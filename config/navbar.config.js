@@ -10,12 +10,12 @@ module.exports = {
     },
     // hideOnScroll: true,
     items: [
-        // {
-        //     to: `${routePrefix}/api`,
-        //     activeBasePath: "${routePrefix}/api",
-        //     label: "Documentation",
-        //     position: "left",
-        // },
+        {
+            to: `${routePrefix}/concepts`,
+            activeBasePath: "${routePrefix}/concepts",
+            label: "Concepts",
+            position: "left",
+        },
         {
             to: `${routePrefix}/workflow`,
             activeBasePath: `${routePrefix}/workflow`,
@@ -68,42 +68,6 @@ module.exports = {
             href: "https://discord.com/invite/Q38s3Vh",
             label: "Chat",
         },
-
-        // {
-        //     to: `${routePrefix}/developer`,
-        //     activeBasePath: `${routePrefix}/developer`,
-        //     label: "Developer",
-        //     position: "left",
-        // },
-        // {
-        //     to: `${routePrefix}/sdk`,
-        //     activeBasePath: `${routePrefix}/sdk`,
-        //     label: "SDK",
-        //     position: "left",
-        // },
-        // {
-        //     to: `${routePrefix}/user`,
-        //     activeBasePath: `${routePrefix}/user`,
-        //     label: "User",
-        //     position: "left",
-        // },
-        // {
-        //     to: `${routePrefix}/crate`,
-        //     activeBasePath: `${routePrefix}/crate`,
-        //     label: "Crate",
-        //     position: "left",
-        // },
-        // {
-        //     to: "demo/demo",
-        //     activeBasePath: "demo/demo",
-        //     label: "Demo",
-        //     position: "left",
-        // },
-        // {
-        //     href: "https://github.com/casper-network/casper-integrations",
-        //     label: "Integration",
-        //     position: "right",
-        // },
         {
             type: "localeDropdown",
             position: "right",
