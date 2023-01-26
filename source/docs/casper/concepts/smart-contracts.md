@@ -5,4 +5,19 @@ slug: /smart-contracts
 
 # Smart Contracts
 
+## What is a Smart Contract?
+
+A smart contract is a self-contained program installed on a blockchain. In the context of a Casper network, a smart contract consists of contract code installed on-chain using a [Deploy](/design/casper-design.md/#execution-semantics-deploys). Casper smart contracts are programs that run on a Casper network. They interact with accounts and other contracts through entry points, allowing for various triggers, conditions, and logic.
+
+Smart contracts exist as stored on-chain logic, allowing disparate users to call the included entry points. These contracts can, in turn, call one another to perform interconnected operations and create more complex programs. The decentralized nature of blockchain technology means that these smart contracts do not suffer from any single point of failure. Even if a Casper node leaves the network, other nodes will continue to allow the contract to operate as intended.
+
+## Key Features of Casper Contracts
+
+On the Casper platform, developers may write smart contracts in any language that compiles to Wasm binaries. This tutorial focuses specifically on writing a smart contract in the Rust language. The Rust compiler compiles the contract code into Wasm. After that, the Wasm binary can be [sent to a node](/dapp-dev-guide/writing-contracts/installing-contracts/) on a Casper network using a Deploy. Nodes within the network then [gossip deploys](/design/p2p/#communications-gossiping), include them within a block, and finalize them. After finalizing, the network executes the deploys within the block.
+
+Further, the Casper platform allows for [upgradable contracts](/dapp-dev-guide/writing-contracts/upgrading-contracts/). A [ContractPackage](https://docs.rs/casper-types/latest/casper_types/contracts/struct.ContractPackage.html) is created through the [new_contract](https://docs.rs/casper-contract/latest/casper_contract/contract_api/storage/fn.new_contract.html) or [new_locked_contract](https://docs.rs/casper-contract/latest/casper_contract/contract_api/storage/fn.new_locked_contract.html) methods. Through these methods, the Casper execution engine creates the new contract package automatically and assigns a [`ContractPackageHash`](/dapp-dev-guide/understanding-hash-types#hash-and-key-explanations). The new contract is added to this package with a [`ContractHash`](https://docs.rs/casper-types/latest/casper_types/contracts/struct.ContractHash.html) key. The execution engine stores the new contract within the contract package alongside any previously installed contract versions, if applicable.
+
+The `new_contract` and `new_locked_contract` methods are a convenience that automatically creates the package associated with a new contract. Developers choosing not to use these methods must first create a contract package to function as a container for their new contract.
+
+The contract contains required metadata, and it is primarily identified by its `ContractHash`. While the contract hash identifies a specific [ContractVersion](https://docs.rs/casper-types/latest/casper_types/contracts/type.ContractVersion.html), the `ContractPackageHash` serves as an identifier for the most recent contract version in the contract package.
 
