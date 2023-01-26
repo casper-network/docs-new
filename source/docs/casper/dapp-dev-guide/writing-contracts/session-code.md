@@ -163,14 +163,6 @@ Use the `--help` option to view an updated list of supported arguments.
 casper-client put-deploy --help
 ```
 
-## Video Walkthrough {#video-walkthrough}
-
-The following brief video describes [sample session code](https://github.com/casper-ecosystem/two-party-multi-sig/) for configuring an account. 
-
-<p align="center">
-<iframe width="400" height="225" src="https://www.youtube.com/embed?v=sUg0nh3K3iQ&list=PL8oWxbJ-csEqi5FP87EJZViE2aLz6X1Mj&index=4" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
-
 ## What's Next? {#whats-next}
 
 - Learn to [test session code](/dapp-dev-guide/writing-contracts/testing-session-code) using the Casper testing framework.
