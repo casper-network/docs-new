@@ -11,7 +11,7 @@ on:
 
 jobs:
   backup:
-    if: github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/dev-new'
     runs-on: ubuntu-latest
 
     steps:
@@ -134,7 +134,7 @@ jobs:
       working-directory: ./docs
 
   deploy-prod:
-    if: github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/dev-new'
     needs: [backup, system-tests-predeployment]
     runs-on: ubuntu-latest
 
