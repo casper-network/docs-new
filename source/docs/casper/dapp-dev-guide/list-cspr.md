@@ -1,6 +1,6 @@
 # Listing CSPR on Your Exchange
 
-This topic describes how to list Casper token (CSPR) on a cryptocurrency exchange. 
+This topic describes how to list Casper token (CSPR) on a cryptocurrency exchange.
 
 CSPR is listed on [many exchanges](https://tokenmarketcaps.com/coins/casper/market) worldwide. It usually takes 1 to 3 days to list CSPR on an exchange.
 
@@ -12,9 +12,9 @@ This setup enables you to have a self-administered gateway to the Casper Network
 
 ## Casper Account
 
-You will need a Casper Account to handle the transactions on an exchange. Casper has an [Account model](../design/casper-design.md/#accounts-head) and instructions on how to [create an Account](../design/casper-design.md/#accounts-creating). 
+You will need a Casper Account to handle the transactions on an exchange. Casper has an [Account model](../design/casper-design.md/#accounts-head) and instructions on how to [create an Account](../design/casper-design.md/#accounts-creating).
 
-For your exchange, you would need at least one Account. The Casper Network uses an Account model that holds on to general resources as well as tokens and provides an on-chain identity. As an exchange if you are dealing with high-volumes of transaction activity, you might need a main account for the exchange platform and sub-accounts for other users. 
+For your exchange, you would need at least one Account. The Casper Network uses an Account model that holds on to general resources as well as tokens and provides an on-chain identity. As an exchange if you are dealing with high-volumes of transaction activity, you might need a main account for the exchange platform and sub-accounts for other users.
 
 ## Understanding Basic Transactions
 
@@ -134,17 +134,17 @@ Bulk or batched Wasm transfers allow you to apply some logic before or after the
 -   `transfer_from_purse_to_public_key`: Transfers amount of motes from source to the main purse of target. If the account referenced by the target does not exist, the transfer will create it.
 -   `transfer_from_purse_to_account`: Transfers amount of motes from source purse to target account. If the target account does not exist, the transfer creates a new account.
 
-For more information on how to write session code, see [Writing Session Code](../dapp-dev-guide/writing-contracts/session-code.md). There are equivalent [assembly script](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract_as/assembly/purse.ts#L135-L305) methods available. Alternatively, you can program directly against the [ext-FFI](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract/src/ext_ffi.rs#L283-L370) methods. 
+For more information on how to write session code, see [Smart Contracts and Session Code](../dapp-dev-guide/writing-contracts/contracts-and-session-code.md). There are equivalent [assembly script](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract_as/assembly/purse.ts#L135-L305) methods available. Alternatively, you can program directly against the [ext-FFI](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract/src/ext_ffi.rs#L283-L370) methods. 
 
 ## Integrating CSPR
 
-You can integrate with the [JSON-RPC API](../dapp-dev-guide/sdkspec/introduction.md) of a node on the Casper Network. 
-You can program directly against the RPC or if you prefer you can choose from the variety of SDK libraries that are available to use on the Casper Network see [SDK Libraries](../dapp-dev-guide/building-dapps/sdk/index.md). 
+You can integrate with the [JSON-RPC API](../dapp-dev-guide/sdkspec/introduction.md) of a node on the Casper Network.
+You can program directly against the RPC or if you prefer you can choose from the variety of SDK libraries that are available to use on the Casper Network see [SDK Libraries](../dapp-dev-guide/building-dapps/sdk/index.md).
 Casper also provides a stream server that gives you real-time information about a variety of events occurring on a node. Use of the stream is optional. You might want to use this feature as it notifies you of events instead of requiring you to ask periodically. For more information about various events, see [Monitoring and Consuming Events](../dapp-dev-guide/building-dapps/monitoring-events.md).
 
 ## Testing the Integration
 
-Our recommended testing mechanism is to have a test environment that points at the official Casper [Testnet](https://testnet.cspr.live/). Through this, you may run production like operations of your test exchange against the test environment. However, if you are not doing this and you just want to integrate with the [Mainnet](https://cspr.live/), then you can do so with your own test accounts. 
+Our recommended testing mechanism is to have a test environment that points at the official Casper [Testnet](https://testnet.cspr.live/). Through this, you may run production like operations of your test exchange against the test environment. However, if you are not doing this and you just want to integrate with the [Mainnet](https://cspr.live/), then you can do so with your own test accounts.
 
 If you are not going to do a Testnet integration, then we suggest you create some additional test accounts and test the transactions on the Mainnet through your software prior to moving to the general public.
 
@@ -164,7 +164,7 @@ Exchanges seeking to integrate CSPR staking mechanisms will need to understand t
 Staking operations consists of two parts:
 
 1) [Creating a deploy object](/dapp-dev-guide/building-dapps/sending-deploys/)
-    
+
 2) [Signing the deploy](/dapp-dev-guide/building-dapps/signing-a-deploy/)
 
 The staking deploy requires the following information:
@@ -275,7 +275,7 @@ const args = RuntimeArgs.fromMap({
     amount: CLValueBuilder.u512(amountMotes)
 })
 ```
-  
+
 #### 2a. Sign the deploy (Casper Signer)
 
 To get the signature, you will need to use `Signer.sign` from the [JavaScript SDK](https://github.com/casper-ecosystem/casper-js-sdk/). It will return `Promise<{ deploy }>`, which is the signed object.
@@ -301,7 +301,7 @@ Signer.sign(
 
 #### 2b. Sign the deploy (Ledger)
 
-You will need to connect with your `Ledger` first to get the signature. 
+You will need to connect with your `Ledger` first to get the signature.
 
 ```
 import TransportWebUSB from '@ledgerhq/hw-transport-webusb';
@@ -324,7 +324,7 @@ const res = await ledgerApp.sign(
 
 The Signature will be in a property called `res.signatureRS`.
 
-After that, we can create a signed deploy, 
+After that, we can create a signed deploy,
 
 ```
 import { DeployUtil, CLPublicKey } from 'casper-js-sdk';
@@ -358,6 +358,6 @@ Minimum amount required for delegation: 500,000,000,000 motes, or 500 **CSPR**.
 
 Casper includes a delegator limit rule, which limits the number of delegators that a single validator may have at `953`. This is a temporary solution to prevent complications with Casper’s fast sync mechanism - in which high bond counts could break fast sync.
 
-Validators with a delegator count at or above `953` at the time of the **1.4.5** upgrade were grandfathered in, however new delegators will not be able to delegate to any validator until the delegator count for that validator falls below `953`. 
+Validators with a delegator count at or above `953` at the time of the **1.4.5** upgrade were grandfathered in, however new delegators will not be able to delegate to any validator until the delegator count for that validator falls below `953`.
 
 Existing delegators may continue to delegate additional CSPR, regardless of the current number of delegators staking their **CSPR** to that validator. However, no new delegators may join the validator until it drops below the `953` limit.

@@ -1,6 +1,6 @@
 # Testing Session Code
 
-This section describes how to test session code using the Casper unit-testing framework. The [writing session code](/dapp-dev-guide/writing-contracts/session-code/) section is a prerequisite for this tutorial, which uses the example code described [here](/dapp-dev-guide/writing-contracts/session-code#writing-session-code).
+This section describes how to test session code using the Casper unit-testing framework. The [writing session code](/dapp-dev-guide/writing-contracts/contracts-and-session-code/) section is a prerequisite for this tutorial, which uses the example code described [here](/dapp-dev-guide/writing-contracts/contracts-and-session-code#writing-session-code).
 
 ## Specifying Dependencies in Cargo.toml {#specifying-dependencies}
 
@@ -15,7 +15,7 @@ casper-types = "1.5.0"
 
 - `casper-execution-engine` - This crate imports the execution engine functionality, enabling Wasm execution within the test framework. Each node contains an instance of an execution engine, and the testing framework simulates this behavior.
 - `casper-engine-test-support` - A helper crate that provides the interface to write tests and interact with an instance of the execution engine.
-- `casper-types` - Types shared by many Casper crates for use on a Casper network. 
+- `casper-types` - Types shared by many Casper crates for use on a Casper network.
 
 ## Writing the Tests {#writing-the-tests}
 
@@ -51,10 +51,10 @@ Next, import the packages required for the tests to run. The example tests use t
     use casper_types::{runtime_args, RuntimeArgs};
 ```
 
-### Defining The Constants 
+### Defining The Constants
 
 The names of the runtime arguments are defined as constants. Using the exact names as in the original contract class is mandatory to define these constants. These are dictated by the arguments specified by the session code. If your session code takes in different arguments, you should define them as constants at this point.
- 
+
 ```rust
 const ASSOCIATED_ACCOUNT_HASH: AccountHash = AccountHash::new([1u8; 32]); // hash of the associated account
 const ASSOCIATED_ACCOUNT: &str = "deployment-account"; // the associated account argument
@@ -98,7 +98,7 @@ This [unit test](https://github.com/casper-ecosystem/two-party-multi-sig/blob/23
             .build();
 ```
 
-6) Invoke the execution engine to process the session code. 
+6) Invoke the execution engine to process the session code.
 
 ```rust
     builder.exec(execute_request).expect_success().commit();
@@ -118,7 +118,7 @@ This example uses a `Makefile` to run the tests.
 make test
 ```
 
-Under the hood, the `Makefile` generates a `tests/wasm` folder, copies the Wasm to the folder, and runs the tests with `cargo test`. 
+Under the hood, the `Makefile` generates a `tests/wasm` folder, copies the Wasm to the folder, and runs the tests with `cargo test`.
 
 ```bash
 mkdir -p tests/wasm
@@ -166,7 +166,7 @@ For many more examples, visit the [casper-node](https://github.com/casper-networ
 
 ## Video Walkthrough
 
-The following brief video describes testing the [sample session code](https://github.com/casper-ecosystem/two-party-multi-sig/) for configuring an account. 
+The following brief video describes testing the [sample session code](https://github.com/casper-ecosystem/two-party-multi-sig/) for configuring an account.
 
 <p align="center">
 <iframe width="400" height="225" src="https://www.youtube.com/embed?v=sUg0nh3K3iQ&list=PL8oWxbJ-csEqi5FP87EJZViE2aLz6X1Mj&index=5" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

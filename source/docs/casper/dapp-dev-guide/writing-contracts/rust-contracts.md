@@ -158,7 +158,7 @@ const COUNT_KEY: &str = "count";
 
 #### Defining the Contract Entry Points
 
-Entry points provide access to contract code installed in global state. Either [session code](/dapp-dev-guide/writing-contracts/contract-vs-session) or another smart contract may call these entry points. A contract must have at least one entry point and may have more than one entry point. Entry points are defined by their name, and those names should be clear and self-describing. Each entry point is equivalent to a static main entry point in a traditional program.
+Entry points provide access to contract code installed in global state. Either [session code](/dapp-dev-guide/writing-contracts/contracts-and-session-code) or another smart contract may call these entry points. A contract must have at least one entry point and may have more than one entry point. Entry points are defined by their name, and those names should be clear and self-describing. Each entry point is equivalent to a static main entry point in a traditional program.
 
 Entry points are not functions or methods, and they have no arguments. They are static entry points into the contract's logic. Yet, the contract logic can access parameters by name, passed along with the Deploy. Note that another smart contract may access any of these entry points.
 
@@ -316,7 +316,7 @@ make build-contract
 
 ## Executing Contract Code {#executing-contract-code}
 
-Contract execution must be initiated through an outside call, usually via [session code](/dapp-dev-guide/writing-contracts/contract-vs-session/) or another smart contract. Developers should also be familiar with the difference between contract code and session code, explained in the next section.
+Contract execution must be initiated through an outside call, usually via [session code](/dapp-dev-guide/writing-contracts/contracts-and-session-code/) or another smart contract. Developers should also be familiar with the difference between contract code and session code, explained in the next section.
 
 ## Video Walkthrough {#video-walkthrough}
 
@@ -330,5 +330,5 @@ The following brief video accompanies this guide.
 ## What's Next? {#whats-next}
 
 - Learn to [test your contract](/dapp-dev-guide/writing-contracts/testing-contracts).
-- Understand [session code](/dapp-dev-guide/writing-contracts/contract-vs-session) and how it triggers a smart contract.
+- Understand [session code](/dapp-dev-guide/writing-contracts/contracts-and-session-code) and how it triggers a smart contract.
 - Learn to [install a contract and query global state](/dapp-dev-guide/writing-contracts/installing-contracts.md) with the Casper command-line client.

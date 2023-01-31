@@ -1,14 +1,12 @@
-# Get started as a Smart Contract developer on Casper
+# Smart Contracts and Session Code
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # 1. Session Code
-{#session-code}
-
-Session code is the simplest logic one can execute on a Casper network. It is essential because it is often used to trigger contract logic stored on the chain. Session code requires only one entry point, the `call` function, and it runs within the context of the account executing the session code. As a result, the session code runs with the account's permissions, such as having access to the account's main purse. For example, the session code could transfer tokens from the account's main purse.
+Session code {#session-code} is the simplest logic one can execute on a Casper network. It is essential because it is often used to trigger contract logic stored on the chain. Session code requires only one entry point, the `call` function, and it runs within the context of the account executing the session code. As a result, the session code runs with the account's permissions, such as having access to the account's main purse. For example, the session code could transfer tokens from the account's main purse.
 
 The best use of session code is when the situation calls for [stateless](/glossary/S.md/#stateless) execution, and very little or no internal data needs to be tracked. Session code is required when interacting and accepting values returned across the Wasm boundary.
 
 ## Comparing Session and Contract Code
-{#comparing-session-and-contract}
 
 The following table summarises the key differences between session code and contract code on a Casper network.
 
@@ -18,7 +16,7 @@ The following table summarises the key differences between session code and cont
 | Session code has only one entry point, `call`, which can be used to interact with the session code. | A smart contract can have multiple entry points that can be invoked.|  
 | The `call` entry point initiates any action the session code takes. | Any action undertaken by a contract must initiate through an outside call, usually via session code.|
 | When a `put_key` call is made within the body of the session code, the key is added to the account's named keys. | When a `put_key` call is made within the smart contract's context, the contract's record is modified to have a new named_key entry. |
-| For more information on how to write session code, see [Writing Session Code](/dapp-dev-guide/writing-contracts/session-code). | For more information on writing contracts, see [Writing a Basic Smart Contract in Rust](/dapp-dev-guide/writing-contracts/rust-contracts). |
+| For more information on how to write session code, see [Writing Session Code](/dapp-dev-guide/writing-contracts/contracts-and-session-code#writing-session-code). | For more information on writing contracts, see [Writing a Basic Smart Contract in Rust](/dapp-dev-guide/writing-contracts/rust-contracts). |
 
 The following image depicts the comparison presented in the table.
 
@@ -30,7 +28,6 @@ The following image depicts the comparison presented in the table.
 3. When you need to call a Smart Contract Entry Point in the account's context
 
 ## Video Walkthrough
-{#video-walkthrough-session-code}
 
 The following brief video describes [sample session code](https://github.com/casper-ecosystem/two-party-multi-sig/) for configuring an account.
 
@@ -39,8 +36,7 @@ The following brief video describes [sample session code](https://github.com/cas
 </p>
 
 ## Example: Native Token transfers using Session Code
-{#session-code-native-transfers}
-
+{#writing-session-code}
 ```
 pub extern "C" fn call():
     let account_purse: URef = account::get_main_purse();
@@ -57,7 +53,6 @@ Other transfer functions in system include:
 3. transfer_from_purse_to_public
 
 ## Compiling Session Code
-{#compiling-session-code}
 
 Before running session code to interact with a contract or other entities on the network, you must compile it to Wasm. Run the following command in the directory hosting the `Cargo.toml` file and `src` folder.
 
@@ -71,7 +66,6 @@ For the examples above, you may use the Makefiles provided:
 make build-contract
 ```
 ## Use put_deploy to run Session Code
-{#deploy-session-code}
 
 Session code can execute on a Casper network via a [Deploy](/glossary/D.md#deploy). All deploys can be broadly categorized as some unit of work that, when executed and committed, affects change to the network's global state.
 The [Casper command-line client](/dapp-dev-guide/setup/#the-casper-command-line-client) and its `put-deploy` command provide one way to execute session code.
@@ -98,11 +92,9 @@ Use the `--help` option to view an updated list of supported arguments.
 ```bash
 casper-client put-deploy --help
 ```
-## Optional: Testing Session Codes
-<Placeholder for Karol>
+## TESTING SESSION CODE: KAROL.
 
 # 2. Smart Contracts
-{#smart-contracts}
 
 A smart contract is a self-contained program installed on a blockchain. In the context of a Casper network, a smart contract consists of contract code installed on-chain using a [Deploy](/design/casper-design.md/#execution-semantics-deploys). Casper smart contracts are programs that run on a Casper network. They interact with accounts and other contracts through entry points, allowing for various triggers, conditions, and logic.
 
@@ -191,7 +183,7 @@ use casper_types::{
 ```
 #### Defining the Contract Entry Points
 
-Entry points provide access to contract code installed in global state. Either [session code](/dapp-dev-guide/writing-contracts/contract-vs-session) or another smart contract may call these entry points. A contract must have at least one entry point and may have more than one entry point. Entry points are defined by their name, and those names should be clear and self-describing. Each entry point is equivalent to a static main entry point in a traditional program.
+Entry points provide access to contract code installed in global state. Either [session code](/dapp-dev-guide/writing-contracts/contracts-and-session-code#session-code) or another smart contract may call these entry points. A contract must have at least one entry point and may have more than one entry point. Entry points are defined by their name, and those names should be clear and self-describing. Each entry point is equivalent to a static main entry point in a traditional program.
 
 Entry points are not functions or methods, and they have no arguments. They are static entry points into the contract's logic. Yet, the contract logic can access parameters by name, passed along with the Deploy. Note that another smart contract may access any of these entry points.
 
@@ -348,7 +340,7 @@ make build-contract
 
 ## Executing Contract Code {#executing-contract-code}
 
-Contract execution must be initiated through an outside call, usually via [session code](/dapp-dev-guide/writing-contracts/contract-vs-session/) or another smart contract. Developers should also be familiar with the difference between contract code and session code, explained in the next section.
+Contract execution must be initiated through an outside call, usually via [session code](/dapp-dev-guide/writing-contracts/contracts-and-session-code#session-code) or another smart contract. Developers should also be familiar with the difference between contract code and session code, explained in the next section.
 
 ## Video Walkthrough
 {#video-walkthrough-smart-contracts}
@@ -363,6 +355,7 @@ The following brief video accompanies this guide.
 Learn to [test Smart Contracts using the "counter" example](/dapp-dev-guide/writing-contracts/testing-contracts/)
 
 ## Installing Smart Contracts and Querying global state
+{#install-contract}
 Learn to [install a compiled Wasm Contract](/dapp-dev-guide/writing-contracts/installing-contracts/)
 
 ## Calling Smart Contracts with the Rust Client
@@ -384,12 +377,12 @@ Context-stack/Caller-stack overview:
 **End of Description**
 
 Contract (C1) [source](https://github.com/jonas089/C3PRL0CK) \
-Install Contract (C1) as per [install smart contracts](FUTURE_LINK_GOES_HERE) and supply an amount as a session arg for funding a Vault Contract (C2) on installation / migration.
+Install Contract (C1) as per [install smart contracts](/dapp-dev-guide/writing-contracts/contracts-and-session-code#install-contract) and supply an amount as a session arg for funding a Vault Contract (C2) on installation / migration.
 
 ### How Contract (C1) works:
 Contract (C1) [main.rs](https://github.com/jonas089/C3PRL0CK/blob/master/contract/src/main.rs) \
 Contract (C1) holds an Entry Point named "migrate":
-```
+```rust
 #[no_mangle]
 pub extern "C" fn migrate(){
     let owner_account: AccountHash = runtime::get_named_arg("owner_account");
@@ -446,12 +439,12 @@ pub extern "C" fn migrate(){
 ```
 We can split this Entry Point up to make it easier to understand.
 ### First, it creates a new purse named "destination" in the Contract's (C1) context:
-```
+```rust
     // create a new purse to later be stored in the contract's named keys
     let destination: URef = system::create_purse();
 ```
 ### Then adds the newly created "destination" purse to a new Vault Contract's (C2) named keys:
-```
+```rust
     let named_keys = {
         ...
         // store the newly created purse in the contract's named keys
@@ -461,7 +454,7 @@ We can split this Entry Point up to make it easier to understand.
     };
 ```
 ### Lastly the new Contract (C2) is installed on-chain and the "destination" purse is returned from the Contract's (C2) named keys.
-```
+```rust
     let (contract_hash, contract_version) = storage::new_contract(
         entry_points,
         Some(named_keys),
@@ -479,7 +472,7 @@ Summary: C1 "migrate" Entry Point is called to install C2 (with purse in named k
 C2 returns the purse for use in Session Code.
 ## Deposit Casper in a Vault Contract through Session Code
 To transfer Casper from an account to the "destination" purse, we need a Session Code (S) that is executed in the account's context. We supply the contract_hash of the "Vault" Contract (C2) as a session argument when running the Session Code (S) as follows:
-```
+```rust
 #[no_mangle]
 pub extern "C" fn call() {
     let contract_hash: ContractHash = runtime::get_named_arg("contract_hash");
@@ -498,7 +491,8 @@ The get_purse Entry Point of Vault Contract (C2) returns the stored purse from a
 The contract_hash can be found in the newly installed contract's named keys.
 ## Redeem from Vault Contract or approve accounts to redeem from Vault Contract
 1. Redeem Entry Point:
-```
+
+```rust
 #[no_mangle]
 pub extern "C" fn redeem(){
     let caller: AccountHash = runtime::get_caller();
@@ -535,7 +529,8 @@ We are however not interested in calling any Entry Point other than "migrate" in
 You can use the casper-client or an SDK to call entry points on Smart Contracts.
 
 2. Approve Entry Point:
-```
+
+```rust
 #[no_mangle]
 pub extern "C" fn approve(){
     let owner_account_uref: URef = match runtime::get_key(OWNER_ACCOUNT){
@@ -569,7 +564,7 @@ The installer can add account_hashes to the approval list through the "approve" 
 
 ## Multi Sig Session Code Example
 [Example Session Code](https://github.com/casper-ecosystem/two-party-multi-sig/blob/main/contract/src/main.rs)
-```
+```rust
 #[no_mangle]
 pub extern "C" fn call() {
     // Account hash for the account to be associated.
@@ -586,26 +581,6 @@ pub extern "C" fn call() {
     account::set_action_threshold(ActionType::Deployment, Weight::new(2)).unwrap_or_revert();
 }
 ```
- -------------------------
-| TBD: explain above code |
- -------------------------
-
-## Upgradeable Smart Contracts
-{#upgradeable-smart-contracts}
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-Our smart contract packaging tools enable you to:
-
--   Upgrade your contracts and specify how the state of the contract is managed
--   Specify whether a contract is upgradable or immutable
--   Version your contracts and deprecate old versions
--   Set permissions around who can perform contract upgrades
-
-When you upgrade a contract, you add a new contract version in a contract package. The versioning process is additive rather than an in-place replacement of an existing contract. The original version of the contract is still there, and you can enable certain versions for specific clients. You can also disable a contract version if needed.
-
-<p align="center"><img src={useBaseUrl("/image/package-representation.png")} alt="package-representation" width="400"/></p>
-
-The contract package is like a container for different contract versions, with functionality that can differ slightly or significantly among versions. The contract package is created when you install the contract on the blockchain.
 
 ## Videos and Tutorials
 
@@ -616,10 +591,3 @@ To learn more about versioning contracts, consult the following video, which bui
 </p>
 
 Or, for a different perspective, consult the [Smart Contract Upgrade Tutorial](/dapp-dev-guide/tutorials/upgrade-contract.md).
-
-## Maintaining a Contract
-The contract maintenance process is generally covered through the contract upgrade process.
-
-Only major version changes in the Casper node software would require specific contract maintenance since a node version has a one-to-one mapping with the contract version. Otherwise, minor contract version changes can be addressed through the contract upgrade process. At the moment, we are not anticipating major contract changes in the Casper Network. Therefore, the contract upgrade process can cater to any minor contract maintenance.
-
-On instances like new node version releases, type upgrades, and bug fixes, we advise you to adhere to the same contract upgrade process.
