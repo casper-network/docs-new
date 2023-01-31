@@ -563,26 +563,6 @@ The "destination" purse is not the only named key that C2 holds. We also specifi
 To successfully redeem funds from C2, one has to either be the installer/ "owner" or a member of the approval list.
 The installer can add account_hashes to the approval list through the "approve" entry point described above.
 
-## Multi Sig Session Code Example
-[Example Session Code](https://github.com/casper-ecosystem/two-party-multi-sig/blob/main/contract/src/main.rs)
-```rust
-#[no_mangle]
-pub extern "C" fn call() {
-    // Account hash for the account to be associated.
-    let deployment_account: AccountHash = runtime::get_named_arg(ASSOCIATED_ACCOUNT);
-
-    // Add the CA key to half the deployment threshold (i.e 1)
-    account::add_associated_key(deployment_account, Weight::new(1)).unwrap_or_revert();
-
-    // Deployment threshold <= Key management threshold.
-    // Therefore update the key management threshold value.
-    account::set_action_threshold(ActionType::KeyManagement, Weight::new(2)).unwrap_or_revert();
-
-    // Set the deployment threshold to 2 enforcing multisig to send deploys.
-    account::set_action_threshold(ActionType::Deployment, Weight::new(2)).unwrap_or_revert();
-}
-```
-
 ## Videos and Tutorials
 
 To learn more about versioning contracts, consult the following video, which builds upon the previous topics and videos in the [Writing On-Chain Code](/writing-contracts) documentation.
