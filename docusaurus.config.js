@@ -29,7 +29,12 @@ module.exports = {
         // announcementBar: announcementConfig,
         colorMode: colorConfig,
         footer: footerConfig,
-        hideableSidebar: true,
+        docs: {
+            sidebar: {
+                hideable: true,
+            },
+        },
+        //hideableSidebar: true,
         /* Optional */
         // googleAnalytics: analyticsConfig.googleAnalytics,
         // gtag: analyticsConfig.gtag,
