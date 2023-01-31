@@ -17,7 +17,7 @@ This section shows you how to write session code and smart contracts in Rust and
 |[Best Practices for Casper Smart Contract Authors](/dapp-dev-guide/writing-contracts/best-practices.md)| An outline of best practices when developing smart contracts on a Casper Network|
 |[Writing a Basic Smart Contract in Rust](/dapp-dev-guide/writing-contracts/rust-contracts.md)   | An example of a smart contract built in Rust|
 |[Unit Testing Smart Contracts](/dapp-dev-guide/writing-contracts/testing-contracts.md)      | Steps to test contract code using the unit testing framework|
-|[Writing Session Code](/dapp-dev-guide/writing-contracts/session-code.md)      | An introduction to writing session code|
+|[Session Code and Smart Contracts](/dapp-dev-guide/writing-contracts/contracts-and-session-code.md)      | An introduction to session code and smart contracts|
 |[Unit Testing Session Code](/dapp-dev-guide/writing-contracts/testing-session-code.md)      | Steps to test session code using the unit testing framework|
 |[Installing Smart Contracts and Querying Global State](/dapp-dev-guide/writing-contracts/installing-contracts.md)| A guide on installing smart contracts and querying global state        |
 |[Calling Smart Contracts with the Rust Client](/dapp-dev-guide/writing-contracts/calling-contracts.md)| Steps to call a smart contract with the Rust command-line client|
@@ -41,4 +41,3 @@ Additionally, the following tutorials outline some aspects of writing smart cont
 <!-- TODO refresh these tutorials and re-enable the links.
 |[Key-Value Storage with Casper DSL](/dapp-dev-guide/tutorials/kv-storage-tutorial.md)  | Design a simple contract to store a value and use the Casper DSL |
 |[Multi-Signatures and Key Recovery](/dapp-dev-guide/tutorials/multi-sig/index.md)      | Learn to sign transactions with multiple keys                    | -->
-
