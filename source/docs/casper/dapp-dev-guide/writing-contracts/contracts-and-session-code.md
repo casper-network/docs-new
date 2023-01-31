@@ -1,8 +1,8 @@
 # Smart Contracts and Session Code
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# 1. Session Code
-Session code {#session-code} is the simplest logic one can execute on a Casper network. It is essential because it is often used to trigger contract logic stored on the chain. Session code requires only one entry point, the `call` function, and it runs within the context of the account executing the session code. As a result, the session code runs with the account's permissions, such as having access to the account's main purse. For example, the session code could transfer tokens from the account's main purse.
+# 1. Session Code {#session-code}
+Session code is the simplest logic one can execute on a Casper network. It is essential because it is often used to trigger contract logic stored on the chain. Session code requires only one entry point, the `call` function, and it runs within the context of the account executing the session code. As a result, the session code runs with the account's permissions, such as having access to the account's main purse. For example, the session code could transfer tokens from the account's main purse.
 
 The best use of session code is when the situation calls for [stateless](/glossary/S.md/#stateless) execution, and very little or no internal data needs to be tracked. Session code is required when interacting and accepting values returned across the Wasm boundary.
 
@@ -35,8 +35,7 @@ The following brief video describes [sample session code](https://github.com/cas
 <iframe width="400" height="225" src="https://www.youtube.com/embed?v=sUg0nh3K3iQ&list=PL8oWxbJ-csEqi5FP87EJZViE2aLz6X1Mj&index=4" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-## Example: Native Token transfers using Session Code
-{#writing-session-code}
+## Example: Native Token transfers using Session Code {#writing-session-code}
 ```
 pub extern "C" fn call():
     let account_purse: URef = account::get_main_purse();
@@ -46,8 +45,7 @@ pub extern "C" fn call():
 
 ```
 
-This Session code emits a transfer from the account that was used to sign the session deploy to an account_hash that is specified as a runtime argument. \
-Other transfer functions in system include:
+This Session code emits a transfer from the account that was used to sign the session deploy to an account_hash that is specified as a runtime argument. Other transfer functions in system include:
 1. transfer_from_purse_to_purse
 2. transfer_to_account
 3. transfer_from_purse_to_public
@@ -92,7 +90,8 @@ Use the `--help` option to view an updated list of supported arguments.
 ```bash
 casper-client put-deploy --help
 ```
-## TESTING SESSION CODE: KAROL.
+## Testing Session Code
+Learn to [test Session Code](/dapp-dev-guide/writing-contracts/testing-session-code)
 
 # 2. Smart Contracts
 
@@ -354,8 +353,7 @@ The following brief video accompanies this guide.
 ## Testing a basic Smart Contract
 Learn to [test Smart Contracts using the "counter" example](/dapp-dev-guide/writing-contracts/testing-contracts/)
 
-## Installing Smart Contracts and Querying global state
-{#install-contract}
+## Installing Smart Contracts and Querying global state {#install-contract}
 Learn to [install a compiled Wasm Contract](/dapp-dev-guide/writing-contracts/installing-contracts/)
 
 ## Calling Smart Contracts with the Rust Client
@@ -366,7 +364,8 @@ Learn to [use dictionaries on Casper](/dapp-dev-guide/writing-contracts/dictiona
 
 # 3. Advanced Example: Managing a Vault Contract funded through Session Code
 **Description** \
-This is a new example that'll help developers better understand when to use Session Code and when to write Smart Contracts. \
+This is a new example that'll help developers better understand when to use Session Code and when to write Smart Contracts.
+
 Additionally, it'll teach the creation of re-useable purses, runtime context and vault funding.
 
 Context-stack/Caller-stack overview:
@@ -376,11 +375,13 @@ Context-stack/Caller-stack overview:
 
 **End of Description**
 
-Contract (C1) [source](https://github.com/jonas089/C3PRL0CK) \
+Contract (C1) [source](https://github.com/jonas089/C3PRL0CK)
+
 Install Contract (C1) as per [install smart contracts](/dapp-dev-guide/writing-contracts/contracts-and-session-code#install-contract) and supply an amount as a session arg for funding a Vault Contract (C2) on installation / migration.
 
 ### How Contract (C1) works:
-Contract (C1) [main.rs](https://github.com/jonas089/C3PRL0CK/blob/master/contract/src/main.rs) \
+Contract (C1) [main.rs](https://github.com/jonas089/C3PRL0CK/blob/master/contract/src/main.rs)
+
 Contract (C1) holds an Entry Point named "migrate":
 ```rust
 #[no_mangle]
@@ -468,7 +469,7 @@ We can split this Entry Point up to make it easier to understand.
 You will find the new Contract (C2) in the current execution context's named keys. As we are calling a Smart Contract's (C1) "migrate" Entry Point, the context of execution will be the Contract (C1) that holds the "migrate" Entry Point. Therefore we need to query the named keys of the Smart Contract (C1) that holds this Entry Point to find our newly installed Contract (C2) with the purse stored under its named keys. The reason we install C2 through C1 is for us to be able to install and manage multiple instances of Vault contracts with little modification of the C1 contract.
 1. Query Contract (C1) to find the contract hash of Vault Contract (C2)
 2. Query Vault Contract (C2) to find the Vault Contract's purse in named keys
-Summary: C1 "migrate" Entry Point is called to install C2 (with purse in named keys) \
+Summary: C1 "migrate" Entry Point is called to install C2 (with purse in named keys)
 C2 returns the purse for use in Session Code.
 ## Deposit Casper in a Vault Contract through Session Code
 To transfer Casper from an account to the "destination" purse, we need a Session Code (S) that is executed in the account's context. We supply the contract_hash of the "Vault" Contract (C2) as a session argument when running the Session Code (S) as follows:
@@ -522,10 +523,10 @@ pub extern "C" fn redeem(){
     system::transfer_from_purse_to_account(stored_purse_uref, caller, amount, None);
 }
 ```
-To redeem from the Vault Contract (C2), call the "redeem" Entry Point of Vault Contract (C2). \
-Above you see an example from [main.rs](https://github.com/jonas089/C3PRL0CK/blob/master/contract/src/main.rs) in Contract (C1). \
-C1 and C2 have to share this Entry Point, as C2 is installed through C1. \
-We are however not interested in calling any Entry Point other than "migrate" in the context of C1. \
+To redeem from the Vault Contract (C2), call the "redeem" Entry Point of Vault Contract (C2).
+Above you see an example from [main.rs](https://github.com/jonas089/C3PRL0CK/blob/master/contract/src/main.rs) in Contract (C1).
+C1 and C2 have to share this Entry Point, as C2 is installed through C1.
+We are however not interested in calling any Entry Point other than "migrate" in the context of C1.
 You can use the casper-client or an SDK to call entry points on Smart Contracts.
 
 2. Approve Entry Point:
@@ -558,8 +559,8 @@ pub extern "C" fn approve(){
     storage::dictionary_put(approved_list_uref, &owner_account.to_string(), res);
 }
 ```
-The "destination" purse is not the only named key that C2 holds. We also specified an approval list in C2's named keys. \
-To successfully redeem funds from C2, one has to either be the installer/ "owner" or a member of the approval list. \
+The "destination" purse is not the only named key that C2 holds. We also specified an approval list in C2's named keys.
+To successfully redeem funds from C2, one has to either be the installer/ "owner" or a member of the approval list.
 The installer can add account_hashes to the approval list through the "approve" entry point described above.
 
 ## Multi Sig Session Code Example
