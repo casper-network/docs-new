@@ -141,10 +141,10 @@ We also provide a [Casper command-line client](/dapp-dev-guide/setup/#the-casper
 
 There are many IDEs available for Rust development. The most popular IDEs for Rust are the following:
 
--	Visual Studio Code
--	CLion
--	IntelliJ Idea
--	Vim
+- Visual Studio Code
+- CLion
+- IntelliJ Idea
+- Vim
 
 You can use whatever IDE you feel the most comfortable using. In all the exercises and tutorials, we will be using Visual Studio Code as it is the most popular one and has a lot of additional extensions, which might prove useful during the development process.
 The easiest way of installing the VSC is to get it from the [official site](https://code.visualstudio.com):
@@ -153,11 +153,11 @@ The easiest way of installing the VSC is to get it from the [official site](http
 
 We advise installing the following extensions to support the development process:
 
--	Better TOML – support for formatting the TOML files
--	CodeLLDB – the Debug Extension – without it, it is impossible to debug the RUST Code from the IDE
--	crates – will help managing the crates
--	Error Lens – enhances the experience during programming and highlights the syntax errors to be more prominent and easily identifiable
--	rust-analyzer – official supported Rust Language extension
+- Better TOML – support for formatting the TOML files
+- CodeLLDB – the Debug Extension – without it, it is impossible to debug the RUST Code from the IDE
+- crates – will help managing the crates
+- Error Lens – enhances the experience during programming and highlights the syntax errors to be more prominent and easily identifiable
+- rust-analyzer – official supported Rust Language extension
 
 During the exercises and tutorials, ways to leverage the extensions will be briefly described.
 
