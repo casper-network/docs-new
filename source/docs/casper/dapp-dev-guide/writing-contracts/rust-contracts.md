@@ -34,7 +34,16 @@ project-directory/
     └── Cargo.toml
 ```
 
+The project structure will be different while designing the full stack architecture. This will be expanded upon while describing the dApps.
+
 ### Creating the Project Manually
+
+:::tip
+
+As a beginner it is not advised to start with the manual project structure. 
+Structure created automatically with `cargo casper` contains everything that is needed to start coding.
+
+:::
 
 1. Create a top-level project directory to store the contract code and its corresponding tests.
 
@@ -78,11 +87,25 @@ The `cargo casper` command can automatically set up the project structure, as sh
     - `main.rs` - This file would store the unit test code required to test the contract. If you wish, you can rename the file to `integration-tests.rs` as shown in the example structure.
     - `Cargo.toml` - This is the file with test configurations.
 
-    The [Testing Smart Contracts](/dapp-dev-guide/writing-contracts/testing-contracts) guide explains how to update the tests using example code. 
+    The [Testing Smart Contracts](/dapp-dev-guide/writing-contracts/testing-contracts) guide explains how to update the tests using example code.
 
 ## Writing a Basic Smart Contract
 
 This section covers the process of writing a smart contract in Rust, using example code from the [counter contract](https://github.com/casper-ecosystem/counter/). This simple contract allows callers to increment and retrieve an integer. Casper provides a [contract API](https://docs.rs/casper-contract/latest/casper_contract/contract_api/index.html) within the [`casper_contract`](https://docs.rs/casper-contract/latest/casper_contract/index.html) crate.
+
+:::info
+
+Important syntax elements used frequently in Rust:
+
+- [Match](https://doc.rust-lang.org/rust-by-example/flow_control/match.html)<br />
+- [Array](https://doc.rust-lang.org/rust-by-example/primitives/array.html)<br />
+- [Loop](https://doc.rust-lang.org/rust-by-example/flow_control/loop.html)<br />
+- [Vectors](https://doc.rust-lang.org/rust-by-example/std/vec.html)<br />
+- [Functions](https://doc.rust-lang.org/rust-by-example/fn.html)<br />
+
+To be able to comfortably write code in Rust it is crucial to understand these topics before going further into the examples.
+
+:::
 
 ### Dependencies in `Cargo.toml`
 
