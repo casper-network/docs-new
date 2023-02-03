@@ -20,8 +20,7 @@ Required Parameters:
 
 ## AccountHash {#accounthash}
 
-The AccountHash is a Hex-encoding of the PublicKey and therefore can be 
-viewed as an address.
+The AccountHash is a Hex-encoding of the PublicKey and therefore can be viewed as an address.
 
 ## ActionThresholds {#actionthresholds}
 
