@@ -1,6 +1,6 @@
 # Sending Deploys to a Casper network using the Rust Client
 
-In order to install Smart Contracts on the Blockchain, you can send your .wasm code to the network via a [deploy](../../concepts/design/casper-design.md#execution-semantics-deploys). To do this, you will need to meet a few prerequisites:
+In order to install smart contracts on the blockchain, you can send your .wasm code to the network via a [deploy](../../concepts/design/casper-design.md#execution-semantics-deploys). To do this, you will need to meet a few prerequisites:
 
 - You will need a client to interact with the network, such as the [default Casper client](../prerequisites.md#the-casper-command-line-client)
 - Ensure you have an [Account](../prerequisites.md#setting-up-an-account) and its associated [keys](../../concepts/accounts-and-keys.md) This account will pay for the Deploy, and its secret key will sign the Deploy
@@ -49,7 +49,7 @@ casper-client put-deploy \
 4. `payment-amount` - The payment for the Deploy in motes. This example uses 2.5 CSPR, but you need to modify this for your contract. See the [note](#a-note-about-gas-price) below
 5. `session-path` - The path to the contract Wasm, which should point to wherever you compiled the contract (.wasm file) on your computer
 
-Once you call this command, it will return a deploy hash, which you will need to verify that the deploy was accepted by the node and to query the results of the deploy (success/failed). Sending a deploy to the network does not mean that the transaction was processed successfully. Once the network has received the deploy and done some preliminary validation of it, it will queue up in the system before being proposed in a block for execution. Therefore, you will need to check to see that the contract was executed as expected.
+Once you call this command, it will return a deploy hash, which you will need to verify that the deploy was accepted by the node and to query the results of the deploy. Sending a deploy to the network does not mean that the transaction was processed successfully. Once the network has received the deploy and done some preliminary validation of it, it will queue up in the system before being proposed in a block for execution. Therefore, you will need to check to see that the contract was executed as expected.
 
 **Note**: Each Deploy gets a unique hash, which is part of the cryptographic security of blockchain technology. No two deploys will ever return the same hash.
 
