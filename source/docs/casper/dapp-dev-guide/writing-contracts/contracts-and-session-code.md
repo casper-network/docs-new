@@ -534,11 +534,16 @@ You can use the casper-client or an SDK to call entry points on Smart Contracts.
 ```rust
 #[no_mangle]
 pub extern "C" fn approve(){
+    let caller: AccountHash = runtime::get_caller();
     let owner_account_uref: URef = match runtime::get_key(OWNER_ACCOUNT){
         Some(key) => key,
         None => runtime::revert(ApiError::MissingKey)
     }.into_uref().unwrap_or_revert();
     let owner_account: AccountHash = storage::read_or_revert(owner_account_uref);
+    // only the owner of the contract instance is allowed to approve accounts for redemption.
+    if owner_account != caller{
+        runtime::revert(ApiError::PermissionDenied);
+    };
     let new_account: AccountHash = runtime::get_named_arg(ARG_ACCOUNT);
     let approved_list_uref: URef = match runtime::get_key(APPROVED_LIST){
         Some(key) => key,
