@@ -49,6 +49,8 @@ casper-client transfer \
 
 -   `target-account` - Hex-encoded public key of the account from which the main purse will be used as the target
 
+-   `payment-amount` - The payment for the deploy in motes.
+
 **Important response fields:**
 
 -   `"result"."deploy_hash"` - the address of the executed transfer, needed to look up additional information about the transfer
@@ -156,7 +158,7 @@ casper-client transfer \
 
 A transfer on a Casper Network is only executed after it has been included in a finalized block.
 
-Refer to the Section on [querying deploys](querying.md#deploy-status) within the network to check the execution status of the transfer.
+Refer to the Section on [querying deploys](querying.md#querying-deploys) within the network to check the execution status of the transfer.
 
 **Important response fields:**
 
@@ -482,5 +484,3 @@ Refer to the Section on [querying deploys](querying.md#deploy-status) within the
 ```
 
 </details>
-
-
