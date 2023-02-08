@@ -23,6 +23,12 @@ module.exports = {
             position: "left",
         },
         {
+            to: `${routePrefix}/concepts`,
+            activeBasePath: `${routePrefix}/concepts`,
+            label: "Concepts",
+            position: "left",
+        },
+        {
             to: `${routePrefix}/dapp-dev-guide`,
             activeBasePath: `${routePrefix}/dapp-dev-guide`,
             label: "Developers",

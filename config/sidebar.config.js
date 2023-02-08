@@ -1,4 +1,18 @@
 module.exports = {
+    // new docs
+    concepts: [
+        "concepts/index",
+        "concepts/intro-to-dapps",
+        "concepts/accounts-and-crypt-keys",
+        "concepts/understanding-hash-types",
+        "concepts/deploy-and-deploy-lifecycle",
+        "concepts/global-state",
+        "concepts/session-code",
+        "concepts/dictionaries",
+    ],
+
+    // end of new docs
+
     workflow: [
         "workflow/index",
         "workflow/block-explorer",
