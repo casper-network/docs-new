@@ -13,7 +13,7 @@ This section covers:
 
 ## Installing Rust {#installing-rust}
 
-On the Casper platform, developers may write smart contracts in any language that compiles to Wasm. These How To guides focus on code examples that use Rust and a Rust client to interact with a Casper network. While following these guides, we recommend setting up Rust and installing all dependencies. For step-by-step instructions, visit [Getting Started with Rust](/dapp-dev-guide/writing-contracts/getting-started).
+On the Casper platform, developers may write smart contracts in any language that compiles to Wasm. These How To guides focus on code examples that use Rust and a Rust client to interact with a Casper network. While following these guides, we recommend setting up Rust and installing all dependencies. For step-by-step instructions, visit [Getting Started with Rust](/developers/writing-contracts/getting-started).
 
 ## Casper Command-line Client {#the-casper-command-line-client}
 
@@ -93,7 +93,7 @@ Users can create an account through the Casper command-line client. Alternativel
 
 ### Option 1: Key generation using the Casper client {#option-1-key-generation-using-the-casper-client}
 
-This option describes how you can use the Casper command-line client to set up your accounts. For more information about cryptographic keys, see [Working with Cryptographic Keys](/dapp-dev-guide/keys.md).
+This option describes how you can use the Casper command-line client to set up your accounts. For more information about cryptographic keys, see [Working with Cryptographic Keys](/concepts/accounts-and-keys.md).
 
 Execute the following command to generate your keys:
 
@@ -131,7 +131,7 @@ The Signer does not allow you to download the corresponding public key and hexad
 
 <img src={useBaseUrl("/image/workflow/account-details.png")} alt="Signer Account Details" width="200" class="inline-img" />
 
-For [ed25519](/dapp-dev-guide/keys.md#eddsa-keys) keys, you can generate the `public_key.pem` and `public_key_hex` using [these commands](https://github.com/casper-network/casper-node/wiki/ed25519-public-keys-from-secret_key.pem).
+For [ed25519](/concepts/accounts-and-keys.md#eddsa-keys) keys, you can generate the `public_key.pem` and `public_key_hex` using [these commands](https://github.com/casper-network/casper-node/wiki/ed25519-public-keys-from-secret_key.pem).
 
 ## Funding Accounts {#fund-your-account}
 

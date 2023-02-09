@@ -5,7 +5,7 @@ slug: /multi-sig
 
 # Multi-Signature Tutorial
 
-See the [Two-Party Multi-Signature workflow](/workflow/developers/deploy-transfer.md).
+See the [Two-Party Multi-Signature workflow](/developers/cli/transfers/deploy.md).
 
 <!-- TODO The videos and the tutorial need to be updated. Keeping the content in the repository for now and commenting it out so that it doesn't show up in search results.
 

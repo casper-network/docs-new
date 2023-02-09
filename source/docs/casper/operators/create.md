@@ -1,4 +1,4 @@
-# Setting up a Network
+# Creating a new Network (private)
 
 It is possible to create a new network or join an existing network. This page outlines the basics for creating a new network.
 

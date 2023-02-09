@@ -11,7 +11,7 @@ The most secure way to send a bonding transaction is to compile the contract and
 1. Clone the [`casper-node` repository](https://github.com/casper-network/casper-node)
 2. Install these prerequisites, which are also listed [here](https://github.com/casper-network/casper-node#pre-requisites-for-building).
 
-- [Rust](/dapp-dev-guide/writing-contracts/getting-started/#installing-rust)
+- [Rust](/developers/writing-contracts/getting-started/#installing-rust)
 - [CMake](https://cgold.readthedocs.io/en/latest/first-step/installation.html)
 - `pkg-config` - On Ubuntu, use `sudo apt-get install pkg-config`
 - `openssl` - On Ubuntu, use `sudo apt-get install openssl`

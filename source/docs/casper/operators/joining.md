@@ -20,7 +20,7 @@ Use the commands below to build all the necessary contracts for bonding, retriev
 git clone https://github.com/casper-network/casper-node
 ```
 
-2. Use the following commands to build the contracts in release mode. Make sure you have [installed Rust](/dapp-dev-guide/writing-contracts/getting-started.md#installing-rust).
+2. Use the following commands to build the contracts in release mode. Make sure you have [installed Rust](/developers/writing-contracts/getting-started.md#installing-rust).
 
 ```bash
 cd casper-node

@@ -16,7 +16,7 @@ slug: /design
     -   [Merkle trie structure](/design/casper-design.md#global-state-trie)
 -   [Execution Semantics](/design/casper-design.md#execution-semantics-head)
     -   [Measuring computational work](/design/casper-design.md#execution-semantics-gas)
-    -   [Deploys](/design/casper-design.md#execution-semantics-deploys)
+    -   [Deploys](/concepts/deploy-and-deploy-lifecycle.md#execution-semantics-deploys)
     -   [The Casper Network runtime](/design/casper-design.md#execution-semantics-runtime)
 -   [Accounts](/design/casper-design.md#accounts-head)
     -   [Creating an account](/design/casper-design.md#accounts-creating)
