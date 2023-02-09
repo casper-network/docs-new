@@ -30,4 +30,4 @@ Review the [deploy data structure](/design/serialization-standard.md#deploy) and
 
 A `Dictionary` is a storage data structure on a Casper network. Dictionaries represent a more efficient and scalable form of data storage when compared to [`NamedKeys`](/glossary/N.md#namedkeys).
 
-More information can be found in the [Reading and Writing to Dictionaries](/dapp-dev-guide/writing-contracts/dictionaries/) document.
+More information can be found in the [Reading and Writing to Dictionaries](/concepts/dictionaries.md) document.

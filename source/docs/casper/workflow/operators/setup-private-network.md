@@ -254,7 +254,7 @@ export NODE_ADDR=http://18.224.190.213:7777
 export CHAIN_NAME="private-test"
 ```
 
-This testing example will also use an `alice/secret_key.pem` file, a secret key generated through the [keys generation process](/dapp-dev-guide/keys/#creating-accounts-and-keys). Alice is a regular user in this testing example.
+This testing example will also use an `alice/secret_key.pem` file, a secret key generated through the [keys generation process](/concepts/accounts-and-keys.md#creating-accounts-and-keys). Alice is a regular user in this testing example.
 
 ### Network access control
 

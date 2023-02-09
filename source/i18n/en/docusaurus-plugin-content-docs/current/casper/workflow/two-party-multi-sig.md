@@ -115,12 +115,12 @@ casper-client put-deploy \
 
 ### Confirming Execution and Account Status {#confirming-execution-and-account-status}
 
-Account configuration on a Casper blockchain is stored in a [Merkle Tree](https://docs.casperlabs.io/en/latest/glossary/M.md#merkle-tree) and is a snapshot of the blockchain's [Global State](https://docs.casperlabs.io/en/latest/implementation/global-state.md). The representation of global state for a given block can be computed by executing the deploys (including transfers) within the block and its ancestors. The root node of the Merkle Tree identifying a particular state is called the `state-root-hash` and is stored in every executed block.
+Account configuration on a Casper blockchain is stored in a [Merkle Tree](https://docs.casperlabs.io/en/latest/glossary/M.md#merkle-tree) and is a snapshot of the blockchain's [Global State](https://docs.casperlabs.io/en/latest/concepts/global-state.md). The representation of global state for a given block can be computed by executing the deploys (including transfers) within the block and its ancestors. The root node of the Merkle Tree identifying a particular state is called the `state-root-hash` and is stored in every executed block.
 
 To check that your account was configured correctly, you need the `state-root-hash` corresponding to the block that contains your deploy. To obtain the `state-root-hash`, you need to:
 
-1.  [Confirm the execution status of the deploy](/workflow/developers/querying.md#querying-deploys) and obtain the hash of the block containing it
-2.  [Query the block containing the deploy](/workflow/developers/querying.md#querying-blocks) to obtain the corresponding `state_root_hash`
+1.  [Confirm the execution status of the deploy](/resources/tutorials/beginner/querying-network.md#querying-deploys) and obtain the hash of the block containing it
+2.  [Query the block containing the deploy](/resources/tutorials/beginner/querying-network.md#querying-blocks) to obtain the corresponding `state_root_hash`
 
 Use the `state_root_hash` and the `hex-encoded-public-key` of the main account to query the network for the account and check its configuration.
 

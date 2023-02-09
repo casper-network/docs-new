@@ -64,6 +64,6 @@ Navigate to these pages for step-by-step tutorials on creating an account and de
 - [Funding an account from an exchange](/workflow/users/funding-from-exchanges)
 - [Delegating tokens using a block explorer](/workflow/users/delegate-ui)
 - [Delegating with Ledger devices](/workflow/users/staking-ledger/)
-- [Delegating with the Casper client](/workflow/developers/delegate.md)
+- [Delegating with the Casper client](/developers/cli/delegate.md)
 - [Undelegating tokens using a block explorer](/workflow/users/undelegate-ui)
 

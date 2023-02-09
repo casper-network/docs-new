@@ -30,7 +30,7 @@ Follow the links below to learn more about the Casper Network.
 | Category | Content |
 | --- | --- |
 | [How To's](/workflow/index.md) | Guides for interacting with the Casper Network |
-| [Developers](/dapp-dev-guide/index.md) | Get started with smart contract development on the Casper blockchain in Rust |
+| [Developers](/developers/index.md) | Get started with smart contract development on the Casper blockchain in Rust |
 | [Node Operators](/operators/index.md) | Run node infrastructure on the Casper Network |
 | [Design](/design/index.md) | Understand the architecture of the Casper Network, including network communication, execution semantics, account management, block structure, global state, serialization, unforgeable references, and tokens |
 | [Economics](/economics/index.md) | Conceptualize Casper's economic activity by understanding consensus, runtime, ecosystem, and the macroeconomy |

@@ -155,7 +155,7 @@ casper-client transfer \
 
 A transfer on a Casper Network is only executed after it has been included in a finalized block.
 
-Refer to the Section on [querying deploys](/workflow/developers/querying.md#deploy-status) within the network to check the execution status of the transfer.
+Refer to the Section on [querying deploys](/resources/tutorials/beginner/querying-network.md#deploy-status) within the network to check the execution status of the transfer.
 
 **Important response fields:**
 
@@ -381,7 +381,7 @@ Refer to the Section on [querying deploys](/workflow/developers/querying.md#depl
 
 ### State Root Hash {#state-root-hash}
 
-State information like the balance of an account on a Casper blockchain is stored in the [Global State](https://docs.casperlabs.io/en/latest/implementation/global-state.md).
+State information like the balance of an account on a Casper blockchain is stored in the [Global State](https://docs.casperlabs.io/en/latest/concepts/global-state.md).
 
 We will use the `get-block` command and the `block_hash` to query and retrieve the block that contains our deploy. We will use the `state_root_hash` from the response to look up various values, like the source and destination account and their balances.
 

@@ -172,7 +172,7 @@ The following command will create keys in the `/etc/casper/validator_keys` folde
 sudo -u casper casper-client keygen /etc/casper/validator_keys
 ```
 
-To learn about other options for generating keys, see [Accounts and Cryptographic Keys](/dapp-dev-guide/keys/) or run the Rust client `keygen` command with the `--help` option. 
+To learn about other options for generating keys, see [Accounts and Cryptographic Keys](/concepts/accounts-and-keys.md) or run the Rust client `keygen` command with the `--help` option. 
 
 ```bash
 sudo -u casper casper-client keygen --help

@@ -91,7 +91,7 @@ Active engagement in the community is another important aspect.
 <details>
 <summary><b>How do I stake tokens via the command line?</b></summary>
 
-Follow [the delegation workflow](/workflow/developers/delegate/) to learn how to stake your tokens via the command line.
+Follow [the delegation workflow](/developers/cli/delegate/) to learn how to stake your tokens via the command line.
 
 </details>
 
