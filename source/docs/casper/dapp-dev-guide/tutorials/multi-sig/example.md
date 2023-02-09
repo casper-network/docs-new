@@ -29,13 +29,13 @@ For all the commands used in this tutorial, here are a few pointers:
 
 Create three sets of keys one each for the Manager, Supervisor and Clerk. 
 
-To create accounts on the Casper blockchain, you need to generate keys and fund your accounts. For more information see [Account and Cryptographic Keys](../../keys.md). 
+To create accounts on the Casper blockchain, you need to generate keys and fund your accounts. For more information see [Account and Cryptographic Keys](/dapp-dev-guide/keys.md). 
 
 To fund your Testnet account, see [Funding Testnet Accounts](/workflow/users/testnet-faucet.md).
 
 ## Deploying the Keys Manager Contract
 
-Before you deploy the keys manager contract, you must clone the keys-manager repository and build the [contract](contract.md).
+Before you deploy the keys manager contract, you must clone the keys-manager repository and build the [contract](/dapp-dev-guide/tutorials/multi-sig/contract.md).
 
 You can deploy the keys manager contract using the `put-deploy` command as illustrated below.
 

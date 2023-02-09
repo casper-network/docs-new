@@ -6,7 +6,7 @@ CSPR is listed on [many exchanges](https://tokenmarketcaps.com/coins/casper/mark
 
 ## Setting up a Node
 
-While it is not necessary for an exchange to operate their own node on the Casper Mainnet, we recommend that they do so if they expect to handle moderate to high volumes of transaction activity. A node operated by an exchange does not have to be a validating node, it can be read-only. For setup instructions, see [Basic Node Setup](../operators/setup.md).
+While it is not necessary for an exchange to operate their own node on the Casper Mainnet, we recommend that they do so if they expect to handle moderate to high volumes of transaction activity. A node operated by an exchange does not have to be a validating node, it can be read-only. For setup instructions, see [Basic Node Setup](/operators/setup.md).
 
 This setup enables you to have a self-administered gateway to the Casper Mainnet to get data and submit transactions.
 
@@ -134,13 +134,13 @@ Bulk or batched Wasm transfers allow you to apply some logic before or after the
 -   `transfer_from_purse_to_public_key`: Transfers amount of motes from source to the main purse of target. If the account referenced by the target does not exist, the transfer will create it.
 -   `transfer_from_purse_to_account`: Transfers amount of motes from source purse to target account's purse. If the target account does not exist, the transfer creates a new account.
 
-For more information on how to write session code, see [Writing Session Code](../dapp-dev-guide/writing-contracts/session-code.md). There are equivalent [assembly script](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract_as/assembly/purse.ts#L135-L305) methods available. Alternatively, you can program directly against the [ext-FFI](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract/src/ext_ffi.rs#L283-L370) methods. 
+For more information on how to write session code, see [Writing Session Code](/dapp-dev-guide/writing-contracts/session-code.md). There are equivalent [assembly script](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract_as/assembly/purse.ts#L135-L305) methods available. Alternatively, you can program directly against the [ext-FFI](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract/src/ext_ffi.rs#L283-L370) methods. 
 
 ## Integrating CSPR
 
-You can integrate with the [JSON-RPC API](../dapp-dev-guide/sdkspec/introduction.md) of a node on the Casper Mainnet. 
-You can program directly against the RPC or if you prefer you can choose from the variety of SDK libraries that are available to use on a Casper network see [SDK Libraries](../dapp-dev-guide/building-dapps/sdk/index.md). 
-Casper also provides a stream server that gives you real-time information about a variety of events occurring on a node. Use of the stream is optional. You might want to use this feature as it notifies you of events instead of requiring you to ask periodically. For more information about various events, see [Monitoring and Consuming Events](../dapp-dev-guide/building-dapps/monitoring-events.md).
+You can integrate with the [JSON-RPC API](/dapp-dev-guide/sdkspec/introduction.md) of a node on the Casper Mainnet. 
+You can program directly against the RPC or if you prefer you can choose from the variety of SDK libraries that are available to use on a Casper network see [SDK Libraries](/dapp-dev-guide/building-dapps/sdk/index.md). 
+Casper also provides a stream server that gives you real-time information about a variety of events occurring on a node. Use of the stream is optional. You might want to use this feature as it notifies you of events instead of requiring you to ask periodically. For more information about various events, see [Monitoring and Consuming Events](/dapp-dev-guide/building-dapps/monitoring-events.md).
 
 ## Testing the Integration
 
@@ -152,7 +152,7 @@ If you are not going to do a Testnet integration, then we suggest you create som
 
 -   Casper is integrated with BitGo for enterprise grade custody. If your exchange uses BitGo, support for Casper is available already.
 -   Casper has an execution after consensus model, which means that transactions are executed after they are finalized. Transactions are not orphaned or uncle’d on Casper and neither does chain reorganization happen on it. For more information on the execution process, see [Execution Semantics](/design/casper-design.md/#execution-semantics-head).
--   Exchanges can check finality signatures. Validators send finality signatures after the finalized block is executed and global state is updated. The Casper node streams execution effects and finality signatures through an SSE architecture. For more information about various events, see [Monitoring and Consuming Events](../dapp-dev-guide/building-dapps/monitoring-events.md).
+-   Exchanges can check finality signatures. Validators send finality signatures after the finalized block is executed and global state is updated. The Casper node streams execution effects and finality signatures through an SSE architecture. For more information about various events, see [Monitoring and Consuming Events](/dapp-dev-guide/building-dapps/monitoring-events.md).
 
 
 ## Staking Integration for Exchanges

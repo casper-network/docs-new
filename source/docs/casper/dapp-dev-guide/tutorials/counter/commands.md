@@ -71,7 +71,7 @@ casper-client put-deploy \
 
 This second usage of _put-deploy_ does not place a new contract on the chain, but it allows you to call entry points (functions) defined in smart contracts.
 
-Here we show the example using "counter" and "counter_inc" because, in the [Counter tutorial](./walkthrough.md), we have defined a smart contract by the name of "counter", and there is an entry-point named "counter_inc" defined within it. However, these will be different when you write your contracts.
+Here we show the example using "counter" and "counter_inc" because, in the [Counter tutorial](/dapp-dev-guide/tutorials/counter/walkthrough.md), we have defined a smart contract by the name of "counter", and there is an entry-point named "counter_inc" defined within it. However, these will be different when you write your contracts.
 
 ## Get Deploys (from the Chain) {#get-deploys-from-the-chain}
 

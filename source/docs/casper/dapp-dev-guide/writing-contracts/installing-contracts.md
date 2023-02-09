@@ -301,7 +301,7 @@ casper-client query-global-state \
   --state-root-hash 763e737cf55a298d54bcdfb4ee55526538a1a086128914b9cc25ccbdebbbb966
 ```
 
-Here is how the contract package details would look. The response would contain the `contract_hash`, which you would need to [call a contract by hash](calling-contracts.md#calling-contracts-by-hash) in the next section. You would also see the `access_key` for the `ContractPackage` and the current `contract_version`.
+Here is how the contract package details would look. The response would contain the `contract_hash`, which you would need to [call a contract by hash](/dapp-dev-guide/writing-contracts/calling-contracts.md#calling-contracts-by-hash) in the next section. You would also see the `access_key` for the `ContractPackage` and the current `contract_version`.
 
 <details>
 <summary><b>Sample contract package state</b></summary>
@@ -345,4 +345,4 @@ This video shows you what to expect when querying the network.
 
 ## What's Next? {#whats-next}
 
-- Learn [different ways to call contracts](calling-contracts.md) using the Casper command-line client
+- Learn [different ways to call contracts](/dapp-dev-guide/writing-contracts/calling-contracts.md) using the Casper command-line client

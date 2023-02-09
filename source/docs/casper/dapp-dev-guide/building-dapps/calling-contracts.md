@@ -22,7 +22,7 @@ Further information on the structure of `StoredContractByHash` can be found [her
 
 ### StoredContractByName
 
-`StoredContractByName` is similar to `StoredContractByHash`, with the main difference being the reference used to invoke on-chain Wasm. Where `StoredContractByHash` requires the contract hash, `StoredContractByName` uses a string stored as a [`NamedKey`](dapp-dev-guide/sdkspec/types_chain/#namedkey) in the caller's account.
+`StoredContractByName` is similar to `StoredContractByHash`, with the main difference being the reference used to invoke on-chain Wasm. Where `StoredContractByHash` requires the contract hash, `StoredContractByName` uses a string stored as a [`NamedKey`](/dapp-dev-guide/sdkspec/types_chain.md#namedkey) in the caller's account.
 
 This allows the caller to more easily reference a contract stored on-chain for later use but requires pre-planning to store the name within their account's `NamedKeys`.
 

@@ -252,7 +252,7 @@ After the transfer of funds, the client code removes both deployment accounts in
 ```
 </details>
 
-You can now employ a similar strategy to set up your account using multiple keys, see [Setting up a Multi-sig Account](example.md).  
+You can now employ a similar strategy to set up your account using multiple keys, see [Setting up a Multi-sig Account](/dapp-dev-guide/tutorials/multi-sig/example.md).  
 
 
 -->

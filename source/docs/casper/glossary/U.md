@@ -2,13 +2,13 @@
 
 ---
 
-[A](A.md) [B](B.md) [C](C.md) [D](D.md) [E](E.md) [F](F.md) [G](G.md) [H](H.md) [I](I.md) [J](J.md) [K](K.md) [L](L.md) [M](M.md) [N](N.md) [O](O.md) [P](P.md) [Q](Q.md) [R](R.md) [S](S.md) [T](T.md) [U](U.md) [V](V.md) [W](W.md) [X](X.md) [Y](Y.md) [Z](Z.md)
+[A](/glossary/A.md) [B](/glossary/B.md) [C](/glossary/C.md) [D](/glossary/D.md) [E](/glossary/E.md) [F](/glossary/F.md) [G](/glossary/G.md) [H](/glossary/H.md) [I](/glossary/I.md) [J](/glossary/J.md) [K](/glossary/K.md) [L](/glossary/L.md) [M](/glossary/M.md) [N](/glossary/N.md) [O](/glossary/O.md) [P](/glossary/P.md) [Q](/glossary/Q.md) [R](/glossary/R.md) [S](/glossary/S.md) [T](/glossary/T.md) [U](/glossary/U.md) [V](/glossary/V.md) [W](/glossary/W.md) [X](/glossary/X.md) [Y](/glossary/Y.md) [Z](/glossary/Z.md)
 
 ---
 
 ## Unbonding {#unbonding}
 
-Withdrawing money from the [auction](A.md#auction) contract with _withdraw bid_ and possibly ceasing to be a validator. The unbonding request is a transaction that informs the auction contract that the sender wants to decrease their deposit. In the next booking block, only the decreased deposit is considered when determining a future validator set. If it has been decreased to 0, the sender will not be included in the validator set anymore. However, the amount only gets transferred to the sender after the unbonding period. If during that period their node exhibits a fault, the unbonded amount can still be slashed.
+Withdrawing money from the [auction](/glossary/A.md#auction) contract with _withdraw bid_ and possibly ceasing to be a validator. The unbonding request is a transaction that informs the auction contract that the sender wants to decrease their deposit. In the next booking block, only the decreased deposit is considered when determining a future validator set. If it has been decreased to 0, the sender will not be included in the validator set anymore. However, the amount only gets transferred to the sender after the unbonding period. If during that period their node exhibits a fault, the unbonded amount can still be slashed.
 
 ## URef {#uref}
 

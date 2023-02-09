@@ -12,7 +12,7 @@ You must ensure the following prerequisites are met.
     - A funded [Account](/dapp-dev-guide/setup/#setting-up-an-account) on Testnet or Mainnet
     - A valid _node address_ from the [Testnet peers](https://testnet.cspr.live/tools/peers) or [Mainnet peers](https://cspr.live/tools/peers)
     - The Casper [command-line client](/dapp-dev-guide/setup#the-casper-command-line-client)
-2. Set up the source account for multi-signature deploys, as outlined in the [Two-Party Multi-Signature Deploys](two-party-multi-sig.md) workflow
+2. Set up the source account for multi-signature deploys, as outlined in the [Two-Party Multi-Signature Deploys](/workflow/developers/two-party-multi-sig.md) workflow
 3. Get the path of the source account's _secret key_ file
 4. Get the path of a target account's _public key_ hex file
 
@@ -252,7 +252,7 @@ Make a note of the *deploy_hash* from the `send-deploy` command output to verify
 
 </details>
 
-If you get an account authorization error, you must set up the source account to allow multi-signature deploys using session code. The [Two-Party Multi-Signature Deploys](two-party-multi-sig.md) workflow is an example of how to accomplish this.
+If you get an account authorization error, you must set up the source account to allow multi-signature deploys using session code. The [Two-Party Multi-Signature Deploys](/workflow/developers/two-party-multi-sig.md) workflow is an example of how to accomplish this.
 
 <details>
 <summary>Example of an account authorization error</summary>
@@ -269,7 +269,7 @@ If you get an account authorization error, you must set up the source account to
 
 ## Verifying the Transfer
 
-To verify the transfer status, see [Verifying a Transfer](verify-transfer.md).
+To verify the transfer status, see [Verifying a Transfer](/workflow/developers/verify-transfer.md).
 
 :::tip 
 
