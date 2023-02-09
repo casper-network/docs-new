@@ -147,7 +147,9 @@ const session_args = RuntimeArgs.fromMap({
 ```
 The leftover required arguments for sending a deploy in javascript: `node_address`, `chain_name`, `wasm_path`, `payment_amount` are the same for every SDK and the casper-client command line tool. `payment_amount` sets the installation gas fee and `wasm_path` is a path to the compiled wasm contract that is to be installed.
 ### 2. Python{#installing-contract-code-python-sdk}
-
+In order to install a compiled .wasm smart contract using the Python SDK, we first need to create a keypair and construct an `asymmetric_keypair`.
+See [example](https://github.com/casper-network/casper-python-sdk/blob/main/how_tos/how_to_create_key_pairs.py) on GitHub.
+This is the Pyton equivalent of the `asymmetric_keypair` in the [javascript](#installing-contract-code-javscript-sdk) section.
 
 **Video - Contract Installation Walkthrough**
 
