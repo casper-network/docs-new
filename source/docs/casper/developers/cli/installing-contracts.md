@@ -60,10 +60,10 @@ casper-client get-deploy \
     --node-address http://localhost:11101 [DEPLOY_HASH]
 ```
 
-## Installing a Contract in Global State using different SDKs
-Alternatively to installing contracts with the casper-client command line tool, different SDKs can send be utilised to send deploys to the JSON-RPC server of a Casper node. Not every SDK works the same, but you can find examples for different SDKs below.
+## Installing a Contract in Global State using different SDKs{#installing-contract-code-sdks}
+Alternatively to installing contracts with the casper-client command line tool, different SDKs can be utilised to send deploys to the JSON-RPC server of a Casper node. Not every SDK is exactly the same, but you can find examples for a selection of different SDKs below.
 
-### 1. Javascript
+### 1. Javascript{#installing-contract-code-javascript-sdk}
 ```javascript
 const fs = require('fs');
 const Get_Binary = function(path){
@@ -145,8 +145,8 @@ const session_args = RuntimeArgs.fromMap({
   // ...
 });
 ```
-
-### 2. Python
+The leftover required arguments for sending a deploy in javascript: `node_address`, `chain_name`, `wasm_path`, `payment_amount` are the same for every SDK and the casper-client command line tool. `payment_amount` sets the installation gas fee and `wasm_path` is a path to the compiled wasm contract that is to be installed.
+### 2. Python{#installing-contract-code-python-sdk}
 
 
 **Video - Contract Installation Walkthrough**
