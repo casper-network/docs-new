@@ -99,7 +99,7 @@ const Deploy = async function(
 ```
 As you can see, you will need an `asymmetric_keypair` to sign a deploy. See the
 "KeyManager" class below to learn how to create keys locally and
-construct an `asymmetric_keypair` using Ed25519. If you are interested in using Secp256K1 keypairs, you can find more in-depth examples [here](https://github.com/casper-ecosystem/casper-js-sdk/blob/dev/test/lib/Keys.test.ts)
+construct an `asymmetric_keypair` using Ed25519. The code above is only a simple example of how keys can be used to sign deploys. If you are interested in building on Casper, or, for example want to use Secp256K1 keypairs, you can find more in-depth examples [here](https://github.com/casper-ecosystem/casper-js-sdk/blob/dev/test/lib/Keys.test.ts)
 
 ```javascript
 const fs = require('fs');
@@ -145,7 +145,7 @@ const session_args = RuntimeArgs.fromMap({
   // ...
 });
 ```
-The leftover required arguments for sending a deploy in javascript: `node_address`, `chain_name`, `wasm_path`, `payment_amount` are the same for every SDK and the casper-client command line tool. `payment_amount` sets the installation gas fee and `wasm_path` is a path to the compiled wasm contract that is to be installed.
+The left over required arguments for sending a deploy in javascript: `node_address`, `chain_name`, `wasm_path`, `payment_amount` are the same for every SDK and the casper-client command line tool. `payment_amount` sets the installation gas fee and `wasm_path` is a path to the compiled wasm contract that is to be installed.
 ## 2. Python{#installing-contract-code-python-sdk}
 In order to install a compiled .wasm smart contract using the Python SDK, we first need to create a keypair and construct an `asymmetric_keypair`.
 See [example](https://github.com/casper-network/casper-python-sdk/blob/main/how_tos/how_to_create_key_pairs.py) on GitHub.
