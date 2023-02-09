@@ -17,13 +17,13 @@ The following examples use two contracts on [Testnet](https://testnet.cspr.live/
 ## Prerequisites {#prerequisites}
 
 - You know how to [send and verify deploys](/dapp-dev-guide/building-dapps/sending-deploys.md)
-- You know how to [install contracts and query global state](installing-contracts.md) using the [default Casper client](/dapp-dev-guide/setup#the-casper-command-line-client)
+- You know how to [install contracts and query global state](/dapp-dev-guide/writing-contracts/installing-contracts.md) using the [default Casper client](/dapp-dev-guide/setup#the-casper-command-line-client)
 - Install the [Counter contract](https://github.com/casper-ecosystem/counter/blob/master/contract-v1/src/main.rs) on Testnet if you have not done so already
 - Review the [system Auction contract](https://testnet.cspr.live/contract-package/e375d42c29c0e4b2baefa63cf2d70af34439eda851e08129d8515515d63bd6a9) on Testnet
 
 ## Calling Contracts by Contract Hash {#calling-contracts-by-hash}
 
-After [installing a contract](installing-contracts.md) in global state, you can use the contract's hash to call one of its entry points. The following usage of `put-deploy` allows you to call an entry point and receive a deploy hash. The hash is needed to verify that the deploy was processed successfully.
+After [installing a contract](/dapp-dev-guide/writing-contracts/installing-contracts.md) in global state, you can use the contract's hash to call one of its entry points. The following usage of `put-deploy` allows you to call an entry point and receive a deploy hash. The hash is needed to verify that the deploy was processed successfully.
 
 ```rust
 casper-client put-deploy \
@@ -59,11 +59,11 @@ casper-client put-deploy \
 
 :::note
 
-This `put-deploy` command is nearly identical to the command used to [install the contract](installing-contracts.md#installing-contract-code). Here, instead of `session-path` pointing to the Wasm binary, we have `session-hash` and `session-entry-point` identifying the on-chain contract and its associated entry point. No Wasm file is needed in this example since the contract is already on the blockchain, and the entry point doesn’t return a value. If an entry point returns a value, use code to [interact with runtime return values](/dapp-dev-guide/tutorials/return-values-tutorial/).
+This `put-deploy` command is nearly identical to the command used to [install the contract](/dapp-dev-guide/writing-contracts/installing-contracts.md#installing-contract-code). Here, instead of `session-path` pointing to the Wasm binary, we have `session-hash` and `session-entry-point` identifying the on-chain contract and its associated entry point. No Wasm file is needed in this example since the contract is already on the blockchain, and the entry point doesn’t return a value. If an entry point returns a value, use code to [interact with runtime return values](/dapp-dev-guide/tutorials/return-values-tutorial/).
 
 :::
 
-The following sample response contains a `deploy_hash`, needed to verify the changes in global state, as described [here](installing-contracts.md#querying-global-state).
+The following sample response contains a `deploy_hash`, needed to verify the changes in global state, as described [here](/dapp-dev-guide/writing-contracts/installing-contracts.md#querying-global-state).
 
 <details>
 <summary><b>Sample response</b></summary>
@@ -144,7 +144,7 @@ This video shows how to call a modified Counter contract using session arguments
 
 ## Calling Contracts by Package Hash {#calling-contracts-by-package-hash}
 
-You can also call an entry point in a contract that is part of a contract package (see [contract upgrades](upgrading-contracts.md)). Call `put-deploy` using the stored package hash, the entry point you wish to access, the contract version number, and any runtime arguments. The call defaults to the highest enabled version if no version was specified.
+You can also call an entry point in a contract that is part of a contract package (see [contract upgrades](/dapp-dev-guide/writing-contracts/upgrading-contracts.md)). Call `put-deploy` using the stored package hash, the entry point you wish to access, the contract version number, and any runtime arguments. The call defaults to the highest enabled version if no version was specified.
 
 ```rust
 casper-client put-deploy \
@@ -251,7 +251,7 @@ casper-client put-deploy \
     --session-entry-point "counter_inc"
 ```
 
-The sample response will contain a `deploy_hash`, which you need to use as described [here](installing-contracts.md#querying-global-state) to verify the changes in global state.
+The sample response will contain a `deploy_hash`, which you need to use as described [here](/dapp-dev-guide/writing-contracts/installing-contracts.md#querying-global-state) to verify the changes in global state.
 
 **Example 2 - Calling the Auction contract using a named key:**
 

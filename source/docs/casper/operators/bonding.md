@@ -290,4 +290,4 @@ If a bid doesn't win a slot in the auction, it is too low. The resolution is to 
 
 ## Withdrawing a Bid {#withdrawing-a-bid}
 
-Follow the steps in [Unbonding](unbonding.md) to withdraw a bid.
+Follow the steps in [Unbonding](/operators/unbonding.md) to withdraw a bid.

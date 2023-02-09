@@ -9,9 +9,9 @@ This tutorial installs a simple counter contract on the Casper Testnet. The cont
 
 Before we go through the tutorial, we will give a high-level overview of this tutorial's walkthrough and briefly summarize the relevant commands (and respective arguments).
 
-- [Tutorial Overview](overview.md)
-- [Important Commands](commands.md)
-- [Tutorial Walkthrough](walkthrough.md)
+- [Tutorial Overview](/dapp-dev-guide/tutorials/counter-testnet/overview.md)
+- [Important Commands](/dapp-dev-guide/tutorials/counter-testnet/commands.md)
+- [Tutorial Walkthrough](/dapp-dev-guide/tutorials/counter-testnet/walkthrough.md)
 
 ## Prerequisites {#prerequisites}
 

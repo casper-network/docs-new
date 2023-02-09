@@ -2,13 +2,13 @@
 
 ---
 
-[A](A.md) [B](B.md) [C](C.md) [D](D.md) [E](E.md) [F](F.md) [G](G.md) [H](H.md) [I](I.md) [J](J.md) [K](K.md) [L](L.md) [M](M.md) [N](N.md) [O](O.md) [P](P.md) [Q](Q.md) [R](R.md) [S](S.md) [T](T.md) [U](U.md) [V](V.md) [W](W.md) [X](X.md) [Y](Y.md) [Z](Z.md)
+[A](/glossary/A.md) [B](/glossary/B.md) [C](/glossary/C.md) [D](/glossary/D.md) [E](/glossary/E.md) [F](/glossary/F.md) [G](/glossary/G.md) [H](/glossary/H.md) [I](/glossary/I.md) [J](/glossary/J.md) [K](/glossary/K.md) [L](/glossary/L.md) [M](/glossary/M.md) [N](/glossary/N.md) [O](/glossary/O.md) [P](/glossary/P.md) [Q](/glossary/Q.md) [R](/glossary/R.md) [S](/glossary/S.md) [T](/glossary/T.md) [U](/glossary/U.md) [V](/glossary/V.md) [W](/glossary/W.md) [X](/glossary/X.md) [Y](/glossary/Y.md) [Z](/glossary/Z.md)
 
 ---
 
 ## Safe {#safe}
 
-When a protocol is provably safe, it means that all the participating nodes will make the same decision and continue to produce blocks at some interval. Also, see [CBC](C.md#cbc).
+When a protocol is provably safe, it means that all the participating nodes will make the same decision and continue to produce blocks at some interval. Also, see [CBC](/glossary/C.md#cbc).
 
 ## Secret key {#secret-key}
 
@@ -30,7 +30,7 @@ In Proof-of-Stake, the deposit acts as collateral. The validator guarantees that
 
 Smart contracts are self-executing computer programs that perform specific actions based on pre-programmed terms stored on the blockchain. Once the pre-programmed terms are met, the smart contract executes the action and eliminates the need for a centralized third party.
 
-On a Casper network, a smart contract is a WebAssembly (Wasm) program that the network stores as a value in the [global state](G.md#global-state). The execution of a smart contract causes changes to the global state.
+On a Casper network, a smart contract is a WebAssembly (Wasm) program that the network stores as a value in the [global state](/glossary/G.md#global-state). The execution of a smart contract causes changes to the global state.
 
 A smart contract can be invoked by a transaction or by another smart contract. Smart contracts can declare input data as the arguments of a function. When invoking a smart contract, one must provide the input values.
 
@@ -40,15 +40,15 @@ A smart contract platform provides the required blockchain environment for the c
 
 ## Staker {#staker}
 
-A person that deposits tokens in the [proof-of-stake](P.md#proof-of-stake) contract. A staker is either a [validator](V.md#validator) or a [delegator](D.md#delegator). Stakers take on the slashing risk in exchange for rewards. Stakers will deposit their [tokens](T.md#token) by sending a bonding request in the form of a transaction (deployment) to the system. If a validator is [slashed](#slashing), the staker will lose their tokens.
+A person that deposits tokens in the [proof-of-stake](/glossary/P.md#proof-of-stake) contract. A staker is either a [validator](/glossary/V.md#validator) or a [delegator](/glossary/D.md#delegator). Stakers take on the slashing risk in exchange for rewards. Stakers will deposit their [tokens](/glossary/T.md#token) by sending a bonding request in the form of a transaction (deployment) to the system. If a validator is [slashed](#slashing), the staker will lose their tokens.
 
 ## Staking {#staking}
 
-A feature of Proof-of-Stake protocols that allows token holders to actively participate in the protocol, thus securing the network. The [Staking Guide](../staking/index.md) highlights the steps required to stake CSPR tokens on the Casper Mainnet.
+A feature of Proof-of-Stake protocols that allows token holders to actively participate in the protocol, thus securing the network. The [Staking Guide](/staking/index.md) highlights the steps required to stake CSPR tokens on the Casper Mainnet.
 
 ## State root hash {#state-root-hash}
 
-The state root hash is an identifier of the network's [global state](G.md#global-state) at a moment in time. The state root hash changes with each block executed, containing deploys. Normally, empty blocks do not modify global state. But, if the empty block is the last one in an era, it will also change the state root hash due to changes introduced by the auction contract calculating the validators for future eras.
+The state root hash is an identifier of the network's [global state](/glossary/G.md#global-state) at a moment in time. The state root hash changes with each block executed, containing deploys. Normally, empty blocks do not modify global state. But, if the empty block is the last one in an era, it will also change the state root hash due to changes introduced by the auction contract calculating the validators for future eras.
 
 ## Stateful {#stateful}
 

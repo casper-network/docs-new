@@ -11,10 +11,10 @@ See the [Two-Party Multi-Signature workflow](/workflow/developers/deploy-transfe
 
 In this tutorial, you will learn to use [Casper's permissions model](/design/casper-design.md/#accounts-permissions) to sign transactions with multiple keys. The code for this tutorial is available in [GitHub](https://github.com/casper-ecosystem/keys-manager). The sample code creates a smart contract and a sample client that invokes the multi-signature feature on a local Casper network.
 
-- [Account Management Concepts](concepts.md)
-- [Smart Contract Example](contract.md)
-- [Client Example](client.md)
-- [Additional Scenarios](additional.md)
+- [Account Management Concepts](/dapp-dev-guide/tutorials/multi-sig/concepts.md)
+- [Smart Contract Example](/dapp-dev-guide/tutorials/multi-sig/contract.md)
+- [Client Example](/dapp-dev-guide/tutorials/multi-sig/client.md)
+- [Additional Scenarios](/dapp-dev-guide/tutorials/multi-sig/additional.md)
 
 ## Video Tutorials {#video-tutorials}
 

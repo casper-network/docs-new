@@ -97,7 +97,7 @@ Start by creating an account using the [Casper Signer](https://docs.cspr.communi
 
 ## Funding your Account
 
-Once you create your account, you can [fund the account's main purse](setup.md#funding-an-account) to finish the process of setting it up. 
+Once you create your account, you can [fund the account's main purse](/dapp-dev-guide/setup.md#funding-an-account) to finish the process of setting it up. 
 
 :::note
 

@@ -85,7 +85,7 @@ $(get_path_to_client) get-deploy 8e6309cc37bc58d8fedc1094ee1bd264a636d39fc0e05b5
 
 ## Interacting with the Installed Contract
 
-Once your NCTL network executes your `Deploy`, you can test the functionality of the installed contract. To do so, you will first need to identify any arguments to pass to the contract, starting with the `ContractHash` itself. This hash identifies the contract and allows you to target the included entry points. As we used the pre-established node-1 account to [send the `Deploy`](sending-deploys.md), we can retrieve the `ContractHash` from the node-1 account information. To do so, we will use the following command with a node address and the `PublicKey` of the node in question. 
+Once your NCTL network executes your `Deploy`, you can test the functionality of the installed contract. To do so, you will first need to identify any arguments to pass to the contract, starting with the `ContractHash` itself. This hash identifies the contract and allows you to target the included entry points. As we used the pre-established node-1 account to [send the `Deploy`](/dapp-dev-guide/building-dapps/sending-deploys.md), we can retrieve the `ContractHash` from the node-1 account information. To do so, we will use the following command with a node address and the `PublicKey` of the node in question. 
 
 
 ```

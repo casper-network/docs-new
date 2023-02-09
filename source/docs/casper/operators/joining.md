@@ -4,7 +4,7 @@ Each Casper network is permissionless, enabling new validators to join the netwo
 
 ## Step 1: Provision Hardware {#step-1-provision-hardware}
 
-Visit the [Hardware Specifications](hardware.md) section and provision your node hardware.
+Visit the [Hardware Specifications](/operators/hardware.md) section and provision your node hardware.
 
 ## Step 2: Set Up the Node {#step-2-set-up-the-node}
 
@@ -103,7 +103,7 @@ Towards the end of the following output, notice the `era_id` and `height` that y
 
 ## Step 8: Send the Bonding Request {#step-7-send-the-bonding-request}
 
-You can submit a [bonding request](bonding.md) to change your synchronized node to a validating node.
+You can submit a [bonding request](/operators/bonding.md) to change your synchronized node to a validating node.
 
 The bonding request must be sent after the node has synchronized the protocol state and linear blockchain to avoid being ejected for liveness failures.
 
