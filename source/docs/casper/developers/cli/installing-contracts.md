@@ -18,7 +18,7 @@ This tutorial is a continuation of the [Smart Contracts on Casper](../writing-on
 - You have a contract Wasm to send to a Casper network
 
 
-## Installing a Contract in Global State {#installing-contract-code}
+## Installing a Contract in Global State using the casper-client command line tool{#installing-contract-code}
 
 To install a contract in [global state](../../concepts/glossary/G.md#global-state), you need to send a deploy to the network with the contract Wasm. You can do so by using the `put-deploy` command. Remember to [verify the deploy](../dapps/sending-deploys.md#sending-the-deploy) after sending it to the network.
 
@@ -60,6 +60,95 @@ casper-client get-deploy \
     --node-address http://localhost:11101 [DEPLOY_HASH]
 ```
 
+## Installing a Contract in Global State using different SDKs
+Alternatively to installing contracts with the casper-client command line tool, different SDKs can send be utilised to send deploys to the JSON-RPC server of a Casper node. Not every SDK works the same, but you can find examples for different SDKs below.
+
+### 1. Javascript
+```javascript
+const fs = require('fs');
+const Get_Binary = function(path){
+  return new Uint8Array(fs.readFileSync(path, null).buffer);
+}
+// Import types from javscript sdk
+const {CasperClient, Keys, DeployUtil, CLPublicKey} = require('casper-js-sdk');
+const Deploy = async function(
+  node_address,
+  asymmetric_keypair,
+  chain_name,
+  wasm_path,
+  runtime_args,
+  payment_amount){
+  const client = new CasperClient(node_address);
+  // create a new deploy
+  let deploy = DeployUtil.makeDeploy(
+    new DeployUtil.DeployParams(
+      CLPublicKey.fromHex(asymmetric_keypair.publicKey.toHex()),
+      chain_name
+    ),
+    DeployUtil.ExecutableDeployItem.newModuleBytes(
+      Get_Binary(wasm_path),
+      runtime_args
+    ),
+    DeployUtil.standardPayment(payment_amount)
+  );
+  // sign the deploy using an asymmetric Keypair
+  deploy = client.signDeploy(deploy, asymmetric_keypair);
+  // send the deploy to the specified Node
+  return await client.putDeploy(deploy);
+};
+```
+As you can see, you will need an `asymmetric_keypair` to sign a deploy. See the
+"KeyManager" class below to learn how to create keys locally and
+construct an `asymmetric_keypair` using Ed25519.
+
+```javascript
+const fs = require('fs');
+const { CLPublicKey, Keys } = require('casper-js-sdk');
+class KeyManager{
+  constructor (path){
+    this.path = path;
+  }
+  updateKeyPath(path){
+    this.path = path;
+  }
+  newKeys(){
+    const k = Keys.Ed25519.new();
+    let public_key = k.exportPublicKeyInPem();
+    let private_key = k.exportPrivateKeyInPem();
+    fs.writeFile(this.path + 'public.pem', public_key, err => {
+      if (err) {
+        console.error(err);
+      }
+    });
+    fs.writeFile(this.path + 'private.pem', private_key, err => {
+      if (err) {
+        console.error(err);
+      }
+    });
+  }
+  asymmetricKeyPair(){
+    return Keys.Ed25519.parseKeyFiles(this.path + 'public.pem', this.path + 'private.pem');
+  }
+  publicKeyHex(){
+    return CLPublicKey.fromEd25519(Keys.Ed25519.parsePublicKeyFile(this.path + 'public.pem')).toHex();
+  }
+}
+```
+Additionally, you will want to specify `session-arguments`, if your contract takes any.
+You can construct an instance of session, or runtime arguments as follows:
+
+```javascript
+const {RuntimeArgs} = require('casper-js-sdk');
+const session_args = RuntimeArgs.fromMap({
+  'some_string_argument':CLValueBuilder.string(product_hash),
+  'some_key_argument': CLValueBuilder.key(publicKeyBytes(sender)),
+  // ...
+});
+```
+
+### 2. Python
+
+
 **Video - Contract Installation Walkthrough**
 
 This video demonstrates the commands described above for installing a contract on-chain.
@@ -68,7 +157,7 @@ This video demonstrates the commands described above for installing a contract o
 <iframe width="400" height="225" src="https://www.youtube.com/embed?v=sUg0nh3K3iQ&list=PL8oWxbJ-csEqi5FP87EJZViE2aLz6X1Mj&index=8" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-## Querying Global State {#querying-global-state} 
+## Querying Global State {#querying-global-state}
 
 Here we look at how to query global state to see details about a successfully installed contract.
 
@@ -96,7 +185,7 @@ Next, query the state of a Casper network at a given time, specified by the `sta
 casper-client query-global-state \
     --node-address [NODE_SERVER_ADDRESS] \
     --state-root-hash [STATE_ROOT_HASH] \
-    --key [HASH_STRING] \ 
+    --key [HASH_STRING] \
     -q "[SESSION_NAME]/[SESSION_NAMED_KEY]" (OPTIONAL)
 ```
 
@@ -281,7 +370,7 @@ casper-client query-global-state \
 It is also possible to check the state of a specific contract variable in global state given the account hash under which the contract was installed. Here we query the named key "count", stored under another key identifying the contract and named "counter".
 
 ```bash
-casper-client query-global-state \ 
+casper-client query-global-state \
     --node-address http://localhost:11101 \
     --state-root-hash fa968344a2000282686303f1664c474465f9a028f32ec4f51791d9fa64c0bcd7 \
     --key account-hash-1d17e3fdad268f866a73558d1ae45e1eea3924c247871cb63f67ebf1a116e66d \
@@ -296,7 +385,7 @@ You can query information about a contract package, such as the latest contract 
 
 ```bash
 casper-client query-global-state \
-  --node-address http://localhost:11101 \ 
+  --node-address http://localhost:11101 \
   --key hash-76a8c3daa6d6ac799ce9f46d82ac98efb271d2d64b517861ec89a06051ef019e \
   --state-root-hash 763e737cf55a298d54bcdfb4ee55526538a1a086128914b9cc25ccbdebbbb966
 ```
