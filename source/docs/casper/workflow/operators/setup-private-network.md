@@ -35,7 +35,7 @@ A [Casper node](/glossary/N/#node) is a physical or virtual device participating
 Use the below guides to set up and manage validator nodes.
 
 - [Casper node setup - GitHub guide](https://github.com/casper-network/casper-node/tree/master/resources/production#casper-node-setup): A guide to configuring a system with the new Rust node to operate within a network.
-- [Basic node setup tutorial](/operators/setup/): A guide on using the `casper-node-launcher`, generating directories and files needed for running casper-node versions and performing upgrades, generating keys, and setting up the configuration file for nodes.
+- [Basic node setup tutorial](/operators/setup/basic-node-configuration): A guide on using the `casper-node-launcher`, generating directories and files needed for running casper-node versions and performing upgrades, generating keys, and setting up the configuration file for nodes.
 - [Set up Mainnet and Testnet validator nodes](https://docs.cspr.community/): A set of guides for Mainnet and Testnet node-operators on setting up and configuring their Casper network validator nodes.
 
 Use these FAQ collections for tips and details for validators.
@@ -45,8 +45,8 @@ Use these FAQ collections for tips and details for validators.
 ## Step 2. Setting up the Directory
 Use these guides to set up your private network directories. You will find several main directories dedicated to different purposes.
 
-- Go through the [file location](/operators/setup/#file-locations) section to understand how directories are created and managed in a Casper private network.
-- Refer to the [setting up a new network](/operators/create/) guide to identify the required configuration files to set up a genesis block.
+- Go through the [file location](/operators/setup/basic-node-configuration#file-locations) section to understand how directories are created and managed in a Casper private network.
+- Refer to the [setting up a new network](/operators/setup-network/create-private/) guide to identify the required configuration files to set up a genesis block.
 
 ## Step 3. Configuring the Genesis Block
 A Casper private network contains a different set of configurations when compared to the public network. The [`chainspec.toml`](/glossary/C/#chainspec) file contains the required configurations for the genesis process in a private network.
@@ -223,7 +223,7 @@ Please make sure you are running this tool as the same user that owns `$DATA_DIR
 
 :::
 
-You can find more details on enabling new validators in the [joining a running network](/operators/joining/) guide. The guide explains how to join the network and provide additional security to the system.
+You can find more details on enabling new validators in the [joining a running network](/operators/becoming-a-validator/joining/) guide. The guide explains how to join the network and provide additional security to the system.
 
 ## Step 7. Testing the Private Network
 We will describe the testing flow using an example customer and the configuration below. These options are relative to this example customer.

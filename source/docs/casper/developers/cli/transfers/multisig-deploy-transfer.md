@@ -269,7 +269,7 @@ If you get an account authorization error, you must set up the source account to
 
 ## Verifying the Transfer
 
-To verify the transfer status, see [Verifying a Transfer](/developers/cli/transfers/verify.md).
+To verify the transfer status, see [Verifying a Transfer](/developers/cli/transfers/verify-transfer.md).
 
 :::tip 
 

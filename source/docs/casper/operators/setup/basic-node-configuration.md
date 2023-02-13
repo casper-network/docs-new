@@ -1,6 +1,6 @@
 # Basic Node Configuration
 
-This page outlines the processes and files involved in setting up a Casper node. For step-by-step node installation instructions, follow the [Node Setup](/operators/install-node/) guide. 
+This page outlines the processes and files involved in setting up a Casper node. For step-by-step node installation instructions, follow the [Node Setup](/operators/becoming-a-validator/install-node/) guide. 
 
 ## The Casper Node Launcher {#casper-node-launcher}
 
@@ -134,7 +134,7 @@ For the node to connect to a network, the node needs a set of trusted peers for 
 
 ### Updating the `config.toml` file {#updating-config-file}
 
-At the top of a `config.toml` file as shown here, enter the trusted block hash to replace the `'HEX-FORMATTED BLOCK HASH'` and uncomment the line by deleting the leading '#'. See the [Configuration File](/operators/setup/#config-file) for more details.
+At the top of a `config.toml` file as shown here, enter the trusted block hash to replace the `'HEX-FORMATTED BLOCK HASH'` and uncomment the line by deleting the leading '#'. See the [Configuration File](/operators/setup/basic-node-configuration#config-file) for more details.
 
 ```
 # ================================

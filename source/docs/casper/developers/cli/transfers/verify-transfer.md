@@ -3,7 +3,7 @@
 ## Prerequisite
 
 Before verifying a transfer, make sure you have:
-1. Initiated a [Direct Transfer](/developers/cli/transfers/workflow.md) or [Multi-sig Deploy Transfer](/developers/cli/transfers/deploy.md)
+1. Initiated a [Direct Transfer](/developers/cli/transfers/direct-token-transfer.md) or [Multi-sig Deploy Transfer](/developers/cli/transfers/multisig-deploy-transfer.md)
 2. The *deploy_hash* of the transfer you want to verify
 3. The *public key* hex for the source and target accounts
 

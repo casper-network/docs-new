@@ -15,7 +15,7 @@ Before we go through the tutorial, we will give a high-level overview of this tu
 
 ## Prerequisites {#prerequisites}
 
-1.  You have completed the [Getting Started tutorial](/developers/writing-contracts/getting-started.md) to set up your development environment, including tools like _cmake_ (version 3.1.4+), _cargo_, and _Rust_.
+1.  You have completed the [Getting Started tutorial](/developers/writing-onchain-code/getting-started.md) to set up your development environment, including tools like _cmake_ (version 3.1.4+), _cargo_, and _Rust_.
 2. Follow the installation instructions for the [Casper client](/dapp-dev-guide/setup/#the-casper-command-line-client). We will use the _casper-client_ to send deploys to the chain.
 3. Proceed to [setting up and funding an account](/dapp-dev-guide/setup#setting-up-an-account) on the Casper Testnet. Make note of two critical pieces of information that you will need in order to complete this tutorial:
    - The location of your account’s **secret_key.pem** file

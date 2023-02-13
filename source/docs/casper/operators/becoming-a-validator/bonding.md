@@ -11,13 +11,13 @@ The most secure way to send a bonding transaction is to compile the contract and
 1. Clone the [`casper-node` repository](https://github.com/casper-network/casper-node)
 2. Install these prerequisites, which are also listed [here](https://github.com/casper-network/casper-node#pre-requisites-for-building).
 
-- [Rust](/developers/writing-contracts/getting-started/#installing-rust)
+- [Rust](/developers/writing-onchain-code/getting-started/#installing-rust)
 - [CMake](https://cgold.readthedocs.io/en/latest/first-step/installation.html)
 - `pkg-config` - On Ubuntu, use `sudo apt-get install pkg-config`
 - `openssl` - On Ubuntu, use `sudo apt-get install openssl`
 - `libssl-dev` - On Ubuntu, use `sudo apt-get install libssl-dev`
 
-3. Install the [Rust casper-client](/dapp-dev-guide/setup/#the-casper-command-line-client) and fund the [keys](/operators/setup/#create-fund-keys) you will use for bonding 
+3. Install the [Rust casper-client](/dapp-dev-guide/setup/#the-casper-command-line-client) and fund the [keys](/operators/setup/basic-node-configuration#create-fund-keys) you will use for bonding 
 4. [Build the contracts](#build-contracts)
 5. [Send a bonding request](#example-bonding-transaction)
 6. [Check the status of the auction](#check-the-status-of-the-bid-in-the-auction) to see if you have won a validator slot
@@ -290,4 +290,4 @@ If a bid doesn't win a slot in the auction, it is too low. The resolution is to 
 
 ## Withdrawing a Bid {#withdrawing-a-bid}
 
-Follow the steps in [Unbonding](/operators/unbonding.md) to withdraw a bid.
+Follow the steps in [Unbonding](/operators/becoming-a-validator/unbonding.md) to withdraw a bid.

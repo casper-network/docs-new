@@ -13,7 +13,7 @@ This section covers:
 
 ## Installing Rust {#installing-rust}
 
-On the Casper platform, developers may write smart contracts in any language that compiles to Wasm. These How To guides focus on code examples that use Rust and a Rust client to interact with a Casper network. While following these guides, we recommend setting up Rust and installing all dependencies. For step-by-step instructions, visit [Getting Started with Rust](/developers/writing-contracts/getting-started).
+On the Casper platform, developers may write smart contracts in any language that compiles to Wasm. These How To guides focus on code examples that use Rust and a Rust client to interact with a Casper network. While following these guides, we recommend setting up Rust and installing all dependencies. For step-by-step instructions, visit [Getting Started with Rust](/developers/writing-onchain-code/getting-started).
 
 ## Casper Command-line Client {#the-casper-command-line-client}
 

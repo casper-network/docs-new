@@ -371,7 +371,7 @@ The `put-deploy` command performs multiple actions under the hood, optimizing th
 
 To sign a Deploy with multiple keys, create the Deploy with the `make-deploy` command. The generated deploy file can be sent to the other signers, who then sign it with their keys by calling the `sign-deploy` for each key. Signatures need to be gathered on the Deploy one after another until all required parties have signed the Deploy. Finally, the signed Deploy is sent to the network with the `send-deploy` command for processing.
 
-For a step-by-step workflow, visit the [Two-Party Multi-Signature Deploy](/developers/cli/transfers/deploy.md) guide. This workflow describes how a trivial two-party multi-signature scheme for signing and sending deploys can be enforced for an account on a Casper network.
+For a step-by-step workflow, visit the [Two-Party Multi-Signature Deploy](/developers/cli/transfers/multisig-deploy-transfer.md) guide. This workflow describes how a trivial two-party multi-signature scheme for signing and sending deploys can be enforced for an account on a Casper network.
 
 ## A Note about Gas Price {#a-note-about-gas-price}
 

@@ -1,6 +1,6 @@
 # Testing Session Code
 
-This section describes how to test session code using the Casper unit-testing framework. The [writing session code](/developers/writing-contracts/writing-session-code/) section is a prerequisite for this tutorial, which uses the example code described [here](/developers/writing-contracts/writing-session-code#writing-session-code).
+This section describes how to test session code using the Casper unit-testing framework. The [writing session code](/developers/writing-onchain-code/writing-session-code/) section is a prerequisite for this tutorial, which uses the example code described [here](/developers/writing-onchain-code/writing-session-code#writing-session-code).
 
 ## Specifying Dependencies in Cargo.toml {#specifying-dependencies}
 

@@ -744,7 +744,7 @@ We offer some additional examples of account management in the next section.
 
 :::tip
 
-To make a transfer using your multisig account, see [Transferring Tokens using a Multisig Account](/developers/cli/transfers/deploy.md).
+To make a transfer using your multisig account, see [Transferring Tokens using a Multisig Account](/developers/cli/transfers/multisig-deploy-transfer.md).
 
 :::
 

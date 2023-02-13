@@ -13,12 +13,12 @@ This section shows you how to write session code and smart contracts in Rust and
 
 | Title                                       | Description                     |
 | ------------------------------------------- | ------------------------------- |
-|[Getting Started with Rust](/developers/writing-contracts/getting-started.md)| An introduction to using Rust with the Casper Platform|
-|[Best Practices for Casper Smart Contract Authors](/developers/writing-contracts/best-practices.md)| An outline of best practices when developing smart contracts on a Casper network|
+|[Getting Started with Rust](/developers/writing-onchain-code/getting-started.md)| An introduction to using Rust with the Casper Platform|
+|[Best Practices for Casper Smart Contract Authors](/developers/writing-onchain-code/best-practices.md)| An outline of best practices when developing smart contracts on a Casper network|
 |[Writing a Basic Smart Contract in Rust](/resources/tutorials/beginner/rust-contracts.md)   | An example of a smart contract built in Rust|
-|[Unit Testing Smart Contracts](/developers/writing-contracts/testing-contracts.md)      | Steps to test contract code using the unit testing framework|
-|[Writing Session Code](/developers/writing-contracts/writing-session-code.md)      | An introduction to writing session code|
-|[Unit Testing Session Code](/developers/writing-contracts/testing-session-code.md)      | Steps to test session code using the unit testing framework|
+|[Unit Testing Smart Contracts](/developers/writing-onchain-code/testing-contracts.md)      | Steps to test contract code using the unit testing framework|
+|[Writing Session Code](/developers/writing-onchain-code/writing-session-code.md)      | An introduction to writing session code|
+|[Unit Testing Session Code](/developers/writing-onchain-code/testing-session-code.md)      | Steps to test session code using the unit testing framework|
 |[Installing Smart Contracts and Querying Global State](/developers/cli/installing-contracts.md)| A guide on installing smart contracts and querying global state        |
 |[Calling Smart Contracts with the Rust Client](/developers/cli/calling-contracts.md)| Steps to call a smart contract with the Rust command-line client|
 |[Upgrading and Maintaining Smart Contracts](/dapp-dev-guide/writing-contracts/upgrading-contracts.md)| An introduction to versioning smart contracts|

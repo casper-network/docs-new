@@ -43,7 +43,7 @@ Structure created automatically with `cargo casper` contains everything that is 
 
 ### Creating the Project Automatically
 
-The `cargo casper` command can automatically set up the project structure, as shown [here](/developers/writing-contracts/getting-started#creating-a-project). Alternatively, follow the steps below to customize the project, yet create the various folders using `cargo`. 
+The `cargo casper` command can automatically set up the project structure, as shown [here](/developers/writing-onchain-code/getting-started#creating-a-project). Alternatively, follow the steps below to customize the project, yet create the various folders using `cargo`. 
 
 1. Create a top-level project directory for the contract code and its corresponding tests.
 
@@ -71,7 +71,7 @@ The `cargo casper` command can automatically set up the project structure, as sh
     - `main.rs` - This file would store the unit test code required to test the contract. If you wish, you can rename the file to `integration-tests.rs` as shown in the example structure.
     - `Cargo.toml` - This is the file with test configurations.
 
-    The [Testing Smart Contracts](/developers/writing-contracts/testing-contracts) guide explains how to update the tests using example code.
+    The [Testing Smart Contracts](/developers/writing-onchain-code/testing-contracts) guide explains how to update the tests using example code.
 
 ## Writing a Basic Smart Contract
 
@@ -336,6 +336,6 @@ The following brief video accompanies this guide.
 
 ## What's Next? {#whats-next}
 
-- Learn to [test your contract](/developers/writing-contracts/testing-contracts).
+- Learn to [test your contract](/developers/writing-onchain-code/testing-contracts).
 - Understand [session code](/concepts/session-code) and how it triggers a smart contract.
 - Learn to [install a contract and query global state](/developers/cli/installing-contracts.md) with the Casper command-line client.

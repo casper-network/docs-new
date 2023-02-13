@@ -67,7 +67,7 @@ mkdir secp256k1-keys
 casper-client keygen -a secp256k1 secp256k1-keys/
 tree secp256k1-keys/
 ```
-Sample output of the `tree` command shows the contents of the *secp256k1-keys* folder:
+Sample output of the `tree` command shows the contents of the *secp256k1-keys* folder:  
 
 ```bash
 secp256k1-keys/

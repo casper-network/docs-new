@@ -42,9 +42,9 @@ Testing all Deploys prior to committing them to [Mainnet](https://cspr.live/) ca
 
 Information on these processes can be found at the following locations:
 
-- [Unit Testing Session Code](/developers/writing-contracts/testing-session-code/)
+- [Unit Testing Session Code](/developers/writing-onchain-code/testing-session-code/)
 
-- [Testing Smart Contracts](/developers/writing-contracts/testing-contracts/)
+- [Testing Smart Contracts](/developers/writing-onchain-code/testing-contracts/)
 
 - [Testing Smart Contracts with NCTL](/dapp-dev-guide/building-dapps/nctl-test/)
 

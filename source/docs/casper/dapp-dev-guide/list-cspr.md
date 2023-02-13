@@ -6,7 +6,7 @@ CSPR is listed on [many exchanges](https://tokenmarketcaps.com/coins/casper/mark
 
 ## Setting up a Node
 
-While it is not necessary for an exchange to operate their own node on the Casper Mainnet, we recommend that they do so if they expect to handle moderate to high volumes of transaction activity. A node operated by an exchange does not have to be a validating node, it can be read-only. For setup instructions, see [Basic Node Setup](/operators/setup.md).
+While it is not necessary for an exchange to operate their own node on the Casper Mainnet, we recommend that they do so if they expect to handle moderate to high volumes of transaction activity. A node operated by an exchange does not have to be a validating node, it can be read-only. For setup instructions, see [Basic Node Setup](/operators/setup/basic-node-configuration.md).
 
 This setup enables you to have a self-administered gateway to the Casper Mainnet to get data and submit transactions.
 
@@ -110,7 +110,7 @@ You can accomplish a native transfer by sending a native transfer deploy, withou
 </details>
 
 
-Native transfers are the simplest method to transfer tokens between two purses. For details about the native transfer command, see [Direct Token Transfer](/developers/cli/transfers/workflow.md). The following command transfers 10 CSPR from *account A's main purse* to *account B's main purse*.
+Native transfers are the simplest method to transfer tokens between two purses. For details about the native transfer command, see [Direct Token Transfer](/developers/cli/transfers/direct-token-transfer.md). The following command transfers 10 CSPR from *account A's main purse* to *account B's main purse*.
 
 ```bash
 casper-client transfer \
@@ -134,7 +134,7 @@ Bulk or batched Wasm transfers allow you to apply some logic before or after the
 -   `transfer_from_purse_to_public_key`: Transfers amount of motes from source to the main purse of target. If the account referenced by the target does not exist, the transfer will create it.
 -   `transfer_from_purse_to_account`: Transfers amount of motes from source purse to target account's purse. If the target account does not exist, the transfer creates a new account.
 
-For more information on how to write session code, see [Writing Session Code](/developers/writing-contracts/writing-session-code.md). There are equivalent [assembly script](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract_as/assembly/purse.ts#L135-L305) methods available. Alternatively, you can program directly against the [ext-FFI](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract/src/ext_ffi.rs#L283-L370) methods. 
+For more information on how to write session code, see [Writing Session Code](/developers/writing-onchain-code/writing-session-code.md). There are equivalent [assembly script](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract_as/assembly/purse.ts#L135-L305) methods available. Alternatively, you can program directly against the [ext-FFI](https://github.com/casper-network/casper-node/blob/e01b528db64f96fc1d3eac8b3b8e58e1337b398d/smart_contracts/contract/src/ext_ffi.rs#L283-L370) methods. 
 
 ## Integrating CSPR
 
