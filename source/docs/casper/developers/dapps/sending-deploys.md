@@ -8,7 +8,7 @@ In order to install smart contracts on the blockchain, you can send your Wasm to
 
 ## Paying for Deploys {#paying-for-deploys}
 
-CSPR tokens are used to pay for deploys on the Casper Mainnet and Testnet. There are several ways to fund your account:
+CSPR tokens are used to pay for Deploys on the Casper Mainnet and Testnet. There are several ways to fund your account:
 
 - You may want to [transfer tokens from an exchange](../../users/funding-from-exchanges.md)
 - You can use a [block explorer to transfer tokens](../../users/token-transfer.md) between accounts' purses
