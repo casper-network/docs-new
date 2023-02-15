@@ -1,4 +1,4 @@
-# Important Commands
+# Casper-Client Commands
 
 ## Faucet Account Information {#faucet-account-information}
 
@@ -34,7 +34,12 @@ casper-client query-global-state \
 
 This command allows you to query the state of a Casper network at a given moment in time, which is specified by the _state-root-hash_ described above.
 
--   The _node-address_ is the server (localhost when running on a local NCTL network).
+-   The _node-address_ is the server's _IP:PORT_, where port is usually the default RPC-port when setting up an NCTL network is _11101_ (IP == localhost when running on a local NCTL network).
+
+Example:
+```rust
+  casper-client ... --node-address http://localhost:11101
+```
 -   The _key_ is the identifier for the query. It must be either the account public key, account hash, contract address hash, transfer hash, or deploy hash. The tutorial demonstrates two of these key types.
 -   The optional query path argument (_q_) allows you to drill into the specifics of a query concerning the key.
 
