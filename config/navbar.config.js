@@ -46,6 +46,18 @@ module.exports = {
             label: "Resources",
             position: "left",
         },
+        {
+            to: `${routePrefix}/users`,
+            activeBasePath: `${routePrefix}/users`,
+            label: "Users",
+            position: "left",
+        },
+        {
+            to: `${routePrefix}/faq`,
+            activeBasePath: `${routePrefix}/faq`,
+            label: "FAQs",
+            position: "left",
+        },
         //{
         //    to: `${routePrefix}/design`,
         //    activeBasePath: `${routePrefix}/design`,
