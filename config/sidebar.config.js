@@ -285,6 +285,13 @@ module.exports = {
         },
         {
             type: "category",
+            label: "Becoming a Validator",
+            collapsible: true,
+            collapsed: true,
+            items: ["operators/becoming-a-validator/bonding", "operators/becoming-a-validator/unbonding", "operators/becoming-a-validator/upgrade"],
+        },
+        {
+            type: "category",
             label: "Setting up a Network",
             collapsible: true,
             collapsed: true,
@@ -293,13 +300,6 @@ module.exports = {
                 "operators/setup-network/create-private",
                 "operators/setup-network/staging-files-for-new-network",
             ],
-        },
-        {
-            type: "category",
-            label: "Becoming a Validator",
-            collapsible: true,
-            collapsed: true,
-            items: ["operators/becoming-a-validator/bonding", "operators/becoming-a-validator/unbonding", "operators/becoming-a-validator/upgrade"],
         },
     ],
     users: [
