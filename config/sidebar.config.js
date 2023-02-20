@@ -8,7 +8,7 @@ module.exports = {
             label: "Operator How To's",
             collapsible: true,
             collapsed: true,
-            items: ["workflow/operators/index", "workflow/operators/setup-private-network", "workflow/operators/staging-files-for-new-network"],
+            items: ["workflow/operators/index", "workflow/operators/setup-private-network"],
         },
         {
             type: "category",
@@ -306,7 +306,7 @@ module.exports = {
             items: [
                 "operators/setup-network/development-prerequisites",
                 "operators/setup-network/create-private",
-                "operators/setup-network/staging-files-network",
+                "operators/setup-network/staging-files-for-new-network",
             ],
         },
         {
