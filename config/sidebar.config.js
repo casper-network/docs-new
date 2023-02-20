@@ -176,6 +176,7 @@ module.exports = {
                 "developers/writing-onchain-code/getting-started",
                 "developers/writing-onchain-code/simple-contract",
                 "developers/writing-onchain-code/testing-contracts",
+                "developers/writing-onchain-code/upgrading-contracts",
                 "developers/writing-onchain-code/contracts-and-session-code",
                 "developers/writing-onchain-code/writing-session-code",
                 "developers/writing-onchain-code/testing-session-code",
@@ -286,7 +287,7 @@ module.exports = {
             label: "Writing On-Chain Code",
             collapsible: true,
             collapsed: true,
-            items: ["dapp-dev-guide/writing-contracts/upgrading-contracts", "dapp-dev-guide/writing-contracts/assembly-script"],
+            items: ["dapp-dev-guide/writing-contracts/assembly-script"],
         },
         //{
         //    type: "category",
