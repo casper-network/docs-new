@@ -8,7 +8,7 @@ Visit the [Hardware Specifications](/operators/setup/hardware.md) section and pr
 
 ## Step 2: Set Up the Node {#step-2-set-up-the-node}
 
-Follow the instructions on the [Node Setup](/operators/becoming-a-validator/install-node/) page. 
+Follow the instructions on the [Node Setup](/operators/setup/install-node/) page. 
 
 ## Step 3: Build the Required Contracts {#step-3-build-contracts}
 

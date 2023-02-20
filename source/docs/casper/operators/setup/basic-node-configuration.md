@@ -1,6 +1,6 @@
 # Basic Node Configuration
 
-This page outlines the processes and files involved in setting up a Casper node. For step-by-step node installation instructions, follow the [Node Setup](/operators/becoming-a-validator/install-node/) guide. 
+This page outlines the processes and files involved in setting up a Casper node. For step-by-step node installation instructions, follow the [Node Setup](/operators/setup/install-node/) guide. 
 
 ## The Casper Node Launcher {#casper-node-launcher}
 
