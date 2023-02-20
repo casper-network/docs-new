@@ -24,7 +24,7 @@ This section shows you how to write session code and smart contracts in Rust and
 |[Upgrading and Maintaining Smart Contracts](/developers/writing-onchain-code/upgrading-contracts.md)| An introduction to versioning smart contracts|
 |[Reading and Writing to Dictionaries](/concepts/dictionaries.md)]| Information on Dictionaries and how to read and write to them on the Casper Platform.|
 |[Execution Error Codes](/developers/cli/execution-error-codes.md)|Possible error codes when writing smart contracts.|
-|[Getting Started with AssemblyScript](/dapp-dev-guide/writing-contracts/assembly-script.md) | An introduction to using AssemblyScript with the Casper Platform |
+|[Getting Started with AssemblyScript](/developers/writing-onchain-code/assembly-script.md) | An introduction to using AssemblyScript with the Casper Platform |
 
 Additionally, the following tutorials outline some aspects of writing smart contracts on a Casper network.
 
