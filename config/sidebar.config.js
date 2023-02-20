@@ -294,8 +294,8 @@ module.exports = {
         },
     ],
     faq: ["faq/index", "faq/faq-general", "faq/faq-enterpise", "faq/faq-developer", "faq/faq-validator"],
-    /// TODO FIX BELOW
-    "dapp-dev-guide": [
+    // BELOW ITEMS ARE COMMENTED OUT BECAUSE WE COULD NOT LOCATE PLACE FOR THEM IN THE NEW STRUCTURE:
+    /*"dapp-dev-guide": [
         "dapp-dev-guide/json-rpc",
         {
             type: "category",
@@ -333,5 +333,5 @@ module.exports = {
         //        //                },
         //    ],
         //},
-    ],
+    ],*/
 };
