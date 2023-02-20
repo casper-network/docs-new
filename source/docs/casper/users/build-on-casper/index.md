@@ -34,7 +34,7 @@ The Casper Ecosystem is growing every day through the addition of new dApps and 
 - [NOWNodes.io](https://nownodes.io/nodes/casper-cspr)
 
 ### Open Source Software
-- [Ecosystem Open Source Software](/dapp-dev-guide/build-on-casper/casper-open-source-software.md)
+- [Ecosystem Open Source Software](/users/build-on-casper/casper-open-source-software.md)
 
 
 ## Developer-Friendly Language {#developer-friendly-language}
