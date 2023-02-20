@@ -88,10 +88,10 @@ module.exports = {
         //    label: "FAQ",
         //    position: "left",
         //},
-        //{
-        //    href: "https://discord.com/invite/Q38s3Vh",
-        //    label: "Chat",
-        //},
+        {
+            href: "https://discord.com/invite/Q38s3Vh",
+            label: "Chat",
+        },
 
         // {
         //     to: `${routePrefix}/developer`,
