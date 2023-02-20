@@ -246,7 +246,6 @@ module.exports = {
     "dapp-dev-guide": [
         "dapp-dev-guide/json-rpc",
         "dapp-dev-guide/list-cspr",
-        "dapp-dev-guide/setup",
         {
             type: "category",
             label: "Building dApps",
@@ -327,7 +326,6 @@ module.exports = {
         "users/token-transfer",
         "users/funding-from-exchanges",
         "users/testnet-faucet",
-        "dapp-dev-guide/setup",
         {
             type: "category",
             label: "Why Build on Casper",
