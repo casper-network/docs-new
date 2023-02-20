@@ -16,7 +16,14 @@ module.exports = {
             label: "Design",
             collapsible: true,
             collapsed: true,
-            items: ["design/casper-design", "design/highway", "design/p2p", "design/reading-and-writing-to-the-blockchain"],
+            items: [
+                "concepts/design/index",
+                "concepts/design/p2p",
+                "concepts/design/highway",
+                "concepts/design/casper-design",
+                "concepts/design/reading-and-writing-to-the-blockchain",
+                "concepts/design/serialization-standard",
+            ],
         },
         {
             type: "category",
@@ -278,6 +285,7 @@ module.exports = {
         },
     ],
     faq: ["faq/index", "faq/faq-general", "faq/faq-enterpise", "faq/faq-developer", "faq/faq-validator"],
+    /// TODO FIX BELOW
     "dapp-dev-guide": [
         "dapp-dev-guide/json-rpc",
         "dapp-dev-guide/list-cspr",
@@ -318,14 +326,6 @@ module.exports = {
         //        //                },
         //    ],
         //},
-    ],
-    design: [
-        "design/index",
-        "design/p2p",
-        "design/highway",
-        "design/casper-design",
-        "design/reading-and-writing-to-the-blockchain",
-        "design/serialization-standard",
     ],
     economics: [
         "economics/index",
