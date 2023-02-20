@@ -529,7 +529,7 @@ This method returns a purse's balance from a network. The request takes in the f
 
 To query for the balance of an Account, you must provide the formatted representation of the Account's main purse URef, which can be obtained from the  [`state_get_account_info`](#stategetaccountinfo-state-get-account-info) response. The response contains the balance of a purse in motes.
 
-For instance, one native layer-1 token of the Casper Mainnet [CSPR](/glossary/C#cspr) is comprised of 1,000,000,000 motes. On a different Casper network, the representation of token-to-motes may differ.
+For instance, one native layer-1 token of the Casper Mainnet [CSPR](/concepts/glossary/C#cspr) is comprised of 1,000,000,000 motes. On a different Casper network, the representation of token-to-motes may differ.
 
 |Parameter|Type|Description|
 |---------|----|-----------|

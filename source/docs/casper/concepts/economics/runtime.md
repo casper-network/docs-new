@@ -19,7 +19,7 @@ Additionally, a minimal amount of CSPR must be present in the user account's mai
 
 ### Costs and limits {#costs-and-limits}
 
-Gas cost is a measure of relative time used by different primitive operations of the execution engine, which is also assumed to be additive. By additivity, we mean that the time to execute a program is approximately proportional to the sum of gas expended by the opcodes and functions called within the program. Casper assigns gas costs to primitive execution engine opcodes and specific more complex _host-side_ functions that are callable from within the execution engine context. Gas costs for opcodes and host-side functions are specified in the [chainspec](/glossary/C/#chainspec) and may vary according to arguments.
+Gas cost is a measure of relative time used by different primitive operations of the execution engine, which is also assumed to be additive. By additivity, we mean that the time to execute a program is approximately proportional to the sum of gas expended by the opcodes and functions called within the program. Casper assigns gas costs to primitive execution engine opcodes and specific more complex _host-side_ functions that are callable from within the execution engine context. Gas costs for opcodes and host-side functions are specified in the [chainspec](/concepts/glossary/C/#chainspec) and may vary according to arguments.
 
 We expect to refine the current gas cost table to reflect time use more closely, with updates introduced in future upgrades. We also anticipate that, with the introduction of state pruning, storage costs will be calculated separately from computing time.
 

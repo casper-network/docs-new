@@ -11,7 +11,7 @@ This article provides an overview of the Casper project.
 
 ## What is Casper? {#what-is-casper}
 
-Casper is a new [Turing-complete](/glossary/T.md#turing-complete-blockchain) smart-contracting platform, backed by a Proof-of-Stake (PoS) consensus algorithm and WebAssembly (Wasm). The network is a [permissionless](/glossary/P.md#permissionless), decentralized, public blockchain.
+Casper is a new [Turing-complete](/concepts/glossary/T.md#turing-complete-blockchain) smart-contracting platform, backed by a Proof-of-Stake (PoS) consensus algorithm and WebAssembly (Wasm). The network is a [permissionless](/concepts/glossary/P.md#permissionless), decentralized, public blockchain.
 
 The network's consensus protocol is called [Highway](https://arxiv.org/pdf/2101.02159.pdf), and it has several benefits over classic Byzantine Fault Tolerant (BFT) consensus protocols. First, Highway allows networks to reach higher thresholds of _finality_, meaning that more blocks are finalized, and validators agree to add them to the blockchain. Second, the protocol achieves flexibility by expressing block finality in ways not possible in BFT models. This protocol is built on the [correct-by-construction (CBC) Casper](https://github.com/cbc-casper/cbc-casper-paper) research.
 
@@ -34,7 +34,7 @@ Follow the links below to learn more about the Casper Network.
 | [Design](/concepts/design/index.md) | Understand the architecture of the Casper Network, including network communication, execution semantics, account management, block structure, global state, serialization, unforgeable references, and tokens |
 | [Economics](/concepts/economics/index.md) | Conceptualize Casper's economic activity by understanding consensus, runtime, ecosystem, and the macroeconomy |
 | [Staking Guide](/concepts/economics/staking.md) | Participate in the protocol by staking CSPR tokens with a validator in the Casper Network |
-| [Glossary](/glossary/index.md) | Explore key definitions in the context of the Casper Network |
+| [Glossary](/concepts/glossary/index.md) | Explore key definitions in the context of the Casper Network |
 | [FAQ](/faq/index.md) | Find answers regarding the Casper Network, CasperLabs, and the CSPR token sale Changelog Review past technical releases and changelogs for the Casper Network |
 
 #### Disclaimer {#disclaimer}

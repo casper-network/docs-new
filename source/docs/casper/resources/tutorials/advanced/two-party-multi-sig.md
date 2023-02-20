@@ -75,7 +75,7 @@ casper-client put-deploy \
 
 ### Confirming Processing and Account Status {#confirming-execution-and-account-status}
 
-Account configuration on a Casper blockchain is stored in a [Merkle Tree](/glossary/M.md#merkle-tree) and is a snapshot of the blockchain's [Global State](/concepts/design/casper-design.md/#global-state-head). The representation of global state for a given block can be computed by executing the deploys (including transfers) within the block and its ancestors. The root node of the Merkle Tree identifying a particular state is called the `state-root-hash` and is stored in every executed block.
+Account configuration on a Casper blockchain is stored in a [Merkle Tree](/concepts/glossary/M.md#merkle-tree) and is a snapshot of the blockchain's [Global State](/concepts/design/casper-design.md/#global-state-head). The representation of global state for a given block can be computed by executing the deploys (including transfers) within the block and its ancestors. The root node of the Merkle Tree identifying a particular state is called the `state-root-hash` and is stored in every executed block.
 
 To check that the account was configured correctly, you need the `state-root-hash` corresponding to the block that contains your deploy. To obtain the `state-root-hash`, you need to:
 

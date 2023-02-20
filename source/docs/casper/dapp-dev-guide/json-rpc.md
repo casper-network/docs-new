@@ -10,7 +10,7 @@ These SDKs offer a means to build decentralized applications by interacting with
 
 ## Building a Casper SDK
 
-Most programming languages that compile to [WebAssembly (Wasm)](/glossary/W/#webassembly) are compatible with Casper. If there is not currently an SDK for your preferred programming language, you are free to build your own [Casper SDK Standard](/developers/json-rpc/index/) compliant SDK.
+Most programming languages that compile to [WebAssembly (Wasm)](/concepts/glossary/W/#webassembly) are compatible with Casper. If there is not currently an SDK for your preferred programming language, you are free to build your own [Casper SDK Standard](/developers/json-rpc/index/) compliant SDK.
 
 The standard outlines necessary available endpoints and their included types, both for fully-featured SDKs and those of a more narrow scope. Guidance for Casper SDK developers can be found [here](/developers/json-rpc/guidance/).
 

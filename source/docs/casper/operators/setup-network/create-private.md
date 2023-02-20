@@ -29,7 +29,7 @@ Follow these guides to set up the required environment and user accounts.
 
 
 ## Step 1. Setting up a Validator Node
-A [Casper node](/glossary/N/#node) is a physical or virtual device participating in a Casper network. You need to set up several [validator](/glossary/V/#validator) nodes on your private network. An [operator](/glossary/O/#operator) who has won an [auction](/glossary/A/#auction) bid will be a validator for the private network.
+A [Casper node](/concepts/glossary/N/#node) is a physical or virtual device participating in a Casper network. You need to set up several [validator](/concepts/glossary/V/#validator) nodes on your private network. An [operator](/concepts/glossary/O/#operator) who has won an [auction](/concepts/glossary/A/#auction) bid will be a validator for the private network.
 
 
 Use the below guides to set up and manage validator nodes.
@@ -49,7 +49,7 @@ Use these guides to set up your private network directories. You will find sever
 - Refer to the [setting up a new network](/operators/setup-network/create-private/) guide to identify the required configuration files to set up a genesis block.
 
 ## Step 3. Configuring the Genesis Block
-A Casper private network contains a different set of configurations when compared to the public network. The [`chainspec.toml`](/glossary/C/#chainspec) file contains the required configurations for the genesis process in a private network.
+A Casper private network contains a different set of configurations when compared to the public network. The [`chainspec.toml`](/concepts/glossary/C/#chainspec) file contains the required configurations for the genesis process in a private network.
 
 You should add the configuration options below to the `chainspec.toml` file inside the [private network directory](/operators/setup-network/create-private/#step-2-setting-up-the-directory).
 
@@ -108,7 +108,7 @@ fee_handling = { type = "pay_to_proposer" }
 ```
 
 The `fee_handling` configuration has three variations:
-- `pay_to_proposer`: The rest of the payment amount after deducing the gas fee from a refund is paid to the block's [proposer](/glossary/P/#proposer).
+- `pay_to_proposer`: The rest of the payment amount after deducing the gas fee from a refund is paid to the block's [proposer](/concepts/glossary/P/#proposer).
 - `burn`: The tokens paid are burned, and the total supply is reduced.
 - `accumulate`: The funds are transferred to a special accumulation purse. Here, the accumulation purse is owned by a handle payment system contract, and the amount is distributed among all the administrators defined at the end of a switch block. The fees are paid to the purse owned by the handle payment contract, and no tokens are transferred to the proposer when this configuration is enabled.
 
@@ -133,7 +133,7 @@ Other configurations related to the auction:
 In a public network, `allow_auction_bid` is set to *true*, which allows bidding for new entries and validator nodes.
 
 ## Step 4. Configuring the Administrator Accounts
-An administrator is mandatory for a private network since it manages all the other [validator](/glossary/V/#validator) accounts. There should be at least one administrator account configured within a network to operate it as a `private network`. You can create new administrators and [rotate the validator set](/operators/setup-network/create-private/#step-6-rotating-the-validator-accounts) in a single configuration update. The operator must first ensure the `global_state.toml` file contains new administrators. The validator set is updated after if an administrator is also a validator. Also, only purses of administrator accounts can hold and distribute token balances.
+An administrator is mandatory for a private network since it manages all the other [validator](/concepts/glossary/V/#validator) accounts. There should be at least one administrator account configured within a network to operate it as a `private network`. You can create new administrators and [rotate the validator set](/operators/setup-network/create-private/#step-6-rotating-the-validator-accounts) in a single configuration update. The operator must first ensure the `global_state.toml` file contains new administrators. The validator set is updated after if an administrator is also a validator. Also, only purses of administrator accounts can hold and distribute token balances.
 
 ### Configuring administrator accounts
 

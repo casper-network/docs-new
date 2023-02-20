@@ -13,7 +13,7 @@ These are associated with Deploys on a node. Currently, only `DeployAccepted` ev
 
 **Finality Signature event**
 
-This event indicates that the final approvals from validators are signed and further alterations to the block will not be allowed. Refer to the [consensus reached](/concepts/design/casper-design.md/#consensus-reached) section and [block finality](/glossary/B/#block-finality) 
+This event indicates that the final approvals from validators are signed and further alterations to the block will not be allowed. Refer to the [consensus reached](/concepts/design/casper-design.md/#consensus-reached) section and [block finality](/concepts/glossary/B/#block-finality) 
 section to learn more about finality signatures.
 
 **Main events**
@@ -104,7 +104,7 @@ curl -sN http://<HOST>:9999/events/sigs
 
 The URL to consume the `FinalitySignature` event is `http://<HOST>:9999/events/sigs`.
 
-The `FinalitySignature` event is emitted whenever a new [finality](/glossary/B/#block-finality) signature is received.
+The `FinalitySignature` event is emitted whenever a new [finality](/concepts/glossary/B/#block-finality) signature is received.
 
 The following example contains the JSON representation of the `FinalitySignature` event structure.
 

@@ -42,7 +42,7 @@ Here is a list of commands for developers who already meet the prerequisites and
 
    **Note:** Make sure you also have the development packages of `openssl` installed. For example, `libssl-dev` on Ubuntu or `openssl-devel` on Fedora.
 
-7. Test the `casper-client` by [querying a node](/developers/prerequisites/#acquire-node-address-from-network-peers) on the network and getting the latest [state root hash](/glossary/S/#state-root-hash).
+7. Test the `casper-client` by [querying a node](/developers/prerequisites/#acquire-node-address-from-network-peers) on the network and getting the latest [state root hash](/concepts/glossary/S/#state-root-hash).
 
    ```bash
    casper-client get-state-root-hash --node-address http://65.21.235.219:7777

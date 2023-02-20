@@ -2,13 +2,13 @@
 
 ---
 
-[A](/glossary/A.md) [B](/glossary/B.md) [C](/glossary/C.md) [D](/glossary/D.md) [E](/glossary/E.md) [F](/glossary/F.md) [G](/glossary/G.md) [H](/glossary/H.md) [I](/glossary/I.md) [J](/glossary/J.md) [K](/glossary/K.md) [L](/glossary/L.md) [M](/glossary/M.md) [N](/glossary/N.md) [O](/glossary/O.md) [P](/glossary/P.md) [Q](/glossary/Q.md) [R](/glossary/R.md) [S](/glossary/S.md) [T](/glossary/T.md) [U](/glossary/U.md) [V](/glossary/V.md) [W](/glossary/W.md) [X](/glossary/X.md) [Y](/glossary/Y.md) [Z](/glossary/Z.md)
+[A](/concepts/glossary/A.md) [B](/concepts/glossary/B.md) [C](/concepts/glossary/C.md) [D](/concepts/glossary/D.md) [E](/concepts/glossary/E.md) [F](/concepts/glossary/F.md) [G](/concepts/glossary/G.md) [H](/concepts/glossary/H.md) [I](/concepts/glossary/I.md) [J](/concepts/glossary/J.md) [K](/concepts/glossary/K.md) [L](/concepts/glossary/L.md) [M](/concepts/glossary/M.md) [N](/concepts/glossary/N.md) [O](/concepts/glossary/O.md) [P](/concepts/glossary/P.md) [Q](/concepts/glossary/Q.md) [R](/concepts/glossary/R.md) [S](/concepts/glossary/S.md) [T](/concepts/glossary/T.md) [U](/concepts/glossary/U.md) [V](/concepts/glossary/V.md) [W](/concepts/glossary/W.md) [X](/concepts/glossary/X.md) [Y](/concepts/glossary/Y.md) [Z](/concepts/glossary/Z.md)
 
 ---
 
 ## Safe {#safe}
 
-When a protocol is provably safe, it means that all the participating nodes will make the same decision and continue to produce blocks at some interval. Also, see [CBC](/glossary/C.md#cbc).
+When a protocol is provably safe, it means that all the participating nodes will make the same decision and continue to produce blocks at some interval. Also, see [CBC](/concepts/glossary/C.md#cbc).
 
 ## Secret key {#secret-key}
 
@@ -20,7 +20,7 @@ The reward mechanism by which validators are rewarded for participating in conse
 
 ## Session code {#session-code}
 
-_Session code_ is Wasm executed in the context of an account through sending a [Deploy](/glossary/D/#deploy). The _session code_ contains code the user wishes to execute against the blockchain. When the session code executes, it performs changes to global state.
+_Session code_ is Wasm executed in the context of an account through sending a [Deploy](/concepts/glossary/D/#deploy). The _session code_ contains code the user wishes to execute against the blockchain. When the session code executes, it performs changes to global state.
 
 ## Slashing {#slashing}
 
@@ -30,7 +30,7 @@ In Proof-of-Stake, the deposit acts as collateral. The validator guarantees that
 
 Smart contracts are self-executing computer programs that perform specific actions based on pre-programmed terms stored on the blockchain. Once the pre-programmed terms are met, the smart contract executes the action and eliminates the need for a centralized third party.
 
-On a Casper network, a smart contract is a WebAssembly (Wasm) program that the network stores as a value in the [global state](/glossary/G.md#global-state). The execution of a smart contract causes changes to the global state.
+On a Casper network, a smart contract is a WebAssembly (Wasm) program that the network stores as a value in the [global state](/concepts/glossary/G.md#global-state). The execution of a smart contract causes changes to the global state.
 
 A smart contract can be invoked by a transaction or by another smart contract. Smart contracts can declare input data as the arguments of a function. When invoking a smart contract, one must provide the input values.
 
@@ -40,7 +40,7 @@ A smart contract platform provides the required blockchain environment for the c
 
 ## Staker {#staker}
 
-A person that deposits tokens in the [proof-of-stake](/glossary/P.md#proof-of-stake) contract. A staker is either a [validator](/glossary/V.md#validator) or a [delegator](/glossary/D.md#delegator). Stakers take on the slashing risk in exchange for rewards. Stakers will deposit their [tokens](/glossary/T.md#token) by sending a bonding request in the form of a transaction (deployment) to the system. If a validator is [slashed](#slashing), the staker will lose their tokens.
+A person that deposits tokens in the [proof-of-stake](/concepts/glossary/P.md#proof-of-stake) contract. A staker is either a [validator](/concepts/glossary/V.md#validator) or a [delegator](/concepts/glossary/D.md#delegator). Stakers take on the slashing risk in exchange for rewards. Stakers will deposit their [tokens](/concepts/glossary/T.md#token) by sending a bonding request in the form of a transaction (deployment) to the system. If a validator is [slashed](#slashing), the staker will lose their tokens.
 
 ## Staking {#staking}
 
@@ -48,7 +48,7 @@ A feature of Proof-of-Stake protocols that allows token holders to actively part
 
 ## State root hash {#state-root-hash}
 
-The state root hash is an identifier of the network's [global state](/glossary/G.md#global-state) at a moment in time. The state root hash changes with each block executed, containing deploys. Normally, empty blocks do not modify global state. But, if the empty block is the last one in an era, it will also change the state root hash due to changes introduced by the auction contract calculating the validators for future eras.
+The state root hash is an identifier of the network's [global state](/concepts/glossary/G.md#global-state) at a moment in time. The state root hash changes with each block executed, containing deploys. Normally, empty blocks do not modify global state. But, if the empty block is the last one in an era, it will also change the state root hash due to changes introduced by the auction contract calculating the validators for future eras.
 
 ## Stateful {#stateful}
 
@@ -60,4 +60,4 @@ Stateless means that the execution doesn't depend on a previous state, so the ou
 
 ## Switch Block {#switch-block}
 
-A `Switch Block` is the final block in an era, which contains the `era_summary`. See also [booking block](/glossary/B/#booking-block).
+A `Switch Block` is the final block in an era, which contains the `era_summary`. See also [booking block](/concepts/glossary/B/#booking-block).
