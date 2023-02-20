@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Staking
 slug: /staking
 tags: ["finance", "staking", "governance"]
 ---
