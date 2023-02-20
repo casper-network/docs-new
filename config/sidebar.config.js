@@ -174,6 +174,7 @@ module.exports = {
                 "developers/writing-onchain-code/index",
                 "developers/writing-onchain-code/prerequisites",
                 "developers/writing-onchain-code/getting-started",
+                "developers/writing-onchain-code/assembly-script",
                 "developers/writing-onchain-code/simple-contract",
                 "developers/writing-onchain-code/testing-contracts",
                 "developers/writing-onchain-code/upgrading-contracts",
@@ -281,13 +282,6 @@ module.exports = {
                 "dapp-dev-guide/building-dapps/setup-nctl",
                 "dapp-dev-guide/building-dapps/nctl-test",
             ],
-        },
-        {
-            type: "category",
-            label: "Writing On-Chain Code",
-            collapsible: true,
-            collapsed: true,
-            items: ["dapp-dev-guide/writing-contracts/assembly-script"],
         },
         //{
         //    type: "category",
