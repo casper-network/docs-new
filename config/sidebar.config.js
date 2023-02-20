@@ -285,7 +285,7 @@ module.exports = {
             label: "Why Build on Casper",
             collapsible: true,
             collapsed: true,
-            items: ["dapp-dev-guide/build-on-casper/index", "dapp-dev-guide/build-on-casper/casper-open-source-software"],
+            items: ["users/build-on-casper/index", "users/build-on-casper/casper-open-source-software"],
         },
     ],
     faq: ["faq/index", "faq/faq-general", "faq/faq-enterpise", "faq/faq-developer", "faq/faq-validator"],
