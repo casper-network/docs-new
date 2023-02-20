@@ -80,7 +80,6 @@ module.exports = {
                     items: [
                         "resources/tutorials/beginner/index",
                         "resources/tutorials/beginner/use-javascript-sdk",
-                        "resources/tutorials/beginner/rust-contracts",
                         "resources/tutorials/beginner/querying-network",
                         "resources/tutorials/beginner/upgrade-contract",
                     ],
