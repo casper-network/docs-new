@@ -1,7 +1,6 @@
 const { items } = require("./navbar.config");
 
 module.exports = {
-    workflow: ["workflow/index"],
     concepts: [
         "concepts/index",
         "concepts/intro-to-dapps",
