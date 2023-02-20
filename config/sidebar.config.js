@@ -5,13 +5,6 @@ module.exports = {
         "workflow/index",
         {
             type: "category",
-            label: "Operator How To's",
-            collapsible: true,
-            collapsed: true,
-            items: ["workflow/operators/index"],
-        },
-        {
-            type: "category",
             label: "Developer How To's",
             collapsible: true,
             collapsed: true,
@@ -286,6 +279,7 @@ module.exports = {
     ],
     operators: [
         "operators/index",
+        "operators/overview",
         {
             type: "category",
             label: "Get set up",
