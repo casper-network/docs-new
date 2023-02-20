@@ -7,7 +7,7 @@ The [How To's for Users](/users/index.md) contain step-by-step instructions for 
 
 ## Operators {#operator-guides}
 
-The [How To's for Operators](/workflow/operators/index.md) help operators set up and configure private networks.
+The [How To's for Operators](/operators/index.md) help operators set up and configure private networks.
 
 ## Developers {#developer-guides}
 
