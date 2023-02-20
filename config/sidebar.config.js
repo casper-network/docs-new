@@ -262,7 +262,7 @@ module.exports = {
                         "resources/tutorials/advanced/transfer-token-to-contract",
                         "resources/tutorials/advanced/two-party-multi-sig",
                         "resources/tutorials/advanced/return-values-tutorial",
-                        "dapp-dev-guide/list-cspr",
+                        "resources/tutorials/advanced/list-cspr",
                     ],
                 },
             ],
