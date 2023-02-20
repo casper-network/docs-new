@@ -17,7 +17,7 @@ Independent of the framework, knowledge of setting up the debugger and logging t
 
 ### Defining Dependencies in `Cargo.toml`
 
-This guide uses the project structure, and example contract outlined [here](/resources/tutorials/beginner/rust-contracts.md#directory-structure) for creating tests.
+This guide uses the project structure, and example contract outlined [here](/developers/writing-onchain-code/simple-contract.md#directory-structure) for creating tests.
 
 To begin, outline the required test dependencies in the `/tests/Cargo.toml` file. Specify the dependencies for your tests similarly and update the crate versions. Dependencies may vary with each project. For the counter tests, we have the following dependencies:
 

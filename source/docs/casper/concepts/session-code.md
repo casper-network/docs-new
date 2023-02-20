@@ -18,7 +18,7 @@ The following table summarizes the key differences between session code and cont
 | Session code has only one entry point, `call`, which can be used to interact with the session code. | A smart contract can have multiple entry points that can be invoked.|  
 | The `call` entry point initiates any action the session code takes. | Any action undertaken by a contract must initiate through an outside call, usually via session code.|
 | When a `put_key` call is made within the body of the session code, the key is added to the account's named keys. | When a `put_key` call is made within the smart contract's context, the contract's record is modified to have a new named_key entry. |
-| For more information on how to write session code, see [Writing Session Code](/developers/writing-onchain-code/writing-session-code). | For more information on writing contracts, see [Writing a Basic Smart Contract in Rust](/resources/tutorials/beginner/rust-contracts). |
+| For more information on how to write session code, see [Writing Session Code](/developers/writing-onchain-code/writing-session-code). | For more information on writing contracts, see [Writing a Basic Smart Contract in Rust](/developers/writing-onchain-code/simple-contract). |
 
 The following image depicts the comparison presented in the table.
 

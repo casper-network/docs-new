@@ -10,7 +10,7 @@ Smart contracts exist as stored on-chain logic, allowing disparate users to call
 
 The following examples use two contracts on [Testnet](https://testnet.cspr.live/):
 
-- The [Counter contract](https://github.com/casper-ecosystem/counter/blob/master/contract-v1/src/main.rs) described while [Writing a Basic Smart Contract in Rust](/resources/tutorials/beginner/rust-contracts). You will need to [install this contract](/developers/cli/installing-contracts) on Testnet
+- The [Counter contract](https://github.com/casper-ecosystem/counter/blob/master/contract-v1/src/main.rs) described while [Writing a Basic Smart Contract in Rust](/developers/writing-onchain-code/simple-contract). You will need to [install this contract](/developers/cli/installing-contracts) on Testnet
 - The Auction contract found in [this contract package](https://testnet.cspr.live/contract-package/e375d42c29c0e4b2baefa63cf2d70af34439eda851e08129d8515515d63bd6a9), already installed on Testnet as a system contract. The examples will call its `delegate` entry point
 
 

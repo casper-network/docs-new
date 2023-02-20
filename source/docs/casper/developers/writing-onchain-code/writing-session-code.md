@@ -4,7 +4,7 @@ This section explains how to write session code. To review the definition of ses
 
 ## Creating the Directory Structure {#directory-structure}
 
-For writing session code, we use the same project structure used for writing contracts, described [here](/resources/tutorials/beginner/rust-contracts.md#directory-structure).
+For writing session code, we use the same project structure used for writing contracts, described [here](/developers/writing-onchain-code/simple-contract.md#directory-structure).
 
 ## Example 1: Writing Session Code {#writing-session-code}
 
