@@ -223,7 +223,7 @@ Please make sure you are running this tool as the same user that owns `$DATA_DIR
 
 :::
 
-You can find more details on enabling new validators in the [joining a running network](/operators/becoming-a-validator/joining/) guide. The guide explains how to join the network and provide additional security to the system.
+You can find more details on enabling new validators in the [joining a running network](/operators/setup/joining/) guide. The guide explains how to join the network and provide additional security to the system.
 
 ## Step 7. Testing the Private Network
 We will describe the testing flow using an example customer and the configuration below. These options are relative to this example customer.
