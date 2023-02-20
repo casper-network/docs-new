@@ -4,7 +4,7 @@ This document details a workflow where tokens delegated to a validator on a Casp
 
 This workflow assumes:
 
-1.  You meet the [prerequisites](/dapp-dev-guide/setup.md)
+1.  You meet the [prerequisites](/developers/prerequisites.md)
 2.  You are using the Casper command-line client
 3.  You have an undelegation contract or WASM to execute on the network
 4.  You have a valid `node-address`
@@ -15,7 +15,7 @@ This workflow assumes:
 
 Obtain the `undelegate.wasm` by cloning the [casper-node](https://github.com/casper-network/casper-node) repository and building the contracts.
 
-To build contracts, set up Rust, and install all dependencies. Visit [Setting up Rust](https://docs.casperlabs.io/en/latest/dapp-dev-guide/setup-of-rust-contract-sdk.md) in the Developer Guide for step-by-step instructions.
+To build contracts, set up Rust, and install all dependencies. Visit [Setting up Rust](https://docs.casperlabs.io/en/latest/developers/prerequisites-of-rust-contract-sdk.md) in the Developer Guide for step-by-step instructions.
 
 Once you build the contracts, you can use the `undelegate.wasm` to create a deploy that will initiate the undelegation process. The WASM can be found in:
 

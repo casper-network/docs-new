@@ -2,8 +2,8 @@
 
 Ultimately, smart contracts are meant to run on the blockchain. You can send your contract to the network via a [Deploy](/concepts/deploy-and-deploy-lifecycle.md#execution-semantics-deploys). To do this, you will need to meet a few prerequisites:
 
-- You will need a client to interact with the network, such as the [default Casper client](/dapp-dev-guide/setup#the-casper-command-line-client)
-- Ensure you have an [Account](/dapp-dev-guide/setup#setting-up-an-account) and its associated [keys](/concepts/accounts-and-keys.md) This account will pay for the Deploy, and its secret key will sign the Deploy
+- You will need a client to interact with the network, such as the [default Casper client](/developers/prerequisites#the-casper-command-line-client)
+- Ensure you have an [Account](/developers/prerequisites#setting-up-an-account) and its associated [keys](/concepts/accounts-and-keys.md) This account will pay for the Deploy, and its secret key will sign the Deploy
 - Ensure this account has enough CSPR tokens to pay for the Deploy
 
 ## Paying for Deploys {#paying-for-deploys}
@@ -19,7 +19,7 @@ CSPR tokens are used to pay for transactions on the Casper Mainnet and Testnet. 
 
 If you want to follow the [lifecycle](/concepts/deploy-and-deploy-lifecycle.md#execution-semantics-phases) of the Deploy, you can start monitoring a node's event stream. This section will focus only on DeployAccepted events, but there are other event types described [here](/developers/dapps/monitor-and-consume-events). You need the following information to proceed:
 
-- The IP address of a [peer](/dapp-dev-guide/setup/#acquire-node-address-from-network-peers) on the network
+- The IP address of a [peer](/developers/prerequisites/#acquire-node-address-from-network-peers) on the network
 - The port specified as the `event_stream_server.address` in the node's *config.toml*, which is by default 9999 on Mainnet and Testnet
 - The URL for DeployAccepted events, which is <HOST:PORT>/events/deploys
 

@@ -4,7 +4,7 @@ This document details a workflow where an account holder on a Casper network can
 
 ## Prerequisites
 
-1. You meet all prerequisites listed [here](/dapp-dev-guide/setup.md), including having a valid `node-address` and the Casper command-line client
+1. You meet all prerequisites listed [here](/developers/prerequisites.md), including having a valid `node-address` and the Casper command-line client
 2. You have previously [deployed a smart contract](/developers/dapps/sending-deploys.md) to a Casper network
 
 The workflow will take you through two additional prerequisites before sending the [delegation request](/developers/cli/delegate/#sending-the-delegation-request):

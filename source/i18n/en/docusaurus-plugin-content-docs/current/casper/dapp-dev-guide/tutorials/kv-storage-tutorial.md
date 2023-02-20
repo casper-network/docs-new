@@ -216,7 +216,7 @@ mod tests {
 
 ### Running Locally {#running-locally}
 
-You can run unit tests locally if you have set up the contract using _cargo-casper_ as shown in the [Getting started](https://docs.casperlabs.io/en/latest/dapp-dev-guide/setup-of-rust-contract-sdk.html) guide.
+You can run unit tests locally if you have set up the contract using _cargo-casper_ as shown in the [Getting started](https://docs.casperlabs.io/en/latest/developers/prerequisites-of-rust-contract-sdk.html) guide.
 
 ```bash
 cargo test -p tests

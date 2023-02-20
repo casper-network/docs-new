@@ -16,9 +16,9 @@ Exchanges should store the account hash to query and monitor the account. Custom
 
 You must ensure the following prerequisites are met before you can generate an account hash:
 
-1.  [Set up your machine](/dapp-dev-guide/setup.md)
+1.  [Set up your machine](/developers/prerequisites.md)
 2.  Have a Casper Account and its _public key_
-3.  Install the Casper [command-line client](/dapp-dev-guide/setup#the-casper-command-line-client)
+3.  Install the Casper [command-line client](/developers/prerequisites#the-casper-command-line-client)
 
 **Generating an Account Hash**
 

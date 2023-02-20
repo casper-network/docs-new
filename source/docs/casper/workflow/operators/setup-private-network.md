@@ -23,9 +23,9 @@ Casper private networks operate in a similar way to the Casper public network. T
 
 ## Prerequisites
 Follow these guides to set up the required environment and user accounts.
-- [Setting up the Casper client](/dapp-dev-guide/setup/#the-casper-command-line-client)
+- [Setting up the Casper client](/developers/prerequisites/#the-casper-command-line-client)
 - [Setting up the client for interacting with the network](https://github.com/casper-ecosystem/casper-client-rs/blob/main/README.md#casper-client)
-- [Setting up an Account](/dapp-dev-guide/setup/#setting-up-an-account)
+- [Setting up an Account](/developers/prerequisites/#setting-up-an-account)
 
 
 ## Step 1. Setting up a Validator Node

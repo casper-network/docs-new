@@ -6,13 +6,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Installing Smart Contracts and Querying Global State
 
-This tutorial is a continuation of the [Smart Contracts on Casper](/resources/tutorials/beginner/rust-contracts) guide, and covers the installation of Casper contracts using the [Casper command-line client](/dapp-dev-guide/setup/#the-casper-command-line-client) and the `put-deploy` command.
+This tutorial is a continuation of the [Smart Contracts on Casper](/resources/tutorials/beginner/rust-contracts) guide, and covers the installation of Casper contracts using the [Casper command-line client](/developers/prerequisites/#the-casper-command-line-client) and the `put-deploy` command.
 
 ## Prerequisites
 
 - You know how to [send and verify deploys](/developers/dapps/sending-deploys.md)
-   - Your environment meets these [prerequisites](/dapp-dev-guide/setup/) and you have a client to interact with the network, such as the [default Casper client](/dapp-dev-guide/setup#the-casper-command-line-client)
-   - You have a [Casper Account](/dapp-dev-guide/setup/#setting-up-an-account) with a public and secret key pair to initiate the deploy
+   - Your environment meets these [prerequisites](/developers/prerequisites/) and you have a client to interact with the network, such as the [default Casper client](/developers/prerequisites#the-casper-command-line-client)
+   - You have a [Casper Account](/developers/prerequisites/#setting-up-an-account) with a public and secret key pair to initiate the deploy
    - You have enough CSPR tokens in your account's main purse to pay for deploys. If you plan to use the Casper Testnet, learn about the [faucet](/users/token-transfer#2-the-faucet) to fund your testing account's main purse
 - You understand how to [write basic contract code](/developers/writing-onchain-code/index.md) and session code
 - You have a contract Wasm to send to a Casper network
