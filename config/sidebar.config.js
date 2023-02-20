@@ -279,7 +279,7 @@ module.exports = {
     ],
     operators: [
         "operators/index",
-        "operators/overview",
+        "operators/table-of-content",
         {
             type: "category",
             label: "Get set up",
