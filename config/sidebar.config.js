@@ -186,8 +186,8 @@ module.exports = {
             items: [
                 "operators/setup/hardware",
                 "operators/setup/basic-node-configuration",
-                "operators/becoming-a-validator/install-node",
                 "operators/becoming-a-validator/joining",
+                "operators/setup/install-node",
             ],
         },
         {
