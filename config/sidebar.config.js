@@ -1,16 +1,7 @@
 const { items } = require("./navbar.config");
 
 module.exports = {
-    workflow: [
-        "workflow/index",
-        {
-            type: "category",
-            label: "Developer How To's",
-            collapsible: true,
-            collapsed: true,
-            items: ["workflow/developers/index"],
-        },
-    ],
+    workflow: ["workflow/index"],
     concepts: [
         "concepts/index",
         "concepts/intro-to-dapps",
@@ -141,6 +132,7 @@ module.exports = {
     ],
     developers: [
         "developers/index",
+        "developers/table-of-content",
         "developers/prerequisites",
         {
             type: "category",
