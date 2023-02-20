@@ -9,6 +9,7 @@ module.exports = {
         "concepts/deploy-and-deploy-lifecycle",
         "concepts/global-state",
         "concepts/smart-contracts",
+        "concepts/callstack",
         "concepts/session-code",
         "concepts/dictionaries",
         {
@@ -296,7 +297,6 @@ module.exports = {
     /// TODO FIX BELOW
     "dapp-dev-guide": [
         "dapp-dev-guide/json-rpc",
-        "dapp-dev-guide/list-cspr",
         {
             type: "category",
             label: "Building dApps",
@@ -305,7 +305,6 @@ module.exports = {
             items: [
                 "dapp-dev-guide/building-dapps/dapp",
                 "dapp-dev-guide/building-dapps/calling-contracts",
-                "dapp-dev-guide/building-dapps/callstack",
                 "dapp-dev-guide/building-dapps/setup-nctl",
                 "dapp-dev-guide/building-dapps/nctl-test",
             ],
