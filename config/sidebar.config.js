@@ -273,7 +273,7 @@ module.exports = {
         "operators/table-of-content",
         {
             type: "category",
-            label: "Get set up",
+            label: "Getting set up",
             collapsible: true,
             collapsed: true,
             items: [
