@@ -21,7 +21,7 @@ This section shows you how to write session code and smart contracts in Rust and
 |[Unit Testing Session Code](/developers/writing-onchain-code/testing-session-code.md)      | Steps to test session code using the unit testing framework|
 |[Installing Smart Contracts and Querying Global State](/developers/cli/installing-contracts.md)| A guide on installing smart contracts and querying global state        |
 |[Calling Smart Contracts with the Rust Client](/developers/cli/calling-contracts.md)| Steps to call a smart contract with the Rust command-line client|
-|[Upgrading and Maintaining Smart Contracts](/dapp-dev-guide/writing-contracts/upgrading-contracts.md)| An introduction to versioning smart contracts|
+|[Upgrading and Maintaining Smart Contracts](/developers/writing-onchain-code/upgrading-contracts.md)| An introduction to versioning smart contracts|
 |[Reading and Writing to Dictionaries](/concepts/dictionaries.md)]| Information on Dictionaries and how to read and write to them on the Casper Platform.|
 |[Execution Error Codes](/developers/cli/execution-error-codes.md)|Possible error codes when writing smart contracts.|
 |[Getting Started with AssemblyScript](/dapp-dev-guide/writing-contracts/assembly-script.md) | An introduction to using AssemblyScript with the Casper Platform |

@@ -144,7 +144,7 @@ This video shows how to call a modified Counter contract using session arguments
 
 ## Calling Contracts by Package Hash {#calling-contracts-by-package-hash}
 
-You can also call an entry point in a contract that is part of a contract package (see [contract upgrades](/dapp-dev-guide/writing-contracts/upgrading-contracts.md)). Call `put-deploy` using the stored package hash, the entry point you wish to access, the contract version number, and any runtime arguments. The call defaults to the highest enabled version if no version was specified.
+You can also call an entry point in a contract that is part of a contract package (see [contract upgrades](/developers/writing-onchain-code/upgrading-contracts.md)). Call `put-deploy` using the stored package hash, the entry point you wish to access, the contract version number, and any runtime arguments. The call defaults to the highest enabled version if no version was specified.
 
 ```rust
 casper-client put-deploy \
