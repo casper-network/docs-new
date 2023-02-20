@@ -11,5 +11,5 @@ The [How To's for Operators](/operators/index.md) help operators set up and conf
 
 ## Developers {#developer-guides}
 
-The [How To's for Developers](/workflow/developers/index.md) highlight key features and capabilities of the Casper system for builders.
+The [How To's for Developers](/developers/table-of-content.md) highlight key features and capabilities of the Casper system for builders.
 
