@@ -12,7 +12,7 @@ Cargo is Rust's build system and package manager. This tool manages Rust project
 
 ## Casper network {#casper-network}
 
-Casper is a Proof-of-Stake blockchain platform with an account-based model that performs execution after consensus. More information on the design of a Casper network can be found [here](/design/casper-design/).
+Casper is a Proof-of-Stake blockchain platform with an account-based model that performs execution after consensus. More information on the design of a Casper network can be found [here](/concepts/design/casper-design/).
 
 ## CBC {#cbc}
 

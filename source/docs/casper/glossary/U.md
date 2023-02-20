@@ -12,7 +12,7 @@ Withdrawing money from the [auction](/glossary/A.md#auction) contract with _with
 
 ## URef {#uref}
 
-An **U**nforgeable **Ref**erence, used by a Casper network to store any value other than `Account`. More information can be found [here](/design/casper-design/#uref-head).
+An **U**nforgeable **Ref**erence, used by a Casper network to store any value other than `Account`. More information can be found [here](/concepts/design/casper-design/#uref-head).
 
 ## Users {#users}
 

@@ -8,7 +8,7 @@
 
 ## Account {#account}
 
-An Account is a structure that represents a user on a Casper network. Information on creating an account can be found [here](/design/casper-design/#accounts-head).
+An Account is a structure that represents a user on a Casper network. Information on creating an account can be found [here](/concepts/design/casper-design/#accounts-head).
 
 ## Account Hash {#account-hash}
 

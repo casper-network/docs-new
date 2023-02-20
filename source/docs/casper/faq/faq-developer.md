@@ -235,7 +235,7 @@ There are two types of action that an account can perform: a deploy and key mana
 
 You may also reference the following two documents for additional information:
 
-- [Accounts](/design/casper-design.md/#accounts-head)
+- [Accounts](/concepts/design/casper-design.md/#accounts-head)
 - [Two-Party Multi-Signature workflow](/developers/cli/transfers/multisig-deploy-transfer.md)
 
 </details>

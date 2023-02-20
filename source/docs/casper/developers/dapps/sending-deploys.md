@@ -361,7 +361,7 @@ casper-client put-deploy --show-arg-examples
 
 ## Advanced Features {#advanced-features}
 
-Casper networks support complex deploys using multiple signatures. [Casper Accounts](/design/casper-design.md/#accounts-head) use a powerful permissions model that enables a multi-signature scheme for deploys.
+Casper networks support complex deploys using multiple signatures. [Casper Accounts](/concepts/design/casper-design.md/#accounts-head) use a powerful permissions model that enables a multi-signature scheme for deploys.
 
 The `put-deploy` command performs multiple actions under the hood, optimizing the typical use case. It creates a deploy, signs it, and sends the Deploy to the network without allowing multiple signatures. However, it is possible to call the following three commands and separate key management from account creation:
 
