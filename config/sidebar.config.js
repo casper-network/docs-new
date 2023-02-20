@@ -8,8 +8,8 @@ module.exports = {
         "concepts/understanding-hash-types",
         "concepts/deploy-and-deploy-lifecycle",
         "concepts/global-state",
-        "concepts/session-code",
         "concepts/smart-contracts",
+        "concepts/session-code",
         "concepts/dictionaries",
         {
             type: "category",
