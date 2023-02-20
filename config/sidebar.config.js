@@ -8,7 +8,7 @@ module.exports = {
             label: "Operator How To's",
             collapsible: true,
             collapsed: true,
-            items: ["workflow/operators/index", "workflow/operators/setup-private-network"],
+            items: ["workflow/operators/index"],
         },
         {
             type: "category",
