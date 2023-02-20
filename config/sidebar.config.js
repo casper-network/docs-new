@@ -148,6 +148,7 @@ module.exports = {
                     label: "Build Counter on an NCTL Network",
                     collapsible: true,
                     collapsed: true,
+                    className: "text_transform_reset",
                     items: [
                         "resources/tutorials/beginner/counter/index",
                         "resources/tutorials/beginner/counter/overview",
