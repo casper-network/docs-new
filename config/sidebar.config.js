@@ -23,7 +23,7 @@ module.exports = {
             label: "Economics",
             collapsible: true,
             collapsed: true,
-            items: ["economics/index", "economics/consensus", "economics/runtime", "economics/gas-concepts", "economics/delegation", "staking/index"],
+            items: ["economics/index", "economics/consensus", "economics/runtime", "economics/gas-concepts", "economics/delegation", "economics/staking"],
         },
         {
             type: "category",
@@ -339,6 +339,6 @@ module.exports = {
         },
         "economics/delegation",
         "economics/concepts",
+        "economics/staking",
     ],
-    staking: ["staking/index"],
 };
