@@ -11,6 +11,6 @@ The following table provides links to the SDK documentation, in addition to the 
 
 | SDK Documentation             | GitHub Location                                        |
 | ----------------------------- | ------------------------------------------------------ |
-| [TypeScript](/developers/json-rpc/sdk/script-sdk) | https://github.com/casper-ecosystem/casper-js-sdk/     |
+| [TypeScript](/developers/dapps/sdk/script-sdk) | https://github.com/casper-ecosystem/casper-js-sdk/     |
 | Java SDK (work in progress)   | https://github.com/cnorburn/casper-java-sdk/           |
 | Go SDK (work in progress)     | https://github.com/casper-ecosystem/casper-golang-sdk/ |

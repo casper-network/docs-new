@@ -139,7 +139,7 @@ For more information on how to write session code, see [Writing Session Code](/d
 ## Integrating CSPR
 
 You can integrate with the [JSON-RPC API](/developers/json-rpc/index.md) of a node on the Casper Mainnet. 
-You can program directly against the RPC or if you prefer you can choose from the variety of SDK libraries that are available to use on a Casper network see [SDK Libraries](/developers/json-rpc/sdk/index.md). 
+You can program directly against the RPC or if you prefer you can choose from the variety of SDK libraries that are available to use on a Casper network see [SDK Libraries](/developers/dapps/sdk/index.md). 
 Casper also provides a stream server that gives you real-time information about a variety of events occurring on a node. Use of the stream is optional. You might want to use this feature as it notifies you of events instead of requiring you to ask periodically. For more information about various events, see [Monitoring and Consuming Events](/developers/dapps/monitor-and-consume-events.md).
 
 ## Testing the Integration
