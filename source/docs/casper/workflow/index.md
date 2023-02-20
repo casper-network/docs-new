@@ -3,7 +3,7 @@
 
 ## Users {#user-guides}
 
-The [How To's for Users](/workflow/users/index.md) contain step-by-step instructions for interacting with the Casper blockchain.
+The [How To's for Users](/users/index.md) contain step-by-step instructions for interacting with the Casper blockchain.
 
 ## Operators {#operator-guides}
 

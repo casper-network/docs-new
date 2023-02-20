@@ -31,7 +31,7 @@ Create three sets of keys one each for the Manager, Supervisor and Clerk.
 
 To create accounts on the Casper blockchain, you need to generate keys and fund your accounts. For more information see [Account and Cryptographic Keys](/concepts/accounts-and-keys.md). 
 
-To fund your Testnet account, see [Funding Testnet Accounts](/workflow/users/testnet-faucet.md).
+To fund your Testnet account, see [Funding Testnet Accounts](/users/testnet-faucet.md).
 
 ## Deploying the Keys Manager Contract
 

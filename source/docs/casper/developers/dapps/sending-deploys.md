@@ -10,10 +10,10 @@ Ultimately, smart contracts are meant to run on the blockchain. You can send you
 
 CSPR tokens are used to pay for transactions on the Casper Mainnet and Testnet. There are several ways to fund your account:
 
-- You may want to [transfer tokens from an exchange](/workflow/users/funding-from-exchanges)
-- You can use a [block explorer to transfer tokens](/workflow/users/token-transfer/) between accounts' purses
+- You may want to [transfer tokens from an exchange](/users/funding-from-exchanges)
+- You can use a [block explorer to transfer tokens](/users/token-transfer/) between accounts' purses
 - You can also [transfer tokens using the default Casper client](/developers/cli/transfers/)
-- On the Testnet, you can use the [faucet functionality](/workflow/users/testnet-faucet/) for testing your smart contracts
+- On the Testnet, you can use the [faucet functionality](/users/testnet-faucet/) for testing your smart contracts
 
 ## Monitoring the Event Stream for Deploys
 

@@ -98,7 +98,7 @@ Follow [the delegation workflow](/developers/cli/delegate/) to learn how to stak
 <details>
 <summary><b>How do I stake tokens using cspr.live?</b></summary>
 
-See [this article](/workflow/users/delegate-ui/).
+See [this article](/users/delegate-ui/).
 
 </details>
 
