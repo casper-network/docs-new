@@ -159,20 +159,6 @@ module.exports = {
             collapsed: true,
             items: [
                 "developers/json-rpc/index",
-                {
-                    type: "category",
-                    label: "SDK Client Libraries",
-                    collapsible: true,
-                    collapsed: true,
-                    items: [
-                        "developers/json-rpc/sdk/index",
-                        "developers/json-rpc/sdk/script-sdk",
-                        "developers/json-rpc/sdk/csharp-sdk",
-                        "developers/json-rpc/sdk/go-sdk",
-                        "developers/json-rpc/sdk/python-sdk",
-                        "developers/json-rpc/sdk/additional-libraries",
-                    ],
-                },
                 "developers/json-rpc/guidance",
                 "developers/json-rpc/minimal-compliance",
                 "developers/json-rpc/json-rpc-transactional",
@@ -189,6 +175,20 @@ module.exports = {
             collapsed: true,
             items: [
                 "developers/dapps/index",
+                {
+                    type: "category",
+                    label: "SDK Client Libraries",
+                    collapsible: true,
+                    collapsed: true,
+                    items: [
+                        "developers/dapps/sdk/index",
+                        "developers/dapps/sdk/script-sdk",
+                        "developers/dapps/sdk/csharp-sdk",
+                        "developers/dapps/sdk/go-sdk",
+                        "developers/dapps/sdk/python-sdk",
+                        "developers/dapps/sdk/additional-libraries",
+                    ],
+                },
                 "developers/dapps/prerequisites",
                 "developers/dapps/technology-stack",
                 "developers/dapps/template-frontend",
