@@ -183,12 +183,7 @@ module.exports = {
             label: "Getting set up",
             collapsible: true,
             collapsed: true,
-            items: [
-                "operators/setup/hardware",
-                "operators/setup/basic-node-configuration",
-                "operators/becoming-a-validator/joining",
-                "operators/setup/install-node",
-            ],
+            items: ["operators/setup/hardware", "operators/setup/basic-node-configuration", "operators/setup/install-node", "operators/setup/joining"],
         },
         {
             type: "category",
