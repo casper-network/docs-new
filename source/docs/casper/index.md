@@ -32,8 +32,8 @@ Follow the links below to learn more about the Casper Network.
 | [Developers](/developers/index.md) | Get started with smart contract development on the Casper blockchain in Rust |
 | [Node Operators](/operators/index.md) | Run node infrastructure on the Casper Network |
 | [Design](/concepts/design/index.md) | Understand the architecture of the Casper Network, including network communication, execution semantics, account management, block structure, global state, serialization, unforgeable references, and tokens |
-| [Economics](/economics/index.md) | Conceptualize Casper's economic activity by understanding consensus, runtime, ecosystem, and the macroeconomy |
-| [Staking Guide](/economics/staking.md) | Participate in the protocol by staking CSPR tokens with a validator in the Casper Network |
+| [Economics](/concepts/economics/index.md) | Conceptualize Casper's economic activity by understanding consensus, runtime, ecosystem, and the macroeconomy |
+| [Staking Guide](/concepts/economics/staking.md) | Participate in the protocol by staking CSPR tokens with a validator in the Casper Network |
 | [Glossary](/glossary/index.md) | Explore key definitions in the context of the Casper Network |
 | [FAQ](/faq/index.md) | Find answers regarding the Casper Network, CasperLabs, and the CSPR token sale Changelog Review past technical releases and changelogs for the Casper Network |
 

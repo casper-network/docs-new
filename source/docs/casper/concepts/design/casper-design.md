@@ -64,7 +64,7 @@ A Casper network is a decentralized computation platform. This section describes
 
 ### Measuring Computational Work {#execution-semantics-gas}
 
-Computation is done in a [WebAssembly (Wasm)](https://webassembly.org/) interpreter, allowing any programming language which compiles to Wasm to become a smart contract language for the Casper blockchain. Similar to Ethereum, Casper uses [`Gas`](/economics/gas-concepts/) to measure computational work in a way that is consistent from node to node in a Casper network. Each Wasm opcode is assigned a `Gas` cost, and the amount of gas spent is tracked by the runtime with each opcode executed by the interpreter.
+Computation is done in a [WebAssembly (Wasm)](https://webassembly.org/) interpreter, allowing any programming language which compiles to Wasm to become a smart contract language for the Casper blockchain. Similar to Ethereum, Casper uses [`Gas`](/concepts/economics/gas-concepts/) to measure computational work in a way that is consistent from node to node in a Casper network. Each Wasm opcode is assigned a `Gas` cost, and the amount of gas spent is tracked by the runtime with each opcode executed by the interpreter.
 
 Costs for opcode instructions on the Casper Mainnet network can be found [here](https://github.com/casper-network/casper-node/blob/dev/resources/production/chainspec.toml#L115).
 
@@ -76,7 +76,7 @@ Although the network measures costs in `Gas`, payment for computation occurs in 
 
 Please note that Casper will not refund any amount of unused gas.
 
-This decision is taken to incentivize the [Casper Runtime Economics](/economics/runtime.md#runtime-economics) by efficiently allocating the computational resources. The [consensus-before-execution model](/economics/runtime.md#consensus-before-execution-basics-of-payment) implements the mechanism to encourage the optimized gas consumption from users and to prevent the overuse of block space by poorly handled deploys.
+This decision is taken to incentivize the [Casper Runtime Economics](/concepts/economics/runtime.md#runtime-economics) by efficiently allocating the computational resources. The [consensus-before-execution model](/concepts/economics/runtime.md#consensus-before-execution-basics-of-payment) implements the mechanism to encourage the optimized gas consumption from users and to prevent the overuse of block space by poorly handled deploys.
 
 :::
 
@@ -267,7 +267,7 @@ Refer to the [Serialization Standard](/concepts/design/serialization-standard.md
 
 ## Tokens {#tokens-head}
 
-Casper is a decentralized Proof-of-Stake blockchain platform that uses a consensus algorithm called [Highway](/concepts/design/highway/). Having a unit of value is required to make this system work because users must pay for computation, and validators must have [stake](/economics/staking.md) to bond. In the blockchain space, this unit of value is a _token_.
+Casper is a decentralized Proof-of-Stake blockchain platform that uses a consensus algorithm called [Highway](/concepts/design/highway/). Having a unit of value is required to make this system work because users must pay for computation, and validators must have [stake](/concepts/economics/staking.md) to bond. In the blockchain space, this unit of value is a _token_.
 
 This chapter describes tokens and how one can use them on the Casper platform.
 

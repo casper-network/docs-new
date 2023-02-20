@@ -38,7 +38,7 @@ The concept of *eras* allows Highway to reduce the overall operational storage r
 
 In any given era, node operators will bid to become validators that will participate in the consensus mechanism for the era after next (`N`+2). Each time slot within the era will also determine a lead validator. The lead validator proposes new blocks to be added to the chain, which are then gossiped among the network's nodes. These messages show an implicit preference for the lead validator's block due to the GHOST (Greedy Heaviest Observed Sub-Tree) rule. Once this process reaches critical mass, with a sufficient interconnected pattern of messages, it becomes impossible to switch to another block. The selected block is then considered finalized and added to the chain.
 
-The final block of an era is a *switch block* and forms the initial state of the next era. A new Highway instance begins with the new era, using information contained within the *switch block* and a new potential set of validators. More details on the auction process to determine an era's validators can be found within the [Consensus Economics](/economics/consensus/) page.
+The final block of an era is a *switch block* and forms the initial state of the next era. A new Highway instance begins with the new era, using information contained within the *switch block* and a new potential set of validators. More details on the auction process to determine an era's validators can be found within the [Consensus Economics](/concepts/economics/consensus/) page.
 
 ### Finality
 
