@@ -400,4 +400,4 @@ Visit the [Interacting with Runtime Return Values](/resources/tutorials/advanced
 - The [Counter Contract Tutorial](/resources/tutorials/beginner/counter/index.md) takes you through a detailed walkthrough on how to query global state to verify a contract's state
 - Learn more about [Delegating with the Casper Client](/developers/cli/delegate)
 - Look into the [Tutorials for Smart Contract Authors](/resources/tutorials/)
-- See the [Developer How To Guides](/workflow/developers)
+- See the [Developer How To Guides](/developers/table-of-content)
