@@ -1,4 +1,4 @@
-import IColumn from "@site/src/plugins/docusaurus-plugin-navdata/src/interfaces/navbar/column";
+import IColumn from "src/plugins/docusaurus-plugin-navdata/src/interfaces/navbar/column";
 import React from "react";
 import styles from "./NavBarColumn.module.scss";
 import NavBarGroup from "./NavBarGroup";

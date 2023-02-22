@@ -1,3 +1,24 @@
+// Variables
+@use "./variables/custom-properties";
+@use "./variables/fonts-variables";
+@use "./variables/media-queries";
+@use "./variables/sizes";
+
+// Base
+@use "./mixins";
+@use "./animations";
+@use "./fonts";
+
+// Reboot
+@use "./reboot";
+
+// Third parties
+// @use "./vendor";
+
+// Common
+@use "./global";
+@use "./utilities";
+
 :root {
     --h1-font-size: 32px;
     --h2-font-size: 28px;
@@ -23,6 +44,15 @@
     --color-footer: #23262a;
     --casper-font-headlines: Inter, sans-serif;
     --casper-font-body: Inter, sans-serif;
+    
+    --ifm-color-primary: var(--casperRed);
+    --ifm-menu-color-background-hover : var(--black);
+    --ifm-menu-color-background-active : var(--black);
+    --ifm-card-background-color: var(--liftedBlack);
+    --ifm-menu-color:var(--casperWhite);
+    --ifm-toc-link-color: var(--casperWhite);
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 .navbar__logo img {

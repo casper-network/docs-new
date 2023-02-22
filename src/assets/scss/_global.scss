@@ -1,0 +1,188 @@
+@use "./variables/fonts-variables";
+@use "./variables/sizes";
+@use "./mixins";
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: fonts-variables.$font-casperSans;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    background: var(--black);
+
+    &.dropdownOpen {
+        position: relative;
+        right: calc(var(--scrollbarWidth) / 2);
+    }
+    &.mobileDropdownOpen {
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+h1 {
+    font-family: fonts-variables.$font-casperSans;
+    font-weight: 300;
+    font-size: 94px;
+    line-height: inherit; //identical to box height, or 117%
+    color: var(--casperWhite);
+}
+
+h2 {
+    font-family: fonts-variables.$font-casperSans;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 125%;
+    letter-spacing: 0.02em;
+    color: var(--casperWhite);
+}
+
+h3 {
+    font-family: fonts-variables.$font-casperSans;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: inherit; // identical to box height, or 131%
+    letter-spacing: 0.01em;
+    color: var(--casperWhite);
+}
+
+h4 {
+    font-family: fonts-variables.$font-casperSans;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: inherit; // identical to box height, or 133%
+    letter-spacing: 0.05em;
+    color: var(--casperWhite);
+}
+
+.halfTitleEyebrow {
+    font-family: fonts-variables.$font-casperSans;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px; // or 150%
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--casperWhite);
+}
+
+.snippetMarkdown {
+    font-family: fonts-variables.$font-sourceCodePro;
+    font-size: 16px;
+    line-height: inherit; // identical to box height, or 150%
+    letter-spacing: 0.01em;
+    color: var(--casperWhite);
+}
+
+.primaryParagraph {
+    font-family: fonts-variables.$font-casperSans;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px; // or 150%
+    letter-spacing: 0.05em;
+    color: #ffffff;
+}
+
+.secondaryParagraph {
+    font-family: fonts-variables.$font-casperSans;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px; // or 133%
+    letter-spacing: 0.06em;
+    color: var(--casperWhite);
+}
+
+.noWrap {
+    white-space: nowrap;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+ol[class],
+ul[class] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration-skip-ink: auto;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.preload-image {
+    position: absolute;
+    opacity: 0;
+    height: 1px;
+    width: 1px;
+    pointer-events: none;
+}
+
+// GRID
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .navBar {
+        width: 100%;
+        max-width: sizes.$navBoxWidth;
+        padding: 0 sizes.$navSpacing;
+    }
+
+    .contentBox {
+        width: 100%;
+        max-width: sizes.$contentBoxWidth;
+        margin: 0 auto;
+        display: grid;
+        //grid-template-columns: repeat(auto-fill, minmax(77px, 1fr));
+        grid-template-columns: repeat(sizes.$columns, 1fr);
+        gap: sizes.$gapSpacing;
+
+        @include mixins.span-x;
+    }
+}
+// /GRID
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+//
+html {
+    scroll-behavior: smooth;
+}
+
+$scrollbar-width: 12px;
+
+::-webkit-scrollbar {
+    width: $scrollbar-width;
+    height: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid var(--black);
+    background-clip: padding-box;
+    background-color: var(--casperWhite);
+    border-radius: 7px;
+    box-shadow: inset -1px -1px 0 var(--black), inset 1px 1px 0 var(--black);
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
