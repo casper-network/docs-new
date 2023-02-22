@@ -1,0 +1,79 @@
+// @use "../../../../assets/scss/variables/sizes";
+// @use "../../../stylesheets/mixins";
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+
+    .container {
+        // height: sizes.$navBarHeight;
+        background-color: var(--black);
+        color: var(--casperWhite);
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .logo {
+                min-width: 163px;
+            }
+
+            .navbar_list {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.05em;
+                text-transform: capitalize;
+
+                .navbar_list_item {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    padding-right: 25px;
+                    cursor: pointer;
+                    background-color: transparent;
+                    color: var(--casperWhite);
+                }
+            }
+
+            .login, .loggedIn {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+                cursor: pointer;
+    
+                > button {
+                    background-color: transparent;
+                    color: var(--casperWhite);
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 9px;
+                    border: 0;
+                    padding: 0;
+                }
+            }
+        }
+
+        .search {
+            > input {
+                width: 100%;
+            }
+        }
+
+        
+    }
+}

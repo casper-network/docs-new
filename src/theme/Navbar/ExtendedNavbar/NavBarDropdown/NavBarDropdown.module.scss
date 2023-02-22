@@ -1,0 +1,22 @@
+@use "../../../../assets/scss/variables/sizes";
+
+.wrapper {
+    position: fixed;
+    top: sizes.$navBarHeight;
+    z-index: 99;
+    left: var(--position);
+
+    .dropdown {
+        /* In order to comply with the proposed design (0.25px border) 
+        and given the impossibility of using units smaller than 1px, 
+        we came to the following workaround that does the job using alpha color in the border. */
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background-color: var(--black);
+        color: var(--casperWhite);
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+        z-index: 2;
+    }
+}

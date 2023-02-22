@@ -3,8 +3,10 @@
     "version": "1.0.4",
     "private": true,
     "scripts": {
+        "prestart": "npm run buildplugin && npm link docusaurus-plugin-navdata",
+        "buildplugin": "cd ./src/plugins/docusaurus-plugin-navdata && npm install && npm run build && npm link",
         "start": "docusaurus start --no-open",
-        "build": "docusaurus build",
+        "build": "npm run buildplugin && npm link docusaurus-plugin-navdata && docusaurus build",
         "swizzle": "docusaurus swizzle",
         "deploy": "docusaurus deploy",
         "clear": "docusaurus clear",
@@ -28,24 +30,25 @@
     "dependencies": {
         "@cmfcmf/docusaurus-search-local": "^0.10.0",
         "@crowdin/cli": "3",
-        "@docusaurus/core": "^2.0.0-beta.17",
-        "@docusaurus/preset-classic": "^2.0.0-beta.17",
+        "@docusaurus/core": "^2.3.1",
+        "@docusaurus/preset-classic": "^2.3.1",
         "@mdx-js/react": "^1.6.21",
         "@svgr/webpack": "^5.5.0",
         "algoliasearch": "^4.1.0",
         "clsx": "^1.1.1",
-        "docusaurus-plugin-sass": "^0.2.2",
+        "docusaurus-plugin-sass": "^0.2.3",
         "docusaurus2-dotenv": "^1.4.0",
         "file-loader": "^6.2.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
+        "react-instantsearch-hooks-web": "^6.40.1",
         "sass": "^1.49.0",
         "url-loader": "^4.1.1"
     },
     "devDependencies": {
         "@actions/core": "^1.6.0",
-        "@docusaurus/module-type-aliases": "^2.0.0-beta.17",
-        "@tsconfig/docusaurus": "^1.0.2",
+        "@docusaurus/module-type-aliases": "^2.3.1",
+        "@tsconfig/docusaurus": "^1.0.5",
         "@types/react": "^17.0.15",
         "@types/react-helmet": "^6.1.2",
         "@types/react-router-dom": "^5.1.8",
@@ -74,6 +77,9 @@
         "textlint-rule-terminology": "^1.1.30",
         "textlint-rule-write-good": "^1.6.2",
         "typescript": "^4.3.5"
+    },
+    "peerDependencies": {
+        "@docusaurus/theme-common": "^2.3.1"
     },
     "engines": {
         "node": ">=14"

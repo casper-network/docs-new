@@ -1,0 +1,31 @@
+.link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+
+    a:link {
+        text-decoration: none;
+        color: var(--casperWhite);
+    }
+
+    a:visited {
+        color: var(--casperWhite);
+    }
+
+    a:hover {
+        color: var(--casperRed);
+    }
+
+    a:active {
+        color: blue;
+    }
+
+    .subLinkList {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 20px;
+    }
+}

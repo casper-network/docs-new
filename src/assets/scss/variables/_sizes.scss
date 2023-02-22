@@ -1,0 +1,24 @@
+@use "./media-queries";
+// Boxes
+$navBoxWidth: 1600px;
+$contentBoxWidth: 1280px;
+$navBarHeight: 126px;
+
+// Spacing
+$navSpacing: 50px;
+$gapSpacing: 32px;
+
+//Content columns
+$columns: 12;
+
+/* @media #{media-queries.$break-md} {
+    $columns: 8
+}
+
+@media #{media-queries.$break-sm} {
+    $columns: 6
+}
+
+@media #{media-queries.$break-lg} {
+    $columns: 14
+} */
