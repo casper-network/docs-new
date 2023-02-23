@@ -22,11 +22,16 @@ export default function NavbarLayout({ children }) {
                 message: "Main",
                 description: "The ARIA label for the main navigation",
             })}
-            className={clsx("navbar", "navbar--fixed-top", hideOnScroll && [styles.navbarHideable, !isNavbarVisible && styles.navbarHidden], {
-                "navbar--dark": style === "dark",
-                "navbar--primary": style === "primary",
-                "navbar-sidebar--show": mobileSidebar.shown,
-            })}
+            className={`${styles.navBarWrapper} ${clsx(
+                "navbar",
+                "navbar--fixed-top",
+                hideOnScroll && [styles.navbarHideable, !isNavbarVisible && styles.navbarHidden],
+                {
+                    "navbar--dark": style === "dark",
+                    "navbar--primary": style === "primary",
+                    "navbar-sidebar--show": mobileSidebar.shown,
+                },
+            )}`}
         >
             {children}
             <NavbarBackdrop onClick={mobileSidebar.toggle} />

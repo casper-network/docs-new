@@ -1,3 +1,8 @@
+.navBarWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .navbarHideable {
   transition: transform var(--ifm-transition-fast) ease;
 }
