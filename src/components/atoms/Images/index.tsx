@@ -1,5 +1,5 @@
 import React from "react";
-import * as styles from "./Images.module.scss";
+import styles from "./styles.module.scss";
 
 export interface IImagesProps {
     images: IImage[];
