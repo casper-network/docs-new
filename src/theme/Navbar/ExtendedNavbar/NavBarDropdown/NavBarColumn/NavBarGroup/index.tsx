@@ -6,12 +6,11 @@ import NavBarLink from "./NavBarLink";
 interface INavBarGroupProps extends IGroup {
     locale: string;
 }
-export default function NavBarGroup(props: INavBarGroupProps) {
-    const { links, title, locale } = props;
+export default function NavBarGroup({ links, title, locale }: INavBarGroupProps) {
     return (
         <div className={styles.linkGroup}>
-            <span className="halfTitleEyebrow">{title}</span>
-            <ul className={`primaryParagraph ${styles.linkList}`}>
+            <span className="halfTitleEyebrow noWrap">{title}</span>
+            <ul className={`primaryParagraph noWrap ${styles.linkList}`}>
                 {links &&
                     links.map((link, i) => {
                         return <NavBarLink key={`column_group_link_${i}`} {...{ locale, ...link }} />;

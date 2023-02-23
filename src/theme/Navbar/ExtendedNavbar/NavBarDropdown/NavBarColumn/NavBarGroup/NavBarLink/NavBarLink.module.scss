@@ -1,9 +1,10 @@
+@import "../../../../../../../assets/scss/mixins";
 .link {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 10px;
+    gap: 5px;
 
     a:link {
         text-decoration: none;
@@ -15,17 +16,24 @@
     }
 
     a:hover {
+        @include transition(0.3s all);
         color: var(--casperRed);
     }
 
     a:active {
-        color: blue;
+        @include transition(0.3s all);
+        text-decoration: underline;
     }
 
     .subLinkList {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
+        gap: 5px;
         padding-left: 20px;
     }
+}
+
+.onlyTitle {
+    gap: 0px;
 }

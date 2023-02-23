@@ -7,10 +7,9 @@ interface INavBarLinkProps extends ILink {
     locale: string;
 }
 
-export default function NavBarLink(props: INavBarLinkProps) {
+export default function NavBarLink({ title, url, type, children, locale }: INavBarLinkProps) {
     const { siteConfig } = useDocusaurusContext();
     const { customFields } = siteConfig;
-    const { title, url, type, children, locale } = props;
 
     const getLink = (path: string) => {
         const siteUrl = customFields.siteUrl as string;
@@ -34,13 +33,14 @@ export default function NavBarLink(props: INavBarLinkProps) {
     };
 
     return (
-        <li className={styles.link}>
+        <li className={`${styles.link} ${children?.length === 0 ? styles.onlyTitle : ""}`}>
             <span>{renderLink(type, title, url)}</span>
             {children && (
-                <ul className={styles.subLinkList}>
-                    {children.map((subLink, i) => {
-                        return <li key={`column_group_link_subLink_${subLink.title}_${i}`}>{renderLink(subLink!.type, subLink.title!, subLink.url)}</li>;
-                    })}
+                <ul className={`${styles.subLinkList} noWrap`}>
+                    {children.length > 0 &&
+                        children.map((subLink, i) => {
+                            return <li key={`column_group_link_subLink_${subLink.title}_${i}`}>{renderLink(subLink.type, subLink.title, subLink.url)}</li>;
+                        })}
                 </ul>
             )}
         </li>

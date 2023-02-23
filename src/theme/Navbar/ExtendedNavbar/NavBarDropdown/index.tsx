@@ -3,14 +3,13 @@ import React, { useEffect, useRef, useState } from "react";
 import NavBarColumn from "./NavBarColumn";
 import styles from "./NavBarDropdown.module.scss";
 
-interface INavBarDropdownProps extends INavItem {
-    setDropdownOpen: any;
-    setCurrentSubSection?: any;
-    position: any;
+interface INavBarDropdownProps {
+    content: INavItem;
     locale: string;
 }
-export default function NavBarDropdown({ columns, setCurrentSubSection, setDropdownOpen, position, locale }: INavBarDropdownProps) {
-    useEffect(() => {
+export default function NavBarDropdown({ content, locale }: INavBarDropdownProps) {
+    console.log(content);
+    /* useEffect(() => {
         document.body.classList.add("dropdownOpen");
         return () => {
             document.body.classList.remove("dropdownOpen");
@@ -20,14 +19,15 @@ export default function NavBarDropdown({ columns, setCurrentSubSection, setDropd
                 document.body.classList.remove("dropdownIsClosing");
             }, 200);
         };
-    }, []);
+    }, []); */
 
     return (
-        <div className={styles.wrapper} style={{ [`--position` as string]: `${position}px` }}>
+        <div className={styles.wrapper} onClick={(e) => e.stopPropagation()}>
             <div className={styles.dropdown}>
-                {columns.map((column, i) => {
-                    return <NavBarColumn key={`column_${i}`} {...{ locale, ...column }} />;
-                })}
+                {content.columns &&
+                    content.columns.map((column, i) => {
+                        return <NavBarColumn key={`column_${i}`} {...{ locale, ...column }} />;
+                    })}
             </div>
         </div>
     );

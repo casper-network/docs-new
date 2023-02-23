@@ -6,8 +6,7 @@ import NavBarGroup from "./NavBarGroup";
 interface INavBarColumnProps extends IColumn {
     locale: string;
 }
-export default function NavBarColumn(props: INavBarColumnProps) {
-    const { groups, locale } = props;
+export default function NavBarColumn({ groups, locale }: INavBarColumnProps) {
     return (
         <div className={styles.dropdown_column}>
             {groups &&
