@@ -1,0 +1,80 @@
+//Var: 1-name class, 2-color, 3-background
+$colors: (
+    "blue" var(--casperBlue) var(--black),
+    "purple" var(--casperPurple) var(--black),
+    "yellow" var(--casperYellow) var(--black),
+    "brownLight" var(--casperTilesBrownLight) var(--black),
+    "red" var(--casperRed) var(--black),
+    "brown" var(--casperBrown) var(--black),
+    "pink" var(--casperBrightPink) var(--black),
+    "green" var(--casperGreen) var(--black),
+    "pinkLight" var(--casperPinkLight) var(--black),
+    "white" var(--casperWhite) var(--black)
+);
+
+//Iteration var: $color=name, $primaryColor=color, $backgroundColor=background
+@each $color, $primaryColor, $backgroundColor in $colors {
+    .#{$color} {
+        svg {
+            path {
+                fill: $primaryColor;
+            }
+
+            g {
+                path {
+                    fill: $primaryColor;
+                    stroke: $primaryColor;
+                }
+            }
+        }
+    }
+}
+
+.resourcetilecard {
+    position: relative;
+    min-height: 237px;
+    min-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_img {
+        position: relative;
+        min-height: 237px;
+        min-width: 30%;
+        max-width: 30%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow: hidden;
+
+        svg {
+            width: 71px;
+            height: 74px;
+        }
+    }
+
+    &_text {
+        position: relative;
+        min-height: 237px;
+        min-width: 70%;
+        max-width: 70%;
+        padding-right: 14px;
+
+        > h3 {
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        > p {
+            margin-bottom: 24px;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            max-height: 100px;
+        }
+    }
+}

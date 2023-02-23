@@ -1,0 +1,108 @@
+@import "../../../../assets/scss/mixins";
+
+//Var: 1-name class, 2-color, 3-background
+$colors: (
+    "blue" var(--casperBlue) var(--black),
+    "purple" var(--casperPurple) var(--black),
+    "yellow" var(--casperYellow) var(--black),
+    "brownLight" var(--casperTilesBrownLight) var(--black),
+    "red" var(--casperRed) var(--black),
+    "brown" var(--casperBrown) var(--black),
+    "pink" var(--casperBrightPink) var(--black),
+    "green" var(--casperGreen) var(--black),
+    "pinkLight" var(--casperPinkLight) var(--black),
+    "white" var(--casperWhite) var(--black)
+);
+
+//Iteration var: $color=name, $primaryColor=color, $backgroundColor=background
+@each $color, $primaryColor, $backgroundColor in $colors {
+    .#{$color} {
+        background: linear-gradient(90deg, $primaryColor 0%, $backgroundColor 45%);
+        background-size: 100% 100%;
+        @include transition(0.5s all);
+
+        &:hover,
+        &:active {
+            background: linear-gradient(90deg, $primaryColor 0%, $backgroundColor 50%);
+            background-size: 600% 100%;
+            @include transition(0.5s ease-in);
+
+            @if ($color == "yellow" or $color == "brownLight") {
+                .tilecard_text h4,
+                .tilecard_text p {
+                    color: $backgroundColor;
+                }
+                .tilecard_img {
+                    svg {
+                        path {
+                            fill: $backgroundColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tilecard {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 116px;
+    max-width: 400px;
+    background-color: var(--black);
+    color: var(--casperWhite);
+    border: 0.25px solid var(--casperWhite);
+    border-radius: 2px;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+
+    &_img {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+
+        svg {
+            margin: 0;
+            width: 38px;
+            height: 43px;
+
+            path {
+                fill: var(--casperWhite);
+                @include transition(0.3s all);
+            }
+        }
+    }
+
+    &_text {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+        padding-right: 14px;
+
+        > p,
+        h4 {
+            margin: 0;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            max-height: 100px;
+            @include transition(0.3s all);
+        }
+
+        > p {
+            -webkit-line-clamp: 2;
+        }
+
+        > h4 {
+            -webkit-line-clamp: 1;
+        }
+    }
+}
