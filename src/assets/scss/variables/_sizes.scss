@@ -11,14 +11,5 @@ $gapSpacing: 32px;
 //Content columns
 $columns: 12;
 
-/* @media #{media-queries.$break-md} {
-    $columns: 8
-}
-
-@media #{media-queries.$break-sm} {
-    $columns: 6
-}
-
-@media #{media-queries.$break-lg} {
-    $columns: 14
-} */
+//NavBar z-index
+$navBarZIndex: 10;
