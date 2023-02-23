@@ -1,0 +1,95 @@
+@import "../../../assets/scss/mixins";
+$colors: (
+    "yellow" var(--casperYellow) var(--black) var(--casperWhite),
+    "pink" var(--casperBrightPink) var(--black) var(--casperWhite),
+    "green" var(--casperGreen) var(--black) var(--casperWhite),
+    "blue" var(--casperBlue) var(--black) var(--casperWhite),
+    "purple" var(--casperPurple) var(--black) var(--casperWhite),
+    "pinkLight" var(--casperPinkLight) var(--black) var(--casperWhite),
+    "brown" var(--casperBrown) var(--black) var(--casperWhite),
+    "white" var(--casperWhite) var(--black) var(--casperWhite),
+    "red" var(--casperRed) var(--black) var(--casperWhite)
+);
+
+@each $color, $borderColor, $backgroundColor, $fontColor in $colors {
+    .#{$color} {
+        background-color: $backgroundColor;
+        border: 1px solid $borderColor;
+        @include transition(0.3s all);
+        > p {
+            color: $fontColor;
+        }
+        .span {
+            background: $borderColor;
+        }
+        &:hover {
+            border: 1px solid $borderColor;
+            background-color: $borderColor;
+        }
+
+        @if ($color == "brown") {
+            &:hover {
+                > p {
+                    color: $fontColor;
+                }
+                .span {
+                    background: $fontColor;
+                }
+            }
+        } @else if ($color == "blue") {
+            &:hover {
+                > p {
+                    color: $fontColor;
+                }
+                .span {
+                    background: $fontColor;
+                }
+            }
+        } @else if ($color == "purple") {
+            &:hover {
+                > p {
+                    color: $fontColor;
+                }
+                .span {
+                    background: $fontColor;
+                }
+            }
+        } @else {
+            &:hover {
+                > p {
+                    color: $backgroundColor;
+                }
+                .span {
+                    background: $backgroundColor;
+                }
+            }
+        }
+    }
+}
+
+.tag {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 2px 10px;
+
+    > p {
+        font-weight: 500px;
+        font-size: 12px;
+        line-height: 18px;
+        margin: 0;
+        padding: 0;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+    }
+
+    .span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+}

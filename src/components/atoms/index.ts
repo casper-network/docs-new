@@ -6,3 +6,6 @@ export * from "./DocsSection";
 export * from "./DocsSection/DocsTile";
 export * from "./FeatureSection";
 export * from "./Images";
+export * from "./PullQuotes";
+export * from "./SocialSection";
+export * from "./Tag";
