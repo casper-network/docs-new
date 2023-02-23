@@ -1,8 +1,31 @@
-.socialIconsContainer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 27px;
-    color: var(--socialMediaLogos);
+@import "../../../../assets/scss/mixins";
+.social_icons {
+    min-width: 175px;
+
+    .social_icons_container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        color: var(--socialMediaLogos);
+
+        > a {
+            svg {
+                max-width: 32px;
+                max-height: 24px;
+                path {
+                    @include transition(0.3s all);
+                    fill: var(--primaryBtn-hover);
+                }
+            }
+            &:hover {
+                svg {
+                    path {
+                        fill: var(--casperRed);
+                    }
+                }
+            }
+        }
+    }
 }
