@@ -54,6 +54,11 @@
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
     --ifm-navbar-height: unset;
+    --ifm-background-color: var(--black) !important;
+}
+
+body {
+    height: unset !important;
 }
 
 .navbar__logo img {
