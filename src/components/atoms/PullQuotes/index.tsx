@@ -10,7 +10,7 @@ export interface IPullQuoteProps {
 
 export function PullQuotes({ image, paragraph, name, description }: IPullQuoteProps) {
     return (
-        <div className={`container`}>
+        <div className={`containerSite`}>
             <div className={`contentBox`}>
                 <div className={`${styles.pullquotes} span-12`}>
                     <div className={`${styles.card}`}>

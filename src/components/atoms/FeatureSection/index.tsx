@@ -14,7 +14,7 @@ interface IFeatureSectionProps {
 export function FeatureSection({ header, subheader, tiles, imageAndTextBlock }: IFeatureSectionProps) {
     const desktop = useWindowWidth(1401);
     return (
-        <section className={`${styles.feature} container`}>
+        <section className={`${styles.feature} containerSite`}>
             <section className={`${styles.feature_content} contentBox`}>
                 <div className={`${styles.feature_content_title} span-12`}>
                     <h2>{header}</h2>

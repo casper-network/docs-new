@@ -87,7 +87,7 @@ export default function ExtendedNavbar() {
     return (
         <div className={styles.wrapper}>
             <header ref={navBarRef} className={styles.navbar_wrapper}>
-                <div className={`${styles.container} container`}>
+                <div className={`${styles.container} containerSite`}>
                     <div className={`${styles.navbar} navBarSite`}>
                         {navData && navData.navItems && (
                             <>

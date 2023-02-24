@@ -1,0 +1,5 @@
+@use "../../../../assets/scss/variables/sizes";
+
+.sideBarWrapper {
+    top: calc(sizes.$navBarHeight);
+}

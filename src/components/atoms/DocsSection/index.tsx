@@ -12,7 +12,7 @@ export interface IDocsSectionProps {
 export function DocsSection({ header, subheader, tiles }: IDocsSectionProps) {
     const desktop = useWindowWidth(1401);
     return (
-        <section className={`${styles.docstiles} container`}>
+        <section className={`${styles.docstiles} containerSite`}>
             <div className={`${styles.docstiles_content_text} contentBox`}>
                 <div className={`${styles.docstiles_content_text_span} span-12`}>
                     <h2>{header}</h2>

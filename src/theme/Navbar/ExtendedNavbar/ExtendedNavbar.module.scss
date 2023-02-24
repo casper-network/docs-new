@@ -6,15 +6,22 @@
 .wrapper {
     position: relative;
     z-index: sizes.$navBarZIndex;
+    width: 100%;
+    background-color: var(--black);
+    
 }
 
 .navbar_wrapper {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
     .container {
         height: sizes.$navBarHeight;
-        background-color: var(--black);
         color: var(--casperWhite);
+        margin: 0;
 
         .navbar {
             display: flex;

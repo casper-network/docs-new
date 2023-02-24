@@ -12,7 +12,7 @@ interface ISocialSectionProps {
 export function SocialSection({ header, subheader, tiles }: ISocialSectionProps) {
     const desktop = useWindowWidth(1390);
     return (
-        <section className={`${styles.socialtiles} container`}>
+        <section className={`${styles.socialtiles} containerSite`}>
             <div className={`${styles.socialtiles_content} contentBox`}>
                 <div className={`${styles.socialtiles_content_text} span-12`}>
                     <h2>{header}</h2>

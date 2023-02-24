@@ -13,7 +13,7 @@ interface IImage {
 
 export function Images({ images }: IImagesProps) {
     return (
-        <section className={`${styles.images} container`}>
+        <section className={`${styles.images} containerSite`}>
             <div className={`${styles.images_content} contentBox`}>
                 {images.map((data, index) => (
                     <div

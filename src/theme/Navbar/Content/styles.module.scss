@@ -1,0 +1,11 @@
+@use "../../../assets/scss/variables/sizes";
+
+
+@media (max-width: 996px) {
+  .docNavBar{
+    height: sizes.$navBarMobileHeight;
+  }
+  .colorModeToggle {
+    display: none;
+  }
+}

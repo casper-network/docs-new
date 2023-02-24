@@ -30,7 +30,7 @@ export function ImageAndTextBlock({ image, title, description, button, textAlign
     }
 
     return (
-        <section className={`${styles.ImageAndTextBlock} container`}>
+        <section className={`${styles.ImageAndTextBlock} containerSite`}>
             <div className={`${styles.ImageAndTextBlock_content}  contentBox ${textAlign === "left" && styles.grid_invert}`}>
                 <div className={`${styles.ImageAndTextBlock_content_img} ${spanHandler(textSize, elements.image)}`}>
                     <img alt={title} src={image} />
