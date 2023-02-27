@@ -19,7 +19,7 @@
     align-items: center;
 
     .container {
-        height: sizes.$navBarHeight;
+        height: sizes.$navBarSiteHeight;
         color: var(--casperWhite);
         margin: 0;
 
@@ -31,7 +31,8 @@
             align-items: center;
 
             .navbar_logo_container {
-                min-width: 8vw;
+                width: 163px;
+                min-width: 83px;
             }
 
             .navbar_list {

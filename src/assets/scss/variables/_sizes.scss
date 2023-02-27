@@ -1,9 +1,9 @@
-@use "./media-queries";
 // Boxes
 $navBoxWidth: 1600px;
 $contentBoxWidth: 1280px;
-$navBarHeight: 126px;
-$navBarMobileHeight: 44px;
+$navBarSiteHeight: 126px;
+$navBarDocHeight: 44px;
+$fullNavBarHeight: calc($navBarSiteHeight + $navBarDocHeight);
 // Spacing
 $navSpacing: 50px;
 $gapSpacing: 32px;

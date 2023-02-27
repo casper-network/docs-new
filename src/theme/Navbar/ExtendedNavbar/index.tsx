@@ -92,9 +92,11 @@ export default function ExtendedNavbar() {
                         {navData && navData.navItems && (
                             <>
                                 {navData.logo && (
-                                    <Link href={getExternalLink("/")}>
-                                        <div className={styles.navbar_logo_container} dangerouslySetInnerHTML={{ __html: navData.logo }}></div>
-                                    </Link>
+                                    <div className={styles.navbar_logo_container}>
+                                        <Link href={getExternalLink("/")}>
+                                            <div dangerouslySetInnerHTML={{ __html: navData.logo }}></div>
+                                        </Link>
+                                    </div>
                                 )}
                                 <nav className={styles.navbar_list} ref={dropdownParentRef}>
                                     <div className={styles.navbar_list_container}>
