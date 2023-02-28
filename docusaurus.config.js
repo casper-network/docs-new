@@ -30,7 +30,7 @@ module.exports = {
     },
     themeConfig: {
         // algolia: algoliaConfig,
-        // announcementBar: announcementConfig,
+        announcementBar: announcementConfig,
         colorMode: colorConfig,
         footer: footerConfig,
         /* Optional */
