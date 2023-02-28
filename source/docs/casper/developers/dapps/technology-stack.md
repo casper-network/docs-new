@@ -54,7 +54,7 @@ client = NodeClient(NodeConnection(host = "NODE_ADDRESS", port_rpc = 7777))
 
 </Tabs>
 
-*Note: You can find online peers for mainnet at [cspr.live](https://cspr.live) or testnet at [testnet.cspr.live](https://testnet.cspr.live)*)
+*Note: You can find online peers for mainnet at [cspr.live](https://cspr.live) or testnet at [testnet.cspr.live](https://testnet.cspr.live)*
 
 There are two main types of queries that will be sent from the backend to the blockchain, transactions and queries. In the case of a dApp, these will both originate from the front-end.
 
@@ -68,4 +68,4 @@ The last stop for a transaction or query is the blockchain itself. Like the majo
 
 More than likely, you will want your dApp to perform personalized functions, store custom data, and perhaps even store or transact upon tokens with monetary value. All of these behaviors can be implemented by writing custom smart contracts for your application. Smart contracts on the Casper Network can perform any function that a classical computer can. Casper's smart contracts are executed as [WebAssembly](https://webassembly.org/) binaries, and can be written in any language that compiles to WebAssembly. Currently, most developers choose to write their smart contracts in [Rust](https://www.rust-lang.org/) for its reliability and ease-of-use. Additionally, Casper's smart contract documentation is written for Rust.
 
-To learn how to write smart contracts for your dApp, read the [smart contract documentation](). (LINK TO DEV PORTAL - Smart Contracts)
+To learn how to write smart contracts for your dApp, read the [smart contract documentation](about:blank).
