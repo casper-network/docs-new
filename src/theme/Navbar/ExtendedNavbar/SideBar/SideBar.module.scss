@@ -1,0 +1,43 @@
+@use "../../../../assets/scss/variables/sizes";
+@import "../../../../assets/scss/mixins";
+
+.sidebar {
+    position: fixed;
+    top: sizes.$navBarSiteHeight;
+    left: 0;
+    z-index: sizes.$navBarZIndex;
+    width: 100%;
+    background-color: var(--liftedBlack);
+    transform: translateX(-950px);
+    @include transition(0.7s ease-in);
+    padding: 0 sizes.$navSpacing;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-x: scroll;
+    height: 90vh;
+
+    &_container {
+        width: 100%;
+        margin-top: 20px;
+        &_search {
+            position: relative;
+            width: 100%;
+        }
+        &_nav {
+            position: relative;
+            width: 100%;
+            margin-top: 52px;
+        }
+    }
+
+    &_social {
+        position: relative;
+        margin: 45px 0;
+    }
+}
+
+.sidebarClose {
+    transform: translateX(0px);
+}

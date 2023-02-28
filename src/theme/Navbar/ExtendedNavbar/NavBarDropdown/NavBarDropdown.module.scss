@@ -21,3 +21,18 @@
         gap: 60px;
     }
 }
+
+@media (max-width: 930px) {
+    .wrapper {
+        position: relative;
+
+        .dropdown {
+            flex-direction: column;
+            border: none;
+            background-color: var(--liftedBlack);
+            padding: 0;
+            gap: 0;
+            margin-top: 20px;
+        }
+    }
+}

@@ -69,3 +69,9 @@
         }
     }
 }
+
+@media (max-width: 930px) {
+    .results_container {
+        z-index: 2;
+    }
+}

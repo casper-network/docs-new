@@ -5,24 +5,30 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useLocation } from "@docusaurus/router";
 import useLocaleMap from "../../../hooks/useLocaleMap";
 import { usePluginData } from "@docusaurus/useGlobalData";
-import ISocialMedia from "src/plugins/docusaurus-plugin-navdata/src/interfaces/navbar/socialMedia";
-import INavData from "src/plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navData";
+import ISocialMedia from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/socialMedia";
+import INavData from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navData";
 import SocialMedia from "./SocialMedia";
-import NavBarDropdown from "./NavBarDropdown";
 import Search from "./Search";
-import INavItem from "src/plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navItem";
+import INavItem from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navItem";
 import useEventListener from "../../../hooks/useEventListener";
 import useFocusTrap from "../../../hooks/useFocusTrap";
 import Link from "@docusaurus/Link";
 import icons from "../../../icons";
+import useWindowWidth from "../../../hooks/useWindowWidth";
+import Nav from "./Nav";
+import Sidebar from "./SideBar";
 
 export default function ExtendedNavbar() {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [dropdownContent, setDropdownContent] = useState<INavItem | null>(null);
     const [current, setCurrent] = useState<string>("");
+    const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+
     const { siteConfig } = useDocusaurusContext();
     const navBarRef = useRef<HTMLHeadingElement>(null);
     const dropdownParentRef = useRef<HTMLElement>(null);
+
+    const isDesktop = useWindowWidth(930);
 
     const location = useLocation();
     const baseUrl = siteConfig.customFields.baseUrl as string;
@@ -71,6 +77,10 @@ export default function ExtendedNavbar() {
         setCurrent("");
     };
 
+    const handleSidebar = () => {
+        setSidebarOpen(!sidebarOpen);
+    };
+
     function handleClickOutside(event: any) {
         if (dropdownParentRef && dropdownParentRef.current && !dropdownParentRef.current.contains(event.target)) closeNavBarHandler();
     }
@@ -93,69 +103,80 @@ export default function ExtendedNavbar() {
                             <>
                                 {navData.logo && (
                                     <div className={styles.navbar_logo_container}>
-                                        <Link href={getExternalLink("/")}>
+                                        <Link href={getExternalLink("/")} onClick={() => closeNavBarHandler()}>
                                             <div dangerouslySetInnerHTML={{ __html: navData.logo }}></div>
                                         </Link>
                                     </div>
                                 )}
-                                <nav className={styles.navbar_list} ref={dropdownParentRef}>
-                                    <div className={styles.navbar_list_container}>
-                                        {navData.navItems.map((item, i: number) => {
-                                            return (
-                                                <button
-                                                    key={`navItem_${i}`}
-                                                    id={`navItem_${i}`}
-                                                    className={`${styles.navbar_list_item} ${item?.title === current ? styles.isActive : ""}`}
-                                                    tabIndex={0}
-                                                    onClick={() => {
-                                                        handleClick(item.title || "");
-                                                    }}
-                                                >
-                                                    <span>{item.title}</span>
-                                                    {icons.chevronDown}
-                                                    {dropdownContent && dropdownContent && item && dropdownContent.title === item.title && dropdownOpen && (
-                                                        <NavBarDropdown content={dropdownContent} locale={externalLocale} />
-                                                    )}
+                                {isDesktop ? (
+                                    <>
+                                        {navData && navData.navItems && (
+                                            <Nav
+                                                dropdownParentRef={dropdownParentRef}
+                                                header={navData}
+                                                handleClick={handleClick}
+                                                dropdownContent={dropdownContent}
+                                                dropdownOpen={dropdownOpen}
+                                                current={current}
+                                                locale={externalLocale}
+                                            />
+                                        )}
+                                        {navData && navData.searchPlaceholder && (
+                                            <Search
+                                                index={{
+                                                    name: `${siteConfig.customFields.siteAlgoliaIndexName}`,
+                                                    title: `${siteConfig.customFields.siteAlgoliaIndexName}`,
+                                                }}
+                                                locale={externalLocale}
+                                                placeholder={navData.searchPlaceholder}
+                                                siteUrl={siteConfig.customFields.siteUrl as string}
+                                            />
+                                        )}
+
+                                        {data && data.socialMedia && <SocialMedia socialMedia={data.socialMedia} />}
+                                        {/* Hide Log In button per Casper request on a meeting, since there's nothing to show if a users log in*/}
+                                        {/* {false && data.user && (
+                                                <div className={styles.login} onClick={login}>
+                                                    <button>
+                                                        {header && <span className="halfTitleEyebrow noWrap">{header?.login_text}</span>}
+                                                        {icons.login}
+                                                    </button>
+                                                </div>
+                                            )}
+                                            {user && (
+                                                <button>
+                                                    <span className={styles.loggedIn}>
+                                                        {user.name} {user.email}
+                                                    </span>
+                                                    {icons.login}
                                                 </button>
-                                            );
-                                        })}
+                                            )} */}
+                                    </>
+                                ) : (
+                                    <div className={styles.icon} onClick={handleSidebar}>
+                                        <div className={`${styles.icon_cancel} ${!sidebarOpen ? styles.icon_cancel_none : ""}`}>{icons.cancel}</div>
+                                        <div className={`${styles.icon_menu} ${sidebarOpen ? styles.icon_menu_none : ""}`}>{icons.menu}</div>
                                     </div>
-                                </nav>
+                                )}
                             </>
                         )}
-                        {navData && navData.searchPlaceholder && (
-                            <Search
-                                index={{
-                                    name: `${siteConfig.customFields.siteAlgoliaIndexName}`,
-                                    title: `${siteConfig.customFields.siteAlgoliaIndexName}`,
-                                }}
-                                locale={externalLocale}
-                                placeholder={navData.searchPlaceholder}
-                                siteUrl={siteConfig.customFields.siteUrl as string}
-                            />
-                        )}
-
-                        {data && data.socialMedia && <SocialMedia socialMedia={data.socialMedia} />}
-                        {/* Hide Log In button per Casper request on a meeting, since there's nothing to show if a users log in*/}
-                        {/* {false && data.user && (
-                            <div className={styles.login} onClick={login}>
-                                <button>
-                                    {header && <span className="halfTitleEyebrow noWrap">{header?.login_text}</span>}
-                                    {icons.login}
-                                </button>
-                            </div>
-                        )}
-                        {user && (
-                            <button>
-                                <span className={styles.loggedIn}>
-                                    {user.name} {user.email}
-                                </span>
-                                {icons.login}
-                            </button>
-                        )} */}
                     </div>
                 </div>
             </header>
+            {!isDesktop && (
+                <Sidebar
+                    sidebarOpen={sidebarOpen}
+                    header={navData}
+                    currentLocale={externalLocale}
+                    dropdownParentRef={dropdownParentRef}
+                    handleClick={handleClick}
+                    dropdownContent={dropdownContent}
+                    dropdownOpen={dropdownOpen}
+                    current={current}
+                    siteConfig={siteConfig}
+                    socialMedia={data.socialMedia}
+                />
+            )}
         </div>
     );
 }
