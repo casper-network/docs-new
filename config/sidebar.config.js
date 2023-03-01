@@ -138,7 +138,7 @@ module.exports = {
                 },
                 //"developers/dapps/prerequisites", // NEW CONTENT WILL BE HERE
                 //"developers/dapps/technology-stack", // NEW CONTENT WILL BE HERE
-                //"developers/dapps/template-frontend", // NEW CONTENT WILL BE HERE
+                "developers/dapps/template-frontend", // NEW CONTENT WILL BE HERE
                 "developers/dapps/signing-a-deploy",
                 "developers/dapps/sending-deploys",
                 //"developers/dapps/using-casper-signer", // NEW CONTENT WILL BE HERE
