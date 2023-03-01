@@ -1,6 +1,6 @@
 # Casper Signer in dApp Development
 
-The Casper Signer is a wallet developed by the teams at MAKE and CasperLabs for using Casper accounts. You can interact with the Casper Signer using the `Signer` (Reword this for god sakes).
+The Casper Signer is a wallet developed by the teams at MAKE and CasperLabs for interfacing with Casper accounts. You can interact with the Casper Signer using the `Signer` class in the Casper JS SDK.
 
 ## Integration
 
