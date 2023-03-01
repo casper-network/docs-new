@@ -2,10 +2,27 @@ import React from "react";
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
 import { translate } from "@docusaurus/Translate";
 import IconMenu from "@theme/Icon/Menu";
+import styles from "./MobileSidebarToggle.module.scss";
+
 export default function MobileSidebarToggle() {
     const { toggle, shown } = useNavbarMobileSidebar();
     return (
         <button
+            onClick={toggle}
+            aria-label={translate({
+                id: "theme.docs.sidebar.toggleSidebarButtonAriaLabel",
+                message: "Toggle documentation navigation bar",
+                description: "The ARIA label for documentation menu button of mobile navigation",
+            })}
+            aria-expanded={shown}
+            className={`navBarSite ${styles.navbarTitle}`}
+        >
+            Documentation
+        </button>
+    );
+}
+
+/* {/* <button
             onClick={toggle}
             aria-label={translate({
                 id: "theme.docs.sidebar.toggleSidebarButtonAriaLabel",
@@ -17,6 +34,4 @@ export default function MobileSidebarToggle() {
             type="button"
         >
             <IconMenu />
-        </button>
-    );
-}
+        </button>  */
