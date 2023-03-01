@@ -1,7 +1,14 @@
-.navbarTitle {
+.navbarMobileTitle {
     background-color: transparent;
     border: 0;
-    display: flex;
-    justify-content: flex-start;
     padding: 0px;
+    position: relative;
+
+    &_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 }

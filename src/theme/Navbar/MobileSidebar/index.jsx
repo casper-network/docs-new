@@ -10,11 +10,5 @@ export default function NavbarMobileSidebar() {
     if (!mobileSidebar.shouldRender) {
         return null;
     }
-    return (
-        <NavbarMobileSidebarLayout
-            header={<NavbarMobileSidebarHeader />}
-            primaryMenu={<NavbarMobileSidebarPrimaryMenu />}
-            secondaryMenu={<NavbarMobileSidebarSecondaryMenu />}
-        />
-    );
+    return <NavbarMobileSidebarLayout primaryMenu={<NavbarMobileSidebarPrimaryMenu />} secondaryMenu={<NavbarMobileSidebarSecondaryMenu />} />;
 }

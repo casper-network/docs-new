@@ -56,11 +56,6 @@ export default function NavbarContent() {
                     <NavbarItems items={rightItems} />
                     {/* Doc NavBar theme color toggle disabled */}
                     {/* <NavbarColorModeToggle className={styles.colorModeToggle} /> */}
-                    {!searchBarItem && (
-                        <NavbarSearch>
-                            <SearchBar />
-                        </NavbarSearch>
-                    )}
                 </>
             }
         />

@@ -5,9 +5,7 @@ import { useHideableNavbar, useNavbarMobileSidebar } from "@docusaurus/theme-com
 import { translate } from "@docusaurus/Translate";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import styles from "./styles.module.css";
-function NavbarBackdrop(props) {
-    return <div role="presentation" {...props} className={clsx("navbar-sidebar__backdrop", props.className)} />;
-}
+
 export default function NavbarLayout({ children }) {
     const {
         navbar: { hideOnScroll, style },
@@ -34,8 +32,6 @@ export default function NavbarLayout({ children }) {
             )}`}
         >
             {children}
-            <NavbarBackdrop onClick={mobileSidebar.toggle} />
-            <NavbarMobileSidebar />
         </nav>
     );
 }
