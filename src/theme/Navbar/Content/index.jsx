@@ -7,7 +7,9 @@ import SearchBar from "@theme/SearchBar";
 import NavbarMobileSidebarToggle from "@theme/Navbar/MobileSidebar/Toggle";
 import NavbarLogo from "@theme/Navbar/Logo";
 import NavbarSearch from "@theme/Navbar/Search";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.scss";
+
 function useNavbarItems() {
     // TODO temporary casting until ThemeConfig type is improved
     return useThemeConfig().navbar.items;
@@ -23,8 +25,8 @@ function NavbarItems({ items }) {
 }
 function NavbarContentLayout({ left, right }) {
     return (
-        <div className={`containerSite ${styles.docNavBar}`}>
-            <div className="navBarSite">
+        <div className={`containerSite ${styles.fullNavBarHeight}`}>
+            <div className={`navBarSite`}>
                 <div className="navbar__inner">
                     <div className="navbar__items">{left}</div>
                     <div className="navbar__items navbar__items--right">{right}</div>

@@ -57,6 +57,7 @@
     //"--ifm-navbar-height" hardcoded bc we can't access to "sizes." variables here. It's the size of the $navBarSiteHeight (126px) + $navBarDocHeight (44px)
     //it was necessary to set this height for the hash-links (#) to work.
     --ifm-navbar-height: 170px;
+    --ifm-navbar-sidebar-width: 100vw;
 }
 
 body {

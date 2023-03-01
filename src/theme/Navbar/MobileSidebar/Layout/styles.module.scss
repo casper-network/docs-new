@@ -2,4 +2,6 @@
 
 .sideBarWrapper {
     top: var(--ifm-navbar-height);
+    bottom: unset;
+    width: 100%;
 }

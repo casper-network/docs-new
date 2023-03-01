@@ -20,7 +20,7 @@ export default function NavbarLayout({ children }) {
                 message: "Main",
                 description: "The ARIA label for the main navigation",
             })}
-            className={`${styles.navBarWrapper} ${clsx(
+            className={`${clsx(
                 "navbar",
                 "navbar--fixed-top",
                 hideOnScroll && [styles.navbarHideable, !isNavbarVisible && styles.navbarHidden],
@@ -29,6 +29,7 @@ export default function NavbarLayout({ children }) {
                     "navbar--primary": style === "primary",
                     "navbar-sidebar--show": mobileSidebar.shown,
                 },
+                styles.navBarWrapper,
             )}`}
         >
             {children}

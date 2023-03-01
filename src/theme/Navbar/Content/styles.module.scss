@@ -1,10 +1,9 @@
 @use "../../../assets/scss/variables/sizes";
-
+.fullNavBarHeight{
+  height: sizes.$navBarDocHeight;
+}
 
 @media (max-width: 996px) {
-  .docNavBar{
-    height: sizes.$navBarDocHeight;
-  }
   .colorModeToggle {
     display: none;
   }
