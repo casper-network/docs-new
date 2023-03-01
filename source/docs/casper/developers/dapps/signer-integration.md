@@ -113,6 +113,46 @@ The `sign` function throws an error if the Casper Signer is not connected (see `
 
 Once you have the `signedDeployJSON` you can craft a [POST request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) to your dApp's backend, passing along the signed JSON deploy in the body. Be sure to set the `Content-Type` header to `application/json`.
 
+## Responding to Signer Events
+
+The Casper Signer will emit events when it changes states. By listening for these events, you can update your application to respond to them.
+
+For example, the Casper Signer will lock itself automatically after a set interval of disuse (2-10 minutes). When this occurs, the Casper Signer emits the `signer:locked` event. We can listen for this event by using `addEventListener` on the `window`.
+
+```javascript
+window.addEventListener("signer:locked", (msg) => {
+  // Disable buttons, forget the active public key, etc
+});
+```
+
+The variable `msg` shown above contains event information specific to the event such as `isConnected` `isUnlocked` and the active public key.
+
+There are a few different events you may listen to:
+
+* `signer:connected`
+
+  Emitted when the Casper Signer connects to the dApp.
+
+* `signer:disconnected`
+
+  Emitted when the Casper Signer disconnects from the dApp.
+
+* `signer:tabUpdated`
+
+  Emitted when a tab is updated within the Signer.
+
+* `signer:activeKeyChanged`
+
+  Emitted when the active account changes within the Signer.
+
+* `signer:locked`
+
+  Emitted when the Casper Signer is locked. Can be performed by the user or occur due to timeout.
+
+* `signer:unlocked`
+
+  Emitted when the Casper Signer is unlocked.
+
 ## Disconnecting
 
 After connecting the Casper Signer to your dApp, you may at some point want to disconnect. There is a method available for this:
