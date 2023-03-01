@@ -51,7 +51,7 @@ npm install casper-js-sdk
 
 To connect to the Casper Signer within your React app, first create a new component that imports the `Signer` class from the Casper JS SDK and stores a public key in a state variable:
 
-```react
+```javascript
 import { Signer } from "casper-js-sdk";
 
 const [publicKey, setPublicKey] = React.useState(null);
@@ -64,7 +64,7 @@ export default Connect;
 
 Within the component, return a single button that calls a function `connectToSigner()`
 
-```react
+```jsx
 function Connect() {
   return <button onClick={() => connectToSigner()}>Connect Signer</button>;
 }
@@ -72,7 +72,7 @@ function Connect() {
 
 Now write the `connectToSigner()` function under the `Connect` function component:
 
-```react
+```javascript
 function connectToSigner() {
 	Signer.isConnected().then(connected => {
 			if (!connected) {
@@ -169,7 +169,7 @@ Consider that the message written to the chain during the `update_message` entry
 
 ### Front-end
 
-```react
+```jsx
 function Query() {
   return (
     <>
