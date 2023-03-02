@@ -2,7 +2,7 @@
 
 .wrapper {
     position: absolute;
-    top: calc((sizes.$navBarSiteHeight / 2) + 50%) ;
+    top: calc((var(--navBarSiteHeight) / 2) + 50%) ;
     left: 0;
     display: flex;
     width: 100%;

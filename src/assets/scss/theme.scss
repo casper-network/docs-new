@@ -54,10 +54,21 @@
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
     --ifm-background-color: var(--black) !important;
-    //"--ifm-navbar-height" hardcoded bc we can't access to "sizes." variables here. It's the size of the $navBarSiteHeight (126px) + $navBarDocHeight (44px)
-    //it was necessary to set this height for the hash-links (#) to work.
-    --ifm-navbar-height: 170px;
+    --navBarSiteHeight: 126px;
+    --navBarDocHeight: 44px;
+    --ifm-navbar-height: calc(var(--navBarSiteHeight) + var(--navBarDocHeight));
     --ifm-navbar-sidebar-width: 100vw;
+
+    // Boxes
+    --navBoxWidth: 1600px;
+    --contentBoxWidth: 1280px;
+
+    // Spacing
+    --navSpacing: 50px;
+    --gapSpacing: 32px;
+
+    //NavBar z-index
+    --navBarZIndex: 10;
 }
 
 body {
@@ -66,6 +77,10 @@ body {
 
 .navbar__logo img {
     margin: 0;
+}
+
+.navbar__items {
+    position: relative;
 }
 
 nav.menu {
@@ -226,6 +241,7 @@ button[aria-label="Collapse sidebar"] {
     .DocSearch-Button-Keys,
     .DocSearch-Button-Placeholder {
         display: none !important;
+        border: 1px solid red;
     }
 }
 

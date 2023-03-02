@@ -3,7 +3,7 @@
 
 .wrapper {
     position: relative;
-    z-index: sizes.$navBarZIndex;
+    z-index: var(--navBarZIndex);
     width: 100%;
     background-color: var(--black);
 }
@@ -16,7 +16,7 @@
     align-items: center;
 
     .container {
-        height: sizes.$navBarSiteHeight;
+        height: var(--navBarSiteHeight);
         color: var(--casperWhite);
         margin: 0;
 

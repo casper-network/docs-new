@@ -1,6 +1,6 @@
 @use "../../../assets/scss/variables/sizes";
 .fullNavBarHeight{
-  height: sizes.$navBarDocHeight;
+  height: var(--navBarDocHeight);
 }
 
 @media (max-width: 996px) {
