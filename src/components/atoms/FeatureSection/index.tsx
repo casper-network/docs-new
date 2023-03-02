@@ -3,6 +3,7 @@ import { ImageAndTextBlock, IImageAndTextBlockProps } from "../ImageAndTextBlock
 import styles from "./FeatureSection.module.scss";
 import { FeatureTile, IFeatureTiledProps } from "./FeatureTile";
 import useWindowWidth from "../../../hooks/useWindowWidth";
+import Section from "../../containers/Section";
 
 interface IFeatureSectionProps {
     header: string;
@@ -14,21 +15,17 @@ interface IFeatureSectionProps {
 export function FeatureSection({ header, subheader, tiles, imageAndTextBlock }: IFeatureSectionProps) {
     const desktop = useWindowWidth(1401);
     return (
-        <section className={`${styles.feature} containerSite`}>
-            <section className={`${styles.feature_content} contentBox`}>
-                <div className={`${styles.feature_content_title} span-12`}>
-                    <h2>{header}</h2>
-                    {subheader && <p className="primaryParagraph">{subheader}</p>}
-                </div>
-            </section>
+        <Section header={header} subheader={subheader}>
             <ImageAndTextBlock {...imageAndTextBlock} />
-            <section className={`${styles.resource_content} contentBox`}>
-                {tiles.map((data, index) => (
-                    <div key={index} className={`${styles.resource_content_card} ${desktop && "span-4"}`}>
-                        <FeatureTile {...data} />
-                    </div>
-                ))}
-            </section>
-        </section>
+            <div className={`${styles.resource_content} containerSite`}>
+                <section className={`${styles.resource_content_box} contentBox`}>
+                    {tiles.map((data, index) => (
+                        <div key={index} className={`${styles.resource_content_card} ${desktop && "span-4"}`}>
+                            <FeatureTile {...data} />
+                        </div>
+                    ))}
+                </section>
+            </div>
+        </Section>
     );
 }

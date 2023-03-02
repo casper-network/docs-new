@@ -1,0 +1,22 @@
+.section {
+    width: 100%;
+    background-color: var(--black);
+    color: var(--casperWhite);
+    padding: 92px 0;
+
+    &_content_text {
+        margin-bottom: 20px;
+
+        > p {
+            margin: 0;
+        }
+    }
+
+    &_children {
+        width: 100%;
+    }
+}
+
+.social_section {
+    background-color: var(--liftedBlack);
+}

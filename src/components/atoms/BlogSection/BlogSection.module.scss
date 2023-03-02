@@ -1,9 +1,9 @@
-.docstiles {
+.blogtiles {
     width: 100%;
     background-color: var(--black);
     color: var(--casperWhite);
 
-    .docstiles_content {
+    .blogtiles_content {
         @media (max-width: 1400px) {
             grid-template-columns: repeat(auto-fill, minmax(350px, 400px));
             justify-content: center;
