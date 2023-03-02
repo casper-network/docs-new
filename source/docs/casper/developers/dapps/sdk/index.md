@@ -6,11 +6,11 @@ Each of these SDKs can be used to build dApps. For browser interaction you can u
 
 | SDK Documentation                                            | GitHub Location                                              | Organization                                            |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------- |
-| [JavaScript/TypeScript](/dapp-dev-guide/building-dapps/sdk/script-sdk) | [Casper-js-sdk](https://github.com/casper-ecosystem/casper-js-sdk/) | [Casper Ecosystem](https://github.com/casper-ecosystem) |
+| [JavaScript/TypeScript](./script-sdk.md) | [Casper-js-sdk](https://github.com/casper-ecosystem/casper-js-sdk/) | [Casper Ecosystem](https://github.com/casper-ecosystem) |
 | Java SDK                                                     | [Casper-java-sdk](https://github.com/casper-network/casper-java-sdk/) | [Casper Association](https://github.com/casper-network) |
-| [C# SDK](/dapp-dev-guide/building-dapps/sdk/csharp-sdk)      | [Casper-net-sdk](https://github.com/make-software/casper-net-sdk) | [MAKE](https://github.com/make-software)                |
-| [Golang SDK](/dapp-dev-guide/building-dapps/sdk/go-sdk)      | [Casper-golang-sdk](https://github.com/casper-ecosystem/casper-golang-sdk/) | [Casper Ecosystem](https://github.com/casper-ecosystem) |
-| [Python SDK](/dapp-dev-guide/building-dapps/sdk/python-sdk)  | [Casper-python-sdk](https://github.com/casper-network/casper-python-sdk/) | [Casper Association](https://github.com/casper-network) |
+| [C# SDK](./csharp-sdk.md)      | [Casper-net-sdk](https://github.com/make-software/casper-net-sdk) | [MAKE](https://github.com/make-software)                |
+| [Golang SDK](./go-sdk.md)      | [Casper-golang-sdk](https://github.com/casper-ecosystem/casper-golang-sdk/) | [Casper Ecosystem](https://github.com/casper-ecosystem) |
+| [Python SDK](./python-sdk.md)  | [Casper-python-sdk](https://github.com/casper-network/casper-python-sdk/) | [Casper Association](https://github.com/casper-network) |
 | Java SDK by SyntiFi                                          | [Casper-sdk](https://github.com/syntifi/casper-sdk)          | [SyntiFi](https://github.com/syntifi)                   |
 | PHP SDK                                                      | [Casper-php-sdk](https://github.com/make-software/casper-php-sdk) | [MAKE](https://github.com/make-software)                |
 | Scala SDK                                                    | [Casper-scala-sdk](https://github.com/abahmanem/casper-scala-sdk) | [M. Abahmane](https://github.com/abahmanem)             |
