@@ -9,6 +9,7 @@ import NavbarLogo from "@theme/Navbar/Logo";
 import NavbarSearch from "@theme/Navbar/Search";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.scss";
+import useWindowWidth from "../../../hooks/useWindowWidth";
 
 function useNavbarItems() {
     // TODO temporary casting until ThemeConfig type is improved
@@ -40,6 +41,7 @@ export default function NavbarContent() {
     const items = useNavbarItems();
     const [leftItems, rightItems] = splitNavbarItems(items);
     const searchBarItem = items.find((item) => item.type === "search");
+    const isDesktop = useWindowWidth(997);
     return (
         <NavbarContentLayout
             left={
@@ -58,6 +60,11 @@ export default function NavbarContent() {
                     <NavbarItems items={rightItems} />
                     {/* Doc NavBar theme color toggle disabled */}
                     {/* <NavbarColorModeToggle className={styles.colorModeToggle} /> */}
+                    {!searchBarItem && isDesktop && (
+                        <NavbarSearch>
+                            <SearchBar />
+                        </NavbarSearch>
+                    )}
                 </>
             }
         />
