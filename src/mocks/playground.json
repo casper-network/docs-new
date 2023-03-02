@@ -232,7 +232,49 @@
                 "color": "pinkLight",
                 "url": "https://docs.casperlabs.io/"
             }
-        ]
+        ],
+        "blog": {
+            "header" : "Blog Header",
+            "subheader" : "Blog Subheader",
+            "tiles": [
+                {
+                    "image": "https://media.istockphoto.com/id/1447907562/es/vector/educaci%C3%B3n-escolar-y-concepto-de-aprendizaje-en-estilo-de-dibujos-animados-libros-y-libros-de.jpg?s=1024x1024&w=is&k=20&c=CUEXgsH-xVMZXKuxkgiJFtvMjF9GFleTnhEq8ZPS8-s=",
+                    "category": "Cat 1",
+                    "title": "Title 1",
+                    "date": "2023-01-01",
+                    "button": {
+                        "text": "Click me",
+                        "url": "https://docs.casperlabs.io/",
+                        "inverted": false,
+                        "disabled": false
+                    }
+                },
+                {
+                    "image": "https://media.istockphoto.com/id/1447907562/es/vector/educaci%C3%B3n-escolar-y-concepto-de-aprendizaje-en-estilo-de-dibujos-animados-libros-y-libros-de.jpg?s=1024x1024&w=is&k=20&c=CUEXgsH-xVMZXKuxkgiJFtvMjF9GFleTnhEq8ZPS8-s=",
+                    "category": "Cat 2",
+                    "title": "Title 2",
+                    "date": "2023-02-12",
+                    "button": {
+                        "text": "Click me",
+                        "url": "https://docs.casperlabs.io/",
+                        "inverted": false,
+                        "disabled": false
+                    }
+                },
+                {
+                    "image": "https://media.istockphoto.com/id/1447907562/es/vector/educaci%C3%B3n-escolar-y-concepto-de-aprendizaje-en-estilo-de-dibujos-animados-libros-y-libros-de.jpg?s=1024x1024&w=is&k=20&c=CUEXgsH-xVMZXKuxkgiJFtvMjF9GFleTnhEq8ZPS8-s=",
+                    "category": "Cat 3",
+                    "title": "Title 3",
+                    "date": "2023-03-03",
+                    "button": {
+                        "text": "Click me",
+                        "url": "https://docs.casperlabs.io/",
+                        "inverted": false,
+                        "disabled": false
+                    }
+                }
+            ]
+        }
     }
     
 }

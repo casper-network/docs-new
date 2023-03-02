@@ -9,3 +9,4 @@ export * from "./Images";
 export * from "./PullQuotes";
 export * from "./SocialSection";
 export * from "./Tag";
+export * from "./BlogSection";

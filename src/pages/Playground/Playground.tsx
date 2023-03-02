@@ -1,7 +1,18 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import { PlaygroundData } from "@site/src/mocks";
-import { SiteButton, ISiteButtonProps, DocsSection, FeatureSection, Images, PullQuotes, SocialSection, ITagProps, Tag } from "@site/src/components";
+import {
+    SiteButton,
+    ISiteButtonProps,
+    DocsSection,
+    FeatureSection,
+    Images,
+    PullQuotes,
+    SocialSection,
+    ITagProps,
+    Tag,
+    BlogSection,
+} from "@site/src/components";
 import styles from "./Playground.module.scss";
 
 export default function Playground() {
@@ -26,6 +37,9 @@ export default function Playground() {
             </div>
             <div>
                 <SocialSection {...PlaygroundData.playground.social} />
+            </div>
+            <div>
+                <BlogSection {...PlaygroundData.playground.blog} />
             </div>
             <div className={styles.buttonSection}>
                 {PlaygroundData.playground.tags.map((x: ITagProps) => {

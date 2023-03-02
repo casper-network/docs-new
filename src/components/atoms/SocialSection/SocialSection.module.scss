@@ -1,47 +1,19 @@
 .socialtiles {
-    position: relative;
     width: 100%;
-    min-height: 61vh;
     background-color: var(--liftedBlack);
     color: var(--casperWhite);
-    padding: 74px 0 92px 0;
 
-    &_content {
-        position: relative;
-
-        &_text {
-            position: relative;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-            padding-bottom: 32px;
-
-            > p {
-                margin: 0;
-            }
-        }
-    }
-    &_content_tiles {
-        position: relative;
-
-        &_container {
-            position: relative;
-        }
-    }
-}
-
-.socialtiles {
-    .socialtiles_content_tiles {
+    .socialtiles_content {
         @media (max-width: 1380px) {
             grid-template-columns: repeat(auto-fill, minmax(350px, 400px));
             justify-content: center;
             align-items: center;
         }
+
         @media (max-width: 1190px) {
             grid-template-columns: repeat(auto-fill, minmax(350px, 400px));
         }
+
         @media (max-width: 1024px) {
             grid-template-columns: repeat(auto-fill, minmax(350px, 400px));
         }

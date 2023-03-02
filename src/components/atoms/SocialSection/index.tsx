@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./SocialSection.module.scss";
 import useWindowWidth from "../../../hooks/useWindowWidth";
 import { ISocialTileProps, SocialTile } from "./SocialTile";
+import Section from "../../containers/Section";
 
 interface ISocialSectionProps {
     header: string;
@@ -12,20 +13,16 @@ interface ISocialSectionProps {
 export function SocialSection({ header, subheader, tiles }: ISocialSectionProps) {
     const desktop = useWindowWidth(1390);
     return (
-        <section className={`${styles.socialtiles} containerSite`}>
-            <div className={`${styles.socialtiles_content} contentBox`}>
-                <div className={`${styles.socialtiles_content_text} span-12`}>
-                    <h2>{header}</h2>
-                    <p className="primaryParagraph">{subheader}</p>
+        <Section header={header} subheader={subheader} setStyles={"social_section"}>
+            <div className={`${styles.socialtiles} containerSite`}>
+                <div className={`${styles.socialtiles_content} contentBox`}>
+                    {tiles.map((data: any, index: number) => (
+                        <section className={`${desktop && "span-4"}`} key={`section-${index}`}>
+                            <SocialTile {...data} />
+                        </section>
+                    ))}
                 </div>
             </div>
-            <div className={`${styles.socialtiles_content_tiles} contentBox`}>
-                {tiles.map((data: any, index: number) => (
-                    <section className={`${styles.socialtiles_content_tiles_container} ${desktop && "span-4"}`} key={`section-${index}`}>
-                        <SocialTile {...data} />
-                    </section>
-                ))}
-            </div>
-        </section>
+        </Section>
     );
 }

@@ -229,8 +229,8 @@ Open the `config/algolia.config.js` file and replace the `api_key`, `index_name`
 
 ### Custom header
 
-Everytime that docusaurus' packages are updated, the command npm run swizzle ```npm run swizzle @docusaurus/theme-classic Navbar -- --eject``` should be run again.
-Then the component ```ExtendedNavbar``` should be added again in the ```NavbarLayout``` component
+If the docusaurus version is updated, the navbar could stop working!.
+In that case run the command ```npm run swizzle @docusaurus/theme-classic Navbar -- --eject``` and restructure the navbar again.
 
 Complete the following enviroment variables to enable the navbar.
 
