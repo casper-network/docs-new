@@ -29,7 +29,6 @@ module.exports = {
         announcementBar: announcementConfig,
         colorMode: colorConfig,
         footer: footerConfig,
-        hideableSidebar: true,
         /* Optional */
         // googleAnalytics: analyticsConfig.googleAnalytics,
         // gtag: analyticsConfig.gtag,
@@ -40,6 +39,11 @@ module.exports = {
             appId: "KQNX60E7J5",
             apiKey: "42e859bcdaa94a6c412d933cbaabe2e2",
             indexName: "casperlabs",
+        },
+        docs: {
+            sidebar: {
+                hideable: true,
+            },
         },
     },
     presets: [
