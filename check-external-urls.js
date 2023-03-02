@@ -58,7 +58,6 @@ class MarkdownExternalUrlChecker {
 
             let urlInc = 0;
             const numUrls = files.map((obj) => obj.urls.length).reduce((partial, sum) => partial + sum, 0);
-            // console.log(`Found ${numUrls} urls within ${files.length} files. Validating URLs...`);
             core.startGroup(`Found ${numUrls} urls within ${files.length} files. Validating URLs...`);
 
             const responseCache = {};
@@ -74,7 +73,7 @@ class MarkdownExternalUrlChecker {
                     }
                     files[f].urls[u] = { url, response: responseCache[url] };
                     urlInc += 1;
-                    console.log(`Tested URL: ${url}, response: ${responseCache[url]}`);
+                    console.log(`Tested URL: ${url}, response: ${responseCache[url].status}`);
                     const percentage = Math.round((urlInc / numUrls) * 100, 2);
                     console.log(`Progress: ${percentage}% (${urlInc}/${numUrls})`);
                 }
