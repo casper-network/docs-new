@@ -7,6 +7,7 @@
         "buildplugin": "cd ./src/plugins/docusaurus-plugin-navdata && yarn install && yarn link",
         "start": "docusaurus start --no-open",
         "build": "yarn run buildplugin && yarn link docusaurus-plugin-navdata && docusaurus build",
+        "preinstall": "yarn run buildplugin && yarn link docusaurus-plugin-navdata",
         "swizzle": "docusaurus swizzle",
         "deploy": "docusaurus deploy",
         "clear": "docusaurus clear",
