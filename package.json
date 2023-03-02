@@ -3,10 +3,10 @@
     "version": "1.0.4",
     "private": true,
     "scripts": {
-        "prestart": "npm run buildplugin && npm link docusaurus-plugin-navdata",
-        "buildplugin": "cd ./src/plugins/docusaurus-plugin-navdata && npm install && npm run build && npm link",
+        "prestart": "yarn run buildplugin && yarn link docusaurus-plugin-navdata",
+        "buildplugin": "cd ./src/plugins/docusaurus-plugin-navdata && yarn install && yarn link",
         "start": "docusaurus start --no-open",
-        "build": "npm run buildplugin && npm link docusaurus-plugin-navdata && docusaurus build",
+        "build": "yarn run buildplugin && yarn link docusaurus-plugin-navdata && docusaurus build",
         "swizzle": "docusaurus swizzle",
         "deploy": "docusaurus deploy",
         "clear": "docusaurus clear",
