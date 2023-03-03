@@ -151,6 +151,50 @@ a {
         @include mixins.span-x;
     }
 }
+
+// Color
+.color {
+    &.blue {
+        --mainColor: var(--casperBlue);
+    }
+
+    &.red {
+        --mainColor: var(--casperRed);
+    }
+
+    &.yellow {
+        --mainColor: var(--casperYellow);
+    }
+
+    &.pink {
+        --mainColor: var(--casperBrightPink);
+    }
+
+    &.green {
+        --mainColor: var(--casperGreen);
+    }
+
+    &.purple {
+        --mainColor: var(--casperPurple);
+    }
+
+    &.pinkLight {
+        --mainColor: var(--casperPinkLight);
+    }
+
+    &.brown {
+        --mainColor: var(--casperBrown);
+    }
+
+    &.white {
+        --mainColor: var(--casperWhite);
+    }
+
+    &.brownLight {
+        --mainColor: var(--casperTilesBrownLight);
+    }
+} 
+
 // /GRID
 
 :focus:not(:focus-visible) {

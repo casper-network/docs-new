@@ -10,7 +10,7 @@ export interface ITagProps {
 
 export function Tag({ text, color, url }: ITagProps) {
     return (
-        <Link to={url} className={`${styles.tag} ${styles[color]}`}>
+        <Link to={url} className={`${styles.tag} color ${color}`}>
             <p>{text}</p>
             <span className={`${styles.span}`}></span>
         </Link>
