@@ -42,7 +42,8 @@
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
-                align-items: flex-end;  
+                align-items: center;
+                text-align: center;
 
                 .title {
                     display: flex;
@@ -60,22 +61,27 @@
                 .buttons {
                     display: flex;
                     justify-content: center;
-                    align-items: center;
+                    align-items: baseline;
+                    text-align: center;
                     flex-wrap: wrap;
+                    gap: 20px;
 
                     .iconButton {
                         background: none;
                         border: none;
-                        margin-right: 20px;
+                        
                     }
 
                     .sourceButton {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         background-color: #3d3d3d;
                         color: var(--casperWhite);
-                        text-align: center;
-                        padding: 2px 5px;
+                        width: 58px;
+                        height: 20px;
                         border-radius: 4px;
-                        font-size: 10px;
+                        text-transform: capitalize;
                     }
                 }
             }

@@ -48,7 +48,7 @@ export function UseCaseTile({ image, category, title, span, isFavourite, url, li
                                 </button>
                             )} */}
                             {url && linkText && (
-                                <a target="_blank" rel="noreferrer" href={url} className={`${styles.sourceButton}`}>
+                                <a target="_blank" rel="noreferrer" href={url} className={`${styles.sourceButton} secondaryParagraph`}>
                                     {linkText}
                                 </a>
                             )}
