@@ -25,6 +25,7 @@
 @media (max-width: 930px) {
     .wrapper {
         position: relative;
+        margin-left: 15px;
 
         .dropdown {
             flex-direction: column;
@@ -32,7 +33,7 @@
             background-color: var(--liftedBlack);
             padding: 0;
             gap: 0;
-            margin-top: 20px;
+            margin-top: 10px;
         }
     }
 }
