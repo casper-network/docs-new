@@ -1,8 +1,8 @@
 .navbarMobileTitle {
     background-color: transparent;
     border: 0;
-    padding: 0px;
     position: relative;
+    margin: 0;
 
     &_container {
         display: flex;
@@ -10,5 +10,6 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        padding: 0;
     }
 }

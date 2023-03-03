@@ -79,8 +79,14 @@ body {
     margin: 0;
 }
 
+.navbar-sidebar__item {
+    padding: 15px var(--navSpacing);
+}
+
 .navbar__items {
-    position: relative;
+    [class*="navbarMobileTitle"] {
+        padding: 0;
+    }
 }
 
 nav.menu {

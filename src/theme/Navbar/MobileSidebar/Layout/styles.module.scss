@@ -4,14 +4,12 @@
     position: absolute;
     top: var(--navBarDocHeight);
     width: 100%;
+    max-width: var(--contentBoxWidth);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: fit-content;
-    /* transform: translate3d(0, calc(-100% - var(--ifm-navbar-height)), 0); */
     transform: translate3d(0, -35%, 0);
-    z-index: 0;
-
 }
 
 .docSearchContainer {
