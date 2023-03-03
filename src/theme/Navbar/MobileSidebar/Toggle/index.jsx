@@ -9,7 +9,7 @@ import Translate from "@docusaurus/Translate";
 import styles from "./MobileSidebarToggle.module.scss";
 
 export default function MobileSidebarToggle() {
-    const { toggle, shown, shouldRender } = useNavbarMobileSidebar();
+    const { toggle, shown } = useNavbarMobileSidebar();
     const mobileSidebar = useNavbarMobileSidebar();
 
     function NavbarBackdrop(props) {
@@ -28,7 +28,7 @@ export default function MobileSidebarToggle() {
                 aria-expanded={shown}
                 className={`navbar__toggle clean-btn navBarSite ${styles.navbarMobileTitle}`}
             >
-                <div className={styles.navbarMobileTitle_container}>
+                <div className={`${styles.navbarMobileTitle_container} ${shown ? styles.docNavbarOpened : ""}`}>
                     <Translate
                         id="theme.navbar.mobileSidebarSecondaryMenu.toggleSideBarTitle"
                         description="The title of SideBarMobile dropdown toggler (notably used to display the docs sidebar)"
