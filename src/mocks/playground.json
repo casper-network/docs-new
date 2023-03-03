@@ -373,6 +373,25 @@
                     ]
                 }
             ]
+        },
+        "numbers" : {
+            "header" : "Numbers Header",
+            "subheader" : "Number Subheader",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "numbers": [
+                {
+                    "number": 900,
+                    "description": "First"                    
+                },
+                {
+                    "number": 15,
+                    "description": "Second"                    
+                },
+                {
+                    "number": 6000,
+                    "description": "Third"                    
+                }
+            ]
         }
     }
     
