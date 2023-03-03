@@ -274,6 +274,105 @@
                     }
                 }
             ]
+        },
+        "usecase": {
+            "header" : "UseCase Header",
+            "subheader" : "UseCase Subheader",
+            "tiles": [
+                {
+                    "image": "https://media.istockphoto.com/id/1447907562/es/vector/educaci%C3%B3n-escolar-y-concepto-de-aprendizaje-en-estilo-de-dibujos-animados-libros-y-libros-de.jpg?s=1024x1024&w=is&k=20&c=CUEXgsH-xVMZXKuxkgiJFtvMjF9GFleTnhEq8ZPS8-s=",
+                    "category": "Cat 1",
+                    "title": "Title 1",
+                    "isFavourite": true,
+                    "url": "https://docs.casperlabs.io/",
+                    "linkText": "source",
+                    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "tags": [
+                        {
+                        "text": "Tag",
+                        "color": "yellow",
+                        "url": "https://docs.casperlabs.io/"
+                        },
+                        {
+                        "text": "Tag",
+                        "color": "blue",
+                        "url": "https://docs.casperlabs.io/"
+                        },
+                        {
+                        "text": "Tag",
+                        "color": "purple",
+                        "url": "https://docs.casperlabs.io/"
+                        },
+                        {
+                        "text": "Tag",
+                        "color": "pinkLight",
+                        "url": "https://docs.casperlabs.io/"
+                        }
+                    ]
+                },
+                {
+                    "image": "https://media.istockphoto.com/id/1447907562/es/vector/educaci%C3%B3n-escolar-y-concepto-de-aprendizaje-en-estilo-de-dibujos-animados-libros-y-libros-de.jpg?s=1024x1024&w=is&k=20&c=CUEXgsH-xVMZXKuxkgiJFtvMjF9GFleTnhEq8ZPS8-s=",
+                    "category": "Cat 3",
+                    "title": "Title 3",
+                    "isFavourite": true,
+                    "url": "https://docs.casperlabs.io/",
+                    "linkText": "source",
+                    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "tags": [
+                        {
+                        "text": "Tag",
+                        "color": "yellow",
+                        "url": "https://docs.casperlabs.io/"
+                        },
+                        {
+                        "text": "Tag",
+                        "color": "blue",
+                        "url": "https://docs.casperlabs.io/"
+                        },
+                        {
+                        "text": "Tag",
+                        "color": "purple",
+                        "url": "https://docs.casperlabs.io/"
+                        },
+                        {
+                        "text": "Tag",
+                        "color": "pinkLight",
+                        "url": "https://docs.casperlabs.io/"
+                        }
+                    ]
+                },
+                {
+                    "image": "https://media.istockphoto.com/id/1447907562/es/vector/educaci%C3%B3n-escolar-y-concepto-de-aprendizaje-en-estilo-de-dibujos-animados-libros-y-libros-de.jpg?s=1024x1024&w=is&k=20&c=CUEXgsH-xVMZXKuxkgiJFtvMjF9GFleTnhEq8ZPS8-s=",
+                    "category": "Cat 2",
+                    "title": "Title 2",
+                    "isFavourite": true,
+                    "url": "https://docs.casperlabs.io/",
+                    "linkText": "source",
+                    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    "tags": [
+                        {
+                        "text": "Tag",
+                        "color": "yellow",
+                        "url": "https://docs.casperlabs.io/"
+                        },
+                        {
+                        "text": "Tag",
+                        "color": "blue",
+                        "url": "https://docs.casperlabs.io/"
+                        },
+                        {
+                        "text": "Tag",
+                        "color": "purple",
+                        "url": "https://docs.casperlabs.io/"
+                        },
+                        {
+                        "text": "Tag",
+                        "color": "pinkLight",
+                        "url": "https://docs.casperlabs.io/"
+                        }
+                    ]
+                }
+            ]
         }
     }
     

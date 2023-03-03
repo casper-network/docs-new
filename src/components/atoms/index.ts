@@ -10,3 +10,4 @@ export * from "./PullQuotes";
 export * from "./SocialSection";
 export * from "./Tag";
 export * from "./BlogSection";
+export * from "./UseCaseSection";

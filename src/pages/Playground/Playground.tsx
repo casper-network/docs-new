@@ -12,6 +12,7 @@ import {
     ITagProps,
     Tag,
     BlogSection,
+    UseCaseSection,
 } from "@site/src/components";
 import styles from "./Playground.module.scss";
 
@@ -40,6 +41,9 @@ export default function Playground() {
             </div>
             <div>
                 <BlogSection {...PlaygroundData.playground.blog} />
+            </div>
+            <div>
+                <UseCaseSection {...PlaygroundData.playground.usecase} />
             </div>
             <div className={styles.buttonSection}>
                 {PlaygroundData.playground.tags.map((x: ITagProps) => {
