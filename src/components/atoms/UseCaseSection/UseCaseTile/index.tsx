@@ -42,13 +42,13 @@ export function UseCaseTile({ image, category, title, span, isFavourite, url, li
                                     {icons.heart}
                                 </div>
                             )}
-                            {url && (
+                            {/* {url && (
                                 <button className={styles.iconButton} onClick={shareLink}>
                                     {icons.share}
                                 </button>
-                            )}
+                            )} */}
                             {url && linkText && (
-                                <a target="_blank" rel="noreferrer" href={url} className={`${styles.sourceButton} halfTitleEyebrow`}>
+                                <a target="_blank" rel="noreferrer" href={url} className={`${styles.sourceButton}`}>
                                     {linkText}
                                 </a>
                             )}

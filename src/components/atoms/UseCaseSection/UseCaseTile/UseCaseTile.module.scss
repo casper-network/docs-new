@@ -42,8 +42,7 @@
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
-                align-items: flex-end;
-                position: relative;
+                align-items: flex-end;  
 
                 .title {
                     display: flex;
@@ -73,8 +72,10 @@
                     .sourceButton {
                         background-color: #3d3d3d;
                         color: var(--casperWhite);
-                        width: 58px;
-                        height: 20px;
+                        text-align: center;
+                        padding: 2px 5px;
+                        border-radius: 4px;
+                        font-size: 10px;
                     }
                 }
             }
