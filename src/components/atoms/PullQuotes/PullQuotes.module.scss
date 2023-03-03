@@ -8,7 +8,7 @@
     .card {
         display: flex;
         flex-direction: row;
-        max-width: 1048px;
+        width: 100%;
         gap: 32px;
 
         .image {
@@ -23,7 +23,7 @@
             }
         }
         .text {
-            max-width: 808px;
+            width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -35,6 +35,10 @@
                 h3 {
                     margin: 0;
                     padding-bottom: 10px;
+                    strong {
+                        color: var(--casperYellow);
+                        font-weight: 400;
+                    }
                 }
             }
             .autor {

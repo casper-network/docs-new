@@ -61,6 +61,7 @@
     &:hover {
         background: var(--primaryBtn-hover);
         border: 1px solid var(--primaryBtn-hover);
+        color: var(--black);
 
         .button_container {
             gap: 13px;
@@ -101,6 +102,7 @@
     &:hover,
     &:active {
         background-color: var(--secondaryBtn-hover);
+        color: var(--casperWhite);
 
         .secondary_container {
             gap: 13px;
