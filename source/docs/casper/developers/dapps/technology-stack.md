@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # dApp Technology Stack
 
 There are 3 layers to building a decentralized application that interacts with the Casper Network: Front-end, backend, and blockchain. This document outlines lists the requirements for each.
