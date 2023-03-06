@@ -15,11 +15,11 @@ export function DocsTile(props: IDocsTileProps) {
 
     return (
         <>
-            <Link to={url} className={`${styles.tilecard} ${styles[color]}`}>
+            <Link to={url} className={`${styles.tilecard} color ${color}`}>
                 <div dangerouslySetInnerHTML={{ __html: icon! }} className={styles.tilecard_img}></div>
                 <div className={styles.tilecard_text}>
                     <h4>{title}</h4>
-                    <p className="secondaryParagraph">{description}</p>
+                    <p className={`secondaryParagraph`}>{description}</p>
                 </div>
             </Link>
         </>
