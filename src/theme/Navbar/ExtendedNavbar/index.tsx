@@ -28,7 +28,7 @@ export default function ExtendedNavbar() {
     const navBarRef = useRef<HTMLHeadingElement>(null);
     const dropdownParentRef = useRef<HTMLElement>(null);
 
-    const isDesktop = useWindowWidth(930);
+    const isDesktop = useWindowWidth(997);
 
     const location = useLocation();
     const baseUrl = siteConfig.customFields.baseUrl as string;
