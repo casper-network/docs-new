@@ -7,7 +7,7 @@ slug: /deploy-and-deploy-lifecycle
 
 ### Deploys {#execution-semantics-deploys}
 
-A [Deploy](/concepts/design/serialization-standard/#serialization-standard-deploy) is a data structure containing Wasm and the requester's signature(s). Additionally, the deploy header contains additional metadata about the deploy itself. A deploy’s structure is as follows:
+A [Deploy](./serialization-standard.md#serialization-standard-deploy) is a data structure containing Wasm and the requester's signature(s). Additionally, the deploy header contains additional metadata about the deploy itself. A deploy’s structure is as follows:
 
 <p align="center">
 <img src={"/image/design/deploy-structure.png"} alt="Image showing the deploy data structure" width="500"/> 
@@ -15,12 +15,12 @@ A [Deploy](/concepts/design/serialization-standard/#serialization-standard-deplo
 
 -   Body: Containing payment code and session code (more details on these below)
 -   Header: containing
-    -   The [Public Key](/concepts/design/serialization-standard/#publickey) of the account in whose context the deploy will run
+    -   The [Public Key](./serialization-standard.md#publickey) of the account in whose context the deploy will run
     -   The timestamp of the deploy’s creation
     -   A time-to-live, after which the deploy expires and cannot be included in a block
     -   the `blake2b256` hash of the body
 -   Deploy hash: the `blake2b` hash of the Header
--   Approvals: the set of signatures which have signed the deploy hash; these are used in the [account permissions model](#accounts-associated-keys-weights)
+-   Approvals: the set of signatures which have signed the deploy hash; these are used in the [account permissions model](./design/casper-design.md#accounts-associated-keys-weights)
 
 ### Deploy Lifecycle {#execution-semantics-phases}
 
@@ -68,7 +68,7 @@ _Session code_ provides the main logic for the deploy. It only executes if the p
 The user-defined logic of a deploy can be specified in a number of ways:
 
 -   a Wasm module in binary format representing valid session code, including logic to be executed in the context of an account or to store Wasm in the form of a contract to be executed later. (Note that the named keys from the context of the account the deploy is running in.)
--   a 32-byte identifier representing the [hash](/concepts/design/serialization-standard.md#serialization-standard-hash-key) where a contract is already stored in the global state
+-   a 32-byte identifier representing the [hash](./serialization-standard.md#serialization-standard-hash-key) where a contract is already stored in the global state
 -   a name corresponding to a named key in the account, where a contract is stored under the key
 
 Payment and session code can be independently specified, so different methods of specifying them may be used (e.g. payment could be specified by a hash key, while the session is explicitly provided as a Wasm module).
