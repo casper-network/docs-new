@@ -11,7 +11,7 @@ interface ISocialSectionProps {
 }
 
 export function SocialSection({ header, subheader, tiles }: ISocialSectionProps) {
-    const desktop = useWindowWidth(1390);
+    const desktop = useWindowWidth(1401);
     return (
         <Section header={header} subheader={subheader} setStyles={"social_section"}>
             <div className={`${styles.socialtiles} containerSite`}>
