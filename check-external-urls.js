@@ -36,9 +36,7 @@ class MarkdownExternalUrlChecker {
             }
         });
 
-        console.log(`Found ${filesWithUrls.length} markdown files containing external URLs. Testing URLs...`);
         const results = await this.testUrls(filesWithUrls);
-        console.log(`Creating results log...`);
         const hasInvalidUrls = this.logResults(results);
         if (hasInvalidUrls) {
             core.setFailed("Found invalid URLs. Please check the log output for more details.");
@@ -50,73 +48,63 @@ class MarkdownExternalUrlChecker {
     //  Methods
     //----------------------------------
     static async testUrls(files) {
-        try {
-            browser = await puppeteer.launch({
-                args: ["--no-sandbox", "--disable-setuid-sandbox"],
-                headless: true,
-            });
+        browser = await puppeteer.launch({
+            args: ["--no-sandbox", "--disable-setuid-sandbox"],
+            headless: true,
+        });
 
-            let urlInc = 0;
-            const numUrls = files.map((obj) => obj.urls.length).reduce((partial, sum) => partial + sum, 0);
-            core.startGroup(`Found ${numUrls} urls within ${files.length} files. Validating URLs...`);
+        let urlInc = 0;
+        const numUrls = files.map((obj) => obj.urls.length).reduce((partial, sum) => partial + sum, 0);
+        core.startGroup(`Found ${numUrls} urls within ${files.length} files. Validating URLs...`);
 
-            const responseCache = {};
-            for (let f = 0, flen = files.length; f < flen; f++) {
-                const { urls } = files[f];
+        const responseCache = {};
+        for (let f = 0, flen = files.length; f < flen; f++) {
+            const { urls } = files[f];
 
-                for (let u = 0, ulen = urls.length; u < ulen; u++) {
-                    const url = urls[u];
-                    if (!responseCache[url]) {
-                        console.log(`Testing URL: ${url}`);
-                        responseCache[url] = await this.evaluateUrl(url);
-                        await this.sleep(SITE_REQUEST_INTERVAL);
-                    }
-                    files[f].urls[u] = { url, response: responseCache[url] };
-                    urlInc += 1;
-                    console.log(`Tested URL: ${url}, response: ${responseCache[url].status}`);
-                    const percentage = Math.round((urlInc / numUrls) * 100, 2);
-                    console.log(`Progress: ${percentage}% (${urlInc}/${numUrls})`);
+            for (let u = 0, ulen = urls.length; u < ulen; u++) {
+                const url = urls[u];
+                if (!responseCache[url]) {
+                    responseCache[url] = await this.evaluateUrl(url);
+                    await this.sleep(SITE_REQUEST_INTERVAL);
                 }
+                files[f].urls[u] = { url, response: responseCache[url] };
+                urlInc += 1;
+                const percentage = Math.round((urlInc / numUrls) * 100);
+                console.log(`Progress: ${percentage}% (${urlInc}/${numUrls})`);
             }
-            await browser.close();
-            core.endGroup();
-            browser = null;
-            return files;
-        } catch (err) {
-            return files;
         }
+        await browser.close();
+        core.endGroup();
+        browser = null;
+        return files;
     }
 
     static evaluateUrl(url, originStatus = null) {
         return new Promise(async (resolve) => {
-            try {
-                const page = await browser.newPage();
-                page.once("response", async (response) => {
-                    const status = response.status();
-                    const headers = response.headers();
-                    if ([301, 307].includes(status)) {
-                        const resp = await this.evaluateUrl(headers.location, status);
-                        resolve(resp);
-                    } else if (originStatus) {
-                        resolve({ status: originStatus, redirectionStatus: response.status(), redirection: response.url() });
-                    } else {
-                        resolve({ status: response.status() });
-                    }
-                });
-                page.once("pageerror", async (err) => {
-                    resolve({ error: err.message });
-                });
-
-                try {
-                    await page.goto(url, { waitUntil: "load" });
-                } catch (err) {
-                    resolve({ error: err.message });
+            const page = await browser.newPage();
+            page.once("response", async (response) => {
+                const status = response.status();
+                const headers = response.headers();
+                if ([301, 307].includes(status)) {
+                    const resp = await this.evaluateUrl(headers.location, status);
+                    resolve(resp);
+                } else if (originStatus) {
+                    resolve({ status: originStatus, redirectionStatus: response.status(), redirection: response.url() });
+                } else {
+                    resolve({ status: response.status() });
                 }
-                await page.close();
-                resolve({ error: "Unknown exception occured" });
+            });
+            page.once("pageerror", async (err) => {
+                resolve({ error: err.message });
+            });
+
+            try {
+                await page.goto(url, { waitUntil: "load" });
             } catch (err) {
                 resolve({ error: err.message });
             }
+            await page.close();
+            resolve({ error: "Unknown exception occured" });
         });
     }
 
