@@ -33,20 +33,27 @@
             margin: 0;
             white-space: nowrap;
             overflow: hidden;
+            
         }
 
         .paragraphfirst {
             font-weight: 500;
             margin-top: 14px;
             text-transform: uppercase;
+            max-width: 240px;
+            text-overflow: ellipsis;
         }
 
         > h4 {
             margin: 12px 0;
+            max-width: 250px;
+            text-overflow: ellipsis;
         }
 
         .paragraphsecond {
             margin-bottom: 27px;
+            max-width: 240px;
+            text-overflow: ellipsis;
         }
     }
 
