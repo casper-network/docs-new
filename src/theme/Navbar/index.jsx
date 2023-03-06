@@ -9,7 +9,7 @@ export default function Navbar() {
     const { customFields } = siteConfig;
     return (
         <NavbarLayout>
-            {customFields.directusUrl && customFields.directusGraphqlUrl && customFields.directusToken && customFields.siteUrl && <ExtendedNavbar />}
+            {customFields.directusUrl && customFields.directusGraphqlUrl && customFields.siteUrl && <ExtendedNavbar />}
             <NavbarContent />
         </NavbarLayout>
     );
