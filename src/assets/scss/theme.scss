@@ -83,11 +83,6 @@ body {
     padding: 15px var(--navSpacing);
 }
 
-.navbar__items {
-    [class*="navbarMobileTitle"] {
-        padding: 0;
-    }
-}
 
 nav.menu {
     padding: 35px 0px 0px 0px;

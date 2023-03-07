@@ -1,9 +1,12 @@
 @import "../../../../assets/scss/mixins";
+
 .navbarMobileTitle {
     background-color: transparent;
     border: 0;
     position: relative;
     margin: 0;
+    width: 100%;
+    padding: 0 var(--navSpacing);
 
     &_container {
         display: flex;

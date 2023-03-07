@@ -26,7 +26,7 @@ export default function MobileSidebarToggle() {
                     description: "The ARIA label for documentation menu button of mobile navigation",
                 })}
                 aria-expanded={shown}
-                className={`navbar__toggle clean-btn navBarSite ${styles.navbarMobileTitle}`}
+                className={`navbar__toggle clean-btn ${styles.navbarMobileTitle}`}
             >
                 <div className={`${styles.navbarMobileTitle_container} ${shown ? styles.docNavbarOpened : ""}`}>
                     <Translate
