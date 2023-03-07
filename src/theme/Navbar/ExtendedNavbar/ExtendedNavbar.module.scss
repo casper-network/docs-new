@@ -19,6 +19,8 @@
         height: var(--navBarSiteHeight);
         color: var(--casperWhite);
         margin: 0;
+        align-items: unset;
+        padding: 0 var(--navSpacing);
 
         .navbar {
             display: flex;
@@ -26,6 +28,16 @@
             justify-content: space-between;
             gap: 4%;
             align-items: center;
+
+            .navBarSectionBeginning,
+            .navBarSectionEnd {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 4%;
+                width: 45%;
+            }
 
             .navbar_logo_container {
                 width: 163px;
@@ -91,6 +103,27 @@
         a {
             display: block;
             width: 83px;
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .wrapper {
+        .navbar_wrapper {
+            .container {
+                .navbar {
+                    .navBarSectionBeginning,
+                    .navBarSectionEnd {
+                        gap: 10%;
+                    }
+                    .navBarSectionBeginning {
+                        justify-content: flex-start;
+                    }
+                    .navBarSectionEnd {
+                        justify-content: flex-end;
+                    }
+                }
+            }
         }
     }
 }

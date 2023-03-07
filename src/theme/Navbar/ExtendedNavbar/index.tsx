@@ -98,42 +98,46 @@ export default function ExtendedNavbar() {
         <div className={styles.wrapper}>
             <header ref={navBarRef} className={styles.navbar_wrapper}>
                 <div className={`${styles.container} containerSite`}>
-                    <div className={`${styles.navbar} navBarSite`}>
+                    <div className={`${styles.navbar}`}>
                         {navData && navData.navItems && (
                             <>
-                                {navData.logo && (
-                                    <div className={styles.navbar_logo_container}>
-                                        <Link href={getExternalLink("/")} onClick={() => closeNavBarHandler()}>
-                                            <div dangerouslySetInnerHTML={{ __html: navData.logo }}></div>
-                                        </Link>
-                                    </div>
-                                )}
+                                <div className={styles.navBarSectionBeginning}>
+                                    {navData.logo && (
+                                        <div className={styles.navbar_logo_container}>
+                                            <Link href={getExternalLink("/")} onClick={() => closeNavBarHandler()}>
+                                                <div dangerouslySetInnerHTML={{ __html: navData.logo }}></div>
+                                            </Link>
+                                        </div>
+                                    )}
+                                    {isDesktop && navData && navData.navItems && (
+                                        <Nav
+                                            dropdownParentRef={dropdownParentRef}
+                                            header={navData}
+                                            handleClick={handleClick}
+                                            dropdownContent={dropdownContent}
+                                            dropdownOpen={dropdownOpen}
+                                            current={current}
+                                            locale={externalLocale}
+                                        />
+                                    )}
+                                </div>
                                 {isDesktop ? (
                                     <>
-                                        {navData && navData.navItems && (
-                                            <Nav
-                                                dropdownParentRef={dropdownParentRef}
-                                                header={navData}
-                                                handleClick={handleClick}
-                                                dropdownContent={dropdownContent}
-                                                dropdownOpen={dropdownOpen}
-                                                current={current}
-                                                locale={externalLocale}
-                                            />
-                                        )}
-                                        {navData && navData.searchPlaceholder && (
-                                            <Search
-                                                index={{
-                                                    name: `${siteConfig.customFields.siteAlgoliaIndexName}`,
-                                                    title: `${siteConfig.customFields.siteAlgoliaIndexName}`,
-                                                }}
-                                                locale={externalLocale}
-                                                placeholder={navData.searchPlaceholder}
-                                                siteUrl={siteConfig.customFields.siteUrl as string}
-                                            />
-                                        )}
+                                        <div className={styles.navBarSectionEnd}>
+                                            {navData && navData.searchPlaceholder && (
+                                                <Search
+                                                    index={{
+                                                        name: `${siteConfig.customFields.siteAlgoliaIndexName}`,
+                                                        title: `${siteConfig.customFields.siteAlgoliaIndexName}`,
+                                                    }}
+                                                    locale={externalLocale}
+                                                    placeholder={navData.searchPlaceholder}
+                                                    siteUrl={siteConfig.customFields.siteUrl as string}
+                                                />
+                                            )}
 
-                                        {data && data.socialMedia && <SocialMedia socialMedia={data.socialMedia} />}
+                                            {data && data.socialMedia && <SocialMedia socialMedia={data.socialMedia} />}
+                                        </div>
                                         {/* Hide Log In button per Casper request on a meeting, since there's nothing to show if a users log in*/}
                                         {/* {false && data.user && (
                                                 <div className={styles.login} onClick={login}>
