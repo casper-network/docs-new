@@ -88,13 +88,6 @@ body {
         padding: 0;
     }
 }
-.main-wrapper {
-    align-items: center;
-
-    [class*="docPage_"] {
-        max-width: var(--navBoxWidth);
-    }
-}
 
 nav.menu {
     padding: 35px 0px 0px 0px;
