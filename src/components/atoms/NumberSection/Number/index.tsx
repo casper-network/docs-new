@@ -39,7 +39,7 @@ export function Number({ number, description, onScreen }: INumberProps) {
     return (
         <div className={styles.container}>
             <div className={styles.container_number}>
-                <h1>{count >= number ? number : Math.floor(count)}</h1>
+                <div>{count >= number ? number : Math.floor(count)}</div>
             </div>
             <div className={styles.container_description}>
                 <p className="primaryParagraph">{description}</p>
