@@ -19,7 +19,7 @@ export function PullQuotes({ image, paragraph, name, description }: IPullQuotePr
                         </div>
                         <div className={styles.text}>
                             <div className={styles.paragraph}>
-                                <h3>{paragraph}</h3>
+                                <h3 dangerouslySetInnerHTML={{ __html: paragraph! }}></h3>
                             </div>
                             <div className={styles.autor}>
                                 <p className={`${styles.autorname} halfTitleEyebrow`}>{name}</p>
