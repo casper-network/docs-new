@@ -1,4 +1,6 @@
 ---
+title: Calling Smart Contracts
+slug: /developers/cli/calling-contracts
 tags: ["smart contract developers","rust","put-deploy"]
 ---
 
