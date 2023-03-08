@@ -126,3 +126,50 @@ accountHashHex = pycspr.crypto.cl_checksum.encode(accountHashBytes)
 </TabItem>
 
 </Tabs>
+
+---
+
+## Transferring CSPR
+
+Using the `keypair` created above in [Accounts](#Accounts), you can sign a CSPR transferral deploy.
+
+<Tabs>
+
+<TabItem value="js" label="JavaScript">
+
+```javascript
+const casperClient = new CasperClient(RPC_API);
+const paymentAmount = 100000000;
+
+let deployParams = new DeployUtil.DeployParams(
+  keypair.publicKey,
+  "casper" // or "casper-test" for testnet
+);
+
+const session = DeployUtil.ExecutableDeployItem.newTransfer(
+  amount,
+  recipientPublicKeyHex,
+  null,
+  id // transaction ID ("nonce")
+);
+
+const payment = DeployUtil.standardPayment(paymentAmount); // Gas payment in motes
+const deploy = DeployUtil.makeDeploy(deployParams, session, payment);
+const signedDeploy = DeployUtil.signDeploy(deploy, keypair);
+
+return await casperClient.putDeploy(signedDeploy);
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+
+```
+
+</TabItem>
+
+</Tabs>
+
+*Note: You can find active online peers to communicate with from the `CasperClient`* object at [cspr.live](https://cspr.live/tools/peers) for mainnet and [testnet.cspr.live](https://testnet.cspr.live/tools/peers).
