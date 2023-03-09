@@ -14,7 +14,7 @@ function SocialMedia(props: ISocialMediaProps) {
                 {socialMedia &&
                     socialMedia.map((social) => {
                         return (
-                            <a key={social.name} href={social.url!}>
+                            <a key={social.name} href={social.url!} title={`Go to ${social.name}` ?? "social media"}>
                                 <div dangerouslySetInnerHTML={{ __html: social.icon }} className={styles.tileCard_img}></div>
                             </a>
                         );
