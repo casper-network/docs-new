@@ -28,7 +28,7 @@ export function NumberSection({ header, subheader, numbers, text }: INumberSecti
             <div className={` ${styles.number_section} containerSite`}>
                 <div className={`${styles.number_section_box} contentBox`}>
                     {numbers.map((data: any, index: number) => (
-                        <div className={`${styles.number_section_box_span} ${desktop && "span-4"}`} key={`number-${index}`}>
+                        <div className={`${styles.number_section_box_span} ${desktop ? "span-4" : ""}`} key={`number-${index}`}>
                             <Number number={data.number} description={data.description} onScreen={onScreen} />
                         </div>
                     ))}

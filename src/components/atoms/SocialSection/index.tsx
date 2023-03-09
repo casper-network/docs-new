@@ -17,7 +17,7 @@ export function SocialSection({ header, subheader, tiles }: ISocialSectionProps)
             <div className={`${styles.socialtiles} containerSite`}>
                 <div className={`${styles.socialtiles_content} contentBox`}>
                     {tiles.map((data: any, index: number) => (
-                        <section className={`${desktop && "span-4"}`} key={`section-${index}`}>
+                        <section className={`${desktop ? "span-4" : ""}`} key={`section-${index}`}>
                             <SocialTile {...data} />
                         </section>
                     ))}
