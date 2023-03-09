@@ -17,7 +17,7 @@ export function DocsSection({ header, subheader, tiles }: IDocsSectionProps) {
             <div className={`${styles.docstiles} containerSite`}>
                 <div className={`${styles.docstiles_content} contentBox`}>
                     {tiles.map((data: any, index: number) => (
-                        <section className={`${desktop && "span-4"}`} key={`section-${index}`}>
+                        <section className={`${desktop ? "span-4" : ""}`} key={`section-${index}`}>
                             <DocsTile color={data.color} icon={data.icon} description={data.description} title={data.title} url={data.url} />
                         </section>
                     ))}

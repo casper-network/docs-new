@@ -9,7 +9,7 @@ interface ISectionProps {
 
 function Section({ header, subheader, children, setStyles }: PropsWithChildren<ISectionProps>) {
     return (
-        <section className={`${styles.section} ${setStyles && styles[setStyles]} container`}>
+        <section className={`${styles.section} ${setStyles ? styles[setStyles] : ""} containerSite`}>
             <div className={`contentBox`}>
                 <div className={`${styles.section_content_text} span-12`}>
                     {header && <h2>{header}</h2>}
