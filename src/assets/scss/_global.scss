@@ -141,14 +141,18 @@ a {
 
     .contentBox {
         width: 100%;
-        max-width: var(--contentBoxWidth);
         margin: 0 auto;
         display: grid;
         //grid-template-columns: repeat(auto-fill, minmax(77px, 1fr));
         grid-template-columns: repeat(sizes.$columns, 1fr);
         gap: var(--gapSpacing);
-
+        padding-left: 20px;
+        padding-right: 20px;
         @include mixins.span-x;
+        .contentBox {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 
@@ -193,7 +197,7 @@ a {
     &.brownLight {
         --mainColor: var(--casperTilesBrownLight);
     }
-} 
+}
 
 // /GRID
 
@@ -205,4 +209,3 @@ a {
 html {
     scroll-behavior: smooth;
 }
-

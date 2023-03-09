@@ -58,9 +58,12 @@
     --navBarDocHeight: 44px;
     --ifm-navbar-height: calc(var(--navBarSiteHeight) + var(--navBarDocHeight));
     --ifm-navbar-sidebar-width: 100vw;
+    --maxContentWidth: 1600px;
+    --ifm-container-width-xl: var(--maxContentWidth);
+    --ifm-container-width: var(--maxContentWidth);
 
     // Boxes
-    --navBoxWidth: 1600px;
+    --navBoxWidth: var(--maxContentWidth);
     --contentBoxWidth: 1280px;
 
     // Spacing
@@ -71,16 +74,18 @@
     --navBarZIndex: 10;
 }
 
-body {
-    height: unset !important;
-}
-
 .navbar__logo img {
     margin: 0;
 }
 
 .navbar-sidebar__item {
     padding: 15px var(--navSpacing);
+}
+
+.navbar__inner{
+    max-width: var(--maxContentWidth);
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 
@@ -145,12 +150,29 @@ nav.menu {
     }
 }
 
+.main-wrapper{
+    align-items: center;
+
+    > [class*="docPage"] {
+        max-width: var(--maxContentWidth);
+        justify-content: center;
+    }
+}
+
 footer.footer {
     padding: 30px 0;
     font-size: 18px;
     font-weight: 300;
     line-height: 1.5;
     background-color: var(--casper-color-dark-purple);
+    display: flex;
+    justify-content: center;
+
+    .container, .container-fluid{
+        margin: 0 20px;
+        max-width: var(--maxContentWidth);
+        
+    }
 
     ul {
         list-style: none;
@@ -246,16 +268,6 @@ button[aria-label="Collapse sidebar"] {
     }
 }
 
-@media (min-width: 997px) and (max-width: 1399px) {
-    .navbar__item {
-        padding: 5px;
-        font-size: 15px;
-    }
-
-    .navbar__brand {
-        margin-right: 5px;
-    }
-}
 
 html[data-theme="white"] {
     .menu__list {
