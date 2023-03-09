@@ -14,7 +14,7 @@ Smart Contracts in Casper are implemented in the Rust programming language, and 
 
 #### Further Reading
 
- - [Writing Contracts](../developers/writing-onchain-code/writing-contracts)
+ - [Writing Contracts](../../casper/developers/writing-onchain-code/simple-contract.md)
  - [Sending a Deploy](../developers/dapps/sending-deploys.md)
  - [Installing Smart Contracts](../developers/cli/installing-contracts.md)
  - [Calling Smart Contracts](../developers/writing-onchain-code/calling-contracts.md)
