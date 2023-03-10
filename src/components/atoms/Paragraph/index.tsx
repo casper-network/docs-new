@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "../../containers/Section";
-import * as styles from "./Paragraph.module.scss";
+import styles from "./Paragraph.module.scss";
 
 export interface IParagraph {
     header?: string;
