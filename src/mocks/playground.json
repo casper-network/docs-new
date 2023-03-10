@@ -404,18 +404,18 @@
             },
             "tiles": [
                 {
-                    "title": "Tile 1",
-                    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc sed. Accumsan sit amet nulla facilisi morbi tempus. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Pharetra et ultrices neque ornare. Facilisis mauris sit amet massa vitae tortor. A arcu cursus vitae congue mauris rhoncus aenean. Libero volutpat sed cras ornare arcu dui vivamus arcu. Tellus in metus vulputate eu scelerisque felis imperdiet. Rhoncus dolor purus non enim praesent elementum. Ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Non sodales neque sodales ut.",
+                    "title": "Tile 1 short",
+                    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
                     "image": "https://media.istockphoto.com/id/1447907562/es/vector/educaci%C3%B3n-escolar-y-concepto-de-aprendizaje-en-estilo-de-dibujos-animados-libros-y-libros-de.jpg?s=1024x1024&w=is&k=20&c=CUEXgsH-xVMZXKuxkgiJFtvMjF9GFleTnhEq8ZPS8-s="
                 },
                 {
-                    "title": "Tile 2",
-                    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc sed. Accumsan sit amet nulla facilisi morbi tempus. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Pharetra et ultrices neque ornare. Facilisis mauris sit amet massa vitae tortor. A arcu cursus vitae congue mauris rhoncus aenean. Libero volutpat sed cras ornare arcu dui vivamus arcu. Tellus in metus vulputate eu scelerisque felis imperdiet. Rhoncus dolor purus non enim praesent elementum. Ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Non sodales neque sodales ut.",
+                    "title": "Tile 2 full",
+                    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc sed consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "image": "https://media.istockphoto.com/id/1447907562/es/vector/educaci%C3%B3n-escolar-y-concepto-de-aprendizaje-en-estilo-de-dibujos-animados-libros-y-libros-de.jpg?s=1024x1024&w=is&k=20&c=CUEXgsH-xVMZXKuxkgiJFtvMjF9GFleTnhEq8ZPS8-s="
                 },
                 {
-                    "title": "Tile 3",
-                    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc sed. Accumsan sit amet nulla facilisi morbi tempus. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Pharetra et ultrices neque ornare. Facilisis mauris sit amet massa vitae tortor. A arcu cursus vitae congue mauris rhoncus aenean. Libero volutpat sed cras ornare arcu dui vivamus arcu. Tellus in metus vulputate eu scelerisque felis imperdiet. Rhoncus dolor purus non enim praesent elementum. Ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Non sodales neque sodales ut. Tellus in metus vulputate eu scelerisque felis imperdiet. Rhoncus dolor purus non enim praesent elementum. Ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Non sodales neque sodales ut.",
+                    "title": "Tile 3 long long long long long long long long long long long long long long long long ",
+                    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc sed. Accumsan sit amet nulla facilisi morbi tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc sed. Accumsan sit amet nulla facilisi morbi tempus.",
                     "image": "https://media.istockphoto.com/id/1447907562/es/vector/educaci%C3%B3n-escolar-y-concepto-de-aprendizaje-en-estilo-de-dibujos-animados-libros-y-libros-de.jpg?s=1024x1024&w=is&k=20&c=CUEXgsH-xVMZXKuxkgiJFtvMjF9GFleTnhEq8ZPS8-s="
                 }
             ]
