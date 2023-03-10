@@ -14,10 +14,11 @@ export default function NavBarLink({ title, url, type, children, locale }: INavB
     const getLink = (path: string) => {
         const siteUrl = customFields.siteUrl as string;
         const url = siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl;
+        const truncatedPath = path.startsWith("/") ? path.slice(1) : path;
         if (customFields.defaultExternalLocales === locale) {
-            return `${url}${path}`;
+            return `${url}/${truncatedPath}`;
         } else {
-            return `${url}${locale}${path}`;
+            return `${url}/${locale}/${truncatedPath}`;
         }
     };
     const renderLink = (type: "internal" | "external", title: string, url: string) => {

@@ -91,7 +91,12 @@ export default function ExtendedNavbar() {
 
     const getExternalLink = (path: string) => {
         const url = siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl;
-        return `${url}/${externalLocale}${path}`;
+        const truncatedPath = path.startsWith("/") ? path.slice(1) : path;
+        if (siteConfig.customFields.defaultExternalLocales === externalLocale) {
+            return `${url}/${truncatedPath}`;
+        } else {
+            return `${url}/${externalLocale}/${truncatedPath}`;
+        }
     };
 
     return (
