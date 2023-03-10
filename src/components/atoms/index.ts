@@ -13,3 +13,5 @@ export * from "./BlogSection";
 export * from "./UseCaseSection";
 export * from "./NumberSection";
 export * from "./Paragraph";
+export * from "./InfoSection";
+export * from "./InfoSection/InfoTile";

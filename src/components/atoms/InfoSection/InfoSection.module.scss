@@ -1,0 +1,16 @@
+.wrapper {
+    .tileContent {
+        grid-template-rows: max-content;
+    }
+
+    > a {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 1024px) {
+    [class*="container"] > .tileContent {
+        grid-template-columns: repeat(auto-fit, 60px);
+        justify-content: center;
+    }
+}

@@ -15,6 +15,7 @@ import {
     UseCaseSection,
     NumberSection,
     Paragraph,
+    InfoSection,
 } from "@site/src/components";
 import styles from "./Playground.module.scss";
 
@@ -52,6 +53,9 @@ export default function Playground() {
             </div>
             <div>
                 <Paragraph {...PlaygroundData.playground.paragraph} />
+            </div>
+            <div>
+                <InfoSection {...PlaygroundData.playground.infosection} />
             </div>
             <div className={styles.buttonSection}>
                 {PlaygroundData.playground.tags.map((x: ITagProps) => {

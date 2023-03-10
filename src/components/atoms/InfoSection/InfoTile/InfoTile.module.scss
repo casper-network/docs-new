@@ -1,0 +1,27 @@
+@use "../../../../assets/scss/mixins";
+
+.infoTileWrapper {
+    .title,
+    .paragraph {
+        margin-top: 30px;
+    }
+
+    .title {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .paragraph {
+        max-height: 120px;
+        overflow-y: auto;
+        padding-right: 10px;
+        @include mixins.custom_scrollbar(var(--black) var(--casperWhite));
+    }
+
+    .image {
+        object-fit: cover;
+        width: 100%;
+    }
+}

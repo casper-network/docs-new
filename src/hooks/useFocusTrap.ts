@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
-
+import INavItem from "../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navItem";
 /**
  * Trap focus in the current component
  *
  * @param {React.RefObject} componentRef    - Ref element (any html element)
  * @param {string} selectors                - A string with a list of the query selectors that you want catch like "a[href], button:not([disabled]), textarea, input, select, p"
+ * @param {boolean} isDropdownOpen          - Param to check when it change its value (to run the hook again).
+ * @param {INavItem | null} content - Param to check when it change its value (to run the hook again).
  */
 
 export default function useFocusTrap(
     componentRef: React.RefObject<HTMLElement>,
     selectors: string = "a[href], button:not([disabled])",
     isDropdownOpen?: boolean,
-    content?: any,
-    currentSubsection?: number,
+    content?: INavItem | null,
 ) {
     useEffect(() => {
         if (!isDropdownOpen) return;
@@ -69,5 +70,5 @@ export default function useFocusTrap(
         return () => {
             document.removeEventListener("keydown", keyDownHandler);
         };
-    }, [isDropdownOpen, content?.name, currentSubsection]);
+    }, [isDropdownOpen, content]);
 }
