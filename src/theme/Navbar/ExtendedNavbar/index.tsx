@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./ExtendedNavbar.module.scss";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
@@ -77,9 +77,25 @@ export default function ExtendedNavbar() {
         setCurrent("");
     };
 
+    /* OPEN SIDEBAR */
     const handleSidebar = () => {
         setSidebarOpen(!sidebarOpen);
     };
+    useEffect(() => {
+        setSidebarOpen(false);
+    }, [isDesktop]);
+
+    useEffect(() => {
+        if (document && document.body) {
+            const bodyDocument = document.body;
+            if (sidebarOpen && !isDesktop) {
+                bodyDocument.classList.add("scrollDocument");
+            } else {
+                bodyDocument.classList.remove("scrollDocument");
+            }
+        }
+    }, [isDesktop, sidebarOpen]);
+    /* /SIDEBAR */
 
     function handleClickOutside(event: any) {
         if (dropdownParentRef && dropdownParentRef.current && !dropdownParentRef.current.contains(event.target)) closeNavBarHandler();

@@ -21,6 +21,10 @@ body {
     @include mixins.custom_scrollbar(var(--black) var(--casperWhite));
 }
 
+.scrollDocument {
+    overflow-y: hidden !important;
+}
+
 h1 {
     font-family: fonts-variables.$font-casperSans;
     font-weight: 300;
