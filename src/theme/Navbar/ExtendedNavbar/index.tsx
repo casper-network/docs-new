@@ -135,7 +135,6 @@ export default function ExtendedNavbar() {
                                             dropdownParentRef={dropdownParentRef}
                                             header={navData}
                                             handleClick={handleClick}
-                                            dropdownContent={dropdownContent}
                                             dropdownOpen={dropdownOpen}
                                             current={current}
                                             locale={externalLocale}

@@ -4,18 +4,25 @@ import NavBarDropdown from "../NavBarDropdown";
 import icons from "../../../../icons";
 import INavItem from "../../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navItem";
 import INavData from "../../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navData";
+import { CSSTransition } from "react-transition-group";
 
 interface INav {
     dropdownParentRef: React.RefObject<HTMLElement>;
     header: INavData;
     handleClick: (title: string) => void;
-    dropdownContent: INavItem | null;
     dropdownOpen: Boolean;
     current: string;
     locale: string;
 }
 
-function Nav({ dropdownParentRef, header, handleClick, dropdownContent, dropdownOpen, current, locale }: INav) {
+function Nav({ dropdownParentRef, header, handleClick, dropdownOpen, current, locale }: INav) {
+    const isCurrent = (item): boolean => {
+        if (item && current === item.title && dropdownOpen) {
+            return true;
+        }
+        return false;
+    };
+
     return (
         <nav className={styles.navbar_list} ref={dropdownParentRef}>
             <div className={styles.navbar_list_container}>
@@ -34,9 +41,9 @@ function Nav({ dropdownParentRef, header, handleClick, dropdownContent, dropdown
                                 <span>{item.title}</span>
                                 {icons.chevronDown}
                             </button>
-                            {dropdownContent && dropdownContent.title && item && dropdownContent.title === item.title && dropdownOpen && (
-                                <NavBarDropdown content={dropdownContent} locale={locale} />
-                            )}
+                            <CSSTransition in={isCurrent(item!)} timeout={500} classNames="transition" unmountOnExit>
+                                <NavBarDropdown content={item ?? undefined} locale={locale} />
+                            </CSSTransition>
                         </div>
                     );
                 })}
