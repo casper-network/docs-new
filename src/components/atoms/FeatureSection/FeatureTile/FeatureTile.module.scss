@@ -1,35 +1,3 @@
-//Var: 1-name class, 2-color, 3-background
-$colors: (
-    "blue" var(--casperBlue) var(--black),
-    "purple" var(--casperPurple) var(--black),
-    "yellow" var(--casperYellow) var(--black),
-    "brownLight" var(--casperTilesBrownLight) var(--black),
-    "red" var(--casperRed) var(--black),
-    "brown" var(--casperBrown) var(--black),
-    "pink" var(--casperBrightPink) var(--black),
-    "green" var(--casperGreen) var(--black),
-    "pinkLight" var(--casperPinkLight) var(--black),
-    "white" var(--casperWhite) var(--black)
-);
-
-//Iteration var: $color=name, $primaryColor=color, $backgroundColor=background
-@each $color, $primaryColor, $backgroundColor in $colors {
-    .#{$color} {
-        svg {
-            path {
-                fill: $primaryColor;
-            }
-
-            g {
-                path {
-                    fill: $primaryColor;
-                    stroke: $primaryColor;
-                }
-            }
-        }
-    }
-}
-
 .resourcetilecard {
     position: relative;
     min-height: 237px;
@@ -51,6 +19,16 @@ $colors: (
         svg {
             width: 71px;
             height: 74px;
+            path {
+                fill: var(--mainColor);
+            }
+
+            g {
+                path {
+                    fill: var(--mainColor);
+                    stroke: var(--mainColor);
+                }
+            }
         }
     }
 
@@ -60,7 +38,7 @@ $colors: (
         min-width: 70%;
         max-width: 70%;
         padding-right: 14px;
-        &_text{
+        &_text {
             height: 150px;
             margin-bottom: 25px;
             > h3 {
@@ -70,9 +48,9 @@ $colors: (
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
-    
+
             > p {
-                margin-bottom: 24px;    
+                margin-bottom: 24px;
                 display: -webkit-box;
                 -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
@@ -81,6 +59,5 @@ $colors: (
                 max-width: 270px;
             }
         }
-
     }
 }

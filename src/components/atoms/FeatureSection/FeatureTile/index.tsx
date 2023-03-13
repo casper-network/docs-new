@@ -13,7 +13,7 @@ export interface IFeatureTiledProps {
 export function FeatureTile({ button, color, description, icon, title }: IFeatureTiledProps) {
     return (
         <div className={styles.resourcetilecard}>
-            <div dangerouslySetInnerHTML={{ __html: icon! }} className={`${styles.resourcetilecard_img} ${styles[color]}`}></div>
+            <div dangerouslySetInnerHTML={{ __html: icon! }} className={`${styles.resourcetilecard_img} color ${color}`}></div>
             <div className={styles.resourcetilecard_content}>
                 <div className={styles.resourcetilecard_content_text}>
                     <h3>{title}</h3>
