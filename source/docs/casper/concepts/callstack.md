@@ -1,3 +1,8 @@
+---
+title: Call Stacks
+slug: /concepts/call-stacks
+---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Understanding Call Stacks

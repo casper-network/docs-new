@@ -1,6 +1,6 @@
 ---
-title: Overview
-slug: /economics
+title: Economics Overview
+slug: concepts/economics
 ---
 
 # Economics
