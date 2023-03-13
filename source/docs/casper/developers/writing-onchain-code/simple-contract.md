@@ -40,7 +40,7 @@ The project structure will be different while designing the full stack architect
 
 :::tip
 
-As a beginner it is not advised to start with the manual project structure. 
+As a beginner it is not advised to start with the manual project structure.
 Structure created automatically with `cargo casper` contains everything that is needed to start coding.
 
 :::
@@ -59,7 +59,7 @@ Structure created automatically with `cargo casper` contains everything that is 
 
 ### Creating the Project Automatically
 
-The `cargo casper` command can automatically set up the project structure, as shown [here](./getting-started.md#creating-a-project). Alternatively, follow the steps below to customize the project, yet create the various folders using `cargo`. 
+The `cargo casper` command can automatically set up the project structure, as shown [here](./getting-started.md#creating-a-project). Alternatively, follow the steps below to customize the project, yet create the various folders using `cargo`.
 
 1. Create a top-level project directory for the contract code and its corresponding tests.
 
@@ -74,7 +74,7 @@ The `cargo casper` command can automatically set up the project structure, as sh
     - `main.rs` - This file would contain the contract code.
     - `Cargo.toml` - This file would contain crate dependencies and other configurations.
 
-    The following sections explain how to update these files using example code. 
+    The following sections explain how to update these files using example code.
 
 3. Inside the project directory, run the command to auto-generate the folder structure for the tests. Use a different name instead of `tests` if you wish.
 
@@ -162,7 +162,7 @@ use casper_types::{
 
 #### Defining the Global Constants
 
-After importing the necessary dependencies, you should define the constants used within the contract, including entry points and values. The following example outlines the necessary constants for the counter contract. 
+After importing the necessary dependencies, you should define the constants used within the contract, including entry points and values. The following example outlines the necessary constants for the counter contract.
 
 ```rust
 // Creating constants for values within the contract package.
@@ -247,7 +247,7 @@ This step adds the individual entry points to a `counter_entry_points` object us
     ));
 ```
 
-3) Create the contract's named keys. 
+3) Create the contract's named keys.
 
 [NamedKeys](https://docs.rs/casper-types/latest/casper_types/contracts/type.NamedKeys.html) are a collection of String-Key pairs used to easily identify some network data.
 
@@ -296,7 +296,7 @@ Generally, the `Contract_Hash` and `Contract_Version` are saved as `NamedKeys` i
 
 ## Locked Contracts {#locked-contracts}
 
-Locked contracts cannot contain other contract [versions](https://docs.rs/casper-types/latest/casper_types/contracts/type.ContractVersion.html) in the same contract package; thus, they cannot be upgraded. In this scenario, the Casper execution engine will create a contract package, add a contract to that package and prevent any further upgrades to the contract. Use locked contracts when you need to ensure high security and will not require updates to the contract. 
+Locked contracts cannot contain other contract [versions](https://docs.rs/casper-types/latest/casper_types/contracts/type.ContractVersion.html) in the same contract package; thus, they cannot be upgraded. In this scenario, the Casper execution engine will create a contract package, add a contract to that package and prevent any further upgrades to the contract. Use locked contracts when you need to ensure high security and will not require updates to the contract.
 
 ```rust
 pub fn new_locked_contract(
@@ -311,7 +311,7 @@ pub fn new_locked_contract(
 
 - `entry_points` - The set of entry points defined inside the smart contract.
 - `named_keys` - Any [named-key](https://docs.rs/casper-types/latest/casper_types/contracts/type.NamedKeys.html) pairs for the contract.
-- `hash_name` - Contract hash value. Puts [contractHash](https://docs.rs/casper-types/latest/casper_types/contracts/struct.ContractHash.html) in the current context's named keys under `hash_name`. 
+- `hash_name` - Contract hash value. Puts [contractHash](https://docs.rs/casper-types/latest/casper_types/contracts/struct.ContractHash.html) in the current context's named keys under `hash_name`.
 - `uref_name` - Access URef value. Puts access_uref in the current context's named keys under `uref_name`.
 
 **Note**: The current context is the context of the person who initiated the `call` function, usually an account.
@@ -320,12 +320,12 @@ The counter contract in our example would be locked if we created it this way:
 
 ```rust
 let (stored_contract_hash, _) =
-        storage::new_locked_contract(counter_entry_points, Some(counter_named_keys), None, None); 
+        storage::new_locked_contract(counter_entry_points, Some(counter_named_keys), None, None);
 ```
 
 ## Compiling Contract Code {#compiling-contract-code}
 
-To compile the smart contract, run the following command in the directory hosting the `Cargo.toml` file and `src` folder. 
+To compile the smart contract, run the following command in the directory hosting the `Cargo.toml` file and `src` folder.
 
 ```bash
 cargo build --release --target wasm32-unknown-unknown
