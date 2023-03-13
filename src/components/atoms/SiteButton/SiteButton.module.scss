@@ -16,6 +16,7 @@
     text-decoration: none;
     display: inline-block;
     margin: 0;
+    max-width: 200px;
 
     &_container {
         position: relative;
@@ -25,11 +26,15 @@
         gap: 8px;
         margin: 8px 12px 8px 14px;
         @include transition(0.3s all);
+        width: 100%;
 
         > p {
             margin: 0;
             padding: 0;
             white-space: nowrap;
+            max-width: 80%;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
 
         > svg {
