@@ -46,7 +46,7 @@
         width: 100%;
         padding-right: 14px;
 
-        >p,
+        > p,
         h4 {
             margin: 0;
             display: -webkit-box;
@@ -56,24 +56,24 @@
             @include mixins.transition(0.3s all);
         }
 
-        >p {
+        > p {
             -webkit-line-clamp: 2;
         }
 
-        >h4 {
+        > h4 {
             -webkit-line-clamp: 1;
         }
     }
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
         background: linear-gradient(90deg, var(--mainColor) 0%, var(--black) 50%);
         background-size: 600% 100%;
         @include mixins.transition(0.5s ease-in);
 
         &:global(.yellow),
         &:global(.brownLight) {
-
             .tilecard_text h4,
             .tilecard_text p {
                 color: var(--black);
