@@ -8,7 +8,7 @@ As part of the Casper development environment, we provide a [testing framework](
 
 :::note
 
-The Casper test support crate is one of many options for testing contracts before sending them to a Casper network. 
+The Casper test support crate is one of many options for testing contracts before sending them to a Casper network.
 
 Independent of the framework, knowledge of setting up the debugger and logging the messages from the test execution will ensure, that the contract is fully functional before being deployed on the Casper network.
 
@@ -30,7 +30,7 @@ casper-types = "1.5.0"
 
 - `casper-execution-engine` - This crate imports the execution engine functionality, enabling Wasm execution within the test framework. Each node contains an instance of an execution engine, and the testing framework simulates this behavior.
 - `casper-engine-test-support` - A helper crate that provides the interface to write tests and interact with an instance of the execution engine.
-- `casper-types` - Types shared by many Casper crates for use on a Casper network. 
+- `casper-types` - Types shared by many Casper crates for use on a Casper network.
 
 ## Setting up the Debugger and types of debugging
 
@@ -39,7 +39,7 @@ It was already mentioned that debugging in Rust is not active out of the box. Th
 
 ### Debugging code using breakpoints in VS Code:
 
-1. Set up CodeLLDB extension to be able to set up breakpoints in the code. This is a native debugger supporting C++, Rust and other compiled languages. 
+1. Set up CodeLLDB extension to be able to set up breakpoints in the code. This is a native debugger supporting C++, Rust and other compiled languages.
 2. Go into the main project folder and type the command “make test” in the VS Code Terminal. This will create the target folder.
 3. Mark the tests.rs and from the toolbar in VS Code go to Run -> Start Debugging. This will create a new configuration for Rust.
 4. You will be able to set breakpoints now.
@@ -96,7 +96,7 @@ It is important to note, that running “cargo test” without any parameters wi
 For this to take effect the command
 
 ```bash
-cargo test -- --nocapture 
+cargo test -- --nocapture
 ```
 
 must be used.
@@ -140,7 +140,7 @@ Import external test support, which includes a variety of default values and hel
     use casper_types::{runtime_args, ContractHash, RuntimeArgs};
 ```
 
-Next, you need to define any global variables or constants for the test. 
+Next, you need to define any global variables or constants for the test.
 
 ```rust
     const COUNTER_V1_WASM: &str = "counter-v1.wasm"; // The first version of the contract
@@ -167,7 +167,7 @@ As part of this process, we use the `DEFAULT_RUN_GENESIS_REQUEST` to install the
     fn install_version1_and_check_entry_points() {
         let mut builder = InMemoryWasmTestBuilder::default();
         builder.run_genesis(&*DEFAULT_RUN_GENESIS_REQUEST).commit();
-        
+
         // See the repository for the full function.
     }
 ```
@@ -228,7 +228,7 @@ Next, we test an entry point that should not exist in the first version of the c
         .commit();
 ```
 
-#### Calling the Contract using Session Code 
+#### Calling the Contract using Session Code
 
 In the counter example, we use the session code included in the [counter-call.wasm](https://github.com/casper-ecosystem/counter/blob/master/counter-call/src/main.rs) file. For more details on what session code is and how it differs from contract code, see the [next section](../../concepts/session-code.md).
 
@@ -293,7 +293,7 @@ To run the tests, the counter example uses a `Makefile`.
 make test
 ```
 
-Under the hood, the `Makefile` generates a `tests/wasm` folder, copies the Wasm files to the folder, and runs the tests using `cargo test`. 
+Under the hood, the `Makefile` generates a `tests/wasm` folder, copies the Wasm files to the folder, and runs the tests using `cargo test`.
 
 ```bash
 test: build-contract
