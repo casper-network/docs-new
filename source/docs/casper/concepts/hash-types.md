@@ -1,3 +1,8 @@
+---
+title: Understanding Hash Types
+slug: /concepts/hash-types
+---
+
 # Understanding Hash Types
 
 For the sake of user convenience and compatibility, we expect the delivery of hashes and similar data in the form of a prefixed string when using the node. The following is a list of string representations used.

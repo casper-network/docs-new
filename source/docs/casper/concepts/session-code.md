@@ -1,3 +1,7 @@
+---
+title: Contracts and Session Code
+slug: /concepts/contracts-session-code
+---
 # Contracts and Session Code
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
