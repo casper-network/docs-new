@@ -61,6 +61,7 @@
                     gap: 9px;
                     border: 0;
                     padding: 0;
+                
 
                     &:hover {
                         > span {
@@ -104,6 +105,11 @@
 }
 
 @media (max-width: 996px) {
+    .navbar_wrapper {
+        .container {
+            height:var(--navBarHeightMobile);
+        }
+    }
     .navbar_logo_container {
         a {
             display: block;
