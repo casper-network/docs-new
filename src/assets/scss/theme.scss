@@ -54,13 +54,13 @@
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
     --ifm-background-color: var(--black) !important;
-    --navBarSiteHeight: 126px;
-    --navBarDocHeight: 44px;
-    --ifm-navbar-height: calc(var(--navBarSiteHeight) + var(--navBarDocHeight));
     --ifm-navbar-sidebar-width: 100vw;
-    --maxContentWidth: 1600px;
     --ifm-container-width-xl: var(--maxContentWidth);
     --ifm-container-width: var(--maxContentWidth);
+    --ifm-navbar-height: calc(var(--navBarSiteHeight) + var(--navBarDocHeight));
+    --navBarDocHeight: 44px;
+    --navBarSiteHeight: 126px;
+    --maxContentWidth: 1600px;
 
     // Boxes
     --navBoxWidth: var(--maxContentWidth);
@@ -73,6 +73,10 @@
 
     //NavBar z-index
     --navBarZIndex: 10;
+
+    @media (min-width: 997px) {
+        --doc-sidebar-hidden-width: 50px !important;
+    }
 }
 
 .navbar__logo img {
@@ -83,12 +87,11 @@
     padding: 15px var(--navSpacing);
 }
 
-.navbar__inner{
+.navbar__inner {
     max-width: var(--maxContentWidth);
     padding-left: 20px;
     padding-right: 20px;
 }
-
 
 nav.menu {
     padding: 35px 0px 0px 0px;
@@ -151,13 +154,17 @@ nav.menu {
     }
 }
 
-.main-wrapper{
+.main-wrapper {
     align-items: center;
 
     > [class*="docPage"] {
         max-width: var(--maxContentWidth);
         justify-content: center;
     }
+}
+
+[class*="docSidebarContainer"] {
+    background-color: transparent;
 }
 
 footer.footer {
@@ -169,10 +176,10 @@ footer.footer {
     display: flex;
     justify-content: center;
 
-    .container, .container-fluid{
+    .container,
+    .container-fluid {
         margin: 0 20px;
         max-width: var(--maxContentWidth);
-        
     }
 
     ul {
@@ -251,7 +258,7 @@ main > .container {
 
         & > div:nth-child(1) {
             width: 80%;
-            margin: auto;
+            margin: auto auto auto 20px;
         }
     }
 }
@@ -265,10 +272,32 @@ button[aria-label="Collapse sidebar"] {
     .DocSearch-Button-Keys,
     .DocSearch-Button-Placeholder {
         display: none !important;
-        border: 1px solid red;
     }
 }
 
+@media (min-width: 997px) {
+    [class*="sidebar_node_modules"] {
+        display: flex;
+        flex-direction: column-reverse !important;
+        align-items: flex-start !important;
+    }
+    [class*="expandButton_node_modules"] {
+        padding-top: calc(var(--ifm-navbar-height) + 12px) !important;
+        padding-left: 10px;
+        align-items: flex-start !important;
+        background-color: transparent !important;
+        > svg {
+            transition: 300ms ease all;
+            
+        }
+        :hover {
+            background-color: transparent !important;
+        }
+    }
+    [class*="docSidebarContainer_node_modules"] {
+        border: 0 !important;
+    }
+}
 
 html[data-theme="white"] {
     .menu__list {
