@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./UseCaseTile.module.scss";
 import { ITagProps, Tag } from "@site/src/components";
 import useWindowWidth from "../../../../hooks/useWindowWidth";
 import icons from "../../../../icons";
+import styles from "./UseCaseTile.module.scss";
 
 export interface IUseCaseTileProps {
     image: string;
