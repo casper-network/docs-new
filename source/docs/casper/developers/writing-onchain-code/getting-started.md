@@ -25,6 +25,19 @@ Once you finish installing Rust, check your version:
 ```bash
 rustup --version
 ```
+**Rust-nightly**
+You will need the latest nightly toolchain to develop smart contracts in Rust. Please refer to the [Rust Documentation on Channels](https://rust-lang.github.io/rustup/concepts/channels.html) and the [Rust Documentation on Toolchains](https://rust-lang.github.io/rustup/concepts/toolchains.html) for further information.
+
+**Rust-nightly quickstart**
+```bash
+$ rustup toolchain install nightly
+$ rustup default nightly
+```
+To check your current version of rust-nightly:
+```bash
+$ rustup run nightly rustc --version
+```
+
 
 **Casper Rust Packages**
 
