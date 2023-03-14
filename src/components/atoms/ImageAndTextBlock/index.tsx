@@ -33,7 +33,7 @@ export function ImageAndTextBlock({ image, title, description, button, textAlign
         <section className={`${styles.ImageAndTextBlock} containerSite`}>
             <div className={`${styles.ImageAndTextBlock_content}  contentBox ${textAlign === "left" && styles.grid_invert}`}>
                 <div className={`${styles.ImageAndTextBlock_content_img} ${spanHandler(textSize, elements.image)}`}>
-                    <img alt={title} src={image} />
+                    <img alt={`ImageAndText-${title}`} src={image} />
                 </div>
                 <div className={`${styles.ImageAndTextBlock_content_text} ${spanHandler(textSize, elements.text)}`}>
                     {dateData && <p className={`${styles.date} secondaryParagraph`}>{dateData}</p>}
