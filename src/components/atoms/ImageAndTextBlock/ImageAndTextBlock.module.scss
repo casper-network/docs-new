@@ -4,7 +4,9 @@
     background-color: var(--black);
     color: var(--casperWhite);
     &_content {
+        padding-bottom: 5vh;
         position: relative;
+        
 
         &_img {
             position: relative;
