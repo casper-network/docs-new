@@ -39,7 +39,6 @@ export function ImageAndTextBlock({ image, title, description, button, textAlign
                     {dateData && <p className={`${styles.date} secondaryParagraph`}>{dateData}</p>}
                     <h3>{title}</h3>
                     <p className={`primaryParagraph`}>{description}</p>
-
                     <SiteButton {...button} />
                 </div>
             </div>
