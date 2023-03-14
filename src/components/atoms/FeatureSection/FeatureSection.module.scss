@@ -1,7 +1,5 @@
 .resource_content {
     width: 100%;
-    margin-top: 67px;
-
     &_card {
         border-right: 1px solid var(--casperWhite);
     }
@@ -24,6 +22,10 @@
 
     @media (max-width: 967px) {
         .resource_content_card {
+            border: none;
+
+        }
+        .resource_content_card:nth-child(2) {
             border: none;
         }
     }

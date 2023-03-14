@@ -43,7 +43,7 @@ export function UseCaseTile({ image, category, title, span, isFavourite, url, li
                                 </div>
                             )}
                             {/* {url && (
-                                <button className={styles.iconButton} onClick={shareLink}>
+                                <button className={styles.iconButton} onClick={shareLink} aria-label="Share">
                                     {icons.share}
                                 </button>
                             )} */}

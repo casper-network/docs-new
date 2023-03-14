@@ -15,7 +15,7 @@ export function PullQuotes({ image, paragraph, name, description }: IPullQuotePr
                 <div className={`${styles.pullquotes} span-12`}>
                     <div className={`${styles.card}`}>
                         <div className={styles.image}>
-                            <img src={image} />
+                            <img src={image} alt={`PullQuotesAutor-${name}`} />
                         </div>
                         <div className={styles.text}>
                             <div className={styles.paragraph}>

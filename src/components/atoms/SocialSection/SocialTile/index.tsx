@@ -23,7 +23,7 @@ export function SocialTile(props: ISocialTileProps) {
                 <p className={`${styles.paragraphsecond} secondaryParagraph`}>{description}</p>
                 <SiteButton {...{ ...button }} />
             </div>
-            <div className={styles.socialtilecard_img}>{image && <img alt={`image - ${main_title}`} src={image} />}</div>
+            <div className={styles.socialtilecard_img}>{image && <img alt={`SocialTile-${main_title}`} src={image} />}</div>
         </div>
     );
 }
