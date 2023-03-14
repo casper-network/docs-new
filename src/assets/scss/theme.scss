@@ -277,19 +277,14 @@ button[aria-label="Collapse sidebar"] {
 
 @media (min-width: 997px) {
     [class*="sidebar_node_modules"] {
-        display: flex;
         flex-direction: column-reverse !important;
         align-items: flex-start !important;
     }
     [class*="expandButton_node_modules"] {
         padding-top: calc(var(--ifm-navbar-height) + 12px) !important;
-        padding-left: 10px;
+        padding-left: 15px;
         align-items: flex-start !important;
         background-color: transparent !important;
-        > svg {
-            transition: 300ms ease all;
-            
-        }
         :hover {
             background-color: transparent !important;
         }
