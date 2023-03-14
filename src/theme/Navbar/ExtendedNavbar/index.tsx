@@ -158,23 +158,6 @@ export default function ExtendedNavbar() {
 
                                             {data && data.socialMedia && <SocialMedia socialMedia={data.socialMedia} />}
                                         </div>
-                                        {/* Hide Log In button per Casper request on a meeting, since there's nothing to show if a users log in*/}
-                                        {/* {false && data.user && (
-                                                <div className={styles.login} onClick={login}>
-                                                    <button>
-                                                        {header && <span className="halfTitleEyebrow noWrap">{header?.login_text}</span>}
-                                                        {icons.login}
-                                                    </button>
-                                                </div>
-                                            )}
-                                            {user && (
-                                                <button>
-                                                    <span className={styles.loggedIn}>
-                                                        {user.name} {user.email}
-                                                    </span>
-                                                    {icons.login}
-                                                </button>
-                                            )} */}
                                     </>
                                 ) : (
                                     <div className={styles.icon} onClick={handleSidebar}>
