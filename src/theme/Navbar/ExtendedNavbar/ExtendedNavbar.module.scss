@@ -49,34 +49,6 @@
                 min-width: 83px;
             }
 
-            .login,
-            .loggedIn {
-                > button {
-                    background-color: transparent;
-                    color: var(--casperWhite);
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 9px;
-                    border: 0;
-                    padding: 0;
-                
-
-                    &:hover {
-                        > span {
-                            @include transition(0.3s all);
-                            color: var(--casperRed);
-                        }
-                        > svg {
-                            path {
-                                @include transition(0.3s all);
-                                fill: var(--casperRed);
-                            }
-                        }
-                    }
-                }
-            }
             .icon {
                 position: relative;
                 width: 29px;
