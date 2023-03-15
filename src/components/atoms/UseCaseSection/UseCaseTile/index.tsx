@@ -17,7 +17,7 @@ export interface IUseCaseTileProps {
 }
 
 export function UseCaseTile({ image, category, title, span, isFavourite, url, linkText, paragraph, tags }: IUseCaseTileProps) {
-    const desktop = useWindowWidth(1024);
+    const desktop = useWindowWidth(1025);
 
     const shareLink = () => {
         if (navigator && url) {

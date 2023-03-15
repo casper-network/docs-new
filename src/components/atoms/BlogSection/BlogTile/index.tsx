@@ -13,7 +13,7 @@ export interface IBlogTileProps {
 }
 
 export function BlogTile({ image, category, title, span, date, button }: IBlogTileProps) {
-    const desktop = useWindowWidth(1024);
+    const desktop = useWindowWidth(1025);
     return (
         <div className={`${styles.card} ${desktop ? `span-${span}` : ""}`}>
             <div className={`${styles.card_img}`}>
@@ -30,7 +30,7 @@ export function BlogTile({ image, category, title, span, date, button }: IBlogTi
                         <h4>{title}</h4>
                     </div>
                 </div>
-                <div className={`${styles.buttonlearn}`}>
+                <div className={`${styles.buttonLearn}`}>
                     <SiteButton {...button} />
                     <div className={`${styles.date}`}>
                         <p className="halfTitleEyebrow"> {date} </p>
