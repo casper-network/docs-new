@@ -1,4 +1,5 @@
 @use "../../../../assets/scss/variables/sizes";
+@use "../../../../assets/scss/mixins";
 
 .sidebar {
     position: absolute;
@@ -8,7 +9,7 @@
     width: 100%;
     background-color: var(--liftedBlack);
     transform: translateX(-996px);
-    @include transition(0.7s ease-in);
+    @include mixins.transition(0.7s ease-in);
     padding: 0 var(--navSpacing);
     display: flex;
     justify-content: space-between;
