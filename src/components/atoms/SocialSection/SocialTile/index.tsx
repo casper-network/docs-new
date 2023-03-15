@@ -9,10 +9,11 @@ export interface ISocialTileProps {
     button: ISiteButtonProps;
     icon: string;
     image?: string;
+    image_title: string;
 }
 
 export function SocialTile(props: ISocialTileProps) {
-    const { main_title, secondary_title, description, button, icon, image } = props;
+    const { main_title, image_title, secondary_title, description, button, icon, image } = props;
 
     return (
         <div className={styles.socialtilecard}>
@@ -23,7 +24,9 @@ export function SocialTile(props: ISocialTileProps) {
                 <p className={`${styles.paragraphsecond} secondaryParagraph`}>{description}</p>
                 <SiteButton {...{ ...button }} />
             </div>
-            <div className={styles.socialtilecard_img}>{image && <img alt={`SocialTile-${main_title}`} src={image} />}</div>
+            <div className={styles.socialtilecard_img}>
+                {image && <img alt={image_title ? `SocialTile - ${image_title}` : `SocialTile - ${main_title}`} src={image} />}
+            </div>
         </div>
     );
 }

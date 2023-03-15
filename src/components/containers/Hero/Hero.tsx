@@ -10,12 +10,13 @@ export interface HeroProps {
     actionLabel?: string;
     actionTo?: string;
     children?: React.ReactNode;
+    image_title: string;
 }
 
 export const Hero = (props: HeroProps) => {
     return (
         <div className={styles.heroContainer}>
-            <img className={styles.heroBg} alt={props.title ? `Hero-${props.title}` : "Hero-Image"} src="/icon/curves.svg" />
+            <img className={styles.heroBg} alt={props.image_title ? `Hero - ${props.image_title}` : `Hero - ${props.title}`} src="/icon/curves.svg" />
             <h1>{props.title}</h1>
             <h4>{props?.subTitle}</h4>
             <Button className={styles.actionBtn} label={props.actionLabel} to={props.actionTo} />

@@ -16,9 +16,10 @@ export interface IImageAndTextBlockProps {
     textAlign: "left" | "right";
     textSize: "1/3" | "1/2";
     dateData?: string;
+    image_title: string;
 }
 
-export function ImageAndTextBlock({ image, title, description, button, textAlign, textSize, dateData }: IImageAndTextBlockProps) {
+export function ImageAndTextBlock({ image, image_title, title, description, button, textAlign, textSize, dateData }: IImageAndTextBlockProps) {
     const isDesktop = useWindowWidth(970);
     function spanHandler(textSize: string, element: elements): string {
         if (textSize === "1/3" && isDesktop) {
@@ -33,7 +34,7 @@ export function ImageAndTextBlock({ image, title, description, button, textAlign
         <section className={`${styles.ImageAndTextBlock} containerSite`}>
             <div className={`${styles.ImageAndTextBlock_content}  contentBox ${textAlign === "left" && styles.grid_invert}`}>
                 <div className={`${styles.ImageAndTextBlock_content_img} ${spanHandler(textSize, elements.image)}`}>
-                    <img alt={`ImageAndText-${title}`} src={image} />
+                    <img alt={image_title ? `ImageAndText - ${image_title}` : `ImageAndText - ${title}`} src={image} />
                 </div>
                 <div className={`${styles.ImageAndTextBlock_content_text} ${spanHandler(textSize, elements.text)}`}>
                     {dateData && <p className={`${styles.date} secondaryParagraph`}>{dateData}</p>}
