@@ -6,16 +6,17 @@ export interface IPullQuoteProps {
     paragraph: string;
     name: string;
     description: string;
+    image_title: string;
 }
 
-export function PullQuotes({ image, paragraph, name, description }: IPullQuoteProps) {
+export function PullQuotes({ image, image_title, paragraph, name, description }: IPullQuoteProps) {
     return (
         <div className={`containerSite`}>
             <div className={`contentBox`}>
                 <div className={`${styles.pullquotes} span-12`}>
                     <div className={`${styles.card}`}>
                         <div className={styles.image}>
-                            <img src={image} alt={`PullQuotesAutor-${name}`} />
+                            <img src={image} alt={image_title ? `PullQuote - ${image_title}` : `PullQuote - ${name}`} />
                         </div>
                         <div className={styles.text}>
                             <div className={styles.paragraph}>

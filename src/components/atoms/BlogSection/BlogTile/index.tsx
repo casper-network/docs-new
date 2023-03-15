@@ -10,14 +10,15 @@ export interface IBlogTileProps {
     date: string;
     button: ISiteButtonProps;
     span: number;
+    image_title: string;
 }
 
-export function BlogTile({ image, category, title, span, date, button }: IBlogTileProps) {
+export function BlogTile({ image, image_title, category, title, span, date, button }: IBlogTileProps) {
     const desktop = useWindowWidth(1025);
     return (
         <div className={`${styles.card} ${desktop ? `span-${span}` : ""}`}>
             <div className={`${styles.card_img}`}>
-                <img src={image} alt={`BlogTile-${title}`} />
+                <img src={image} alt={image_title ? `BlogTile -${image_title}` : `BlogTile-${title}`} />
             </div>
             <div className={styles.card_content}>
                 <div className={styles.text}>

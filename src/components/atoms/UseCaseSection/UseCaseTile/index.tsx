@@ -14,9 +14,10 @@ export interface IUseCaseTileProps {
     linkText?: string;
     paragraph: string;
     tags: Array<ITagProps>;
+    image_title: string;
 }
 
-export function UseCaseTile({ image, category, title, span, isFavourite, url, linkText, paragraph, tags }: IUseCaseTileProps) {
+export function UseCaseTile({ image, image_title, category, title, span, isFavourite, url, linkText, paragraph, tags }: IUseCaseTileProps) {
     const desktop = useWindowWidth(1025);
 
     const shareLink = () => {
@@ -28,7 +29,7 @@ export function UseCaseTile({ image, category, title, span, isFavourite, url, li
     return (
         <div className={`${styles.card} ${desktop ? `span-${span}` : ""}`}>
             <div className={`${styles.card_img}`}>
-                <img src={image} alt={`UseCaseTile-${title}`} />
+                <img src={image} alt={image_title ? `UseCaseTile -${image_title}` : `UseCaseTile-${title}`} />
             </div>
             <div className={styles.card_content}>
                 <div className={styles.text}>
