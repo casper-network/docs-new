@@ -13,7 +13,7 @@ function Section({ header, subheader, children, setStyles }: PropsWithChildren<I
             <div className={`contentBox`}>
                 <div className={`${styles.section_content_text} span-12`}>
                     {header && <h2>{header}</h2>}
-                    {subheader && <p className={`primaryParagraph`}>{subheader}</p>}
+                    {subheader && <h3 className={`primaryParagraph`}>{subheader}</h3>}
                 </div>
             </div>
             <div className={styles.section_children}>{children}</div>

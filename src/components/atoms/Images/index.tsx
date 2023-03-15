@@ -10,6 +10,7 @@ interface IImage {
     numberCol: "full" | "half" | "third";
     image: string;
     name: string;
+    image_title: string;
 }
 
 export function Images({ images }: IImagesProps) {
@@ -30,7 +31,7 @@ export function Images({ images }: IImagesProps) {
                         } `}
                         key={index}
                     >
-                        <img src={data.image} alt={`Images - ${data.name}`} />
+                        <img src={data.image} alt={data.image_title ? `Images - ${data.image_title}` : `Images - ${data.name}`} />
                     </div>
                 ))}
             </div>
