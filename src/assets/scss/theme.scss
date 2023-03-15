@@ -154,6 +154,14 @@ nav.menu {
     }
 }
 
+.navbar__items{
+    overflow-x: auto;
+}
+
+.navbar__links{
+    white-space: nowrap;
+}
+
 .navbar-sidebar{
     @media (max-width: 997px) {
         max-height: calc(100svh - var(--ifm-navbar-height));
