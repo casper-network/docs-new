@@ -42,12 +42,12 @@
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
-                text-align: center;
-
+                align-items: flex-end;
+                position: relative;
                 .title {
                     display: flex;
                     text-align: start;
+                    justify-content: flex-start;
                     align-items: center;
                     margin: 0;
                     max-width: 55%;
