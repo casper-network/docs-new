@@ -65,7 +65,6 @@
     // Boxes
     --navBoxWidth: var(--maxContentWidth);
     --contentBoxWidth: 1280px;
-    --navBarHeightMobile: 10vh;
 
     // Spacing
     --navSpacing: 50px;
@@ -76,6 +75,10 @@
 
     @media (min-width: 997px) {
         --doc-sidebar-hidden-width: 50px !important;
+    }
+
+    @media (max-width: 997px) {
+        --navBarSiteHeight: 10vh !important;
     }
 }
 
@@ -156,6 +159,7 @@ nav.menu {
 
 .navbar__items{
     overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .navbar__links{
