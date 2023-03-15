@@ -13,7 +13,7 @@
     border: 1px solid var(--mainColor);
     @include transition(0.3s all);
 
-    >p {
+    > p {
         color: var(--casperWhite);
         font-weight: 500px;
         font-size: 12px;
@@ -34,7 +34,9 @@
         border-radius: 50%;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
+        outline: none;
         border: 1px solid var(--mainColor);
         background-color: var(--mainColor);
 
@@ -50,7 +52,7 @@
             background: var(--hoverColor);
         }
 
-        >p {
+        > p {
             color: var(--hoverColor);
         }
     }
