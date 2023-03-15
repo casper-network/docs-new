@@ -2,7 +2,7 @@
 @import "../../../../assets/scss/mixins";
 
 .sidebar {
-    position: fixed;
+    position: absolute;
     top: var(--navBarSiteHeight);
     left: 0;
     z-index: var(--navBarZIndex);

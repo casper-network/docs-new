@@ -77,11 +77,6 @@
 }
 
 @media (max-width: 996px) {
-    .navbar_wrapper {
-        .container {
-            height:var(--navBarHeightMobile);
-        }
-    }
     .navbar_logo_container {
         a {
             display: block;
