@@ -1,8 +1,6 @@
 import React from "react";
 import { useNavbarMobileSidebar } from "@docusaurus/theme-common/internal";
-import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
-import IconMenu from "@theme/Icon/Menu";
 import icons from "../../../../icons";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import Translate from "@docusaurus/Translate";
@@ -10,11 +8,6 @@ import styles from "./MobileSidebarToggle.module.scss";
 
 export default function MobileSidebarToggle() {
     const { toggle, shown } = useNavbarMobileSidebar();
-    const mobileSidebar = useNavbarMobileSidebar();
-
-    function NavbarBackdrop(props) {
-        return <div role="presentation" {...props} className={clsx("navbar-sidebar__backdrop", props.className)} />;
-    }
 
     return (
         <>
@@ -38,7 +31,6 @@ export default function MobileSidebarToggle() {
                     {icons.chevronDown}
                 </div>
             </button>
-            <NavbarBackdrop onClick={mobileSidebar.toggle} />
             <NavbarMobileSidebar />
         </>
     );
