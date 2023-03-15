@@ -1,14 +1,11 @@
 .resource_content {
     width: 100%;
+
     &_card {
         border-right: 1px solid var(--casperWhite);
     }
 
-    &_card:last-child {
-        border: none;
-    }
-
-    @media (max-width: 1400px) {
+    @media (max-width: 1335px) {
         &_box {
             grid-template-columns: repeat(auto-fill, minmax(350px, 400px)) !important;
             justify-content: center;
@@ -23,10 +20,13 @@
     @media (max-width: 967px) {
         .resource_content_card {
             border: none;
-
         }
         .resource_content_card:nth-child(2) {
             border: none;
         }
     }
+}
+
+.border_none {
+    border: none;
 }
