@@ -154,6 +154,12 @@ nav.menu {
     }
 }
 
+.navbar-sidebar{
+    @media (max-width: 997px) {
+        max-height: calc(100svh - var(--ifm-navbar-height));
+    }
+}
+
 .main-wrapper {
     align-items: center;
 
