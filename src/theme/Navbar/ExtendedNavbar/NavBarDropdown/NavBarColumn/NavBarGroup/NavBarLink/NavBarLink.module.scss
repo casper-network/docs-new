@@ -20,11 +20,6 @@
         color: var(--casperRed);
     }
 
-    a:active {
-        @include transition(0.3s all);
-        text-decoration: underline;
-    }
-
     .subLinkList {
         display: flex;
         flex-direction: column;
