@@ -1,3 +1,5 @@
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
+
 # Monitor and Consume Events
 
 The Casper Network emits events through its native event stream, which can be captured by applications that are actively listning for them. Using Casper's client side SDKs, you can consume these events within your dApp and perform actions based on event data.
@@ -44,9 +46,11 @@ client.get_events(eventHandler, NodeEventChannel.CHANNEL, NodeEventType.EVENT_NA
 
 *Note: You can find active online peers' `NODE_ADDRESS`es at [cspr.live](https://cspr.live/tools/peers) for mainnet and [testnet.cspr.live](https://testnet.cspr.live/tools/peers) for testnet.*
 
-Where `CHANNEL` is `main` for a an event type of `ApiVersion`, `BlockAdded`, `DeployExpired`, `DeployProcessed`, `Fault` or `Step`. `CHANNEL` is `deploys` for `DeployAccepted`, and `CHANNEL` is `sigs` for `FinalitySignature`.
+Where `CHANNEL` is `main` for an event type of `ApiVersion`, `BlockAdded`, `DeployExpired`, `DeployProcessed`, `Fault` or `Step`. `CHANNEL` is `deploys` for `DeployAccepted`, and `CHANNEL` is `sigs` for `FinalitySignature`.
 
 And where `EVENT_NAME` is one of the following different types of events emitted by the Casper Network:
+
+## Event Types
 
 ### BlockAdded
 
@@ -92,7 +96,7 @@ Emitted when a new block is added to the blockchain and stored locally in the no
 
   The JSON representation of the block.
 
-- [proposer](https://docs.casperlabs.io/concepts/serialization-standard.md#body)
+- [proposer](../../concepts/serialization-standard.md#body)
 
   The validator selected to propose the block.
 
@@ -159,7 +163,7 @@ Emitted when a deploy executes successfully and is accepted on the network.
 }
 ```
 
-* [hash](../../concepts/understanding-hash-types/)
+* [hash](../../concepts/understanding-hash-types.md)
 
   The blake2b hash of the deploy.
 
@@ -167,7 +171,7 @@ Emitted when a deploy executes successfully and is accepted on the network.
 
   The hexadecimal-encoded public key of the account submitting the deploy.
 
-* [body_hash](../../concepts/understanding-hash-types/)
+* [body_hash](../../concepts/understanding-hash-types.md)
 
   The blake2b hash of the deploy body.
 
@@ -179,7 +183,7 @@ Emitted when a deploy executes successfully and is accepted on the network.
 
   The session logic defining the deploy's functionality.
 
-* [approvals](../../developers/json-rpc/types_chain/#approval)
+* [approvals](../json-rpc/types_chain.md#approval)
 
   The signer's hexadecimal-encoded public key along with its signature.
 
@@ -472,7 +476,7 @@ es.unsubscribe(EventName.EVENT_NAME)
 
 </Tabs>
 
-Where `EVENT_NAME` is one of the different types of events emitted by the Casper Network [listed above](#listen-to-the-event-stream).
+Where `EVENT_NAME` is one of the different [event types](#event-types) emitted by the Casper Network.
 
 ## Stop Streaming Events
 
