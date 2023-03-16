@@ -25,7 +25,7 @@ export function SocialTile(props: ISocialTileProps) {
                 <SiteButton {...{ ...button }} />
             </div>
             <div className={styles.socialtilecard_img}>
-                {image && <img alt={image_title ? `SocialTile - ${image_title}` : `SocialTile - ${main_title}`} src={image} />}
+                {image && <img alt={image_title ? `${image_title}` : main_title ? `${main_title}` : `SocialTile`} src={image} />}
             </div>
         </div>
     );

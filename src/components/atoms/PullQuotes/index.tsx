@@ -16,7 +16,7 @@ export function PullQuotes({ image, image_title, paragraph, name, description }:
                 <div className={`${styles.pullquotes} span-12`}>
                     <div className={`${styles.card}`}>
                         <div className={styles.image}>
-                            <img src={image} alt={image_title ? `PullQuote - ${image_title}` : `PullQuote - ${name}`} />
+                            <img src={image} alt={image_title ? `${image_title}` : name ? `${name}` : `PullQuote`} />
                         </div>
                         <div className={styles.text}>
                             <div className={styles.paragraph}>

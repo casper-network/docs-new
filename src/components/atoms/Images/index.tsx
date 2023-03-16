@@ -31,7 +31,7 @@ export function Images({ images }: IImagesProps) {
                         } `}
                         key={index}
                     >
-                        <img src={data.image} alt={data.image_title ? `Images - ${data.image_title}` : `Images - ${data.name}`} />
+                        <img src={data.image} alt={data.image_title ? `${data.image_title}` : data.name ? `${data.name}` : `Images`} />
                     </div>
                 ))}
             </div>
