@@ -1,10 +1,10 @@
 module.exports = {
     concepts: [
         "concepts/index",
-        //"concepts/intro-to-dapps", // NEW CONTENT WILL BE HERE
+        "concepts/intro-to-dapps",
         "concepts/accounts-and-keys",
         "concepts/understanding-hash-types",
-        //"concepts/deploy-and-deploy-lifecycle", // NEW CONTENT WILL BE HERE
+        "concepts/deploy-and-deploy-lifecycle",
         //"concepts/global-state", // NEW CONTENT WILL BE HERE
         //"concepts/smart-contracts", // NEW CONTENT WILL BE HERE
         "concepts/callstack",
@@ -307,29 +307,5 @@ module.exports = {
                 "dapp-dev-guide/building-dapps/nctl-test",
             ],
         },
-        //{
-        //    type: "category",
-        //    label: "Tutorials",
-        //    collapsible: true,
-        //    collapsed: true,
-        //    items: [
-        //        // TODO Hiding these 2 tutorials until we can refresh them
-        //        //                "dapp-dev-guide/tutorials/kv-storage-tutorial",
-        //        //                {
-        //        //                    type: "category",
-        //        //                    label: "Multi-Signature Tutorial",
-        //        //                    collapsible: true,
-        //        //                    collapsed: true,
-        //        //                    items: [
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/index",
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/concepts",
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/contract",
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/client",
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/example",
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/additional",
-        //        //                   ],
-        //        //                },
-        //    ],
-        //},
     ],*/
 };
