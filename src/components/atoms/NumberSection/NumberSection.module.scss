@@ -4,6 +4,7 @@
 
     .number_section_box_span {
         border-right: 1px solid var(--casperWhite);
+        width: 100%;
     }
     .number_section_box_span:last-child {
         border: none;
@@ -15,8 +16,8 @@
     }
 
     @media (max-width: 1400px) {
-        &_box {
-            grid-template-columns: repeat(auto-fill, minmax(350px, 400px)) !important;
+        .number_section_box {
+            grid-template-columns: repeat(auto-fill, minmax(350px, 400px));
             justify-content: center;
             align-items: center;
 
@@ -29,6 +30,16 @@
     @media (max-width: 967px) {
         .number_section_box_span {
             border: none;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .number_section_box {
+            grid-template-columns: 1fr;
+        }
+
+        .number_section_box_span {
+            min-width: 0;
         }
     }
 }

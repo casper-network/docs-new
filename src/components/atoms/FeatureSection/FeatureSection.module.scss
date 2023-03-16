@@ -6,8 +6,8 @@
     }
 
     @media (max-width: 1335px) {
-        &_box {
-            grid-template-columns: repeat(auto-fill, minmax(350px, 400px)) !important;
+        .resource_content_box {
+            grid-template-columns: repeat(auto-fill, minmax(350px, 400px));
             justify-content: center;
             align-items: center;
 
@@ -23,6 +23,16 @@
         }
         .resource_content_card:nth-child(2) {
             border: none;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .resource_content_box {
+            grid-template-columns: 1fr;
+
+            .resource_content_card {
+                min-width: unset;
+            }
         }
     }
 }

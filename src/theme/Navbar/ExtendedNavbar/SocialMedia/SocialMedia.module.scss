@@ -29,3 +29,14 @@
         }
     }
 }
+
+@media (max-width: 400px) {
+    .social_icons {
+        min-width: 50%;
+
+        .social_icons_container {
+            gap: 10%;
+            justify-content: flex-start;
+        }
+    }
+}

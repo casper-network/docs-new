@@ -89,3 +89,9 @@
         }
     }
 }
+
+@media (max-width: 400px) {
+    .navbar_list {
+        min-width: unset;
+    }
+}
