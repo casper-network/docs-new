@@ -16,7 +16,7 @@ export function FeatureSection({ header, subheader, tiles, imageAndTextBlock }: 
     const desktop = useWindowWidth(1336);
 
     const multipleOfThree = (index: number) => {
-        var tileIndex = index + 1;
+        let tileIndex = index + 1;
         if (tileIndex % 3 == 0) {
             return true;
         } else {
@@ -25,7 +25,7 @@ export function FeatureSection({ header, subheader, tiles, imageAndTextBlock }: 
     };
 
     const multipleOfTwo = (index: number) => {
-        var tileIndex = index + 1;
+        let tileIndex = index + 1;
         if (tileIndex % 2 == 0) {
             return true;
         } else {
