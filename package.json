@@ -84,7 +84,7 @@
         "@docusaurus/theme-common": "^2.3.1"
     },
     "engines": {
-        "node": ">=14"
+        "node": ">=16.14"
     },
     "engineStrict": true,
     "browserslist": {
