@@ -38,7 +38,7 @@ export function ImageAndTextBlock({ image, image_title, title, description, butt
                 </div>
                 <div className={`${styles.ImageAndTextBlock_content_text} ${spanHandler(textSize, elements.text)}`}>
                     {dateData && <p className={`${styles.date} secondaryParagraph`}>{dateData}</p>}
-                    <h3>{title}</h3>
+                    <h4>{title}</h4>
                     <p className={`primaryParagraph`}>{description}</p>
                     <SiteButton {...button} />
                 </div>
