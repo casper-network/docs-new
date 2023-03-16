@@ -2,7 +2,7 @@
 
 For building web applications, it is most common to use the Casper JS SDK with React. This is a popular solution among developers, but you may use any front-end library or framework, including none at all, to interact with the Casper Network via the [Casper JS SDK](https://github.com/casper-ecosystem/casper-js-sdk).
 
-This guide will walk you through setting up and developing a React application that communicates with the Casper Network using [Vite](https://vitejs.dev/). Experience with Vite is not required, however if you have never built a React app, you should begin by [reading the React documentation](https://reactjs.org/docs/getting-started.html).
+This guide will walk you through setting up and developing a React application with [Vite](https://vitejs.dev/) that communicates with the Casper Network. Experience with Vite is not required, however if you have never built a React app, you should begin by [reading the React documentation](https://reactjs.org/docs/getting-started.html).
 
 ## Get Started
 
@@ -101,27 +101,46 @@ For this example we'll be calling a hypothetical "hello world" contract that con
 
 ### Front-end
 
-On the front-end you'll need to build the transaction and forward it to the Casper Signer to be signed. In most cases you will be calling smart contract entrypoints. This example transaction shows the calling of entrypoint "update_message" which will update the state of the chain to reflect the new data.
+When calling smart contracts from React, you'll need to implement the logic within a function accessible from a React component. You can obtain user-entered data from the DOM using elements like `input` then grab the value within the smart-contract-calling function. 
+
+```jsx
+import { Contracts, CasperClient, RuntimeArgs, CLValueBuilder, DeployUtil, Signer } from "casper-js-sdk";
+
+function UpdateMessage() {
+  return (
+  	<>
+      <input id="message" type="text">
+      <button onClick={ updateMessage() }>Update Message</button>
+    </>
+  )
+}
+
+export default UpdateMessage;
+```
+
+On the front-end you'll need to build the transaction and forward it to the Casper Signer to be signed. In most cases you will be calling smart contract entrypoints. This example transaction shows the calling of entrypoint "update_message" which will update the state of the chain to reflect the new data. Write this function under your `UpdateMessage` component function.
 
 ```javascript
-const contract = Contracts.Contract(new CasperClient("http://NODE_ADDRESS:7777/rpc"));
-contract.setContractHash("hash-75143aa708275b7dead20ac2cc06c1c3eccff4ffcf1eb9aebb8cce7c35cea041");
-const runtimeArguments = RuntimeArgs.fromMap({
-  "message": CLValueBuilder.string(userInputElement.value)
-});
-const deploy = contract.callEntrypoint(
-	"update_message",
-  args,
-  CLPublicKey.fromHex(publicKey),
-  "casper", // "casper-test" for testnet
-  "1000000000", // 1 CSPR (10^9 Motes)
-);
-const deployJSON = DeployUtil.deployToJson(deploy);
-Signer.sign(deployJSON, publicKey).then((signedDeploy) => { // Initiates sign request
-  // Send `signedDeploy` to backend via POST request
-}).catch((error) => {
-  // Handle `error`
-});
+function updateMessage() {
+	const contract = Contracts.Contract(new CasperClient("http://NODE_ADDRESS:7777/rpc"));
+	contract.setContractHash("hash-75143aa708275b7dead20ac2cc06c1c3eccff4ffcf1eb9aebb8cce7c35cea041");
+	const runtimeArguments = RuntimeArgs.fromMap({
+  	"message": CLValueBuilder.string(userInputElement.value)
+	});
+	const deploy = contract.callEntrypoint(
+		"update_message",
+  	args,
+  	CLPublicKey.fromHex(publicKey),
+  	"casper", // "casper-test" for testnet
+  	"1000000000", // 1 CSPR (10^9 Motes)
+	);
+	const deployJSON = DeployUtil.deployToJson(deploy);
+	Signer.sign(deployJSON, publicKey).then((signedDeploy) => { // Initiates sign request
+  	// Send `signedDeploy` to backend via POST request
+	}).catch((error) => {
+  	// Handle `error`
+	});
+}
 ```
 
 ### Backend
@@ -144,7 +163,7 @@ signedDeploy.send("http://NODE_ADDRESS:7777/rpc").then((response) => {
 
 </TabItem>
 
-<TabItem value="js" label="Python">
+<TabItem value="python" label="Python">
 
 ```python
 from pycspr import NodeClient, NodeConnection
