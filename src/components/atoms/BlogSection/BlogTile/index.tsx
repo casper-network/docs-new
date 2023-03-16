@@ -18,7 +18,7 @@ export function BlogTile({ image, image_title, category, title, span, date, butt
     return (
         <div className={`${styles.card} ${desktop ? `span-${span}` : ""}`}>
             <div className={`${styles.card_img}`}>
-                <img src={image} alt={image_title ? `BlogTile -${image_title}` : `BlogTile-${title}`} />
+                <img src={image} alt={image_title ? `${image_title}` : title ? `${title}` : `BlogTile`} />
             </div>
             <div className={styles.card_content}>
                 <div className={styles.text}>

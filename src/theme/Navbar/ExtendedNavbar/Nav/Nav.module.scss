@@ -33,6 +33,12 @@
                 color: var(--casperWhite);
                 border: 0;
 
+                > span {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+
                 > svg {
                     transition: transform 0.15s ease;
                 }

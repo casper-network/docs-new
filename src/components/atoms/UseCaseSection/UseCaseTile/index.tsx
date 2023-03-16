@@ -29,7 +29,7 @@ export function UseCaseTile({ image, image_title, category, title, span, isFavou
     return (
         <div className={`${styles.card} ${desktop ? `span-${span}` : ""}`}>
             <div className={`${styles.card_img}`}>
-                <img src={image} alt={image_title ? `UseCaseTile -${image_title}` : `UseCaseTile-${title}`} />
+                <img src={image} alt={image_title ? `${image_title}` : title ? `${title}` : `UseCase`} />
             </div>
             <div className={styles.card_content}>
                 <div className={styles.text}>

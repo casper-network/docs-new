@@ -31,7 +31,7 @@ export default function InfoTile({ tile, span }: IInfoTileProps) {
         <div className={`${styles.infoTileWrapper} ${isDesktop ? `span-${span}` : "span-6"}`}>
             {image && title && (
                 <div className={styles.image}>
-                    <img alt={image_title ? `InfoSection - ${image_title}` : `InfoSection - ${title}`} src={image} />
+                    <img alt={image_title ? `${image_title}` : title ? `${title}` : `InfoSection`} src={image} />
                 </div>
             )}
             <h4 className={styles.title}>{title}</h4>
