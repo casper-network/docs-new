@@ -1,6 +1,5 @@
 ---
 title: Cep78
-slug: /cep78
 ---
 
 # Casper Cep-78 NFT standard
