@@ -16,7 +16,7 @@ export function FeatureTile({ button, color, description, icon, title }: IFeatur
             <div dangerouslySetInnerHTML={{ __html: icon! }} className={`${styles.resourcetilecard_img} color ${color}`}></div>
             <div className={styles.resourcetilecard_content}>
                 <div className={styles.resourcetilecard_content_text}>
-                    <h3>{title}</h3>
+                    <h4>{title}</h4>
                     <p className="primaryParagraph">{description}</p>
                 </div>
                 <SiteButton {...button} />

@@ -41,12 +41,14 @@
         &_text {
             height: 150px;
             margin-bottom: 25px;
-            > h3 {
+            > h4 {
                 max-width: 270px;
                 display: -webkit-box;
                 -webkit-line-clamp: 1;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
+                font-size: 32px;
+                letter-spacing: 0.01em;
             }
 
             > p {
