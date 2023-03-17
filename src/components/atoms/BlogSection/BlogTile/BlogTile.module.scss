@@ -132,7 +132,7 @@
             padding-top: 60px;
         }
 
-        .buttonLearn {
+        .bottomBlog {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
@@ -140,15 +140,43 @@
             width: 100%;
             padding-top: 10px;
 
+            .buttonLearn {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                :hover {
+                    > [class*="button_container"] {
+                        gap: 8px;
+                    }
+                }
+            }
+            .buttonLearnHover {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                :hover {
+                    > [class*="button_container"] {
+                        gap: 13px;
+                    }
+                }
+            }
+
             .date {
                 display: flex;
-                justify-content: center;
-                text-align: center;
+                justify-content: flex-end;
+                text-align: end;
                 align-items: center;
                 margin: 0;
+                margin-left: 10px;
 
                 p {
                     margin: 0;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
                 }
             }
         }
