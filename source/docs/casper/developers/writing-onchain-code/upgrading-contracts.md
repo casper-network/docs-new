@@ -17,7 +17,7 @@ The contract package is like a container for different contract versions, with f
 
 ## Videos and Tutorials
 
-To learn more about versioning contracts, consult the following video, which builds upon the previous topics and videos in the [Writing On-Chain Code](./simple-contract.md) documentation.
+To learn more about versioning contracts, consult the following video, which builds upon the previous topics and videos in the [Writing On-Chain Code](/writing-contracts) documentation.
 
 <p align="center">
 <iframe width="400" height="225" src="https://www.youtube.com/embed?v=sUg0nh3K3iQ&list=PL8oWxbJ-csEqi5FP87EJZViE2aLz6X1Mj&index=10" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
