@@ -1,4 +1,6 @@
 import IColumn from './interfaces/navbar/column';
+import IFooterColumn from './interfaces/navbar/footerColumn';
+import IFooterData from './interfaces/navbar/footerData';
 import IGroup from './interfaces/navbar/group';
 import ILink from './interfaces/navbar/link';
 import INavData from './interfaces/navbar/navData';
@@ -7,7 +9,11 @@ import ISocialMedia from './interfaces/navbar/socialMedia';
 
 const convertData = (
   source: any
-): { socialMedia: Array<ISocialMedia>; navData: Array<INavData> } => {
+): {
+  socialMedia: Array<ISocialMedia>;
+  navData: Array<INavData>;
+  footerData: Array<IFooterData>;
+} => {
   const socialMedias: Array<ISocialMedia> = [];
 
   for (const socialMedia of source.data.social_media) {
@@ -50,9 +56,38 @@ const convertData = (
     navDatas.push(navData);
   }
 
+  const footerDatas: Array<IFooterData> = [];
+  for (const translation of source.data.footer.translations) {
+    if (!translation.logo || !translation.title) {
+      continue;
+    }
+    const footerData: IFooterData = convertFooterData(translation);
+
+    for (const columnSource of translation.link_column) {
+      const column: IFooterColumn = convertFooterColumn(
+        columnSource.footer_link_column_id
+      );
+
+      for (const sourceLink of columnSource.footer_link_column_id.links) {
+        const link: ILink = convertLink(sourceLink.link_id);
+
+        column.links.push(link);
+      }
+      footerData.columns.push(column);
+    }
+
+    for (const sourceLink of translation.bottom_links) {
+      const link: ILink = convertLink(sourceLink.link_id);
+
+      footerData.bottomLinks.push(link);
+    }
+    footerDatas.push(footerData);
+  }
+
   return {
     socialMedia: socialMedias,
     navData: navDatas,
+    footerData: footerDatas,
   };
 };
 
@@ -104,5 +139,24 @@ const convertNavData = (source: any): INavData => {
     logoId: source.logo.id,
     logo: '',
     navItems: [],
+  };
+};
+
+const convertFooterData = (source: any): IFooterData => {
+  return {
+    languageCode: source.languages_code.code.toLocaleLowerCase(),
+    logoId: source?.logo?.id,
+    title: source?.title,
+    description: source?.description,
+    logo: '',
+    bottomLinks: [],
+    columns: [],
+  };
+};
+
+const convertFooterColumn = (source: any): IFooterColumn => {
+  return {
+    title: source.title,
+    links: [],
   };
 };

@@ -31,8 +31,10 @@ export function BlogTile({ image, image_title, category, title, span, date, butt
                         <h4>{title}</h4>
                     </div>
                 </div>
-                <div className={`${styles.buttonLearn}`}>
-                    <SiteButton {...button} />
+                <div className={`${styles.bottomBlog}`}>
+                    <div className={styles.buttonLearn}>
+                        <SiteButton {...button} />
+                    </div>
                     <div className={`${styles.date}`}>
                         <p className="halfTitleEyebrow"> {date} </p>
                     </div>

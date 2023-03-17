@@ -6,6 +6,7 @@ import {
   ContentTypeInterceptor,
 } from '@miracledevs/paradigm-web-fetch';
 import convertData from './convertData';
+import IFooterData from './interfaces/navbar/footerData';
 import INavData from './interfaces/navbar/navData';
 import ISocialMedia from './interfaces/navbar/socialMedia';
 // import imageToBase64 from 'image-to-base64';
@@ -46,6 +47,8 @@ const navDataLoader = (
 
       const json = await response.json();
 
+      console.log(json);
+
       const data = convertData(json);
 
       const promises = [];
@@ -56,6 +59,10 @@ const navDataLoader = (
 
       for (const navData of data.navData) {
         promises.push(loadLogos(navData, httpClient, directusUrl));
+      }
+
+      for (const footerData of data.footerData) {
+        promises.push(loadFooterLogos(footerData, httpClient, directusUrl));
       }
 
       await Promise.all(promises);
@@ -87,6 +94,16 @@ const loadLogos = async (
   const response = await httpClient.get(`${url}assets/${navData.logoId}`);
   const text = await response.text();
   navData.logo = text;
+};
+
+const loadFooterLogos = async (
+  footerData: IFooterData,
+  httpClient: HttpClient,
+  url: string
+) => {
+  const response = await httpClient.get(`${url}assets/${footerData.logoId}`);
+  const text = await response.text();
+  footerData.logo = text;
 };
 
 export default navDataLoader;

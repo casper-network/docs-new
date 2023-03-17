@@ -7,6 +7,7 @@ import useLocaleMap from "../../../hooks/useLocaleMap";
 import { usePluginData } from "@docusaurus/useGlobalData";
 import ISocialMedia from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/socialMedia";
 import INavData from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navData";
+import IFooterData from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/footerData";
 import SocialMedia from "./SocialMedia";
 import Search from "./Search";
 import INavItem from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navItem";
@@ -42,7 +43,7 @@ export default function ExtendedNavbar() {
 
     useFocusTrap(navBarRef, "a[href], button:not([disabled]), input", dropdownOpen, dropdownContent);
 
-    const data = usePluginData("docusaurus-plugin-navdata") as { socialMedia: Array<ISocialMedia>; navData: Array<INavData> };
+    const data = usePluginData("docusaurus-plugin-navdata") as { socialMedia: Array<ISocialMedia>; navData: Array<INavData>; footerData: Array<IFooterData> };
 
     const navData =
         data.navData.find((x) => x.languageCode === externalLocale) ||
