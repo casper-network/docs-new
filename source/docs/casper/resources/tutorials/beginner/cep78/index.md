@@ -94,7 +94,7 @@ List of **mandatory session arguments**:
 - [_identifier_mode_](https://github.com/casper-ecosystem/cep-78-enhanced-nft#nftidentifiermode): The NFTIdentifierMode modality dictates the primary identifier for NFTs minted by the contract. This argument is passed in as a u8 value and is required at the time of installation.
 - [_metadata_mutability_](https://github.com/casper-ecosystem/cep-78-enhanced-nft#metadata-mutability): The MetadataMutability modality dictates whether the metadata of minted NFTs can be updated. This argument is passed in as a u8 value and is required at the time of installation.
 
-### Example installation with Session Arguments {session-arguments-example}
+### Example installation with Session Arguments {#session-arguments-example}
 For this tutorial, please install an instance of Cep78 using the following command and replace the [JSON SCHEMA ESCAPED STRING] with the example ESCAPED STRING that's explained in-depth below the command.
 ```bash
 casper-client put-deploy \
