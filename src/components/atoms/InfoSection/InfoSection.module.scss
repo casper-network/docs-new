@@ -10,7 +10,13 @@
 
 @media (max-width: 1024px) {
     [class*="container"] > .tileContent {
-        grid-template-columns: repeat(auto-fit, 60px);
+        grid-template-columns: repeat(auto-fill, minmax(360px, 100px));
         justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    [class*="container"] > .tileContent {
+        grid-template-columns: 1fr;
     }
 }
