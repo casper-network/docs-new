@@ -29,7 +29,7 @@ In this example the webserver at _token_uri_ should return json data containing 
 
 ### Custom {#custom-metadata-example}
 Alternatively, one could define a custom metadata schema to, for example, store binary data instead of a weblink as the NFT's metadata.
-Example custom metadata schema:
+See below an example of a custom metadata schema, that we will be using in this tutorial:
 
 ```json
 {
@@ -74,12 +74,14 @@ casper-client put-deploy \
   --secret-key <PATH TO SECRET KEY> \
   --payment-amount <GAS FEE IN MOTES> \
   --session-path <PATH TO contract.wasm> \
-  --session-arg <see below>
+  --session-arg <see below and "Example installation with Session Arguments">
 ```
-for --payment-amount: 1 CSPR = 1*10^9 Motes.
+- for _--payment-amount_: 1 CSPR = 1*10^9 Motes.
+- Overview of [Session Arguments](#session-arguments-overview)
+- Quickstart [installing with Session Arguments](#session-arguments-example)
 -> returns a _deploy hash_. Once the deploy was successfully processed, the instance of Cep-78 should be installed on the Blockchain.
 
-### Session Arguments
+### Session Arguments {#session-arguments-overview}
 List of **mandatory session arguments**:
 
 - _collection_name_: The name of the NFT collection, passed in as a String. This parameter is required and cannot be changed post installation.
@@ -92,7 +94,7 @@ List of **mandatory session arguments**:
 - [_identifier_mode_](https://github.com/casper-ecosystem/cep-78-enhanced-nft#nftidentifiermode): The NFTIdentifierMode modality dictates the primary identifier for NFTs minted by the contract. This argument is passed in as a u8 value and is required at the time of installation.
 - [_metadata_mutability_](https://github.com/casper-ecosystem/cep-78-enhanced-nft#metadata-mutability): The MetadataMutability modality dictates whether the metadata of minted NFTs can be updated. This argument is passed in as a u8 value and is required at the time of installation.
 
-### Example installation with Session Arguments
+### Example installation with Session Arguments {session-arguments-example}
 For this tutorial, please install an instance of Cep78 using the following command and replace the [JSON SCHEMA ESCAPED STRING] with the example ESCAPED STRING that's explained in-depth below the command.
 ```bash
 casper-client put-deploy \
@@ -115,7 +117,7 @@ casper-client put-deploy \
   --session-arg [JSON SCHEMA ESCAPED STRING]
 
 ```
-replace [JSON SCHEMA ESCAPED STRING] with the [above](#custom-metadata-example) example of a custom JSON SCHEMA, formatted as an ESCAPED STRING:
+replace [JSON SCHEMA ESCAPED STRING] with the escaped version of [above](#custom-metadata-example) example of a custom JSON SCHEMA:
 ```
 "json_schema:string='{\"properties\":{\"nft_name\":{\"name\":\"nft_name\",\"description\":\"name_of_nft\",\"required\":true},\"nft_description\":{\"name\":\"nft_description\",\"description\":\"description_of_nft\",\"required\":true},\"nft_url\":{\"name\":\"nft_url\",\"description\":\"url_of_nft\",\"required\":true}}}'"
 ```
@@ -133,6 +135,7 @@ casper-client get-state-root-hash <node-address>
 casper-client get-account-state --node-address<NODE_ADDRESS> --state-root-hash <STATE_ROOT_HASH> --key <account-hash-YOUR_ACCOUNT_HASH>
 ```
 _get-account-state_ returns a list of associated keys. One of these associated keys should be the _contract hash_ of the Cep-78 instance.
+
 -> find the _contract_hash_ of the deploy named "nft_contract" in the output and copy it.
 
 ### Call the _Mint_ entry point to produce an NFT with some _metadata_
@@ -149,7 +152,7 @@ _get-account-state_ returns a list of associated keys. One of these associated k
   --session-arg "token_owner:key='account-hash-5a54f173e71d3c219940dcb9dfec222b024cd81aa7e0672de59ba5fab296448b'" \
   --session-arg [METADATA OF NFT]
 ```
-Replace [METADATA OF NFT] with
+Replace [METADATA OF NFT] with:
 ```
 "token_meta_data:string='{\"nft_name\":\"somename01\",\"nft_description\":\"somedescription01\",\"nft_url\":\"someurl01\"}'"
 ```
