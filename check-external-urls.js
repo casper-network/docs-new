@@ -6,7 +6,6 @@ const core = require("@actions/core");
 const style = require("ansi-styles");
 const glob = require("glob");
 const fs = require("fs");
-const httpStatus = require("http-status-codes");
 
 //----------------------------------
 // Constants
@@ -61,24 +60,17 @@ class MarkdownExternalUrlChecker {
         const responseCache = {};
         for (let f = 0, flen = files.length; f < flen; f++) {
             const { urls } = files[f];
-            console.log(`File: ${files[f].path} `);
+
             for (let u = 0, ulen = urls.length; u < ulen; u++) {
                 const url = urls[u];
                 if (!responseCache[url]) {
-                    let response = await this.evaluateUrl(url);
-                    responseCache[url] = response;
-                    if (response.error) {
-                        console.log(`Url: ${url} received error response: ${response.error} `);
-                    } else if (response.status != "200") {
-                        console.log(`Url: ${url} received response: ${response.status} ${httpStatus.getReasonPhrase(response.status)} `);
-                    }
-
+                    responseCache[url] = await this.evaluateUrl(url);
                     await this.sleep(SITE_REQUEST_INTERVAL);
                 }
                 files[f].urls[u] = { url, response: responseCache[url] };
                 urlInc += 1;
                 const percentage = Math.round((urlInc / numUrls) * 100);
-                // console.log(`Progress: ${percentage}% (${urlInc}/${numUrls})`);
+                console.log(`Progress: ${percentage}% (${urlInc}/${numUrls})`);
             }
         }
         await browser.close();
@@ -89,34 +81,30 @@ class MarkdownExternalUrlChecker {
 
     static evaluateUrl(url, originStatus = null) {
         return new Promise(async (resolve) => {
-            try {
-                const page = await browser.newPage();
-                page.once("response", async (response) => {
-                    const status = response.status();
-                    const headers = response.headers();
-                    if ([301, 307].includes(status)) {
-                        const resp = await this.evaluateUrl(headers.location, status);
-                        resolve(resp);
-                    } else if (originStatus) {
-                        resolve({ status: originStatus, redirectionStatus: response.status(), redirection: response.url() });
-                    } else {
-                        resolve({ status: response.status() });
-                    }
-                });
-                page.once("pageerror", async (err) => {
-                    resolve({ error: err.message });
-                });
-
-                try {
-                    await page.goto(url, { waitUntil: "load" });
-                } catch (err) {
-                    resolve({ error: err.message });
+            const page = await browser.newPage();
+            page.once("response", async (response) => {
+                const status = response.status();
+                const headers = response.headers();
+                if ([301, 307].includes(status)) {
+                    const resp = await this.evaluateUrl(headers.location, status);
+                    resolve(resp);
+                } else if (originStatus) {
+                    resolve({ status: originStatus, redirectionStatus: response.status(), redirection: response.url() });
+                } else {
+                    resolve({ status: response.status() });
                 }
-                await page.close();
-                resolve({ error: "Unknown exception occured" });
+            });
+            page.once("pageerror", async (err) => {
+                resolve({ error: err.message });
+            });
+
+            try {
+                await page.goto(url, { waitUntil: "load" });
             } catch (err) {
                 resolve({ error: err.message });
             }
+            await page.close();
+            resolve({ error: "Unknown exception occured" });
         });
     }
 

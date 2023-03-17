@@ -37,7 +37,6 @@
         "docusaurus-plugin-sass": "^0.2.2",
         "docusaurus2-dotenv": "^1.4.0",
         "file-loader": "^6.2.0",
-        "http-status-codes": "^2.2.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "sass": "^1.49.0",
