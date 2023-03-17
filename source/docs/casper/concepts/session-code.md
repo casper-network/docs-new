@@ -1,9 +1,4 @@
----
-title: Session Code
-slug: /concepts/session-code
----
-
-# Contracts and Session Code
+# Session Code
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
