@@ -92,7 +92,9 @@
 
 @media (max-width: 400px) {
     .tilecard_img {
-        width: unset;
+        width: 55px;
+        svg {
+            transform: scale(0.7);
+        }
     }
 }
-
