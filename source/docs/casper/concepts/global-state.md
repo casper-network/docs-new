@@ -1,8 +1,3 @@
----
-title: Global State
-slug: /concepts/global-state
---- 
-
 # Global State {#global-state-head}
 
 ## Introduction {#global-state-intro}
