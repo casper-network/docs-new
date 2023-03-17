@@ -7,7 +7,8 @@ Introduction
   Learn why WebAssembly is an advantage in contract development
   - [Accounts](./build-on-casper/introduction/#powerful-accounts)
   Read more about the Casper account-model that allows for features like multisig
-  - other [Developer tools](./build-on-casper/introduction/#development-tools)
+  - [Developer tools](./build-on-casper/introduction/#development-tools)
+  Explore development tools
 
 Tutorials
   - [Beginner](./tutorials/beginner/index.md)
