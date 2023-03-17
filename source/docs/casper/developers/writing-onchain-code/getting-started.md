@@ -162,7 +162,7 @@ As a brief example, open up _my-project/contract/src/main.rs_ in your editor, mo
 
 The [Casper command-line client](../prerequisites.md#the-casper-command-line-client) is a Rust CLI tool that can help you transmit deploys and install code on-chain. It's recommended to install the client as it's used to deploy contracts and session code in other on-chain tutorials.
 
-### Setting up an IDE
+### Setting up an IDE {#setting-ide}
 
 There are many IDEs available for Rust development. The most popular IDEs for Rust are the following:
 

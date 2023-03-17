@@ -219,7 +219,11 @@ module.exports = {
             label: "Why Build on Casper",
             collapsible: true,
             collapsed: true,
-            items: ["resources/build-on-casper/index", "resources/build-on-casper/casper-open-source-software"],
+            items: [
+                "resources/build-on-casper/index",
+                "resources/build-on-casper/casper-env-prerequisites",
+                "resources/build-on-casper/casper-open-source-software",
+            ],
         },
         "resources/quick-start",
         //"resources/sample-projects", // NEW CONTENT WILL BE HERE
