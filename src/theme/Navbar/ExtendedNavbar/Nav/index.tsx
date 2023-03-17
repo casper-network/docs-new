@@ -13,9 +13,10 @@ interface INav {
     dropdownOpen: Boolean;
     current: string;
     locale: string;
+    closeNavBarHandler: () => void;
 }
 
-function Nav({ dropdownParentRef, header, handleClick, dropdownOpen, current, locale }: INav) {
+function Nav({ dropdownParentRef, header, handleClick, dropdownOpen, current, locale, closeNavBarHandler }: INav) {
     const isCurrent = (item): boolean => {
         if (item && current === item.title && dropdownOpen) {
             return true;
@@ -42,7 +43,7 @@ function Nav({ dropdownParentRef, header, handleClick, dropdownOpen, current, lo
                                 {icons.chevronDown}
                             </button>
                             <CSSTransition in={isCurrent(item!)} timeout={500} classNames="transition" unmountOnExit>
-                                <NavBarDropdown content={item ?? undefined} locale={locale} />
+                                <NavBarDropdown content={item ?? undefined} locale={locale} closeNavBarHandler={closeNavBarHandler} />
                             </CSSTransition>
                         </div>
                     );

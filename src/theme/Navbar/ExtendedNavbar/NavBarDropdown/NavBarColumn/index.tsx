@@ -5,13 +5,14 @@ import NavBarGroup from "./NavBarGroup";
 
 interface INavBarColumnProps extends IColumn {
     locale: string;
+    closeNavBarHandler: () => void;
 }
-export default function NavBarColumn({ groups, locale }: INavBarColumnProps) {
+export default function NavBarColumn({ groups, locale, closeNavBarHandler }: INavBarColumnProps) {
     return (
         <div className={styles.dropdown_column}>
             {groups &&
                 groups.map((group, i) => {
-                    return <NavBarGroup key={`column_group_${i}`} {...{ locale, ...group }} />;
+                    return <NavBarGroup key={`column_group_${i}`} {...{ locale, ...group }} closeNavBarHandler={closeNavBarHandler} />;
                 })}
         </div>
     );

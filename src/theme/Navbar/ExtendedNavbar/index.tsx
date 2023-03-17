@@ -138,6 +138,7 @@ export default function ExtendedNavbar() {
                                             dropdownOpen={dropdownOpen}
                                             current={current}
                                             locale={externalLocale}
+                                            closeNavBarHandler={closeNavBarHandler}
                                         />
                                     )}
                                 </div>

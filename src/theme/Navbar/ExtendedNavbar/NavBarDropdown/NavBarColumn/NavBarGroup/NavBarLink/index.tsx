@@ -5,9 +5,10 @@ import styles from "./NavBarLink.module.scss";
 
 interface INavBarLinkProps extends ILink {
     locale: string;
+    closeNavBarHandler: () => void;
 }
 
-export default function NavBarLink({ title, url, type, children, locale }: INavBarLinkProps) {
+export default function NavBarLink({ title, url, type, children, locale, closeNavBarHandler }: INavBarLinkProps) {
     const { siteConfig } = useDocusaurusContext();
     const { customFields } = siteConfig;
 
@@ -24,10 +25,18 @@ export default function NavBarLink({ title, url, type, children, locale }: INavB
     const renderLink = (type: "internal" | "external", title: string, url: string) => {
         switch (type) {
             case "internal":
-                return <a href={getLink(url)}>{title}</a>;
+                return (
+                    <a href={getLink(url)} onClick={() => closeNavBarHandler()}>
+                        {title}
+                    </a>
+                );
 
             case "external":
-                return <a href={url}>{title}</a>;
+                return (
+                    <a href={url} onClick={() => closeNavBarHandler()}>
+                        {title}
+                    </a>
+                );
             default:
                 return <span>{title}</span>;
         }
