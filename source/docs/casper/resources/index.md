@@ -1,13 +1,13 @@
 # Table of Contents
 
 Introduction
-  - [Wallets and Block Explorers](./build-on-casper/introduction.md#wallets)
+  - [Wallets and Block Explorers](./build-on-casper/index.md#wallets)
   See a list of Wallets that support the native Casper token $CSPR
-  - [WebAssembly](./build-on-casper/introduction.md#developer-friendly-language)
+  - [WebAssembly](./build-on-casper/index.md#developer-friendly-language)
   Learn why WebAssembly is an advantage in contract development
-  - [Accounts](./build-on-casper/introduction.md#powerful-accounts)
+  - [Accounts](./build-on-casper/index.md#powerful-accounts)
   Read more about the Casper account-model that allows for features like multisig
-  - [Developer tools](./build-on-casper/introduction.md#development-tools)
+  - [Developer tools](./build-on-casper/index.md#development-tools)
   Explore development tools
 
 Tutorials
