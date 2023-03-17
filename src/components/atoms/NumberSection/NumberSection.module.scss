@@ -36,10 +36,10 @@
     @media (max-width: 400px) {
         .number_section_box {
             grid-template-columns: 1fr;
-        }
 
-        .number_section_box_span {
-            min-width: 0;
+            .number_section_box_span {
+                min-width: 0;
+            }
         }
     }
 }
