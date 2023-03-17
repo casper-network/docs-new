@@ -74,7 +74,7 @@ casper-client put-deploy \
   --secret-key <PATH TO SECRET KEY> \
   --payment-amount <GAS FEE IN MOTES> \
   --session-path <PATH TO contract.wasm> \
-  --session-arg <see below and "Example installation with Session Arguments">
+  --session-arg <see below>
 ```
 - for _--payment-amount_: 1 CSPR = 1*10^9 Motes.
 - Overview of [Session Arguments](#session-arguments-overview)
