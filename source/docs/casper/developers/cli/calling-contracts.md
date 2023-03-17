@@ -1,5 +1,4 @@
 ---
-title: Calling Smart Contracts
 tags: ["smart contract developers","rust","put-deploy"]
 ---
 
