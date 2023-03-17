@@ -1,5 +1,6 @@
 ---
 title: Introduction
+slug: /writing-contracts
 ---
 
 # Writing On-Chain Code
