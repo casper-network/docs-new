@@ -74,6 +74,9 @@
                         background: none;
                         border: none;
                         
+                        :active :hover {
+                            background: #f9aaca;
+                        }
                     }
 
                     .sourceButton {

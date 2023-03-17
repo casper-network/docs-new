@@ -5,7 +5,7 @@
 
     .usecasetiles_content {
         @media (max-width: 1400px) {
-            grid-template-columns: repeat(auto-fill, minmax(350px, 400px));
+            grid-template-columns: repeat(auto-fill, minmax(360px, 100px));
             justify-content: center;
             align-items: center;
         }

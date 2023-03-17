@@ -39,9 +39,9 @@ export function UseCaseTile({ image, image_title, category, title, span, isFavou
                         </div>
                         <div className={styles.buttons}>
                             {isFavourite && (
-                                <div className={styles.iconButton} onClick={shareLink}>
+                                <button className={styles.iconButton} onClick={shareLink} aria-label="Favorite">
                                     {icons.heart}
-                                </div>
+                                </button>
                             )}
                             {/* {url && (
                                 <button className={styles.iconButton} onClick={shareLink} aria-label="Share">
