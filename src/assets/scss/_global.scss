@@ -160,6 +160,14 @@ a {
     }
 }
 
+@media (max-width: 390px) {
+    .containerSite {
+        .contentBox {
+            column-gap: unset;
+        }
+    }
+}
+
 // Color
 .color {
     &.blue {

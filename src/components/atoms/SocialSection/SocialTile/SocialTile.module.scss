@@ -10,6 +10,7 @@
     border-radius: 2px;
     padding: 20px 26px;
     min-width: 350px;
+    width: 100%;
 
     &_text {
         position: relative;
@@ -33,7 +34,6 @@
             margin: 0;
             white-space: nowrap;
             overflow: hidden;
-            
         }
 
         .paragraphfirst {
@@ -55,6 +55,14 @@
             max-width: 240px;
             text-overflow: ellipsis;
         }
+
+        @media (max-width: 400px) {
+            .paragraphsecond,
+            > h4,
+            .paragraphfirst {
+                max-width: 100%;
+            }
+        }
     }
 
     &_img {
@@ -70,5 +78,9 @@
             width: 100%;
             height: 100%;
         }
+    }
+    
+    @media (max-width: 400px) {
+        min-width: unset;
     }
 }

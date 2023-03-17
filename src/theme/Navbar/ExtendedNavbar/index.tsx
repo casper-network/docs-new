@@ -69,7 +69,7 @@ export default function ExtendedNavbar() {
     };
 
     const handleKeyClose = (e: KeyboardEvent): void => {
-        if (e.keyCode === 27) setDropdownOpen(false);
+        if (e.keyCode === 27) closeNavBarHandler();
     };
 
     const closeNavBarHandler = () => {
