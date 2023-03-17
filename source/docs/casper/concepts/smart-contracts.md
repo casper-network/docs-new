@@ -1,8 +1,3 @@
----
-title: Smart Contracts
-slug: /concepts/smart-contracts
----
-
 # Smart Contracts
 
 ## General/Intro 
