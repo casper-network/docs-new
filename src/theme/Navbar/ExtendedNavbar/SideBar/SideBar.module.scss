@@ -18,6 +18,8 @@
     overflow-x: scroll;
     height: 90vh;
 
+    @include mixins.custom_scrollbar(var(--black) var(--casperWhite));
+
     &_container {
         width: 100%;
         margin-top: 20px;
