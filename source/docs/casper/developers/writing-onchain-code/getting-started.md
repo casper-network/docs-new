@@ -22,7 +22,7 @@ The installation script automatically adds Rust to your system PATH after your n
 To start using Rust right away instead of restarting your terminal, run the following command in your shell to add Rust to your system PATH manually:
 
 ```bash
-$ source $HOME/.cargo/env
+source $HOME/.cargo/env
 ```
 
 You can also use `brew` on MacOS or `apt` on Linux to install Rust.
@@ -37,12 +37,12 @@ You will need the latest nightly toolchain to develop smart contracts in Rust. P
 
 **Rust-nightly quickstart**
 ```bash
-$ rustup toolchain install nightly
-$ rustup default nightly
+rustup toolchain install nightly
+rustup default nightly
 ```
 To check your current version of rust-nightly:
 ```bash
-$ rustup run nightly rustc --version
+rustup run nightly rustc --version
 ```
 
 
@@ -67,11 +67,11 @@ Each of the Casper crates comes with API documentation and examples for each fun
 CMake is a popular build tool that we will utilize, and you may very well have it already installed. If you do, make sure that you have the latest version. If you need to install or upgrade it, follow the steps located here: https://cmake.org/install/. Once installed, check your version as shown below.
 
 ```bash
-$ cmake --version
+cmake --version
 ```
 Output:
 ```
-cmake version 3.20.0
+cmake version 3.20.0 (or above)
 
 CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
