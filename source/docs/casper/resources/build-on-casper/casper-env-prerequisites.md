@@ -39,7 +39,7 @@ rustup --version
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### Install aditional packages to be able to install cargo-casper and casper-client {#install-adds}
+### Install additional packages to be able to install cargo-casper and casper-client {#install-adds}
 
 ```bash
 brew install pkg-config
@@ -70,7 +70,11 @@ Check the version
 casper-client --version
 ```
 
-For more information about supported commands, you can check it with 'casper-client --help'
+For more information about supported commands, you can check it with:
+
+```bash
+casper-client --help
+```
 
 :::tip
 
