@@ -14,7 +14,7 @@
     }
 
     .paragraph {
-        max-height: 120px;
+        height: 120px;
         overflow-y: auto;
         padding-right: 10px;
         @include mixins.custom_scrollbar(var(--black) var(--casperWhite));
