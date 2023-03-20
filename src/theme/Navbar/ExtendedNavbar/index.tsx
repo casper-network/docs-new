@@ -8,7 +8,7 @@ import { usePluginData } from "@docusaurus/useGlobalData";
 import ISocialMedia from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/socialMedia";
 import INavData from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navData";
 import IFooterData from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/footerData";
-import SocialMedia from "./SocialMedia";
+import SocialMedia from "../../SocialMedia";
 import Search from "./Search";
 import INavItem from "../../../plugins/docusaurus-plugin-navdata/src/interfaces/navbar/navItem";
 import useEventListener from "../../../hooks/useEventListener";

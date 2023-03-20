@@ -9,7 +9,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 function Footer() {
     const { footer } = useThemeConfig();
-    console.log(footer);
     if (!footer) {
         return null;
     }
