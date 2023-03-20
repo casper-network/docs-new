@@ -6,6 +6,17 @@
     > a {
         margin-top: 50px;
     }
+    .container_btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        :hover {
+            > [class*="button_container"] {
+                gap: 8px;
+            }
+        }
+    }
 }
 
 @media (max-width: 1024px) {
