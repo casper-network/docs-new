@@ -1,14 +1,15 @@
 module.exports = {
     concepts: [
         "concepts/index",
-        //"concepts/intro-to-dapps", // NEW CONTENT WILL BE HERE
+        "concepts/intro-to-dapps",
         "concepts/accounts-and-keys",
         "concepts/understanding-hash-types",
-        //"concepts/deploy-and-deploy-lifecycle", // NEW CONTENT WILL BE HERE
-        //"concepts/global-state", // NEW CONTENT WILL BE HERE
-        //"concepts/smart-contracts", // NEW CONTENT WILL BE HERE
+        "concepts/deploy-and-deploy-lifecycle",
+        "concepts/global-state",
+        "concepts/smart-contracts",
         "concepts/callstack",
         "concepts/session-code",
+        "concepts/callstack",
         "concepts/dictionaries",
         "concepts/serialization-standard",
         {
@@ -137,11 +138,11 @@ module.exports = {
                     ],
                 },
                 //"developers/dapps/prerequisites", // NEW CONTENT WILL BE HERE
-                //"developers/dapps/technology-stack", // NEW CONTENT WILL BE HERE
+                "developers/dapps/technology-stack",
                 //"developers/dapps/template-frontend", // NEW CONTENT WILL BE HERE
                 "developers/dapps/signing-a-deploy",
                 "developers/dapps/sending-deploys",
-                //"developers/dapps/using-casper-signer", // NEW CONTENT WILL BE HERE
+                "developers/dapps/signer-integration",
                 //"developers/dapps/callstack-based", // NEW CONTENT WILL BE HERE
                 //"developers/dapps/explanation-session-and-contract", // NEW CONTENT WILL BE HERE
                 "developers/dapps/monitor-and-consume-events",
