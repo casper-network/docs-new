@@ -18,13 +18,16 @@ function Footer() {
     const { customFields } = siteConfig;
     return (
         <div>
-            {customFields.directusUrl && customFields.directusGraphqlUrl && customFields.siteUrl && <ExtendedFooter />}
-            <FooterLayout
-                style={style}
-                links={links && links.length > 0 && <FooterLinks links={links} />}
-                logo={logo && <FooterLogo logo={logo} />}
-                copyright={copyright && <FooterCopyright copyright={copyright} />}
-            />
+            {customFields.directusUrl && customFields.directusGraphqlUrl && customFields.siteUrl ? (
+                <ExtendedFooter />
+            ) : (
+                <FooterLayout
+                    style={style}
+                    links={links && links.length > 0 && <FooterLinks links={links} />}
+                    logo={logo && <FooterLogo logo={logo} />}
+                    copyright={copyright && <FooterCopyright copyright={copyright} />}
+                />
+            )}
         </div>
     );
 }
