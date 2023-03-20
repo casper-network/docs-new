@@ -47,8 +47,6 @@ const navDataLoader = (
 
       const json = await response.json();
 
-      console.log(json);
-
       const data = convertData(json);
 
       const promises = [];
