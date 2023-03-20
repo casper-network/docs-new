@@ -120,59 +120,58 @@ export default function ExtendedNavbar() {
         <div className={styles.wrapper}>
             <header ref={navBarRef} className={styles.navbar_wrapper}>
                 <div className={`${styles.container} containerSite`}>
-                    <div className={`${styles.navbar}`}>
-                        {navData && navData.navItems && (
-                            <>
-                                <div className={styles.navBarSectionBeginning}>
-                                    {navData.logo && (
-                                        <div className={styles.navbar_logo_container}>
-                                            <Link href={getExternalLink("/")} onClick={() => closeNavBarHandler()}>
-                                                <div dangerouslySetInnerHTML={{ __html: navData.logo }}></div>
-                                            </Link>
-                                        </div>
-                                    )}
-                                    {isDesktop && navData && navData.navItems && (
-                                        <Nav
-                                            dropdownParentRef={dropdownParentRef}
-                                            header={navData}
-                                            handleClick={handleClick}
-                                            dropdownOpen={dropdownOpen}
-                                            current={current}
-                                            locale={externalLocale}
-                                            closeNavBarHandler={closeNavBarHandler}
-                                        />
-                                    )}
+                    <div className={`${styles.navbar} ${styles.desktop} navBar`}>
+                        <div className={styles.navBarSectionBeginning}>
+                            {navData.logo && (
+                                <div className={styles.navbar_logo_container}>
+                                    <Link href={getExternalLink("/")} onClick={() => closeNavBarHandler()}>
+                                        <div dangerouslySetInnerHTML={{ __html: navData.logo }}></div>
+                                    </Link>
                                 </div>
-                                {isDesktop ? (
-                                    <>
-                                        <div className={styles.navBarSectionEnd}>
-                                            {navData && navData.searchPlaceholder && (
-                                                <Search
-                                                    index={{
-                                                        name: `${siteConfig.customFields.siteAlgoliaIndexName}`,
-                                                        title: `${siteConfig.customFields.siteAlgoliaIndexName}`,
-                                                    }}
-                                                    locale={externalLocale}
-                                                    placeholder={navData.searchPlaceholder}
-                                                    siteUrl={siteConfig.customFields.siteUrl as string}
-                                                />
-                                            )}
-
-                                            {data && data.socialMedia && <SocialMedia socialMedia={data.socialMedia} />}
-                                        </div>
-                                    </>
-                                ) : (
-                                    <div className={styles.icon} onClick={handleSidebar}>
-                                        <div className={`${styles.icon_cancel} ${!sidebarOpen ? styles.icon_cancel_none : ""}`}>{icons.cancel}</div>
-                                        <div className={`${styles.icon_menu} ${sidebarOpen ? styles.icon_menu_none : ""}`}>{icons.menu}</div>
-                                    </div>
-                                )}
-                            </>
+                            )}
+                            {navData && navData.navItems && (
+                                <Nav
+                                    dropdownParentRef={dropdownParentRef}
+                                    header={navData}
+                                    handleClick={handleClick}
+                                    dropdownOpen={dropdownOpen}
+                                    current={current}
+                                    locale={externalLocale}
+                                    closeNavBarHandler={closeNavBarHandler}
+                                />
+                            )}
+                        </div>
+                        <div className={styles.navBarSectionEnd}>
+                            {navData && navData.searchPlaceholder && (
+                                <Search
+                                    index={{
+                                        name: `${siteConfig.customFields.siteAlgoliaIndexName}`,
+                                        title: `${siteConfig.customFields.siteAlgoliaIndexName}`,
+                                    }}
+                                    locale={externalLocale}
+                                    placeholder={navData.searchPlaceholder}
+                                    siteUrl={siteConfig.customFields.siteUrl as string}
+                                />
+                            )}
+                            {data && data.socialMedia && <SocialMedia socialMedia={data.socialMedia} />}
+                        </div>
+                    </div>
+                    <div className={`${styles.navbar} ${styles.mobile} navBar`}>
+                        {navData && navData.logo && (
+                            <div className={styles.navbar_logo_container}>
+                                <Link href={getExternalLink("/")} onClick={() => closeNavBarHandler()}>
+                                    <div dangerouslySetInnerHTML={{ __html: navData.logo }}></div>
+                                </Link>
+                            </div>
                         )}
+                        <div className={`${styles.icon} ${isDesktop ? styles.hidden : ""}`} onClick={handleSidebar}>
+                            <div className={`${styles.icon_cancel} ${!sidebarOpen && styles.icon_cancel_none}`}>{icons.cancel}</div>
+                            <div className={`${styles.icon_menu} ${sidebarOpen && styles.icon_menu_none}`}>{icons.menu}</div>
+                        </div>
                     </div>
                 </div>
             </header>
-            {!isDesktop && (
+            <div className={`${styles.mobile}`}>
                 <Sidebar
                     sidebarOpen={sidebarOpen}
                     header={navData}
@@ -185,7 +184,7 @@ export default function ExtendedNavbar() {
                     siteConfig={siteConfig}
                     socialMedia={data.socialMedia}
                 />
-            )}
+            </div>
         </div>
     );
 }
