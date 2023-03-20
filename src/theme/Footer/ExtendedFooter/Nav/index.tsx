@@ -28,7 +28,7 @@ function Nav({ footer, renderLink, getExternalLink }: INavProps) {
             {footer && footer.logo && (
                 <div className={styles.logoCasper}>
                     <Link href={getExternalLink("/")}>
-                        <div dangerouslySetInnerHTML={{ __html: footer.logo }}></div>
+                        <div className={styles.logoCasper_logo} dangerouslySetInnerHTML={{ __html: footer.logo }}></div>
                     </Link>
                 </div>
             )}

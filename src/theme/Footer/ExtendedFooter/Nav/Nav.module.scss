@@ -1,3 +1,4 @@
+@use "../../../../assets/scss/variables/media-queries";
 @import "../../../../assets/scss/mixins";
 
 .nav {
@@ -49,29 +50,27 @@
     }
 }
 
-// @media #{media-queries.$break-md} {
-//     .nav {
-//         justify-content: flex-start;
-//         flex-direction: column;
-//         padding-top: 30px;
-//         gap: 29px;
-//     }
-// }
-
-// @media #{media-queries.$break-sm} {
-//     .nav {
-//         justify-content: flex-start;
-//         flex-direction: column;
-//         padding-top: 30px;
-//         gap: 29px;
-//         width: 100%;
-
-//         .logoCasper {
-//             display: block;
-//             margin-top: 14px;
-//             &_logo {
-//                 min-width: 168px;
-//             }
-//         }
-//     }
-// }
+@media #{media-queries.$break-md} {
+    .nav {
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-top: 30px;
+        gap: 29px;
+    }
+}
+@media #{media-queries.$break-sm} {
+    .nav {
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-top: 30px;
+        gap: 29px;
+        width: 100%;
+        .logoCasper {
+            display: block;
+            margin-top: 14px;
+            &_logo {
+                min-width: 168px;
+            }
+        }
+    }
+}

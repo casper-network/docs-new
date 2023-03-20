@@ -81,9 +81,9 @@ export default function ExtendedFooter() {
                                 <SocialMedia socialMedia={data.socialMedia} />
                                 <p className={`${styles.footer_container_upperData_social_description} primaryParagraph`}>{footerData.description}</p>
                                 {footerData && footerData.logo && (
-                                    <div className={styles.navbar_logo_container}>
+                                    <div className={styles.logoCasper}>
                                         <Link href={getExternalLink("/")}>
-                                            <div dangerouslySetInnerHTML={{ __html: footerData.logo }}></div>
+                                            <div className={styles.logoCasper_logo} dangerouslySetInnerHTML={{ __html: footerData.logo }}></div>
                                         </Link>
                                     </div>
                                 )}
