@@ -51,11 +51,13 @@ npm install casper-js-sdk
 
 ## Casper Signer Integration
 
-To connect to the Casper Signer within your React app, first create a new component that imports the `Signer` class from the Casper JS SDK and stores a public key in a state variable:
+To connect to the Casper Signer within your React app, first create a new component that imports the `Signer` class from the Casper JS SDK and stores a public key in a state variable.
 
 ```bash
 touch src/Signer.js
 ```
+
+Open the file and write:
 
 ```javascript
 import { Signer } from "casper-js-sdk";
@@ -107,9 +109,13 @@ For this example we'll be calling a hypothetical "hello world" contract that con
 
 When calling smart contracts from React, you'll need to implement the logic within a function accessible from a React component. You can obtain user-entered data from the DOM using elements like `input` then grab the value within the smart-contract-calling function.
 
+Create a new component:
+
 ```bash
 touch src/UpdateMessage.js
 ```
+
+Open the file and write:
 
 ```jsx
 import { Contracts, CasperClient, RuntimeArgs, CLValueBuilder, DeployUtil, Signer } from "casper-js-sdk";
@@ -133,20 +139,20 @@ function updateMessage() {
 	const contract = Contracts.Contract(new CasperClient("http://NODE_ADDRESS:7777/rpc"));
 	contract.setContractHash("hash-75143aa708275b7dead20ac2cc06c1c3eccff4ffcf1eb9aebb8cce7c35cea041");
 	const runtimeArguments = RuntimeArgs.fromMap({
-  	"message": CLValueBuilder.string(userInputElement.value)
+		"message": CLValueBuilder.string(userInputElement.value)
 	});
 	const deploy = contract.callEntrypoint(
 		"update_message",
-  	args,
-  	CLPublicKey.fromHex(publicKey),
-  	"casper", // "casper-test" for testnet
-  	"1000000000", // 1 CSPR (10^9 Motes)
+		args,
+		CLPublicKey.fromHex(publicKey),
+		"casper", // "casper-test" for testnet
+		"1000000000", // 1 CSPR (10^9 Motes)
 	);
 	const deployJSON = DeployUtil.deployToJson(deploy);
 	Signer.sign(deployJSON, publicKey).then((signedDeploy) => { // Initiates sign request
-  	// Send `signedDeploy` to backend via POST request
+		// Send `signedDeploy` to backend via POST request
 	}).catch((error) => {
-  	// Handle `error`
+		// Handle `error`
 	});
 }
 ```
@@ -155,9 +161,13 @@ function updateMessage() {
 
 Consider that the message written to the chain during the `update_message` entrypoint invocation is stored in the [dictionary](../../concepts/glossary/D.md#dictionary) "messages" in the contract. Further consider that each account may write their own message, and that the messages are stored under the account's [account hash](../../concepts/glossary/A.md#account-hash) as the dictionary key. Querying this kind of data is important in any dApp, here is how to communicate contract data to and from the front-end.
 
+Create a new component:
+
 ```bash
 touch src/Query.js
 ```
+
+Open the file and write:
 
 ```jsx
 function Query() {
