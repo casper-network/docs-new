@@ -23,7 +23,7 @@ Read [this](./session-code.md) to understand the different kinds of code which e
 ### [Dictionaries](./dictionaries.md)
 [Dictionaries](./dictionaries.md) are a primary construct for storing and retrieving data in Casper code. 
 ### [Design](./design/index.md)
-An in-depth look at the high-level design and architecture o the Casper eco-system can be found [here](./design/index.md)
+An in-depth look at the high-level design and architecture of the Casper eco-system can be found [here](./design/index.md)
 ### [Economics](./economics/index.md)
 Learn how the on-chain economics of Casper work [here](./economics/index.md).
 ### [Glossary](./glossary/index.md)
