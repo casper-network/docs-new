@@ -1,3 +1,5 @@
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
+
 # dApp Front-end with React
 
 For building web applications, it is most common to use the Casper JS SDK with React. This is a popular solution among developers, but you may use any front-end library or framework, including none at all, to interact with the Casper Network via the [Casper JS SDK](https://github.com/casper-ecosystem/casper-js-sdk).
@@ -51,6 +53,10 @@ npm install casper-js-sdk
 
 To connect to the Casper Signer within your React app, first create a new component that imports the `Signer` class from the Casper JS SDK and stores a public key in a state variable:
 
+```bash
+touch src/Signer.js
+```
+
 ```javascript
 import { Signer } from "casper-js-sdk";
 
@@ -99,9 +105,11 @@ The `connectToSigner()` function calls `Signer.isConnected()` to check if the Si
 
 For this example we'll be calling a hypothetical "hello world" contract that contains a single entrypoint "update_message". We'll call the "update_message" entrypoint with text entered by the user in an HTML `input` field.
 
-### Front-end
+When calling smart contracts from React, you'll need to implement the logic within a function accessible from a React component. You can obtain user-entered data from the DOM using elements like `input` then grab the value within the smart-contract-calling function.
 
-When calling smart contracts from React, you'll need to implement the logic within a function accessible from a React component. You can obtain user-entered data from the DOM using elements like `input` then grab the value within the smart-contract-calling function. 
+```bash
+touch src/UpdateMessage.js
+```
 
 ```jsx
 import { Contracts, CasperClient, RuntimeArgs, CLValueBuilder, DeployUtil, Signer } from "casper-js-sdk";
@@ -143,50 +151,13 @@ function updateMessage() {
 }
 ```
 
-### Backend
-
-Once a deploy has been signed by the user, you can call your dApp's backend with the transaction attached as a JSON object and have the backend forward the transaction to a Casper Network node.
-
-<Tabs>
-
-<TabItem value="js" label="JavaScript">
-
-```javascript
-... // Accept JSON Deploy via POST endpoint
-let signedDeploy = DeployUtil.deployFromJson(signedJSON).unwrap();
-signedDeploy.send("http://NODE_ADDRESS:7777/rpc").then((response) => { 
-  // Send `response` back to the frontend
-}).catch((error) => {
-  // Handle `error`
-});
-```
-
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-from pycspr import NodeClient, NodeConnection
-from pycspr.serialisation.json.deploy.decoder import decode
-from pycspr.types.deploys import Deploy, DeployApproval, DeployHeader, DeployExecutableItem
-import json
-
-... # Accept Stringified JSON Deploy via POST endpoint
-client = NodeClient(NodeConnection(host = "NODE_ADDRESS", port_rpc = 7777))
-deploy = json.loads(jsonStringifiedDeploy)
-decoded = decode(deploy["deploy"], Deploy)
-deployHash = client.send_deploy(decoded)
-```
-
-</TabItem>
-
-</Tabs>
-
   ## Query a Smart Contract
 
 Consider that the message written to the chain during the `update_message` entrypoint invocation is stored in the [dictionary](../../concepts/glossary/D.md#dictionary) "messages" in the contract. Further consider that each account may write their own message, and that the messages are stored under the account's [account hash](../../concepts/glossary/A.md#account-hash) as the dictionary key. Querying this kind of data is important in any dApp, here is how to communicate contract data to and from the front-end.
 
-### Front-end
+```bash
+touch src/Query.js
+```
 
 ```jsx
 function Query() {
@@ -203,40 +174,3 @@ function query() {
   // Query the backend using GET/POST with the `accountHash`
 }
 ```
-
-Now on the backend, open a corresponding GET/POST endpoint and parse the account hash:
-
-### Backend
-
-<Tabs>
-
-<TabItem value="js" label="JavaScript">
-
-```javascript
-... // Accept specified account hash via GET or POST endpoint
-const contract = Contracts.Contract(new CasperClient("http://NODE_ADDRESS:7777/rpc"));
-contract.setContractHash("hash-75143aa708275b7dead20ac2cc06c1c3eccff4ffcf1eb9aebb8cce7c35cea041");
-contract.queryContractDictionary("messages", accountHash).then((response) => {
-  // Send the result back to the front-end
-}).catch((error) => {
-  // Handle `error`
-})
-```
-
-</TabItem>
-
-<TabItem value="js" label="Python">
-
-```python
-... # Accept specified account hash via GET or POST endpoint
-dictionaryID = pycspr.types.DictionaryID_ContractNamedKey(
-    dictionary_name = "messages",
-    dictionary_item_key = accountHash,
-    contract_key = "75143aa708275b7dead20ac2cc06c1c3eccff4ffcf1eb9aebb8cce7c35cea041"
-)
-response = client.get_dictionary_item(dictionaryID)
-```
-
-</TabItem>
-
-</Tabs>
