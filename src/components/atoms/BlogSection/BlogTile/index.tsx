@@ -36,7 +36,7 @@ export function BlogTile({ image, image_title, category, title, span, date, butt
                         <SiteButton {...button} />
                     </div>
                     <div className={`${styles.date}`}>
-                        <p className="halfTitleEyebrow"> {date} </p>
+                        <p className="secondaryParagraph"> {date} </p>
                     </div>
                 </div>
             </div>
