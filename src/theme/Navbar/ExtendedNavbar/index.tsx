@@ -28,6 +28,7 @@ export default function ExtendedNavbar() {
     const { siteConfig } = useDocusaurusContext();
     const navBarRef = useRef<HTMLHeadingElement>(null);
     const dropdownParentRef = useRef<HTMLElement>(null);
+    const dropdownParentMobileRef = useRef<HTMLElement>(null);
 
     const isDesktop = useWindowWidth(997);
 
@@ -99,7 +100,9 @@ export default function ExtendedNavbar() {
     /* /SIDEBAR */
 
     function handleClickOutside(event: any) {
-        if (dropdownParentRef && dropdownParentRef.current && !dropdownParentRef.current.contains(event.target)) closeNavBarHandler();
+        if (isDesktop && dropdownParentRef && dropdownParentRef.current && !dropdownParentRef.current.contains(event.target)) closeNavBarHandler();
+        if (!isDesktop && dropdownParentMobileRef && dropdownParentMobileRef.current && !dropdownParentMobileRef.current.contains(event.target))
+            closeNavBarHandler();
     }
 
     useEventListener("keydown", handleKeyClose);
@@ -176,7 +179,7 @@ export default function ExtendedNavbar() {
                     sidebarOpen={sidebarOpen}
                     header={navData}
                     currentLocale={externalLocale}
-                    dropdownParentRef={dropdownParentRef}
+                    dropdownParentRef={dropdownParentMobileRef}
                     handleClick={handleClick}
                     dropdownContent={dropdownContent}
                     dropdownOpen={dropdownOpen}

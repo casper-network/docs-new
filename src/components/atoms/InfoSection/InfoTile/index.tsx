@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import useWindowWidth from "../../../../hooks/useWindowWidth";
 import styles from "./InfoTile.module.scss";
 
 export interface IInfoTile {
@@ -16,7 +15,6 @@ export interface IInfoTileProps {
 
 export default function InfoTile({ tile, span }: IInfoTileProps) {
     const { title, content, image, image_title } = tile;
-    const isDesktop = useWindowWidth(1024);
     const ref = useRef(null);
     const [addAttribute, setAddAttribute] = useState<boolean>(false);
 
@@ -28,7 +26,7 @@ export default function InfoTile({ tile, span }: IInfoTileProps) {
     }, []);
 
     return (
-        <div className={`${styles.infoTileWrapper} ${isDesktop ? `span-${span}` : ""}`}>
+        <div className={`${styles.infoTileWrapper} ${`span-${span}`}`}>
             {image && title && (
                 <div className={styles.image}>
                     <img alt={image_title ? `${image_title}` : title ? `${title}` : `InfoSection`} src={image} />
