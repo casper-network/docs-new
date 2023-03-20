@@ -33,6 +33,18 @@ export function FeatureSection({ header, subheader, tiles, imageAndTextBlock }: 
         }
     };
 
+    const checkMultiplicity = (index: number) => {
+        if ((desktop && multipleOfThree(index)) || (!desktop && multipleOfTwo(index))) return styles.border_none;
+        else return "";
+    };
+
+    const lastTile = (index: number) => {
+        const numberTiles = tiles.length;
+        if (index + 1 == numberTiles) {
+            return styles.border_none;
+        } else return "";
+    };
+
     return (
         <Section header={header} subheader={subheader}>
             <ImageAndTextBlock {...imageAndTextBlock} />
@@ -41,9 +53,7 @@ export function FeatureSection({ header, subheader, tiles, imageAndTextBlock }: 
                     {tiles.map((data, index) => (
                         <div
                             key={index}
-                            className={`${styles.resource_content_card} ${desktop ? "span-4" : ""} ${
-                                desktop ? (multipleOfThree(index) ? styles.border_none : "") : multipleOfTwo(index) ? styles.border_none : ""
-                            } `}
+                            className={`${styles.resource_content_card} ${desktop ? "span-4" : ""} ${checkMultiplicity(index)} ${lastTile(index)} `}
                         >
                             <FeatureTile {...data} />
                         </div>
