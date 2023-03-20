@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
-# dApp Front-end with React
+# Front-end Template with React
 
 For building web applications, it is most common to use the Casper JS SDK with React. This is a popular solution among developers, but you may use any front-end library or framework, including none at all, to interact with the Casper Network via the [Casper JS SDK](https://github.com/casper-ecosystem/casper-js-sdk).
 
