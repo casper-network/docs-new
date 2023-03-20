@@ -73,8 +73,8 @@ export default function ExtendedFooter() {
     return (
         <>
             {footerData && (
-                <div className={`containerSite`}>
-                    <div className={`${styles.footer_container} navBarSite`}>
+                <div className={`containerSite ${styles.footer_wrapper}`}>
+                    <div className={`${styles.footer_container}`}>
                         <div className={styles.footer_container_upperData}>
                             <div className={styles.footer_container_upperData_social}>
                                 <h2>{footerData.title}</h2>
