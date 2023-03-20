@@ -26,19 +26,19 @@ export default function NavBarLink({ title, url, type, children, locale, closeNa
         switch (type) {
             case "internal":
                 return (
-                    <a href={getLink(url)} onClick={() => closeNavBarHandler()}>
+                    <a key={`${title}`} href={getLink(url)} onClick={() => closeNavBarHandler()}>
                         {title}
                     </a>
                 );
 
             case "external":
                 return (
-                    <a href={url} onClick={() => closeNavBarHandler()}>
+                    <a key={`${title}`} href={url} onClick={() => closeNavBarHandler()}>
                         {title}
                     </a>
                 );
             default:
-                return <span>{title}</span>;
+                return <span key={`${title}`}>{title}</span>;
         }
     };
 

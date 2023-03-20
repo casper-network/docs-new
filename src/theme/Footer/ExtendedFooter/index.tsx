@@ -42,12 +42,20 @@ export default function ExtendedFooter() {
     const renderLink = (type: "internal" | "external", title: string, url: string) => {
         switch (type) {
             case "internal":
-                return <a href={getLink(url)}>{title}</a>;
+                return (
+                    <a key={`${title}`} href={getLink(url)}>
+                        {title}
+                    </a>
+                );
 
             case "external":
-                return <a href={url}>{title}</a>;
+                return (
+                    <a key={`${title}`} href={url}>
+                        {title}
+                    </a>
+                );
             default:
-                return <span>{title}</span>;
+                return <span key={`${title}`}>{title}</span>;
         }
     };
 
@@ -66,7 +74,7 @@ export default function ExtendedFooter() {
         <>
             {footerData && (
                 <div className={`containerSite`}>
-                    <div className={`${styles.footer_container} navBar`}>
+                    <div className={`${styles.footer_container} navBarSite`}>
                         <div className={styles.footer_container_upperData}>
                             <div className={styles.footer_container_upperData_social}>
                                 <h2>{footerData.title}</h2>
@@ -85,7 +93,7 @@ export default function ExtendedFooter() {
                         {footerData.bottomLinks && (
                             <div className={styles.footer_container_bottomData}>
                                 {footerData.bottomLinks.map((link, i) => {
-                                    return <span key={link.title}>{renderLink(link.type, link.title, link.url)}</span>;
+                                    return <span key={`${link.title}_${i}`}>{renderLink(link.type, link.title, link.url)}</span>;
                                 })}
                             </div>
                         )}
