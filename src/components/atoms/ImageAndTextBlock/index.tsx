@@ -1,5 +1,4 @@
 import React from "react";
-import useWindowWidth from "../../../hooks/useWindowWidth";
 import { SiteButton, ISiteButtonProps } from "../SiteButton";
 import styles from "./ImageAndTextBlock.module.scss";
 
@@ -20,13 +19,16 @@ export interface IImageAndTextBlockProps {
 }
 
 export function ImageAndTextBlock({ image, image_title, title, description, button, textAlign, textSize, dateData }: IImageAndTextBlockProps) {
-    const isDesktop = useWindowWidth(970);
     function spanHandler(textSize: string, element: elements): string {
-        if (textSize === "1/3" && isDesktop) {
+        if (textSize === "1/3") {
             if (element === elements.image) return "span-8";
             // if the element is a text, the function return span-4
             else return "span-4";
-        } else if (textSize === "1/2" && isDesktop) return "span-6";
+        } else if (textSize === "2/3") {
+            if (element === elements.image) return "span-4";
+            // if the element is a text, the function return span-8
+            else return "span-8";
+        } else if (textSize === "1/2") return "span-6";
         else return "span-12";
     }
 
