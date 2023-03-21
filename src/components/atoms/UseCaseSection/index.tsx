@@ -33,7 +33,7 @@ export function UseCaseSection({ header, subheader, tiles }: IUseCaseSectionProp
             <div className={`${styles.usecasetile} containerSite`}>
                 <div className={`${styles.usecasetiles_content} contentBox`}>
                     {tiles.map((data: any, index: number) => (
-                        <section className={`${desktop && "span-4"}`} key={`section-${index}`}>
+                        <section className={`span-4`} key={`usecase-section-${index}`}>
                             <UseCaseTile {...{ ...data, ...{ span: span } }} />
                         </section>
                     ))}
