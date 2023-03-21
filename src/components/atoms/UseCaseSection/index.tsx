@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./UseCaseSection.module.scss";
-import useWindowWidth from "../../../hooks/useWindowWidth";
 import Section from "../../containers/Section";
 import { UseCaseTile, IUseCaseTileProps } from "./UseCaseTile";
 
@@ -11,8 +10,6 @@ export interface IUseCaseSectionProps {
 }
 
 export function UseCaseSection({ header, subheader, tiles }: IUseCaseSectionProps) {
-    const desktop = useWindowWidth(1401);
-
     const setSpan = (length: number) => {
         switch (length) {
             case 1:
