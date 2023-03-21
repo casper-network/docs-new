@@ -2,7 +2,6 @@ import React from "react";
 import { ImageAndTextBlock, IImageAndTextBlockProps } from "../ImageAndTextBlock";
 import styles from "./FeatureSection.module.scss";
 import { FeatureTile, IFeatureTiledProps } from "./FeatureTile";
-import useWindowWidth from "../../../hooks/useWindowWidth";
 import Section from "../../containers/Section";
 
 interface IFeatureSectionProps {
