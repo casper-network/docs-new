@@ -1,6 +1,5 @@
 import React from "react";
 import { ITagProps, Tag } from "@site/src/components";
-import useWindowWidth from "../../../../hooks/useWindowWidth";
 import icons from "../../../../icons";
 import styles from "./UseCaseTile.module.scss";
 
@@ -18,8 +17,6 @@ export interface IUseCaseTileProps {
 }
 
 export function UseCaseTile({ image, image_title, category, title, span, isFavourite, url, linkText, paragraph, tags }: IUseCaseTileProps) {
-    const desktop = useWindowWidth(1025);
-
     const shareLink = () => {
         if (navigator && url) {
             navigator.clipboard.writeText(url);
