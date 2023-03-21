@@ -82,6 +82,7 @@
 .disabled {
     color: var(--primaryBtn-disabled);
     border: 1px solid var(--primaryBtn-disabled);
+    cursor: default;
     &:hover,
     &:focus {
         outline: none;
