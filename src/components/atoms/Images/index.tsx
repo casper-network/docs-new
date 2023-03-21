@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import useWindowWidth from "../../../hooks/useWindowWidth";
 
 export interface IImagesProps {
     images: IImage[];
@@ -14,23 +13,24 @@ interface IImage {
 }
 
 export function Images({ images }: IImagesProps) {
-    const isDesktop = useWindowWidth(996);
+    const getSpan = (numberCol: "full" | "half" | "third") => {
+        if (numberCol === "full") {
+            return "span-12";
+        }
+        if (numberCol == "half") {
+            return "span-6";
+        }
+        if (numberCol == "third") {
+            return "span-4";
+        }
+        return "span-12";
+    };
+
     return (
         <section className={`${styles.images} containerSite`}>
             <div className={`${styles.images_content} contentBox`}>
                 {images.map((data, index) => (
-                    <div
-                        className={`${styles.images_content_section} ${
-                            data.numberCol == "full"
-                                ? "span-12"
-                                : data.numberCol == "half" && isDesktop
-                                ? "span-6"
-                                : data.numberCol == "third" && isDesktop
-                                ? "span-4"
-                                : "span-12"
-                        } `}
-                        key={index}
-                    >
+                    <div className={`${styles.images_content_section} ${getSpan(data.numberCol)}`} key={index}>
                         <img src={data.image} alt={data.image_title ? `${data.image_title}` : data.name ? `${data.name}` : `Images`} />
                     </div>
                 ))}
