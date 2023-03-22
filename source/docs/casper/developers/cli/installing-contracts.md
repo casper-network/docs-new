@@ -99,7 +99,7 @@ const Deploy = async function(
 ```
 As you can see, you will need an `asymmetric_keypair` to sign a deploy. See the
 "KeyManager" class below to learn how to create keys locally and
-construct an `asymmetric_keypair` using Ed25519. The code above is only a simple example of how keys can be used to sign deploys. If you are interested in building on Casper, or, for example want to use Secp256K1 keypairs, you can find more in-depth examples [here](https://github.com/casper-ecosystem/casper-js-sdk/blob/dev/test/lib/Keys.test.ts)
+construct an `asymmetric_keypair` using Ed25519. The code above is only a simple example of how keys can be used to sign deploys. If you are interested in building on Casper, or, for example want to use Secp256K1 keypairs, you can find more in-depth examples [here](https://github.com/casper-ecosystem/casper-js-sdk/blob/772de6e1079242d0a607ca7af2ce028b10a0d090/e2e/lib/Keys.test.ts)
 
 ```javascript
 const fs = require('fs');
