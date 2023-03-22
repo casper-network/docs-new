@@ -24,13 +24,6 @@ The [Developers](./developers/index.md) area caters to software developers inter
   - ### [Operators](./operators/index.md)
 The [Operators](./operators/index.md) section caters for people who want to run and administrate a Casper network. This includes technical staff, responsible for a production Casper network, developers who want to run a test node privately, individuals who run a Casper validator node.
 
-## Other Sections
-
-- [FAQ](./faq/index.md): Frequently Asked Questions
-- [Resources](./resources/index.md): Resources such as setup information, tutorials, further reading, etc.
-- [Tutorials](./resources/tutorials/index.md): All of our tutorials are organized here for easy access. 
-- [Glossary](./concepts/glossary/index.md): An aplphabetized list of all terms used within the Casper documentation.
-
 # Most Visited Pages
  - [Core Concepts of Casper](./concepts/index.md)
  - [Tutorial - Build your first dApp](./resources/tutorials/beginner/getting-started-tutorial.md)
@@ -38,4 +31,10 @@ The [Operators](./operators/index.md) section caters for people who want to run 
  - [Design](./concepts/design/index.md)
  - [Economics](./concepts/economics/index.md) 
  - [Staking Guide](./concepts/economics/staking.md) 
- 
+
+## Other Sections
+
+- [FAQ](./faq/index.md): Frequently Asked Questions
+- [Resources](./resources/index.md): Resources such as setup information, tutorials, further reading, etc.
+- [Tutorials](./resources/tutorials/index.md): All of our tutorials are organized here for easy access. 
+- [Glossary](./concepts/glossary/index.md): An aplphabetized list of all terms used within the Casper documentation.
