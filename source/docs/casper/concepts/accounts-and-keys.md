@@ -1,6 +1,5 @@
 ---
 title: Accounts and Keys
-slug: /concepts/accounts-and-keys
 ---
 
 # Accounts and Cryptographic Keys

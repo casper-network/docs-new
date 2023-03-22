@@ -1,6 +1,5 @@
 ---
 title: Understanding Hash Types
-slug: /concepts/hash-types
 ---
 
 # Understanding Hash Types

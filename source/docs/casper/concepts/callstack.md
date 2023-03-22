@@ -1,6 +1,6 @@
 ---
 title: Call Stacks
-slug: /concepts/call-stacks
+slug: call-stacks
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
