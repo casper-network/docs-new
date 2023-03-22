@@ -7,7 +7,6 @@ tags: ["Must read", "Legal", "Introduction", "CasperLabs", "CSPR"]
 
 # Welcome to the Casper Network Documentation
 
-
 # Get Started Here
 
 ## What is Casper? {#what-is-casper}
