@@ -8,8 +8,8 @@ export interface IPullQuoteProps {
     name: string;
     description: string;
     image_title: string;
-    header: string;
-    subheader: string;
+    header?: string;
+    subheader?: string;
 }
 
 export function PullQuotes({ image, image_title, paragraph, name, description, header, subheader }: IPullQuoteProps) {

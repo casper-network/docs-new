@@ -4,8 +4,8 @@ import styles from "./styles.module.scss";
 
 export interface IImagesProps {
     images: IImage[];
-    header: string;
-    subheader: string;
+    header?: string;
+    subheader?: string;
 }
 
 interface IImage {

@@ -5,7 +5,7 @@ import { FeatureTile, IFeatureTiledProps } from "./FeatureTile";
 import Section from "../../containers/Section";
 
 interface IFeatureSectionProps {
-    header: string;
+    header?: string;
     subheader?: string;
     tiles: IFeatureTiledProps[];
     imageAndTextBlock: IImageAndTextBlockProps;

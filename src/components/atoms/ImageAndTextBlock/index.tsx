@@ -17,8 +17,8 @@ export interface IImageAndTextBlockProps {
     textSize: "1/3" | "1/2";
     dateData?: string;
     image_title: string;
-    header: string;
-    subheader: string;
+    header?: string;
+    subheader?: string;
 }
 
 export function ImageAndTextBlock({
