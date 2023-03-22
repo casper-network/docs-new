@@ -39,4 +39,3 @@ The [Operators](./operators/index.md) section caters for people who want to run 
  - [Economics](./concepts/economics/index.md) 
  - [Staking Guide](./concepts/economics/staking.md) 
  
-# [Legal](./disclaimer.md)
