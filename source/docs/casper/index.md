@@ -7,7 +7,6 @@ tags: ["Must read", "Legal", "Introduction", "CasperLabs", "CSPR"]
 
 # Welcome to the Casper Network Documentation
 
-This is the landing page for all Casper documentation.
 
 # Get Started Here
 
