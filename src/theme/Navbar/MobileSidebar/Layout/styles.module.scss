@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: fit-content;
-    transform: translate3d(0, calc(var(--navBarDocHeight) * -1), 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .docSearchContainer {
