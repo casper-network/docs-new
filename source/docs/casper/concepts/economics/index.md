@@ -1,6 +1,5 @@
 ---
 title: Economics Overview
-slug: concepts/economics
 ---
 
 # Economics

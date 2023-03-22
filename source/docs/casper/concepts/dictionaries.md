@@ -1,6 +1,5 @@
 ---
 title: Dictionaries
-slug: /concepts/dictionaries
 ---
 # Understanding Dictionaries {#dictionaries}
 

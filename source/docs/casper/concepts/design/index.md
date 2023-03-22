@@ -1,6 +1,5 @@
 ---
 title: Introduction
-slug: /concepts/design
 ---
 
 # Design
