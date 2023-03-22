@@ -15,9 +15,6 @@ Casper is a new [Turing-complete](./concepts/glossary/T.md#turing-complete-block
 Read more about Casper [here](./about.md). For a discussion of the Casper design read [this article](./concepts/design/casper-design.md).
 
 # Using this documentation
-
-
-## Which Casper are you?
 The Casper documentation is primarily organized around what you want to do with the Casper blockchain. We identify three loosely defined types of person interested in Casper.
 
   - ### Users  
