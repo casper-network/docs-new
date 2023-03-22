@@ -160,4 +160,3 @@ After connecting the Casper Signer to your dApp, you may at some point want to d
 ```javascript
 Signer.disconnectFromSite()
 ```
-
