@@ -39,7 +39,4 @@ The [Operators](./operators/index.md) section caters for people who want to run 
  - [Economics](./concepts/economics/index.md) 
  - [Staking Guide](./concepts/economics/staking.md) 
  
-# Support 
-This documentation covers most technical aspects of Casper. However, if you can't find what you are looking for, or you just want to explore the ecosystem, start with the [Support Page](./resources/support.md)
-
 # [Legal](./disclaimer.md)
