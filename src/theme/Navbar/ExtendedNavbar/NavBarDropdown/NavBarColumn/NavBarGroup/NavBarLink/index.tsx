@@ -33,7 +33,7 @@ export default function NavBarLink({ title, url, type, children, locale, closeNa
 
             case "external":
                 return (
-                    <a key={`${title}`} href={url} onClick={() => closeNavBarHandler()}>
+                    <a key={`${title}`} href={url}>
                         {title}
                     </a>
                 );
