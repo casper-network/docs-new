@@ -186,6 +186,7 @@ export default function ExtendedNavbar() {
                     current={current}
                     siteConfig={siteConfig}
                     socialMedia={data.socialMedia}
+                    closeNavBarHandler={closeNavBarHandler}
                 />
             </div>
         </div>
