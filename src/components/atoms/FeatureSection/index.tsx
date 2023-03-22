@@ -16,13 +16,13 @@ export function FeatureSection({ header, subheader, tiles, imageAndTextBlock }: 
         <Section header={header} subheader={subheader}>
             <ImageAndTextBlock {...imageAndTextBlock} />
             <div className={`${styles.resource_content} containerSite`}>
-                <section className={`contentBox ${styles.resource_content_box}`}>
+                <div className={`contentBox ${styles.resource_content_box}`}>
                     {tiles.map((data, index) => (
                         <div key={index} className={`${styles.resource_content_card} ${"span-4"}`}>
                             <FeatureTile {...data} />
                         </div>
                     ))}
-                </section>
+                </div>
             </div>
         </Section>
     );
