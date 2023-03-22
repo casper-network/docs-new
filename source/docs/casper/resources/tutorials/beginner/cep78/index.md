@@ -128,28 +128,83 @@ Mint an NFT by calling the previously installed instance of the Cep-78 NFT stand
 
 ### Query your account
 ```bash
-casper-client get-state-root-hash <node-address>
+casper-client get-state-root-hash --node-address <NODE_ADDRESS>
 ```
 -> outputs a _state-root-hash_
 ```bash
-casper-client get-account-state --node-address<NODE_ADDRESS> --state-root-hash <STATE_ROOT_HASH> --key <account-hash-YOUR_ACCOUNT_HASH>
+casper-client query-state --node-address <NODE_ADDRESS> --state-root-hash <STATE_ROOT_HASH> --key <account-hash-YOUR_ACCOUNT_HASH>
 ```
+example:
+```
+casper-client query-state \
+  --node-address http://195.201.167.179:7777 \
+  -s a8b6097502623dbd8a2a8fee17f10e32e46928b2a6f1ed3d01f10aba16140758 \
+  --key account-hash-32e24c2eb139804ad8db550dd79d78c370559069c137519a48b048bd77ca7da4
+```
+When querying an account, make sure to add the "account-hash-" prefix as shown above.
 _get-account-state_ returns a list of associated keys. One of these associated keys should be the _contract hash_ of the Cep-78 instance.
 
 -> find the _contract_hash_ of the deploy named "nft_contract" in the output and copy it.
 
-### Call the _Mint_ entry point to produce an NFT with some _metadata_
-```bash
-  [Example]
+Example output:
+```json
+{
+  "id": 4412230244715552265,
+  "jsonrpc": "2.0",
+  "result": {
+    "api_version": "1.4.13",
+    "block_header": null,
+    "merkle_proof": "[29776 hex chars]",
+    "stored_value": {
+      "Account": {
+        "account_hash": "account-hash-32e24c2eb139804ad8db550dd79d78c370559069c137519a48b048bd77ca7da4",
+        "action_thresholds": {
+          "deployment": 1,
+          "key_management": 1
+        },
+        "associated_keys": [
+          {
+            "account_hash": "account-hash-32e24c2eb139804ad8db550dd79d78c370559069c137519a48b048bd77ca7da4",
+            "weight": 1
+          }
+        ],
+        "main_purse": "uref-f4ab4e000c4ac146ae9bb748a2e8ab8127707c1d3705a2aafec4f2049d95e139-007",
+        "named_keys": [
+          {
+            "key": "hash-b1d96ea7536bf6c9a2f65484ad75651f9a86ed72ba9897593054a0dc847f08de",
+            "name": "cep78_contract_hash_MY_COLLECTION"
+          },
+          {
+            "key": "hash-c8ef8d01c8f6933dd4dc4d542ec132b21a31622f190889a33b982f8653a4f16c",
+            "name": "cep78_contract_package_MY_COLLECTION"
+          },
+          {
+            "key": "uref-30905d7fbba2550e5fead69281400dab80cf34e5c1565fad63c685cd41e31da7-007",
+            "name": "cep78_contract_package_access_MY_COLLECTION"
+          },
+          {
+            "key": "uref-7a1dc2dc77650a602952fbebf31f9ca732d1fc887d68918ca0820ba6af11abaa-007",
+            "name": "cep78_contract_version_MY_COLLECTION"
+          }
+        ]
+      }
+    }
+  }
+}
+```
+In this case the _contract_hash_ is "hash-b1d96ea7536bf6c9a2f65484ad75651f9a86ed72ba9897593054a0dc847f08de".
 
+### Call the _Mint_ entry point to produce an NFT with some _metadata_
+Example:
+```bash
   casper-client put-deploy \
-  --node-address http://136.243.187.84:7777 \
+  --node-address http://195.201.167.179:7777 \
   --chain-name casper-test \
-  --secret-key ./private.pem \
-  --payment-amount 1000000000 \
-  --session-hash hash-b4b78992e0324be09f174637c3dda2d29cc5c21c44430b72a0943d3ba6d2c827 \
+  --secret-key ./secret_key.pem \
+  --payment-amount 100000000000 \
+  --session-hash hash-b1d96ea7536bf6c9a2f65484ad75651f9a86ed72ba9897593054a0dc847f08de \
   --session-entry-point mint \
-  --session-arg "token_owner:key='account-hash-5a54f173e71d3c219940dcb9dfec222b024cd81aa7e0672de59ba5fab296448b'" \
+  --session-arg "token_owner:key='account-hash-32e24c2eb139804ad8db550dd79d78c370559069c137519a48b048bd77ca7da4'" \
   --session-arg [METADATA OF NFT]
 ```
 Replace [METADATA OF NFT] with:
@@ -177,17 +232,16 @@ In order to access the Metadata of an NFT, it is necessary to know which NFTs ar
 
 Find the Ids or Hashs of NFTs owned by your account. Whether your NFT is identified by a hash identifier or numerical Id depends on the modality _NFTIdentifierModethat_ defaults to _Ordinal_ (numerical instead of hash):
 
+Example:
 ```bash
-  [Example]
-
   casper-client get-dictionary-item \
-  -n http://136.243.187.84:7777 \
+  -n http://195.201.167.179:7777 \
   -s 256d0445121f1144a09394c739c9baf82b5624b66dced181a0c1c8b8e936652b \
-  --account-hash hash-b4b78992e0324be09f174637c3dda2d29cc5c21c44430b72a0943d3ba6d2c827 \
+  --account-hash hash-b1d96ea7536bf6c9a2f65484ad75651f9a86ed72ba9897593054a0dc847f08de \
   --dictionary-name owned_tokens \
-  --dictionary-item-key 5a54f173e71d3c219940dcb9dfec222b024cd81aa7e0672de59ba5fab296448b
+  --dictionary-item-key 32e24c2eb139804ad8db550dd79d78c370559069c137519a48b048bd77ca7da4
 ```
-where --dictionary-item-key is set to my account-hash and -s is a new state-root-hash.
+where --dictionary-item-key is set to my account-hash and --account-hash is the contract hash of the Cep78 instance.
 ```json
 A copy of the output:
 {
