@@ -315,7 +315,7 @@ You can always try out storing different types in the context. A distinction bet
 
 ## Deploying the contract {#deploying-contract}
 
-There are many different possibilities to deploy a contract. The simplest would be using the CLI with the [put_deploy](../../../developers/cli/installing-contracts.md#installing-contract-code).
+There are many different ways to deploy a contract. The simplest method is to use the CLI with the [put_deploy](../../../developers/cli/installing-contracts.md#installing-contract-code).
 If you are doing only blockchain smart contract development and you aren't dealing with full-stack applications, this might be the primary way for you to interface with Casper Network.
 
 Be sure to go through the prerequisites from the [installing contracts](../../../developers/cli/installing-contracts.md) and make sure that after doing this you have:
