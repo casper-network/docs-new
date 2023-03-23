@@ -8,7 +8,7 @@ experience.
 An instantiation of the
 [Cep-78](https://github.com/casper-ecosystem/cep-78-enhanced-nft/)
 contract is essentially an NFT collection that hold different methods like
-_Mint_, _Burn_ and _Transfer_,
+`Mint`, `Burn` and `Transfer`,
 as well as references to metadata on the storage system of the Blockchain.
 
 ## Prerequisites
@@ -18,10 +18,8 @@ as well as references to metadata on the storage system of the Blockchain.
 [prerequisites](../../../../developers/prerequisites.md#the-casper-command-line-client)
 
 ## Metadata
-The structure of an NFTs metadata is defined by a json schema. Cep-78
-supports both standardized and custom json schemes. Standardized schemes
-are easier to integrate, whilst custom schemes can be individualized to
-suit a projects needs best.
+The structure of an NFTs metadata is defined by a json schema. Cep-78 supports both standardized and custom json schemes. Standardized schemes
+are easier to integrate, whilst custom schemes can be individualized to suit a projects needs best.
 
 ### Standardized
 Example metadata in Cep-78 form:
@@ -34,15 +32,12 @@ Example metadata in Cep-78 form:
   "0x00..."
 }
 ```
-In this example the webserver at _token_uri_ should return json data
-containing all relevant information regarding the NFT, such as a url to
-the image/jpg file, name and description.
+In this example the webserver at `token_uri` should return json data containing all relevant information regarding the NFT, such as a url to the image/jpg file, name and description.
 
 ### Custom {#custom-metadata-example}
-Alternatively, one could define a custom metadata schema to, for example,
-store binary data instead of a weblink as the NFT's metadata.
-See below an example of a custom metadata schema, that we will be using in
-this tutorial:
+Alternatively, one could define a custom metadata schema to, for example, store binary data instead of a weblink as the NFT's metadata.
+
+See below an **example of a custom metadata schema**, that we will be using in this tutorial:
 
 ```json
 {
@@ -78,8 +73,7 @@ cd cep-78-enhanced-nft
 make prepare
 make build-contract
 ```
-the compiled contract.wasm will be in
-./contract/target/wasm32-unknown-unknown/release
+the compiled `contract.wasm` will be in `./contract/target/wasm32-unknown-unknown/release`
 
 ### Deploy the Cep-78 contract
 ```bash
@@ -91,23 +85,21 @@ casper-client put-deploy \
   --session-path <PATH TO contract.wasm> \
   --session-arg <see below>
 ```
-- for _--payment-amount_: 1 CSPR = 1*10^9 Motes.
+- for `--payment-amount`: 1 CSPR = 1*10^9 Motes.
 - Overview of [Session Arguments](#session-arguments-overview)
-- Quickstart [installing with Session
-Arguments](#session-arguments-example)
--> returns a _deploy hash_. Once the deploy was successfully processed,
+- Quickstart [installing with Session Arguments](#session-arguments-example)
+-> returns a `deploy hash`. Once the deploy was successfully processed,
 the instance of Cep-78 should be installed on the Blockchain.
 
 ### Session Arguments {#session-arguments-overview}
-List of **mandatory session arguments**:
-
-- _collection_name_: The name of the NFT collection, passed in as a
+**Mandatory arguments**
+- `collection_name`: The name of the NFT collection, passed in as a
 String. This parameter is required and cannot be changed post
 installation.
-- _collection_symbol_: The symbol representing a given NFT collection,
+- `collection_symbol`: The symbol representing a given NFT collection,
 passed in as a String. This parameter is required and cannot be changed
 post installation.
-- _total_token_supply_: The total number of NFTs that a specific instance
+- `total_token_supply`: The total number of NFTs that a specific instance
 of a contract will mint passed in as a U64 value. This parameter is
 required and cannot be changed post installation.
 -
@@ -140,6 +132,7 @@ required at the time of installation.
 The MetadataMutability modality dictates whether the metadata of minted
 NFTs can be updated. This argument is passed in as a u8 value and is
 required at the time of installation.
+**Optional Reverse lookup**
 -
 [_reverse_lookup_](https://github.com/casper-ecosystem/cep-78-enhanced-nft#ownerreverselookupmode):
 Needs to be set in order to be able to track the ownership of NFTs.
@@ -151,8 +144,7 @@ command and replace the [JSON SCHEMA ESCAPED STRING] with the example
 ESCAPED STRING that's explained in-depth below the command.
 ```bash
 casper-client put-deploy \
-  --session-path
-./contract/target/wasm32-unknown-unknown/release/contract.wasm \
+  --session-path ./contract/target/wasm32-unknown-unknown/release/contract.wasm \
   --chain-name casper-test \
   --node-address http://195.201.167.179:7777 \
   --secret-key ./secret_key.pem \
@@ -177,42 +169,58 @@ replace [JSON SCHEMA ESCAPED STRING] with the escaped version of
 ```
 "json_schema:string='{\"properties\":{\"nft_name\":{\"name\":\"nft_name\",\"description\":\"name_of_nft\",\"required\":true},\"nft_description\":{\"name\":\"nft_description\",\"description\":\"description_of_nft\",\"required\":true},\"nft_url\":{\"name\":\"nft_url\",\"description\":\"url_of_nft\",\"required\":true}}}'"
 ```
+Example output:
+```json
+{
+  "id": 414006690162046374,
+  "jsonrpc": "2.0",
+  "result": {
+    "api_version": "1.4.13",
+    "deploy_hash": "a7cdcd4d32b38620090843dd0564418e7219f0d03cb46291b3a4e4fc5a5ea4e1"
+  }
+}
+```
 Use this external [tool](https://jsontostring.com/) to escape a custom
-JSON schema like [above](#custom-metadata-example) or the one from the
-Cep78
-[readme](https://github.com/casper-ecosystem/cep-78-enhanced-nft#example-custom-validated-schema).
-Only escaped JSON metadata can be passed as a session argument when
-installing the contract or minting an NFT.
+JSON schema like [above](#custom-metadata-example) or the one from the Cep78 [readme](https://github.com/casper-ecosystem/cep-78-enhanced-nft#example-custom-validated-schema).
+
+_Only escaped JSON metadata can be passed as a session argument when installing the contract or minting an NFT._
 
 ## Mint an NFT
-Mint an NFT by calling the previously installed instance of the Cep-78 NFT
-standard.
-
+Mint an NFT by calling the previously installed instance of the Cep-78 NFT standard.
 ### Query your account
+1. Obtain a `state-root-hash` from the node
 ```bash
 casper-client get-state-root-hash --node-address <NODE_ADDRESS>
 ```
--> outputs a _state-root-hash_
-```bash
-casper-client query-state --node-address <NODE_ADDRESS> --state-root-hash
-<STATE_ROOT_HASH> --key <account-hash-YOUR_ACCOUNT_HASH>
+Example output:
+```json
+{
+  "id": -7027300282865772761,
+  "jsonrpc": "2.0",
+  "result": {
+    "api_version": "1.4.13",
+    "state_root_hash": "e67fc4806287aff050e12e47afb636e328a24dad3a32170701cd4334fde53fb3"
+  }
+}
 ```
-example:
+2. Query account state at said `state-root-hash`
+```bash
+casper-client query-state --node-address <NODE_ADDRESS> \
+  --state-root-hash <STATE_ROOT_HASH> \
+  --key <account-hash-YOUR_ACCOUNT_HASH>
+```
+Example:
 ```
 casper-client query-state \
   --node-address http://195.201.167.179:7777 \
   -s a8b6097502623dbd8a2a8fee17f10e32e46928b2a6f1ed3d01f10aba16140758 \
-  --key
-account-hash-32e24c2eb139804ad8db550dd79d78c370559069c137519a48b048bd77ca7da4
+  --key account-hash-32e24c2eb139804ad8db550dd79d78c370559069c137519a48b048bd77ca7da4
 ```
-When querying an account, make sure to add the "account-hash-" prefix as
-shown above.
-_get-account-state_ returns a list of associated keys. One of these
-associated keys should be the _contract hash_ of the Cep-78 instance.
+When querying an account, make sure to add the `account-hash-` prefix as shown above.
+`get-account-state` returns a list of associated keys. One of these
+associated keys should be the `contract hash` of the Cep-78 instance.
 
--> find the _contract_hash_ of the deploy named "nft_contract" in the
-output and copy it.
-
+-> find the `contract_hash` of the deploy named "nft_contract" in the output and save it.
 Example output:
 ```json
 {
@@ -266,10 +274,9 @@ Example output:
   }
 }
 ```
-In this case the _contract_hash_ is
-"hash-b1d96ea7536bf6c9a2f65484ad75651f9a86ed72ba9897593054a0dc847f08de".
+In this case the `contract_hash` is "hash-b1d96ea7536bf6c9a2f65484ad75651f9a86ed72ba9897593054a0dc847f08de".
 
-### Call the _Mint_ entry point to produce an NFT with some _metadata_
+### Call the `Mint` entry point to produce an NFT with some `metadata`
 Example:
 ```bash
   casper-client put-deploy \
@@ -277,43 +284,43 @@ Example:
   --chain-name casper-test \
   --secret-key ./secret_key.pem \
   --payment-amount 100000000000 \
-  --session-hash
-hash-b1d96ea7536bf6c9a2f65484ad75651f9a86ed72ba9897593054a0dc847f08de \
+  --session-hash hash-b1d96ea7536bf6c9a2f65484ad75651f9a86ed72ba9897593054a0dc847f08de \
   --session-entry-point mint \
-  --session-arg
-"token_owner:key='account-hash-32e24c2eb139804ad8db550dd79d78c370559069c137519a48b048bd77ca7da4'"
-\
+  --session-arg "token_owner:key='account-hash-32e24c2eb139804ad8db550dd79d78c370559069c137519a48b048bd77ca7da4'" \
   --session-arg [METADATA OF NFT]
 ```
 Replace [METADATA OF NFT] with:
 ```
 "token_meta_data:string='{\"nft_name\":\"somename01\",\"nft_description\":\"somedescription01\",\"nft_url\":\"someurl01\"}'"
 ```
-and execute the command.
+_and execute the command._
 
--> outputs a deploy hash.
-
+Example output:
+```json
+{
+  "id": -1859215013112499175,
+  "jsonrpc": "2.0",
+  "result": {
+    "api_version": "1.4.13",
+    "deploy_hash": "51d343037b46d98bdf2c804f742db53fa081c295a2ef1c74d06e2c4ef35491b6"
+  }
+}
+```
 Note that here, again, we had to escape the json metadata of the NFT using
 a [tool](https://jsontostring.com/). This works the exact same for
 metadata as for the metadata/json schema. As you can see, the metadata
 json has the same fields as the schema:
-1. _nft_name_
-2. _nft_description_
-3. _nft_url_
+1. `nft_name`
+2. `nft_description`
+3. `nft_url`
 
-Once this deploy was successful, our Cep-78 NFT should live on the
-blockchain.
+Once this deploy was successful, our Cep-78 NFT should live on the blockchain.
 
-**Note that in this example we use an instance of Cep-78 with the _cep-78
-standard metadata schema_. Review the _Modalities_ in the
-[readme](https://github.com/casper-ecosystem/cep-78-enhanced-nft/) if this
-is unclear at this point of the tutorial.**
+Note that in this example we use an instance of Cep-78 with the _cep-78 standard metadata schema_.
+
+**Review the `Modalities` in the [readme](https://github.com/casper-ecosystem/cep-78-enhanced-nft/) if this is unclear at this point of the tutorial.**
 
 ## Track ownership of NFTs
-Cep78 implements a page-wise ownership system, where a dictionary is created under the owner's account, if the _reverse_lookup_ modality is set to a value other than 0 (NoLookup) see
-[details](https://github.com/casper-ecosystem/cep-78-enhanced-nft#ownerreverselookupmode).
-In the example above, we did install an instance of Cep78 with
-_reverse_lookup_ enabled. It is recommended to complete [this
-tutorial](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/tutorials/token-ownership-tutorial.md)
-on _reverse_lookup_ of ownership to unlock the full potential of the Cep78
-standard.
+Cep78 implements a page-wise ownership system, where a dictionary is created under the owner's account, if the `reverse_lookup` modality is set to a value other than 0 (NoLookup). See [details](https://github.com/casper-ecosystem/cep-78-enhanced-nft#ownerreverselookupmode).
+In the example above, we installed an instance of Cep78 with `reverse_lookup` enabled.
+It is recommended to complete [this tutorial](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/tutorials/token-ownership-tutorial.md) on `reverse_lookup of ownership` next, to unlock the full potential of the Cep78 standard.
