@@ -106,7 +106,7 @@ If you see the red cross it means the version is not up to date and has to be up
 
 ## Changing the standard contract {#changing-contract}
 
-The standard casper contract from the crate constructor has some methods that we will reuse, however we will be getting rid of most of automaticaly created code. 
+The standard Casper contract from the crate constructor contains some methods that we will reuse. However, we will be getting rid of most auto-generated code. 
 
 We will be changing the `main.rs` file. Your code should look exactly as below:
 
