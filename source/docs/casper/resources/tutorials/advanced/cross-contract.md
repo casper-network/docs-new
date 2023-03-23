@@ -612,7 +612,7 @@ If we control the deploy we can see that it has been successful:
 
 <img class="align-center" src={useBaseUrl("/image/tutorials/cross-contract/Deploy.png")} width="600" alt="Deploy" />
 
-If we check the accounts named keys we can see all of the accounts deployed contracts:
+If we check the account's named keys, we can see all of the account's deployed contracts:
 
 <img class="align-center" src={useBaseUrl("/image/tutorials/cross-contract/NamedKeys.png")} width="600" alt="NamedKeys" />
 
