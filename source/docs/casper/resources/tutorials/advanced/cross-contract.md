@@ -677,7 +677,7 @@ With this we have succesfully built a cross contract communication between two c
 
 In this tutorial, we:
 - Discussed why cross-contract communication is sometimes necessary
-- develop two rust contracts on the Casper Network where one smart contract is calling an entry point of the second smart contract
+- Developed two Rust contracts on the Casper Network where one smart contract is calling an entry point of the second smart contract
 - use attributes to pass values into the smart contract during method invocation
 
 Be sure to take your time and get back to the parts which might be unclear and try to understand how things work.
