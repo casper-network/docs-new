@@ -579,7 +579,7 @@ casper-client put-deploy \
 
 :::tip
 
-We can notice that the contract.wasm is always the same when creating a new `cargo casper` project. While this is not crucial for small projects try to name the contracts appropriately in the `Makefile` in the main directory. We encourage to look at it and experiment a little with what happens when the `.wasm` filename will be changed and the following commands are called:
+You may have noticed that the contract.wasm is always output to the same filename for each new `cargo casper` project. You can change this by editing the `Makefile` in the main directory. You can then observe the result by recompiling your contract with these commands;
 
 ```bash
 make prepare
