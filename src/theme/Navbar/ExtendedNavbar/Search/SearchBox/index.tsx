@@ -80,7 +80,7 @@ export default function SearchBox({ placeholder, locale, siteUrl }: any) {
                     {icons.cancel}
                 </button>
             )}
-            {hasFocus && showResults && <SearchResult locale={locale} siteUrl={siteUrl} hits={hits}></SearchResult>}
+            {hasFocus && showResults && <SearchResult locale={locale} siteUrl={siteUrl} hits={hits} setHasFocus={setHasFocus}></SearchResult>}
         </div>
     );
 }
