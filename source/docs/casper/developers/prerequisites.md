@@ -103,6 +103,26 @@ rustup --version
 </TabItem>
 </Tabs>
 
+The installation script automatically adds Rust to your system PATH after your next login.
+To start using Rust right away instead of restarting your terminal, run the following command in your shell to add Rust to your system PATH manually:
+
+<Tabs>
+<TabItem value="macOS" label="macOS">
+
+```bash
+source $HOME/.cargo/env
+```
+
+</TabItem>
+<TabItem value="Linux" label="Linux">
+
+```bash
+source $HOME/.cargo/env
+```
+
+</TabItem>
+</Tabs>
+
 ## Step 3.
 
 ### Install brew on macOS {#install-brew}
