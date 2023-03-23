@@ -618,7 +618,7 @@ If we check the account's named keys, we can see all of the account's deployed c
 
 As we have now managed to deploy two contracts, we can call the endpoint of this contract, passing appropriate arguments to the function. 
 
-Let us quickly check the state of the message in the first contract:
+Checking the state of the message in the first contract, we observe the following:
 
 <img class="align-center" src={useBaseUrl("/image/tutorials/cross-contract/HelloWorldBCC.png")} width="600" alt="HelloWorld" />
 
