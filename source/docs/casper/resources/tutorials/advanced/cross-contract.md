@@ -384,7 +384,7 @@ This should return json output containing information such as header data, appro
 
 Since `af42bc6dbc58f677d138eb968d897f965f1ed118a40980bc16efbcc2a0c71832` is the deploy hash we can find this contract using the block explorer. When viewing through the explorer the status of the Deploy should be marked as `Success`.
 
-In your account on the `cspr.live` in the tab `Named Keys` all contracts which were deployed using the private key connected with this account will be linked. Clicking the contract hash you can see all of the entry points of the contract as well as the named keys (parameters) with which the contract has been deployed. Just remember to keep the named keys organised so you don't loose overview during bigger implementations.
+In your account on `cspr.live`, in the tab `Named Keys`, all contracts which were deployed using the private key connected with this account will be linked. By clicking the contract hash, you can see all of the entry points of the contract, as well as the named keys (parameters) with which the contract has been deployed. Remember to keep these named keys organised, so you don't lose overview during bigger implementations.
 
 We can see a Tab `Deploys` in the contract as well. This is empty for now. If we had a cross-contract call and an entry point to a different contract would have been called, this would be visible here. For now just make sure to note the hash of the contract, which is `hash-b7a06298cc71d4cac05929cc0713dfd5a541c68b71cb500cd04547b5cd0385ea` in this case.
 
