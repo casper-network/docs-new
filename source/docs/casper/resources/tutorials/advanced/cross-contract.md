@@ -344,7 +344,7 @@ With this step everything is in place to deploy the contract.
 
 :::tip
 
-It is always useful to keep a `.txt` file while using the CLI. This will save you time when interacting with the terminal commands.
+When working with lengthy command strings, it may help to maintain a .txt file where you can edit the parameters of the commands before sending them to the CLI. This will save you time and frustration when working with multiple contracts and commands.
 
 :::
 
