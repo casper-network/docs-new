@@ -33,11 +33,13 @@ export function NumberSection({ header, subheader, numbers, text }: INumberSecti
                         </div>
                     ))}
                 </div>
-                <div className={`contentBox`}>
-                    <div className={`${styles.number_section_text} span-12`} ref={ref}>
-                        <p dangerouslySetInnerHTML={{ __html: text! }} className="primaryParagraph"></p>
+                {text && (
+                    <div className={`contentBox`}>
+                        <div className={`${styles.number_section_text} span-12`} ref={ref}>
+                            <p dangerouslySetInnerHTML={{ __html: text! }} className="primaryParagraph"></p>
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
         </Section>
     );
