@@ -227,7 +227,7 @@ We should notice that that runtime and storage appear quite frequently in our co
 
 :::
 
-Each entry point in the call function must have a corresponding function with the same name defined in the contract. This means that if you change the key of an entry point, make sure to update the corresponding function name to avoid runtime errors, and vice versa. The compiler will not catch this error for you, so it is important to check this yourself. In our case we will add the function `update_msg` to the contract code. 
+Each entry point in the call function must have a corresponding function with the same name defined in the contract. This means that if you change the key of an entry point, make sure to update the corresponding function name to avoid runtime errors, and vice versa. The compiler will not catch this error for you, so it is important to check this yourself. In our case we will add the function `update_msg` to the contract code just before the call function. 
 
 Your complete contract should look as below:
 
