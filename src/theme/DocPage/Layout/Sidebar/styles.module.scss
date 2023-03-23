@@ -11,17 +11,14 @@
 
 @media (min-width: 997px) {
   .docSidebarContainer {
-    /* display: block; */
     width: var(--doc-sidebar-width);
-    /* margin-top: calc(-1 * var(--ifm-navbar-height)); */
-    /* border-right: 1px solid var(--ifm-toc-border-color); */
     will-change: width;
     transition: width var(--ifm-transition-fast) ease;
     clip-path: inset(0);
-
+    
     background-color: transparent;
-    margin-top: 0 !important;
-    display: flex !important;
+    margin-top: 0;
+    display: flex;
     align-self: flex-start;
     position: -webkit-sticky;
     position: sticky;
