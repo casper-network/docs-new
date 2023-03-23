@@ -8,10 +8,10 @@ This section explains how to fulfill the prerequisites needed to interact with a
 
 This section covers:
 
-1. Setting up a Rust development environment
-2. Installing the official Casper command-line client
-3. Setting up an Account on a Casper network
-4. Acquiring the IP address of a peer on the official Testnet or Mainnet  
+1. Setting up a [Rust](#install-rust) development environment
+2. Installing the official Casper [command-line client](#install-casper-client) 
+3. [Setting up an Account](#setting-up-an-account) on a Casper network
+4. [Acquiring the IP](#acquire-node-address-from-network-peers) address of a peer on the official Testnet or Mainnet  
 
 To be able to develop comfortably on the Casper Network you should use either `macOS` or `Linux Ubuntu 20.04`. Developing on Windows is not advised.
 
@@ -40,7 +40,7 @@ xcode-select --install
 </TabItem>
 </Tabs>
 
-Check the version 
+Verify the installation with:
 
 <Tabs>
 <TabItem value="macOS" label="macOS">
@@ -84,7 +84,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 </TabItem>
 </Tabs>
 
-Check the rustup version
+Verify the installation with:
 
 <Tabs>
 <TabItem value="macOS" label="macOS">
@@ -172,7 +172,7 @@ sudo apt install cargo
 
 ## Step 4.
 
-### Install the cargo-casper {#install-cargo-casper}
+### Install cargo-casper {#install-cargo-casper}
 
 <Tabs>
 <TabItem value="macOS" label="macOS">
@@ -191,7 +191,7 @@ cargo install cargo-casper
 </TabItem>
 </Tabs>
 
-Check the version
+Verify the installation with:
 
 <Tabs>
 <TabItem value="macOS" label="macOS">
@@ -241,7 +241,7 @@ cargo install casper-client
 </TabItem>
 </Tabs>
 
-Check the version
+Verify the installation with
 
 <Tabs>
 <TabItem value="macOS" label="macOS">
@@ -310,7 +310,7 @@ sudo apt-get -y install cmake
 </TabItem>
 </Tabs>
 
-Check the version of cmake
+Verify the installation with
 
 <Tabs>
 <TabItem value="macOS" label="macOS">
