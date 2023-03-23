@@ -162,7 +162,7 @@ nav.menu {
 }
 
 .navbar__items--right {
-    > [class*="searchBox_src-theme-Navbar-Search-styles-module"] {
+    > [class*="searchBox"] {
         @media #{media-queries.$mobile} {
             display: none;
         }
