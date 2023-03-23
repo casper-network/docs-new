@@ -6,6 +6,7 @@ import { useLocation } from "@docusaurus/router";
 import DocSidebar from "../../../DocSidebar";
 import ExpandButton from "./ExpandButton";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useWindow from "../../../../hooks/useWindow";
 import styles from "./styles.module.scss";
 // Reset sidebar state when sidebar changes
 // Use React key to unmount/remount the children
@@ -31,6 +32,7 @@ export default function DocPageLayoutSidebar({ sidebar, hiddenSidebarContainer, 
 
     function checkAndGetSiteNavbar() {
         if (customFields.directusUrl && customFields.directusGraphqlUrl && customFields.siteUrl) {
+            if (!useWindow()) return;
             const siteNavbar = document.querySelector(".navbar_wrapper_src-theme-Navbar-ExtendedNavbar-ExtendedNavbar-module");
             if (siteNavbar) {
                 ref.current = siteNavbar;
@@ -57,7 +59,9 @@ export default function DocPageLayoutSidebar({ sidebar, hiddenSidebarContainer, 
                 }
             }}
             style={{
-                ["--variable"]: `${customFields.directusUrl && customFields.directusGraphqlUrl && customFields.siteUrl ? siteNavBarHeight : 0}px`,
+                ["--dynamicNavBarSiteHeight"]: `${
+                    customFields.directusUrl && customFields.directusGraphqlUrl && customFields.siteUrl ? siteNavBarHeight : 0
+                }px`,
             }}
         >
             <ResetOnSidebarChange>
