@@ -557,7 +557,7 @@ pub extern "C" fn call() {
 }
 ```
 
-After `make build-contract` you should obtain the outcome:
+After you run `make build-contract` in your second contract's directory, you should obtain the outcome:
 
 ```bash
 cd contract && cargo build --release --target wasm32-unknown-unknown
