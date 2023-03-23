@@ -1,14 +1,12 @@
 @media (min-width: 997px) {
     .sidebar {
         display: flex;
-        /* flex-direction: column; */
         height: 100%;
-        /* padding-top: var(--ifm-navbar-height); */
         width: var(--doc-sidebar-width);
 
-        flex-direction: column-reverse !important;
-        align-items: flex-start !important;
-        padding-top: 0 !important;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding-top: 0;
     }
 
     .sidebarWithHideableNavbar {

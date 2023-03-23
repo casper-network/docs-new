@@ -6,16 +6,12 @@
         width: 100%;
         height: 100%;
         display: flex;
-        /* align-items: center; */
-        /* justify-content: center; */
-        /* transition: background-color var(--ifm-transition-fast) ease; */
-        /* background-color: var(--docusaurus-collapse-button-bg); */
-
+        
         padding-top: 12px;
         padding-left: 25px;
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
-        background-color: transparent !important;
+        align-items: flex-start;
+        justify-content: flex-start;
+        background-color: transparent;
     }
 
     .expandButtonIcon {
