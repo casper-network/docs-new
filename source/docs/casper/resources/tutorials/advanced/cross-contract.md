@@ -608,7 +608,7 @@ If the contract name doesn't change during concurrent deploys, the urefs/hashes 
 
 :::
 
-If we control the deploy we can see that it has been successful:
+Observing the deploy, we can see that it has been successful:
 
 <img class="align-center" src={useBaseUrl("/image/tutorials/cross-contract/Deploy.png")} width="600" alt="Deploy" />
 
