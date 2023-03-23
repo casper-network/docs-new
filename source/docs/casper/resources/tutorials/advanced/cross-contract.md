@@ -452,7 +452,7 @@ pub extern "C" fn call_contract_2() {
     // get the value of the message from the second parameter  
     let new_value: String = runtime::get_named_arg("new_message");
 
-    // Call Counter to increment the value.
+    // Call the update_msg endpoint on the other contract with the parameter values
     let _: () = runtime::call_contract(
         contract_hash, 
         "update_msg", 
