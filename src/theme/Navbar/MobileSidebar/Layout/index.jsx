@@ -5,6 +5,7 @@ import { useThemeConfig } from "@docusaurus/theme-common";
 import NavbarSearch from "@theme/Navbar/Search";
 import SearchBar from "@theme/SearchBar";
 import useOnScreen from "../../../../hooks/useOnScreen";
+import useWindow from "../../../../hooks/useWindow";
 import styles from "./styles.module.scss";
 
 export default function NavbarMobileSidebarLayout({ header, primaryMenu, secondaryMenu }) {
@@ -13,7 +14,9 @@ export default function NavbarMobileSidebarLayout({ header, primaryMenu, seconda
     const searchBarItem = items.find((item) => item.type === "search");
     const ref = React.useRef(null);
 
-    const announcer = document.getElementsByClassName("announcementBar_node_modules-@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module")[0];
+    const announcer = useWindow
+        ? document.getElementsByClassName("announcementBar_node_modules-@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module")[0]
+        : null;
     let announcerHeight, onScreen;
 
     if (announcer) {
