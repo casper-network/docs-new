@@ -48,6 +48,8 @@ This will create the following structure under your desired smart contract folde
 ```bash
 project-directory/
 └── contract/
+    ├── .cargo/
+        └── config.toml
     ├── src/
         └── main.rs
     └── Cargo.toml
@@ -57,7 +59,7 @@ project-directory/
     └── Cargo.toml
 └── .travis.yml
 └── Makefile
-```
+└── rust-toolchain
 
 After the project directory structure is created use the following commands to go into the project folder and compile the files:
 
