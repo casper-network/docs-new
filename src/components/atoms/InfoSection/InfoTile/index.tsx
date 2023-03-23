@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { ISiteButtonProps, SiteButton } from "../../SiteButton";
 import styles from "./InfoTile.module.scss";
 
 export interface IInfoTile {
@@ -11,9 +12,10 @@ export interface IInfoTile {
 export interface IInfoTileProps {
     tile: IInfoTile;
     span: number;
+    button?: ISiteButtonProps;
 }
 
-export default function InfoTile({ tile, span }: IInfoTileProps) {
+export default function InfoTile({ tile, span, button }: IInfoTileProps) {
     const { title, content, image, image_title } = tile;
     const ref = useRef(null);
     const [addAttribute, setAddAttribute] = useState<boolean>(false);
@@ -36,6 +38,11 @@ export default function InfoTile({ tile, span }: IInfoTileProps) {
             <p className={`primaryParagraph ${styles.paragraph}`} ref={ref} tabIndex={addAttribute ? 0 : -1}>
                 {content}
             </p>
+            {button && (
+                <div className={styles.buttonWrapper}>
+                    <SiteButton {...button} />
+                </div>
+            )}
         </div>
     );
 }
