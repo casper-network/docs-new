@@ -7,15 +7,15 @@ export interface IInfoTile {
     content: string;
     image: string;
     image_title: string;
+    button?: ISiteButtonProps;
 }
 
 export interface IInfoTileProps {
     tile: IInfoTile;
     span: number;
-    button?: ISiteButtonProps;
 }
 
-export default function InfoTile({ tile, span, button }: IInfoTileProps) {
+export default function InfoTile({ tile, span }: IInfoTileProps) {
     const { title, content, image, image_title } = tile;
     const ref = useRef(null);
     const [addAttribute, setAddAttribute] = useState<boolean>(false);
@@ -38,9 +38,9 @@ export default function InfoTile({ tile, span, button }: IInfoTileProps) {
             <p className={`primaryParagraph ${styles.paragraph}`} ref={ref} tabIndex={addAttribute ? 0 : -1}>
                 {content}
             </p>
-            {button && (
+            {tile.button && (
                 <div className={styles.buttonWrapper}>
-                    <SiteButton {...button} />
+                    <SiteButton {...tile.button} />
                 </div>
             )}
         </div>
