@@ -449,7 +449,7 @@ pub extern "C" fn call_contract_2() {
     .map(|hash| ContractHash::new(hash))
     .unwrap();
 
-    // get the value of the second parameter to which message should be changed
+    // get the value of the message from the second parameter  
     let new_value: String = runtime::get_named_arg("new_message");
 
     // Call Counter to increment the value.
