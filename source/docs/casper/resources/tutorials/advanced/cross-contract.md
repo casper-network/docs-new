@@ -604,7 +604,7 @@ The output of the deployment is:
 
 :::tip
 
-If the contract name doesn't change during concurrent deploys, the urefs/hashes will be overwritten in the accounts named keys.
+If the contract name doesn't change during concurrent deploys, the urefs/hashes will be overwritten in the account's named keys.
 
 :::
 
