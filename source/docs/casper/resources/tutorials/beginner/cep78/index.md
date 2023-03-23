@@ -141,7 +141,7 @@ The MetadataMutability modality dictates whether the metadata of minted
 NFTs can be updated. This argument is passed in as a u8 value and is
 required at the time of installation.
 -
-[_reverse_lookup_](https://github.com/casper-ecosystem/cep-78-enhanced-nft#metadata-mutability):
+[_reverse_lookup_](https://github.com/casper-ecosystem/cep-78-enhanced-nft#ownerreverselookupmode):
 Needs to be set in order to be able to track the ownership of NFTs.
 
 ### Example installation with Session Arguments
@@ -311,7 +311,7 @@ is unclear at this point of the tutorial.**
 
 ## Track ownership of NFTs
 Cep78 implements a page-wise ownership system, where a dictionary is created under the owner's account, if the _reverse_lookup_ modality is set to a value other than 0 (NoLookup) see
-[details](https://github.com/casper-ecosystem/cep-78-enhanced-nft#metadata-mutability).
+[details](https://github.com/casper-ecosystem/cep-78-enhanced-nft#ownerreverselookupmode).
 In the example above, we did install an instance of Cep78 with
 _reverse_lookup_ enabled. It is recommended to complete [this
 tutorial](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/tutorials/token-ownership-tutorial.md)
