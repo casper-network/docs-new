@@ -626,7 +626,7 @@ This is a simple `hello world` string. After invoking the endpoint using the com
 
 :::info
 
-`--session-hash` - is the contract hash, which is called through the put-deploy. Be sure to put your contract hash here.
+`--session-hash` - is the contract hash, which is returned from the put-deploy. 
 
 `--session-arg` "hello world_contract:Key= ..." takes the hash of the contract which we want to call from within the session-hash contract.
 
