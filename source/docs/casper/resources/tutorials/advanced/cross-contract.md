@@ -673,7 +673,7 @@ We would expect that the value of the message reference in the other contract wo
 
 With this we have succesfully built a cross contract communication between two contracts.
 
-## Summary of the tutorial {#summary}
+## Summary {#summary}
 
 The goal of this tutorial was to:
 - give a brief overview why the cross-contract communication is sometimes necessary
