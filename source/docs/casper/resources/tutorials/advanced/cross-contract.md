@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Tutorial: Cross-Contract Communication
 
-| Title              | Description                     |
+|                    |                    |
 | ------------------ | ------------------------------- |
 | Level: | `Advanced` |
 | Time to complete: | `45 - 60 Minutes`|
@@ -309,7 +309,7 @@ pub extern "C" fn call() {
 
 :::info
 
-You can always try out storing different types in the context. A distinction between storing data in the context of a smart contract and using dictionaries has to be mentioned. The dictionaries can be used to store the data which is dapp centric. Just be sure to remember that the dictionary is not an SQL Database and only what is necessary and should be stored on the blockchain can go into the dictionary. The types stored in the contracts context could be regarded more as key links between parts of a bigger application.
+You can always try out storing different types in the context. There is a distinction between storing data in the context of a smart contract and using dictionaries. The dictionaries can be used to store the data which is dapp centric. Just be sure to remember that the dictionary is not an SQL Database and only what is necessary and should be stored on the blockchain can go into the dictionary. The objects referenced in a contract should only be used as links between contracts/dictionaries in a bigger application.
 
 :::
 
@@ -464,8 +464,6 @@ pub extern "C" fn call_contract_2() {
 }
 ```
 
-The logic will take the contract hash from the `hello_world_contract` field and the new message from the `new_message` field and make further contract calls.
-
 Your complete contract implementation should look as follows:
 
 ```bash
@@ -566,7 +564,8 @@ cd contract && cargo build --release --target wasm32-unknown-unknown
 wasm-strip contract/target/wasm32-unknown-unknown/release/contract.wasm 2>/dev/null | true
 ```
 
-Be sure to copy the keys from the previous folder to the new contract folder. We will not be creating a new set of keys and instead reusing those, which we already have. The call from the terminal will look as follows:
+Create the `keys` subfolder and copy the keys from the `keys` subfolder in the first contract into this subfolder.
+The call from the terminal will look as follows:
 
 ```bash
 casper-client put-deploy \
@@ -587,7 +586,7 @@ make build-contract
 ```
 :::
 
-After the deploy we can check if it was successful and control the parameters of the deployed entry points.
+After the deploy we can check if it was successful and inspect the parameters of the deployed entry points.
 
 The output of the deployment is:
 
@@ -618,6 +617,7 @@ If we check the account's named keys, we can see all of the account's deployed c
 
 As we have now managed to deploy two contracts, we can call the endpoint of this contract, passing appropriate arguments to the function. 
 
+The Uref of the message variable is stored under the Named Keys in the contract. 
 Checking the state of the message in the first contract, we observe the following:
 
 <img class="align-center" src={useBaseUrl("/image/tutorials/cross-contract/HelloWorldBCC.png")} width="600" alt="HelloWorld" />
