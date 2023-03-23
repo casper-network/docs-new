@@ -616,7 +616,7 @@ If we check the account's named keys, we can see all of the account's deployed c
 
 <img class="align-center" src={useBaseUrl("/image/tutorials/cross-contract/NamedKeys.png")} width="600" alt="NamedKeys" />
 
-As we have now managed to deploy two contracts, we can call the endpoint of this contract passing appropriate arguments to the function. Just remember that invoking an entry point of the contract is also a deploy to the network.
+As we have now managed to deploy two contracts, we can call the endpoint of this contract, passing appropriate arguments to the function. 
 
 Let us quickly check the state of the message in the first contract:
 
