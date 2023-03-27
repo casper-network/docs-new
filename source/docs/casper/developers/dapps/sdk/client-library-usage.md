@@ -22,7 +22,7 @@ yarn install casper-js-sdk
 
 <TabItem value="python" label="Python">
 
-Install using the [pip package manager](https://pypi.org/project/pip/).
+Use [`pip`](https://pypi.org/project/pip/) to install [pycspr](https://pypi.org/project/pycspr/) package:
 
 ```bash
 pip install pycspr
