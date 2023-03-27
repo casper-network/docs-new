@@ -60,6 +60,7 @@ project-directory/
 └── .travis.yml
 └── Makefile
 └── rust-toolchain
+```
 
 After the project directory structure is created use the following commands to go into the project folder and compile the files:
 
