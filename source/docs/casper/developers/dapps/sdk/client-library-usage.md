@@ -67,6 +67,38 @@ Replace `ALGO` with your key algorithm: `ED25519` or `SECP256K1`.
 
 </Tabs>
 
+### Exporting Keys
+
+In your `keypair` variable is a private key and a public key. There are many reasons you may want to use, read, or export your public key. You may also want access to the account hash as it is often used within smart contracts on the Casper Network. The following methods show you how to dissect your keypair.
+
+<Tabs>
+
+<TabItem value="js" label="JavaScript">
+
+```javascript
+// Create a hexadecimal representation of the public key and account hash.
+const publicKeyHex = publicKey.toHex();
+const accountHashBytes = publicKey.toAccountHash();
+const accountHashHex = Buffer.from(accountHashBytes).toString('hex');
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+import pycspr.crypto
+
+publicKeyBytes = keypair.account_key
+publicKeyHex = pycspr.crypto.cl_checksum.encode(publicKeyBytes)
+accountHashBytes = pycspr.crypto.cl_operations.get_account_hash(publicKeyBytes)
+accountHashHex = pycspr.crypto.cl_checksum.encode(accountHashBytes)
+```
+
+</TabItem>
+
+</Tabs>
+
 ### Load from private key
 
 When you want to use a specific account, you should not include your private key within your source code, but instead load in your keypair from a local file.
@@ -95,38 +127,6 @@ keypair = pycspr.parse_private_key(
 ```
 
 Replace `ALGO` with your key algorithm: `ED25519` or `SECP256K1`.
-
-</TabItem>
-
-</Tabs>
-
-### Exporting Keys
-
-In your `keypair` variable is a private key and a public key. There are many reasons you may want to use, read, or export your public key. You may also want access to the account hash as it is often used within smart contracts on the Casper Network. The following methods show you how to dissect your keypair.
-
-<Tabs>
-
-<TabItem value="js" label="JavaScript">
-
-```javascript
-// Create a hexadecimal representation of the public key and account hash.
-const publicKeyHex = publicKey.toHex();
-const accountHashBytes = publicKey.toAccountHash();
-const accountHashHex = Buffer.from(accountHashBytes).toString('hex');
-```
-
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-import pycspr.crypto
-
-publicKeyBytes = keypair.account_key
-publicKeyHex = pycspr.crypto.cl_checksum.encode(publicKeyBytes)
-accountHashBytes = pycspr.crypto.cl_operations.get_account_hash(publicKeyBytes)
-accountHashHex = pycspr.crypto.cl_checksum.encode(accountHashBytes)
-```
 
 </TabItem>
 
