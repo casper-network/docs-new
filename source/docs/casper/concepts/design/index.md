@@ -1,6 +1,5 @@
 ---
 title: Introduction
-slug: /design
 ---
 
 # Design
