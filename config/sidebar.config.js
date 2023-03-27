@@ -133,8 +133,8 @@ module.exports = {
                         "developers/dapps/sdk/index",
                         "developers/dapps/sdk/client-library-usage",
                         //"developers/dapps/sdk/script-sdk",
-                        //"developers/dapps/sdk/csharp-sdk",
-                        //"developers/dapps/sdk/go-sdk",
+                        "developers/dapps/sdk/csharp-sdk",
+                        "developers/dapps/sdk/go-sdk",
                         //"developers/dapps/sdk/python-sdk",
                         //"developers/dapps/sdk/additional-libraries", // NEW CONTENT WILL BE HERE
                     ],
