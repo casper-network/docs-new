@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="js" label="JavaScript">
 
-Use `npm` or `yarn` to install.
+Use `npm` or `yarn` to install [casper-js-sdk](https://www.npmjs.com/package/casper-js-sdk) package:
 
 ```bash
 npm install casper-js-sdk
