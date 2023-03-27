@@ -3,12 +3,13 @@ module.exports = {
         "concepts/index",
         "concepts/intro-to-dapps",
         "concepts/accounts-and-keys",
-        "concepts/understanding-hash-types",
+        "concepts/hash-types",
         "concepts/deploy-and-deploy-lifecycle",
-        //"concepts/global-state", // NEW CONTENT WILL BE HERE
-        //"concepts/smart-contracts", // NEW CONTENT WILL BE HERE
+        "concepts/global-state",
+        "concepts/smart-contracts",
         "concepts/callstack",
         "concepts/session-code",
+        "concepts/callstack",
         "concepts/dictionaries",
         "concepts/serialization-standard",
         {
@@ -122,6 +123,7 @@ module.exports = {
             collapsed: true,
             items: [
                 "developers/dapps/index",
+                "developers/dapps/prerequisites",
                 {
                     type: "category",
                     label: "SDK Client Libraries",
@@ -137,12 +139,11 @@ module.exports = {
                         //"developers/dapps/sdk/additional-libraries", // NEW CONTENT WILL BE HERE
                     ],
                 },
-                //"developers/dapps/prerequisites", // NEW CONTENT WILL BE HERE
                 "developers/dapps/technology-stack",
                 //"developers/dapps/template-frontend", // NEW CONTENT WILL BE HERE
                 "developers/dapps/signing-a-deploy",
                 "developers/dapps/sending-deploys",
-                //"developers/dapps/using-casper-signer", // NEW CONTENT WILL BE HERE
+                "developers/dapps/signer-integration",
                 //"developers/dapps/callstack-based", // NEW CONTENT WILL BE HERE
                 //"developers/dapps/explanation-session-and-contract", // NEW CONTENT WILL BE HERE
                 "developers/dapps/monitor-and-consume-events",
@@ -186,6 +187,7 @@ module.exports = {
             items: [
                 "operators/setup/hardware",
                 "operators/setup/basic-node-configuration",
+                "operators/setup/node-endpoints",
                 "operators/setup/install-node",
                 "operators/setup/upgrade",
                 "operators/setup/joining",
@@ -196,7 +198,12 @@ module.exports = {
             label: "Becoming a Validator",
             collapsible: true,
             collapsed: true,
-            items: ["operators/becoming-a-validator/bonding", "operators/becoming-a-validator/unbonding"],
+            items: [
+                "operators/becoming-a-validator/bonding",
+                "operators/becoming-a-validator/recovering",
+                "operators/becoming-a-validator/inactive-vs-faulty",
+                "operators/becoming-a-validator/unbonding",
+            ],
         },
         {
             type: "category",
@@ -269,6 +276,7 @@ module.exports = {
                     collapsed: true,
                     items: [
                         "resources/tutorials/advanced/index",
+                        "resources/tutorials/advanced/cross-contract",
                         "resources/tutorials/advanced/transfer-token-to-contract",
                         "resources/tutorials/advanced/two-party-multi-sig",
                         "resources/tutorials/advanced/return-values-tutorial",
@@ -308,29 +316,5 @@ module.exports = {
                 "dapp-dev-guide/building-dapps/nctl-test",
             ],
         },
-        //{
-        //    type: "category",
-        //    label: "Tutorials",
-        //    collapsible: true,
-        //    collapsed: true,
-        //    items: [
-        //        // TODO Hiding these 2 tutorials until we can refresh them
-        //        //                "dapp-dev-guide/tutorials/kv-storage-tutorial",
-        //        //                {
-        //        //                    type: "category",
-        //        //                    label: "Multi-Signature Tutorial",
-        //        //                    collapsible: true,
-        //        //                    collapsed: true,
-        //        //                    items: [
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/index",
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/concepts",
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/contract",
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/client",
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/example",
-        //        //                        "dapp-dev-guide/tutorials/multi-sig/additional",
-        //        //                   ],
-        //        //                },
-        //    ],
-        //},
     ],*/
 };

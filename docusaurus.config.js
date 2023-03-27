@@ -1,3 +1,7 @@
+require("dotenv").config({
+    path: process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : `.env`,
+});
+
 const {
     algoliaConfig,
     algoliaOfflineConfig,
@@ -12,6 +16,7 @@ const {
     pwaConfig,
     prismConfig,
     siteConfig,
+    siteNavbarConfig,
 } = require("./config");
 const { getEditUrl } = require("./src/utils/docs");
 
@@ -23,10 +28,13 @@ module.exports = {
     i18n: i18nConfig,
     baseUrl: "/",
     /* Optional */
-    // customFields: dataConfig,
+    customFields: {
+        // customFields: dataConfig,
+        ...siteNavbarConfig,
+    },
     themeConfig: {
         // algolia: algoliaConfig,
-        announcementBar: announcementConfig,
+        // announcementBar: announcementConfig,
         colorMode: colorConfig,
         footer: footerConfig,
         docs: {
@@ -44,6 +52,11 @@ module.exports = {
             appId: "KQNX60E7J5",
             apiKey: "42e859bcdaa94a6c412d933cbaabe2e2",
             indexName: "casperlabs",
+        },
+        docs: {
+            sidebar: {
+                hideable: true,
+            },
         },
     },
     presets: [
@@ -89,12 +102,13 @@ module.exports = {
         /* Optional */
         // ["@docusaurus/plugin-pwa", pwaConfig],
         [
-            "docusaurus2-dotenv",
+            "docusaurus-plugin-navdata",
             {
-                path: "./.env.production",
-                safe: false,
-                systemvars: false,
-                silent: false,
+                directusUrl: process.env.DIRECTUS_URL,
+                directusGraphqlUrl: process.env.DIRECTUS_GRAPHQL_URL,
+                directusToken: process.env.DIRECTUS_TOKEN,
+                query:
+                    "query { header { translations { languages_code { code } login_text search_placeholder logo { id } nav_items { header_nav_item_id { title columns { header_nav_column_id { groups { header_link_column_id { title links { link_id { title type url children { related_link_id { title type url }}}}}}}}}}}} social_media { name url icon { id }} footer { translations { title description logo { id title } link_column { footer_link_column_id { title links { link_id { title type url } } } } bottom_links { link_id { title type url } } languages_code { code } } }}",
             },
         ],
     ],
