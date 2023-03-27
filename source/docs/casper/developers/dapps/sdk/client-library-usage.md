@@ -133,8 +133,6 @@ accountHashHex = pycspr.crypto.cl_checksum.encode(accountHashBytes)
 
 </Tabs>
 
----
-
 ## Transferring CSPR
 
 Using the `keypair` created above in [Accounts](#accounts), you can sign a CSPR transferral deploy.
@@ -203,8 +201,6 @@ print(deploy.hash.hex())
 
 Once submitted, the above snippet will print the deploy hash in the console.
 
----
-
 ## Installing Contracts
 
 <Tabs>
@@ -269,3 +265,43 @@ print(deploy.hash.hex())
 </Tabs>
 
 Once submitted, the above snippet will print the deploy hash in the console.
+
+## Staking
+
+Token staking is vital to the Casper Network, enabling its delegated Proof-of-Stake consensus mechanism to operate effectively. With the help of any of the Casper SDKs, you can stake tokens by delegating them to validators.
+
+The delegation functionality exists as a piece of session code obtainable from the [casper-node](https://github.com/casper-network/casper-node) repository. To delegate tokens, first clone the repository:
+
+```bash
+git clone https://github.com/casper-network/casper-node.git
+cd casper-node/
+```
+
+Then compile the [delegate contract](https://github.com/casper-network/casper-node/blob/dev/smart_contracts/contracts/client/delegate/src/main.rs):
+
+```bash
+make setup-rs
+make build-contract-rs/delegate
+```
+
+
+
+<Tabs>
+
+<TabItem value="js" label="JavaScript">
+
+```javascript
+
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+
+```
+
+</TabItem>
+
+</Tabs>
