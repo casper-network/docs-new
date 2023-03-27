@@ -109,8 +109,10 @@ In your `keypair` variable is a private key and a public key. There are many rea
 <TabItem value="js" label="JavaScript">
 
 ```javascript
-const publicKeyHex = keypair.publicKey.toHex();
-const accountHashHex = keypair.publicKey.toAccountHash();
+// Create a hexadecimal representation of the public key and account hash.
+const publicKeyHex = publicKey.toHex();
+const accountHashBytes = publicKey.toAccountHash();
+const accountHashHex = Buffer.from(accountHashBytes).toString('hex');
 ```
 
 </TabItem>
