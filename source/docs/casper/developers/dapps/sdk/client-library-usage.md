@@ -14,9 +14,6 @@ Use `npm` or `yarn` to install [casper-js-sdk](https://www.npmjs.com/package/cas
 ```bash
 npm install casper-js-sdk
 ```
-
-or
-
 ```bash
 yarn install casper-js-sdk
 ```
