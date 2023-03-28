@@ -1,6 +1,5 @@
 ---
 title: Casper Concepts
-slug: /concepts
 ---
 ## Introduction
 This section is intended for the developer or user who has had little or no exposure to Casper, and who wants to understand the concepts underpinning the platform. Working with the Casper blockchain requires an understanding of some core concepts. Some of these concepts are more generally applicable to blockchain technology, while others are Casper-specific. If you are new to Casper, we recommend that you first familiarize yourself with these concepts in order to prevent confusion at a further stage of your educative process.

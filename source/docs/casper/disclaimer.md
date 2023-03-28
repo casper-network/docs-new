@@ -1,7 +1,6 @@
 ---
 id: disclaimer
 title: Disclaimer
-slug: /disclaimer
 tags: ["Legal", "CasperLabs", "CSPR"]
 ---
 # Disclaimer {#disclaimer}

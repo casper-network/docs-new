@@ -1,7 +1,6 @@
 ---
 id: welcome
 title: Welcome
-slug: /about
 tags: ["Must read", "Legal", "Introduction", "CasperLabs", "CSPR"]
 ---
 
