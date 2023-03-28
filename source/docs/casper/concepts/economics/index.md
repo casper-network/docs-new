@@ -1,5 +1,6 @@
 ---
 title: Economics Overview
+slug: /economics
 ---
 
 # Economics
