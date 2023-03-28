@@ -9,9 +9,9 @@ This section explains how to fulfill the prerequisites needed to interact with a
 This section covers:
 
 1. Setting up a [Rust](#install-rust) development environment
-2. Installing the official Casper [command-line client](#install-casper-client) 
+2. Installing the official Casper [command-line client](#install-casper-client)
 3. [Setting up an Account](#setting-up-an-account) on a Casper network
-4. [Acquiring the IP](#acquire-node-address-from-network-peers) address of a peer on the official Testnet or Mainnet  
+4. [Acquiring the IP](#acquire-node-address-from-network-peers) address of a peer on the official Testnet or Mainnet
 
 To be able to develop comfortably on the Casper Network you should use either `macOS` or `Linux Ubuntu 20.04`. Developing on Windows is not advised.
 
@@ -143,7 +143,7 @@ source $HOME/.cargo/env
 
 ```bash
 brew install pkg-config
-brew install openssl 
+brew install openssl
 ```
 
 </TabItem>
