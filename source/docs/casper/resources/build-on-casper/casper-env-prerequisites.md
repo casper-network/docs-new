@@ -34,7 +34,7 @@ xcode-select --install
 </TabItem>
 </Tabs>
 
-Check the version 
+Check the version
 
 <Tabs>
 <TabItem value="macOS" label="macOS">
@@ -118,7 +118,7 @@ rustup --version
 
 ```bash
 brew install pkg-config
-brew install openssl 
+brew install openssl
 ```
 
 </TabItem>
