@@ -225,6 +225,30 @@ module.exports = {
         //"resources/sample-projects", // NEW CONTENT WILL BE HERE
         {
             type: "category",
+            label: "Migrate from other chain",
+            collapsible: true,
+            collapsed: true,
+            items: [
+                "resources/migrate/index",
+                {
+                    type: "category",
+                    label: "Near",
+                    collapsible: true,
+                    collapsed: true,
+                    items: [
+                        "resources/migrate/near/index",
+                        "resources/migrate/near/prerequisites",
+                        "resources/migrate/near/modules-structs",
+                        "resources/migrate/near/contract-class",
+                        "resources/migrate/near/state-data-struct",
+                        "resources/migrate/near/transfers-actions",
+                        "resources/migrate/near/cross-contract",
+                    ],
+                },
+            ],
+        },
+        {
+            type: "category",
             label: "Tutorials",
             collapsible: true,
             collapsed: true,
