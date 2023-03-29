@@ -212,7 +212,7 @@ Example:
 ```
 casper-client query-state \
   --node-address http://195.201.167.179:7777 \
-  -s a8b6097502623dbd8a2a8fee17f10e32e46928b2a6f1ed3d01f10aba16140758 \
+  -state-root-hash a8b6097502623dbd8a2a8fee17f10e32e46928b2a6f1ed3d01f10aba16140758 \
   --key account-hash-32e24c2eb139804ad8db550dd79d78c370559069c137519a48b048bd77ca7da4
 ```
 When querying an account, make sure to add the `account-hash-` prefix as shown above.
