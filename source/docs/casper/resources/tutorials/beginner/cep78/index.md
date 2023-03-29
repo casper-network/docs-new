@@ -169,6 +169,10 @@ replace [JSON SCHEMA ESCAPED STRING] with the escaped version of
 ```
 "json_schema:string='{\"properties\":{\"nft_name\":{\"name\":\"nft_name\",\"description\":\"name_of_nft\",\"required\":true},\"nft_description\":{\"name\":\"nft_description\",\"description\":\"description_of_nft\",\"required\":true},\"nft_url\":{\"name\":\"nft_url\",\"description\":\"url_of_nft\",\"required\":true}}}'"
 ```
+Use this external [tool](https://jsontostring.com/) to escape a custom
+JSON schema like [above](#custom-metadata-example) or the one from the Cep78 [readme](https://github.com/casper-ecosystem/cep-78-enhanced-nft#example-custom-validated-schema).
+
+_Only escaped JSON metadata can be passed as a session argument when installing the contract or minting an NFT._
 ### Standard (Cep78) metadata
 Note that, when using a standard metadata schema, such as Cep78, the user is obliged to supply an empty string as the `json_schema`:
 ```
@@ -191,10 +195,6 @@ Example output:
   }
 }
 ```
-Use this external [tool](https://jsontostring.com/) to escape a custom
-JSON schema like [above](#custom-metadata-example) or the one from the Cep78 [readme](https://github.com/casper-ecosystem/cep-78-enhanced-nft#example-custom-validated-schema).
-
-_Only escaped JSON metadata can be passed as a session argument when installing the contract or minting an NFT._
 
 ## Mint an NFT
 Mint an NFT by calling the previously installed instance of the Cep-78 NFT standard.
