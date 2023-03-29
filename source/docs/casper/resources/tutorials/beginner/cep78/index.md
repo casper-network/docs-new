@@ -137,7 +137,7 @@ required at the time of installation.
 [_reverse_lookup_](https://github.com/casper-ecosystem/cep-78-enhanced-nft#ownerreverselookupmode):
 Needs to be set in order to be able to track the ownership of NFTs.
 
-### Example installation with Session Arguments
+### Example installation command with Session Arguments
 For this tutorial, please install an instance of Cep78 using the following
 command and replace the [JSON SCHEMA ESCAPED STRING] with the example
 ESCAPED STRING that's explained in-depth below the command.
@@ -165,9 +165,21 @@ casper-client put-deploy \
 ```
 replace [JSON SCHEMA ESCAPED STRING] with the escaped version of
 [above](#custom-metadata-example) example of a custom JSON SCHEMA:
+### Custom metadata
 ```
 "json_schema:string='{\"properties\":{\"nft_name\":{\"name\":\"nft_name\",\"description\":\"name_of_nft\",\"required\":true},\"nft_description\":{\"name\":\"nft_description\",\"description\":\"description_of_nft\",\"required\":true},\"nft_url\":{\"name\":\"nft_url\",\"description\":\"url_of_nft\",\"required\":true}}}'"
 ```
+### Standard (Cep78) metadata
+Note that, when using a standard metadata schema, such as Cep78, the user is obliged to supply an empty string as the `json_schema`:
+```
+"json_schema:string=''"
+```
+### Error codes
+Should you experience any errors, the list of [Cep78 error codes](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/contract/src/error.rs) should help identify the issue. 
+
+For example, a missing `json_schema` will be assigned error code `67`. If you encounter this error, it is likely that you forgot to add a `json_schema` to the list of session arguments when installing the contract.
+
+### Execution of the installation command
 Example output:
 ```json
 {
