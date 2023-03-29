@@ -75,7 +75,7 @@ make build-contract
 ```
 the compiled `contract.wasm` will be in `./contract/target/wasm32-unknown-unknown/release`
 
-### Deploy the Cep-78 contract
+### Install the Cep-78 contract
 ```bash
 casper-client put-deploy \
   --node-address <NODE ADDRESS> \
