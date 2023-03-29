@@ -138,7 +138,6 @@ required at the time of installation.
 Needs to be set in order to be able to track the ownership of NFTs.
 
 ### Example installation with Session Arguments
-{#session-arguments-example}
 For this tutorial, please install an instance of Cep78 using the following
 command and replace the [JSON SCHEMA ESCAPED STRING] with the example
 ESCAPED STRING that's explained in-depth below the command.
