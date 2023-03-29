@@ -4,7 +4,7 @@ title: Tutorial: Installing a Cep78 contract, minting NFTs
 Level: Intermediate, time to complete: 15-30 minutes depending on
 experience.
 
-## Install an instantiation of the Cep-78 contract
+## Install an instance of the Cep-78 contract
 An instantiation of the
 [Cep-78](https://github.com/casper-ecosystem/cep-78-enhanced-nft/)
 contract is essentially an NFT collection that hold different methods like
