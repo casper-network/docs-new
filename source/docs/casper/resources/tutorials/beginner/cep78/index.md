@@ -219,7 +219,7 @@ When querying an account, make sure to add the `account-hash-` prefix as shown a
 `get-account-state` returns a list of associated keys. One of these
 associated keys should be the `contract hash` of the Cep-78 instance.
 
--> find the `contract_hash` of the deploy named "nft_contract" in the output and save it.
+-> find the `contract_hash` of the deploy named "cep78_contract_hash_MY_COLLECTION" in the output and save it.
 Example output:
 ```json
 {
