@@ -7,7 +7,7 @@ experience.
 ## Install an instance of the Cep-78 contract
 An instantiation of the
 [Cep-78](https://github.com/casper-ecosystem/cep-78-enhanced-nft/)
-contract is essentially an NFT collection that hold different methods like
+contract is essentially an NFT collection that holds different methods like
 `Mint`, `Burn` and `Transfer`,
 as well as references to metadata on the storage system of the Blockchain.
 
