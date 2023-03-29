@@ -2,7 +2,7 @@
 
 ## Introduction {#global-state-intro}
 
-The "global state" is the storage layer for the blockchain. All accounts, contracts, and any associated data they have are stored in the global state. Our global state has the semantics of a key-value store (with additional permissions logic since not all users can access all values in the same way).
+"Global state" is the storage layer for the blockchain. Storage of all accounts, contracts, and their associated data occurs in global state. Our global state has the semantics of a key-value store (with additional permissions logic since not all users can access all values in the same way).
 
 :::note
 Refer to [Keys and Permissions](./serialization-standard.md#serialization-standard-state-keys) for further information on keys.
@@ -11,6 +11,8 @@ Refer to [Keys and Permissions](./serialization-standard.md#serialization-standa
 Each block causes changes to this global state because of the execution of the deploys it contains. For validators to efficiently judge the correctness of these changes, information about the new state needs to be communicated succinctly. Moreover, we need to communicate pieces of the global state to users while allowing them to verify the correctness of the parts they receive. For these reasons, the key-value store is implemented as a [Merkle trie](#global-state-trie).
 
 ## Merkle trie structure {#global-state-trie}
+
+![Global State](/image/design/global-state.png)
 
 At a high level, a Merkle trie is a key-value store data structure that can be shared piece-wise in a verifiable way (via a construction called a Merkle proof). Each node is labeled by the hash of its data. Leaf nodes are labeled with the hash of their data. Non-leaf nodes are labeled with the hash of the labels of their child nodes.
 

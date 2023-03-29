@@ -9,7 +9,6 @@ module.exports = {
         "concepts/smart-contracts",
         "concepts/callstack",
         "concepts/session-code",
-        "concepts/callstack",
         "concepts/dictionaries",
         "concepts/serialization-standard",
         {
