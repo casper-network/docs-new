@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Installing a Cep78 contract, minting NFTs
+title: Installing a Cep78 contract, minting NFTs
 ---
 Level: Intermediate, time to complete: 15-30 minutes depending on
 experience.
