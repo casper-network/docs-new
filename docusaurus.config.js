@@ -33,6 +33,10 @@ module.exports = {
         ...siteNavbarConfig,
     },
     themeConfig: {
+        tableOfContents: {
+            minHeadingLevel: 2,
+            maxHeadingLevel: 6,
+        },
         // algolia: algoliaConfig,
         // announcementBar: announcementConfig,
         colorMode: colorConfig,
