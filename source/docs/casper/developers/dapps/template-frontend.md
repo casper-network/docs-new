@@ -63,12 +63,14 @@ You can use the `Signer` class within the Casper JS SDK to connect with the Casp
 import React from "react";
 import Connect from "./Connect";
 
-const [publicKey, setPublicKey] = React.useState(null);
-return (
+function App() {
+	const [publicKey, setPublicKey] = React.useState(null);
+	return (
 		<>
 			<Connect setPublicKey={ setPublicKey } />
 		</>
-);
+	);
+}
 ```
 
 This is an example of *src/App.js* that imports and displays the `Connect` component that is described next. The `setPublicKey` function is passed to the `Connect` component as a [prop](https://legacy.reactjs.org/docs/components-and-props.html) so that it may set the public key and make it available through all of *src/App.js*. This way when more components are added to *src/App.js*, they may utilize the `publicKey` variable.
@@ -98,21 +100,21 @@ Write the `connectToSigner` function under the `Connect` function component:
 ```javascript
 function connectToSigner(props) {
 	Signer.isConnected().then(connected => {
-			if (!connected) {
-				Signer.sendConnectionRequest();
-			} else {
-				Signer.getActivePublicKey()
-					.then(publicKey => {
-						props.setPublicKey(publicKey);
-					})
-					.catch(error => {
-						alert(error.message);
-					});
-			}
-		})
-		.catch(error => {
-			alert(error.message);
-		});
+		if (!connected) {
+			Signer.sendConnectionRequest();
+		} else {
+			Signer.getActivePublicKey()
+			.then(publicKey => {
+				props.setPublicKey(publicKey);
+			})
+			.catch(error => {
+				alert(error.message);
+			});
+		}
+	})
+	.catch(error => {
+		alert(error.message);
+	});
 }
 ```
 
@@ -138,11 +140,11 @@ import axios from "axios";
 
 function UpdateMessage(props) {
   return (
-  	<>
-      <input id="message" type="text">
-      <button onClick={ () => updateMessage(props) }>Update Message</button>
-    </>
-  );
+		<>
+			<input id="message" type="text">
+ 			<button onClick={ () => updateMessage(props) }>Update Message</button>
+		</>
+	);
 }
 
 export default UpdateMessage;
@@ -167,14 +169,14 @@ function updateMessage(props) {
 	const deployJSON = DeployUtil.deployToJson(deploy);
 	Signer.sign(deployJSON, props.publicKey).then((signedDeploy) => { // Initiates sign request
 		axios.post("/sendDeploy", signedDeploy, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((response) => {
-      alert(response.data);
-    }).catch((error) => {
-      console.error(error.message);
-    });
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		}).then((response) => {
+			alert(response.data);
+		}).catch((error) => {
+			console.error(error.message);
+		});
 	}).catch((error) => {
 		console.error(error.message);
 	});
@@ -190,13 +192,15 @@ import React from "react";
 import Connect from "./Connect";
 import UpdateMessage from "./UpdateMessage";
 
-const [publicKey, setPublicKey] = React.useState(null);
-return (
+function App() {
+	const [publicKey, setPublicKey] = React.useState(null);
+	return (
 		<>
 			<Connect setPublicKey={ setPublicKey } />
-  		<UpdateMessage publicKey={ publicKey } />
+			<UpdateMessage publicKey={ publicKey } />
 		</>
-);
+	);
+}
 ```
 
   ## Query a Smart Contract
@@ -247,13 +251,15 @@ import Connect from "./Connect";
 import UpdateMessage from "./UpdateMessage";
 import Query from "./Query";
 
-const [publicKey, setPublicKey] = React.useState(null);
-return (
+function App() {
+	const [publicKey, setPublicKey] = React.useState(null);
+	return (
 		<>
 			<Connect setPublicKey={ setPublicKey } />
-  		<UpdateMessage publicKey={ publicKey } />
-  		<Query publicKey={ publicKey } />
+			<UpdateMessage publicKey={ publicKey } />
+			<Query publicKey={ publicKey } />
 		</>
-);
+	);
+}
 ```
 
