@@ -243,7 +243,7 @@ The `toAccountHashStr` method produces a string that is prepended by the text "a
 
 :::
 
-Now add this component to *src/App.js*, making available the `publicKey` state varible via a prop:
+Now add this component to *src/App.js*, making available the `publicKey` state variable via a prop:
 
 ```jsx
 import React from "react";
