@@ -263,3 +263,27 @@ function App() {
 }
 ```
 
+## Test Application
+
+Test your application by running:
+
+```bash
+vite dev
+```
+
+Your application will start locally and a URL will be shown where you can visit your application. Alternatively, press `h`, then `o` to open the app in a browser.
+
+## Build for Production
+
+When you're ready to release your application, you'll want to compile it to pure JavaScript and serve it from a web server. Do so by running:
+
+```bash
+vite build
+```
+
+Once this is complete you can preview your production build by running:
+
+```bash
+vite preview
+```
+
