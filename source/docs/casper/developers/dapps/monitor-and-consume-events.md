@@ -46,7 +46,12 @@ client.get_events(eventHandler, NodeEventChannel.CHANNEL, NodeEventType.EVENT_NA
 
 *Note: You can find active online peers' `NODE_ADDRESS`es at [cspr.live](https://cspr.live/tools/peers) for mainnet and [testnet.cspr.live](https://testnet.cspr.live/tools/peers) for testnet.*
 
-Where `CHANNEL` is `main` for an event type of `ApiVersion`, `BlockAdded`, `DeployExpired`, `DeployProcessed`, `Fault` or `Step`. `CHANNEL` is `deploys` for `DeployAccepted`, and `CHANNEL` is `sigs` for `FinalitySignature`.
+Where `CHANNEL` is set to;
+ `main` for the following event types;
+ `ApiVersion`, `BlockAdded`, `DeployExpired`, `DeployProcessed`, `Fault` or `Step`. 
+`deploys` for event types;
+ `DeployAccepted`, or 
+`sigs` for event type `FinalitySignature`.
 
 And where `EVENT_NAME` is one of the following different types of events emitted by the Casper Network:
 
