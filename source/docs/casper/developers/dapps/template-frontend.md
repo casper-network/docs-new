@@ -18,7 +18,7 @@ To get your Node.js version.
 
 To ensure compatibility, you should be running Node.js version 18 or above. If you are running an earlier version, upgrade to version 18 using the [Node Version Manager](https://github.com/nvm-sh/nvm) or another tool.
 
-Using `npm`, create a new Vite project by running:
+Using [npm](https://www.npmjs.com/), create a new Vite project by running:
 
 ```bash
 npm create vite@latest
@@ -38,7 +38,7 @@ Run
 
 ```bash
 npm install
-npm run dev
+vite dev
 ```
 
 to test the server.
@@ -73,7 +73,7 @@ function App() {
 }
 ```
 
-This is an example of *src/App.js* that imports and displays the `Connect` component that is described next. The `setPublicKey` function is passed to the `Connect` component as a [prop](https://legacy.reactjs.org/docs/components-and-props.html) so that it may set the public key and make it available through all of *src/App.js*. This way when more components are added to *src/App.js*, they may utilize the `publicKey` variable.
+This is an example of *src/App.js* that imports and displays the `Connect` component that is described next. The `setPublicKey` function is passed to the `Connect` component as a [prop](https://legacy.reactjs.org/docs/components-and-props.html) so that it may set the public key and make it available to all of *src/App.js*. This way when more components are added to *src/App.js*, they may utilize the `publicKey` variable.
 
 To connect to the Casper Signer within your React app, create the `Connect` component and import the `Signer` class from the Casper JS SDK.
 
