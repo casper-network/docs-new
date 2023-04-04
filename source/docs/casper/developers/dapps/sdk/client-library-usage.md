@@ -311,7 +311,7 @@ const fs = require("fs");
 const casperClient = new CasperClient("http://NODE_ADDRESS:7777/rpc")
 const contract = new Contracts.Contract(casperClient)
 
-const contractWasm = new Uint8Array(fs.readFileSync("./casper-node/target/wasm32-unknown-unknown/release/delegate.wasm").buffer)
+const contractWasm = new Uint8Array(fs.readFileSync("./casper-node/target/wasm32-unknown-unknown/release/delegate.wasm").buffer);
 
 const runtimeArguments = RuntimeArgs.fromMap({
   "amount": CLValueBuilder.u512(5e11), // 500 CSPR, minimum delegation amount
