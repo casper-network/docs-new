@@ -305,8 +305,8 @@ Now in your dApp's backend (or standalone script), load the *delegate.wasm* file
 <TabItem value="js" label="JavaScript">
 
 ```javascript
-const { CasperClient, Contracts, RuntimeArgs, CLValueBuilder, CLPublicKey } = require("casper-js-sdk")
-const fs = require("fs")
+const { CasperClient, Contracts, RuntimeArgs, CLValueBuilder, CLPublicKey } = require("casper-js-sdk");
+const fs = require("fs");
 
 const casperClient = new CasperClient("http://NODE_ADDRESS:7777/rpc")
 const contract = new Contracts.Contract(casperClient)
