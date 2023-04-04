@@ -3,10 +3,10 @@ module.exports = {
         "concepts/index",
         "concepts/intro-to-dapps",
         "concepts/accounts-and-keys",
-        "concepts/understanding-hash-types",
+        "concepts/hash-types",
         "concepts/deploy-and-deploy-lifecycle",
-        //"concepts/global-state", // NEW CONTENT WILL BE HERE
-        //"concepts/smart-contracts", // NEW CONTENT WILL BE HERE
+        "concepts/global-state",
+        "concepts/smart-contracts",
         "concepts/callstack",
         "concepts/session-code",
         "concepts/dictionaries",
@@ -18,9 +18,9 @@ module.exports = {
             collapsed: true,
             items: [
                 "concepts/design/index",
+                "concepts/design/casper-design",
                 "concepts/design/p2p",
                 "concepts/design/highway",
-                "concepts/design/casper-design",
                 "concepts/design/reading-and-writing-to-the-blockchain",
             ],
         },
@@ -34,9 +34,9 @@ module.exports = {
                 "concepts/economics/consensus",
                 "concepts/economics/runtime",
                 "concepts/economics/gas-concepts",
-                "concepts/economics/delegation",
                 "concepts/economics/concepts",
                 "concepts/economics/staking",
+                "concepts/economics/delegation",
             ],
         },
         {
@@ -122,6 +122,7 @@ module.exports = {
             collapsed: true,
             items: [
                 "developers/dapps/index",
+                "developers/dapps/prerequisites",
                 {
                     type: "category",
                     label: "SDK Client Libraries",
@@ -129,19 +130,19 @@ module.exports = {
                     collapsed: true,
                     items: [
                         "developers/dapps/sdk/index",
-                        "developers/dapps/sdk/script-sdk",
+                        "developers/dapps/sdk/client-library-usage",
+                        //"developers/dapps/sdk/script-sdk",
                         "developers/dapps/sdk/csharp-sdk",
                         "developers/dapps/sdk/go-sdk",
-                        "developers/dapps/sdk/python-sdk",
+                        //"developers/dapps/sdk/python-sdk",
                         //"developers/dapps/sdk/additional-libraries", // NEW CONTENT WILL BE HERE
                     ],
                 },
-                //"developers/dapps/prerequisites", // NEW CONTENT WILL BE HERE
                 "developers/dapps/technology-stack",
                 //"developers/dapps/template-frontend", // NEW CONTENT WILL BE HERE
                 "developers/dapps/signing-a-deploy",
                 "developers/dapps/sending-deploys",
-                //"developers/dapps/using-casper-signer", // NEW CONTENT WILL BE HERE
+                "developers/dapps/signer-integration",
                 //"developers/dapps/callstack-based", // NEW CONTENT WILL BE HERE
                 //"developers/dapps/explanation-session-and-contract", // NEW CONTENT WILL BE HERE
                 "developers/dapps/monitor-and-consume-events",
@@ -185,6 +186,7 @@ module.exports = {
             items: [
                 "operators/setup/hardware",
                 "operators/setup/basic-node-configuration",
+                "operators/setup/node-endpoints",
                 "operators/setup/install-node",
                 "operators/setup/upgrade",
                 "operators/setup/joining",
@@ -195,7 +197,12 @@ module.exports = {
             label: "Becoming a Validator",
             collapsible: true,
             collapsed: true,
-            items: ["operators/becoming-a-validator/bonding", "operators/becoming-a-validator/unbonding"],
+            items: [
+                "operators/becoming-a-validator/bonding",
+                "operators/becoming-a-validator/recovering",
+                "operators/becoming-a-validator/inactive-vs-faulty",
+                "operators/becoming-a-validator/unbonding",
+            ],
         },
         {
             type: "category",
@@ -231,7 +238,6 @@ module.exports = {
                     items: [
                         "resources/tutorials/beginner/index",
                         "resources/tutorials/beginner/getting-started-tutorial",
-                        "resources/tutorials/beginner/use-javascript-sdk",
                         "resources/tutorials/beginner/querying-network",
                         "resources/tutorials/beginner/upgrade-contract",
                         {
@@ -268,10 +274,12 @@ module.exports = {
                     collapsed: true,
                     items: [
                         "resources/tutorials/advanced/index",
+                        "resources/tutorials/advanced/cross-contract",
                         "resources/tutorials/advanced/transfer-token-to-contract",
                         "resources/tutorials/advanced/two-party-multi-sig",
                         "resources/tutorials/advanced/return-values-tutorial",
                         "resources/tutorials/advanced/list-cspr",
+                        "resources/tutorials/advanced/storage-workflow",
                     ],
                 },
             ],
