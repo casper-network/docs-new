@@ -22,7 +22,7 @@ This section shows you how to write session code and smart contracts in Rust and
 |[Installing Smart Contracts and Querying Global State](../cli/installing-contracts.md)| A guide on installing smart contracts and querying global state        |
 |[Calling Smart Contracts with the Rust Client](../cli/calling-contracts.md)| Steps to call a smart contract with the Rust command-line client|
 |[Upgrading and Maintaining Smart Contracts](./upgrading-contracts.md)| An introduction to versioning smart contracts|
-|[Reading and Writing to Dictionaries](../../concepts/dictionaries.md)]| Information on Dictionaries and how to read and write to them on the Casper Platform.|
+|[Reading and Writing to Dictionaries](../../concepts/dictionaries.md)| Information on Dictionaries and how to read and write to them on the Casper Platform.|
 |[Execution Error Codes](../cli/execution-error-codes.md)|Possible error codes when writing smart contracts.|
 |[Getting Started with AssemblyScript](./assembly-script.md) | An introduction to using AssemblyScript with the Casper Platform |
 
@@ -38,7 +38,3 @@ Additionally, the following tutorials outline some aspects of writing smart cont
 |[Interacting with Runtime Return Values](../../resources/tutorials/advanced/return-values-tutorial.md)| Learning how to return a value using contract code         |
 |[Safely Transfer Tokens to a Contract](../../resources/tutorials/advanced/transfer-token-to-contract.md) | How to handle tokens via a contract                     |
 |[Smart Contract Upgrades](../../resources/tutorials/beginner/upgrade-contract.md)               | Learn how to upgrade smart contracts                             |
-<!-- TODO refresh these tutorials and re-enable the links.
-|[Key-Value Storage with Casper DSL](../../dapp-dev-guide/tutorials/kv-storage-tutorial.md)  | Design a simple contract to store a value and use the Casper DSL |
-|[Multi-Signatures and Key Recovery](../../dapp-dev-guide/tutorials/multi-sig/index.md)      | Learn to sign transactions with multiple keys                    | -->
-

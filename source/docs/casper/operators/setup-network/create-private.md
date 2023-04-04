@@ -39,8 +39,8 @@ Use the below guides to set up and manage validator nodes.
 - [Set up Mainnet and Testnet validator nodes](https://docs.cspr.community/): A set of guides for Mainnet and Testnet node-operators on setting up and configuring their Casper network validator nodes.
 
 Use these FAQ collections for tips and details for validators.
-- [FAQs for basic validator node ](../../faq/faq-validator.md)
-- [FAQs on Main Net and Test Net validator node setup](https://docs.cspr.community/docs/faq-validator.html)
+- [FAQs for a basic validator node ](../../faq/faq-validator.md)
+- [External FAQs on Mainnet and Testnet validator node setup](https://docs.cspr.community/docs/faq-validator.html)
 
 ## Step 2. Setting up the Directory
 Use these guides to set up your private network directories. You will find several main directories dedicated to different purposes.
@@ -536,4 +536,4 @@ After this step, the private network would be ready for use.
 
 ## Setting up a Block Explorer
 
-Private and hybrid blockchains can find information on how to set up and operate our free version of a block explorer [here](https://github.com/casper-network/casper-blockexplorer).
+Private and hybrid blockchains can find information on how to set up and operate our free version of a block explorer [here](https://github.com/casper-network/casper-blockexplorer-frontend).
