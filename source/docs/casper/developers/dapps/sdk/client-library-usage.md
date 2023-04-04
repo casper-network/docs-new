@@ -151,7 +151,7 @@ const { CasperClient, DeployUtil } = require("casper-js-sdk");
 const casperClient = new CasperClient("http://NODE_ADDRESS:7777");
 const receipientPublicKeyHex = "01e8c84f4fbb58d37991ef373c08043a45c44cd7f499453fa2bd3e141cc0113b3c"
 
-const amount = 25e8 // Minimum transfer, 2.5 CSPR
+const amount = 2.5e9 // Minimum transfer: 2.5 CSPR
 let deployParams = new DeployUtil.DeployParams(
   keypair.publicKey,
   "casper" // or "casper-test" for Testnet
@@ -162,7 +162,7 @@ const session = DeployUtil.ExecutableDeployItem.newTransferWithOptionalTransferI
   recipientPublicKeyHex
 );
 
-const payment = DeployUtil.standardPayment(1e8); // Gas payment in motes, 0.1 CSPR
+const payment = DeployUtil.standardPayment(0.1e9); // Gas payment in motes: 0.1 CSPR
 const deploy = DeployUtil.makeDeploy(deployParams, session, payment);
 const signedDeploy = DeployUtil.signDeploy(deploy, keypair);
 
@@ -187,7 +187,7 @@ deployParams = pycspr.create_deploy_parameters(
 
 deploy = pycspr.create_transfer(
     params = deployParams,
-    amount = int(25e8), # Minimum transfer: 2.5 CSPR
+    amount = int(2.5e9), # Minimum transfer: 2.5 CSPR
     target = recipientPublicKeyBytes
 )
 
