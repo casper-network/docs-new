@@ -320,13 +320,13 @@ const runtimeArguments = RuntimeArgs.fromMap({
 });
 
 const deploy = contract.install(
-	contractWasm,
-	runtimeArguments,
-	"5000000000", // Gas payment (5 CSPR)
-	keypair.publicKey,
-	"casper", // or "casper-test" for testnet
-	[keypair]
-)
+    contractWasm,
+    runtimeArguments,
+    "5000000000", // Gas payment (5 CSPR)
+    keypair.publicKey,
+    "casper", // or "casper-test" for testnet
+    [keypair]
+);
 
 console.log(await casperClient.putDeploy(deploy))
 ```
