@@ -341,7 +341,7 @@ const deploy = contract.install(
 import pycspr
 
 validator_public_key = pycspr.factory.accounts.create_public_key_from_account_key(
-	bytes.fromhex("01e8c84f4fbb58d37991ef373c08043a45c44cd7f499453fa2bd3e141cc0113b3c")
+    bytes.fromhex("01e8c84f4fbb58d37991ef373c08043a45c44cd7f499453fa2bd3e141cc0113b3c")
 )
 
 deploy_params = pycspr.create_deploy_parameters(
