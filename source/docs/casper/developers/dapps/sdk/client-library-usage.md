@@ -328,7 +328,9 @@ const deploy = contract.install(
     [keypair]
 );
 
-console.log(await casperClient.putDeploy(deploy))
+(async () => {
+    console.log(await casperClient.putDeploy(deploy));
+})();    
 ```
 
 </TabItem>
