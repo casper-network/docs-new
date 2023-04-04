@@ -12,7 +12,7 @@ Smart contracts exist as stored on-chain logic, allowing disparate users to call
 
 On the Casper platform, developers may write smart contracts in any language that compiles to Wasm binaries. This tutorial focuses specifically on writing a smart contract in the Rust language. The Rust compiler compiles the contract code into Wasm. After that, the Wasm binary can be [sent to a node](../cli/installing-contracts.md) on a Casper network using a Deploy. Nodes within the network then [gossip deploys](../../concepts/design/p2p.md#communications-gossiping), include them within a block, and finalize them. After finalizing, the network executes the deploys within the block.
 
-Further, the Casper platform allows for [upgradable contracts](./upgrading-contracts.md). A [ContractPackage](https://docs.rs/casper-types/latest/casper_types/contracts/struct.ContractPackage.html) is created through the [new_contract](https://docs.rs/casper-contract/latest/casper_contract/contract_api/storage/fn.new_contract.html) or [new_locked_contract](https://docs.rs/casper-contract/latest/casper_contract/contract_api/storage/fn.new_locked_contract.html) methods. Through these methods, the Casper execution engine creates the new contract package automatically and assigns a [`ContractPackageHash`](../../concepts/understanding-hash-types.md#hash-and-key-explanations). The new contract is added to this package with a [`ContractHash`](https://docs.rs/casper-types/latest/casper_types/contracts/struct.ContractHash.html) key. The execution engine stores the new contract within the contract package alongside any previously installed contract versions, if applicable.
+Further, the Casper platform allows for [upgradable contracts](./upgrading-contracts.md). A [ContractPackage](https://docs.rs/casper-types/latest/casper_types/contracts/struct.ContractPackage.html) is created through the [new_contract](https://docs.rs/casper-contract/latest/casper_contract/contract_api/storage/fn.new_contract.html) or [new_locked_contract](https://docs.rs/casper-contract/latest/casper_contract/contract_api/storage/fn.new_locked_contract.html) methods. Through these methods, the Casper execution engine creates the new contract package automatically and assigns a [`ContractPackageHash`](../../concepts/hash-types.md#hash-and-key-explanations). The new contract is added to this package with a [`ContractHash`](https://docs.rs/casper-types/latest/casper_types/contracts/struct.ContractHash.html) key. The execution engine stores the new contract within the contract package alongside any previously installed contract versions, if applicable.
 
 The `new_contract` and `new_locked_contract` methods are a convenience that automatically creates the package associated with a new contract. Developers choosing not to use these methods must first create a contract package to function as a container for their new contract.
 
@@ -24,10 +24,15 @@ To begin creating a smart contract, you need to set up the project structure, ei
 
 ```bash
 project-directory/
+
 └── contract/
     ├── src/
         └── main.rs
     └── Cargo.toml
+
+└── Makefile
+└── rust-toolchain
+
 └── tests/
     ├── src/
         └── integration-tests.rs
@@ -36,30 +41,15 @@ project-directory/
 
 The project structure will be different while designing the full stack architecture. This will be expanded upon while describing the dApps.
 
-### Creating the Project Manually
-
+### Automatically using cargo-casper {#automatic-project-setup}
+The `cargo casper` [command](./getting-started.md#creating-a-project) can automatically set up the project structure, as shown above. This is the recommended way of setting up a new casper project. The `cargo casper` command will generate an example contract in the contract directory, as well as an example tests crate with logic defined in integration-tests.rs. The Makefile includes commands to prepare and build the contract and the rust-toolchain file specifies the target build version of rust.
+### Semi-automatically using "vanilla" cargo {#semi-automatic-project-setup}
 :::tip
 
-As a beginner it is not advised to start with the manual project structure.
+As a beginner it is not advised to start with the semi-automatic project structure.
 Structure created automatically with `cargo casper` contains everything that is needed to start coding.
 
 :::
-
-1. Create a top-level project directory to store the contract code and its corresponding tests.
-
-2. Create a folder for the contract code inside the project directory. This folder contains the logic that will be compiled into Wasm and executed on a Casper node. In this example, we named the folder `contract`. You can use a different folder name if you wish.
-
-   - In the `contract` folder, add a source folder called `src` and a `Cargo.toml` file, which specifies the contract's dependencies.
-   - Add a Rust file with the contract code in the `src` folder. In this example, we have the `main.rs` file.
-
-3. Navigating back to the project directory, create a folder for the tests, which help verify the contract's functionality. In this example, we named the folder `tests`.
-
-   - In the `tests` folder, add a source folder called `src` and a `Cargo.toml` file, which specifies the required dependencies to run the tests.
-   - In the `src` folder, add a Rust file with the tests that verify the contract's behavior. In this example, we have the `integration-tests.rs` file.
-
-### Creating the Project Automatically
-
-The `cargo casper` command can automatically set up the project structure, as shown [here](./getting-started.md#creating-a-project). Alternatively, follow the steps below to customize the project, yet create the various folders using `cargo`.
 
 1. Create a top-level project directory for the contract code and its corresponding tests.
 
@@ -89,7 +79,80 @@ The `cargo casper` command can automatically set up the project structure, as sh
 
     The [Testing Smart Contracts](./testing-contracts.md) guide explains how to update the tests using example code.
 
+4. Other than cargo-casper, "vanilla" cargo does not create a Makefile and rust-toolchain configuration file for us. Therefore we need to manually add these to the root of our project tree.
+
+Makefile:
+```bash
+prepare:
+        rustup target add wasm32-unknown-unknown
+
+build-contract:
+        cd contract && cargo build --release --target wasm32-unknown-unknown
+        wasm-strip contract/target/wasm32-unknown-unknown/release/contract.wasm 2>/dev/null | true
+
+test: build-contract
+        mkdir -p tests/wasm
+        cp contract/target/wasm32-unknown-unknown/release/contract.wasm tests/wasm
+        cd tests && cargo test
+
+clippy:
+        cd contract && cargo clippy --all-targets -- -D warnings
+        cd tests && cargo clippy --all-targets -- -D warnings
+
+check-lint: clippy
+        cd contract && cargo fmt -- --check
+        cd tests && cargo fmt -- --check
+
+lint: clippy
+        cd contract && cargo fmt
+        cd tests && cargo fmt
+```
+rust-toolchain file:
+```bash
+nightly-2022-08-03
+```
+### Manually {#manual-project-setup}
+:::tip
+
+As a beginner it is not advised to start with the manual project structure.
+Structure created automatically with `cargo casper` contains everything that is needed to start coding.
+
+:::
+
+1. Create a top-level project directory to store the contract code and its corresponding tests.
+
+2. Create a folder for the contract code inside the project directory. This folder contains the logic that will be compiled into Wasm and executed on a Casper node. In this example, we named the folder `contract`. You can use a different folder name if you wish.
+
+   - In the `contract` folder, add a source folder called `src` and a `Cargo.toml` file, which specifies the contract's dependencies.
+   - Add a Rust file with the contract code in the `src` folder. In this example, we have the `main.rs` file.
+
+3. Navigating back to the project directory, create a folder for the tests, which help verify the contract's functionality. In this example, we named the folder `tests`.
+
+   - In the `tests` folder, add a source folder called `src` and a `Cargo.toml` file, which specifies the required dependencies to run the tests.
+   - In the `src` folder, add a Rust file with the tests that verify the contract's behavior. In this example, we have the `integration-tests.rs` file.
+4. Manually create Makefile and rust-toolchain as per [Semi-automatic setup (4.)](#semi-automatic-project-setup)
+### Dependencies
+
+The `Cargo.toml` file in the `contract` folder includes the dependencies and versions the contract requires. At a minimum, you need to import the latest versions of the [casper-contract](https://docs.rs/casper-contract/latest/casper_contract/) and [casper-types](https://docs.rs/casper-types/latest/casper_types/) crates. The following dependencies and version numbers are only examples and must be adjusted based on your requirements.
+
+
+If you followed the [automatic setup](#automatic-project-setup), the dependencies should already be defined in `Cargo.toml`. For the [semi-automatic setup](#semi-automatic-project-setup) and [manual setup](#manual-project-setup) however, you'll need to manually add the dependencies to your crate's `Cargo.toml` file:
+
+```toml
+[dependencies]
+# A library for developing Casper network smart contracts.
+casper-contract = "1.4.4"
+# Types shared by many Casper crates for use on a Casper network.
+casper-types = "1.5.0"
+```
+
+- `casper-contract = "1.4.4"` - Provides the SDK for the execution engine (EE). The latest version of the crate is published [here](https://crates.io/crates/casper-contract).
+- `casper-types = "1.5.0"` - Includes types shared by many Casper crates for use on a Casper network. This crate is necessary for the EE to understand and interpret the session code. The latest version of the crate is published [here](https://crates.io/crates/casper-types).
+
+
+
 ## Writing a Basic Smart Contract
+At this point you either have the default example contract defined in `contract/src/main.rs` ([automatic](#automatic-project-setup) setup using cargo-casper), an empty `contract/src/main.rs` file ([manual](#manual-project-setup) project setup), or a rust "hello world" program defined in your `contract/src/main.rs` ([semi-automatic](#semi-automatic-project-setup) setup using "vanilla cargo"). In the following, you will write a new contract step-by-step. Therefore it is recommended to clear the content of contract/main.rs (if any).
 
 This section covers the process of writing a smart contract in Rust, using example code from the [counter contract](https://github.com/casper-ecosystem/counter/). This simple contract allows callers to increment and retrieve an integer. Casper provides a [contract API](https://docs.rs/casper-contract/latest/casper_contract/contract_api/index.html) within the [`casper_contract`](https://docs.rs/casper-contract/latest/casper_contract/index.html) crate.
 
@@ -107,24 +170,9 @@ To be able to comfortably write code in Rust it is crucial to understand these t
 
 :::
 
-### Dependencies in `Cargo.toml`
-
-The `Cargo.toml` file includes the dependencies and versions the contract requires. At a minimum, you need to import the latest versions of the [casper-contract](https://docs.rs/casper-contract/latest/casper_contract/) and [casper-types](https://docs.rs/casper-types/latest/casper_types/) crates. The following dependencies and version numbers are only examples and must be adjusted based on your requirements.
-
-```typescript
-[dependencies]
-// A library for developing Casper network smart contracts.
-casper-contract = "1.4.4"
-// Types shared by many Casper crates for use on a Casper network.
-casper-types = "1.5.0"
-```
-
-- `casper-contract = "1.4.4"` - Provides the SDK for the execution engine (EE). The latest version of the crate is published [here](https://crates.io/crates/casper-contract).
-- `casper-types = "1.5.0"` - Includes types shared by many Casper crates for use on a Casper network. This crate is necessary for the EE to understand and interpret the session code. The latest version of the crate is published [here](https://crates.io/crates/casper-types).
-
 ### Updating the `main.rs` File
 
-To begin writing contract code, add the following file attributes to support the Wasm execution environment. If you have an auto-generated `main.rs` file, remove the auto-generated main function.
+To begin writing contract code, add the following file attributes to support the Wasm execution environment. If you still have an auto-generated `main.rs` file, remove the auto-generated main function.
 
 ```rust
 #![no_std]
@@ -227,6 +275,10 @@ Each entry point should have these arguments:
 This step adds the individual entry points to a `counter_entry_points` object using the `add_entry_point` method. This object will later be passed to the `new_contract` method.
 
 ```rust
+#[no_mangle]
+pub extern "C" fn call() {
+    // Initialize the count to 0 locally
+    let count_start = storage::new_uref(0_i32);
     // Create the entry points for this contract
     let mut counter_entry_points = EntryPoints::new();
 
@@ -245,7 +297,9 @@ This step adds the individual entry points to a `counter_entry_points` object us
         EntryPointAccess::Public,
         EntryPointType::Contract,
     ));
+}
 ```
+In the following, we will add more content to this call function.
 
 3) Create the contract's named keys.
 
@@ -294,6 +348,58 @@ Generally, the `Contract_Hash` and `Contract_Version` are saved as `NamedKeys` i
     runtime::put_key(CONTRACT_KEY, stored_contract_hash.into());
 ```
 
+The complete call function should look like this:
+
+```rust
+#[no_mangle]
+pub extern "C" fn call() {
+    // Initialize the count to 0 locally
+    let count_start = storage::new_uref(0_i32);
+    // Create the entry points for this contract
+    let mut counter_entry_points = EntryPoints::new();
+
+    counter_entry_points.add_entry_point(EntryPoint::new(
+        ENTRY_POINT_COUNTER_GET,
+        Vec::new(),
+        CLType::I32,
+        EntryPointAccess::Public,
+        EntryPointType::Contract,
+    ));
+
+    counter_entry_points.add_entry_point(EntryPoint::new(
+        ENTRY_POINT_COUNTER_INC,
+        Vec::new(),
+        CLType::Unit,
+        EntryPointAccess::Public,
+        EntryPointType::Contract,
+    ));
+
+    // In the named keys of the counter contract, add a key for the count.
+    let mut counter_named_keys = NamedKeys::new();
+    let key_name = String::from(COUNT_KEY);
+    counter_named_keys.insert(key_name, count_start.into());
+
+    // Create a new contract package that can be upgraded.
+    let (stored_contract_hash, contract_version) = storage::new_contract(
+        counter_entry_points,
+        Some(counter_named_keys),
+        Some(CONTRACT_PACKAGE_NAME.to_string()),
+        Some(CONTRACT_ACCESS_UREF.to_string()),
+    );
+
+    /* To create a locked contract instead, use new_locked_contract and throw away the contract version returned
+    let (stored_contract_hash, _) =
+    storage::new_locked_contract(counter_entry_points, Some(counter_named_keys), None, None); */
+
+    // Store the contract version in the context's named keys.
+    let version_uref = storage::new_uref(contract_version);
+    runtime::put_key(CONTRACT_VERSION_KEY, version_uref.into());
+
+    // Create a named key for the contract hash.
+    runtime::put_key(CONTRACT_KEY, stored_contract_hash.into());
+}
+```
+
 ## Locked Contracts {#locked-contracts}
 
 Locked contracts cannot contain other contract [versions](https://docs.rs/casper-types/latest/casper_types/contracts/type.ContractVersion.html) in the same contract package; thus, they cannot be upgraded. In this scenario, the Casper execution engine will create a contract package, add a contract to that package and prevent any further upgrades to the contract. Use locked contracts when you need to ensure high security and will not require updates to the contract.
@@ -325,15 +431,17 @@ let (stored_contract_hash, _) =
 
 ## Compiling Contract Code {#compiling-contract-code}
 
-To compile the smart contract, run the following command in the directory hosting the `Cargo.toml` file and `src` folder.
+To compile the smart contract, run the following commands in the `contract` folder in your project's directory where `Cargo.toml` file and `src` folder are hosted.
 
 ```bash
+rustup target add wasm32-unknown-unknown
 cargo build --release --target wasm32-unknown-unknown
 ```
 
-For the counter example, you may use the Makefile provided:
+For the counter example, in your project's directory where you have `Makefile` run the following:
 
 ```bash
+make prepare
 make build-contract
 ```
 

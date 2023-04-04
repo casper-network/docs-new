@@ -1,8 +1,8 @@
-# Installing a Node 
+# Installing a Node
 
 Ensure the requirements listed in the following sections are met before you start setting up the node on the network, either on Mainnet or Testnet.
 
-## Network Requirements
+## Network Requirements {#network-requirements}
 
 The following ports are used by the node:
 
@@ -11,7 +11,7 @@ The following ports are used by the node:
 - 8888 REST endpoint for status and metrics (having this accessible allows your node to be part of network status)
 - 9999 SSE endpoint for event stream
 
-Of these `35000` is the only port required to be open for your node to function, however, opening `8888` will allow others to know general network health.
+Of these `35000` is the only port required to be open for your node to function, however, opening `8888` will allow others to know general network health. For more details, see the additional information on [Node Endpoints](./node-endpoints.md).
 
 ## Operating System Requirements
 
@@ -118,7 +118,7 @@ RPC: Ready
 ● casper-node-launcher.service - Casper Node Launcher
    Loaded: loaded (/lib/systemd/system/casper-node-launcher.service; enabled; vendor preset: enabled)
    Active: active (running) since Wed 2022-03-16 21:08:50 UTC; 4 days ago
-     Docs: https://docs.casperlabs.io
+     Docs: https://docs.casper.network
  Main PID: 2934 (casper-node-lau)
     Tasks: 12 (limit: 4915)
    CGroup: /system.slice/casper-node-launcher.service
@@ -134,6 +134,3 @@ The community has created a few tools to monitor your node once it is running, s
 
 - Status.py: https://github.com/RapidMark/casper-tools
 - Grafana: https://github.com/matsuro-hadouken/casper-tools
-
-
-
