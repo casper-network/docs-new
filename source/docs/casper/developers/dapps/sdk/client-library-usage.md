@@ -345,8 +345,8 @@ validator_public_key = pycspr.factory.accounts.create_public_key_from_account_ke
 )
 
 deploy_params = pycspr.create_deploy_parameters(
-	account = keypair, # Only the public key is used, see `create_deploy_parameters`
-	chain_name = "casper" # or "casper-test" for testnet
+    account = keypair, # Only the public key is used, see `create_deploy_parameters`
+    chain_name = "casper" # or "casper-test" for testnet
 )
 
 deploy = pycspr.create_validator_delegation(
