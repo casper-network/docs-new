@@ -367,3 +367,49 @@ print(deploy.hash.hex())
 </Tabs>
 
 Once submitted, the above snippet will print the deploy hash in the console.
+
+## Serialization
+
+Casper's SDKs provide methods that allow you to serialize and deserialize data, enabling seamless interaction between various components of the blockchain network, such as nodes, smart contracts, and user interfaces. These methods facilitate the conversion of complex typed objects into a standardized, platform-agnostic format for efficient transmission, storage, and subsequent reconstruction back into their original form when needed. By utilizing these serialization and deserialization methods, you can ensure data integrity, consistency, and maintainability while working with a Casper network.
+
+### Public Key
+
+#### Serialization
+
+<Tabs>
+
+<TabItem value="js" label="JavaScript">
+
+```javascript
+const { CLPublicKey } = require("casper-js-sdk")
+
+const publicKeyBytes = CLPublicKey.fromHex("01a0ecf93f1bea3f3ded5c60d220f5324cb3287a888d8b3710c319e59122095a46").value()
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+</TabItem>
+
+</Tabs>
+
+#### Deserialization
+
+<Tabs>
+
+```javascript
+const { CLPublicKey, CLPublicKeyTag } = require("casper-js-sdk")
+
+const publicKey = new CLPublicKey(publicKeyBytes, CLPublicKeyTag.ED25519) // or CLPublicKeyTag.SECP256K1
+```
+
+<TabItem value="js" label="JavaScript">
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+</TabItem>
+
+</Tabs>
