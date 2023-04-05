@@ -314,7 +314,7 @@ const contract = new Contracts.Contract(casperClient)
 const contractWasm = new Uint8Array(fs.readFileSync("./casper-node/target/wasm32-unknown-unknown/release/delegate.wasm").buffer);
 
 const runtimeArguments = RuntimeArgs.fromMap({
-    "amount": CLValueBuilder.u512(5e11), // 500 CSPR, minimum delegation amount
+    "amount": CLValueBuilder.u512(500e9), // Minimum delegation amount: 500 CSPR
     "delegator": keypair.publicKey,
     "validator": CLPublicKey.fromHex("01e8c84f4fbb58d37991ef373c08043a45c44cd7f499453fa2bd3e141cc0113b3c")
 });
