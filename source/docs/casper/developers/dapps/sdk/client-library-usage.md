@@ -271,3 +271,6 @@ print(deploy.hash.hex())
 </Tabs>
 
 Once submitted, the above snippet will print the deploy hash in the console.
+
+## Calling Contracts
+
