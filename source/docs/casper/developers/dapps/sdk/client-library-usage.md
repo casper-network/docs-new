@@ -351,7 +351,7 @@ deploy_params = pycspr.create_deploy_parameters(
 
 deploy = pycspr.create_validator_delegation(
     params = deploy_params,
-    amount = int(500e9), # Minimum delegation amount:  500 CSPR
+    amount = int(500e9), # Minimum delegation amount: 500 CSPR
     public_key_of_delegator = keypair,
     public_key_of_validator = validator_public_key,
     path_to_wasm = "./casper-node/target/wasm32-unknown-unknown/release/delegate.wasm"
