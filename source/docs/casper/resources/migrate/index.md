@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Migrating from another chain - Overview
 slug: /migrating-from-other-chains
 ---
 
