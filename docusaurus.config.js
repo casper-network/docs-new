@@ -52,11 +52,6 @@ module.exports = {
         // metadatas: metadatasConfig,
         navbar: navbarConfig,
         prism: prismConfig,
-        docs: {
-            sidebar: {
-                hideable: true,
-            },
-        },
     },
     presets: [
         [
