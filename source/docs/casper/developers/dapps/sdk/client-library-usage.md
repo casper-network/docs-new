@@ -513,8 +513,8 @@ async fn put_deploy(){
     };
     let mut session_args: Vec<&str> = Vec::new();
     session_args.push("amount:U512='500000000000'");
-    session_args.push("delegator:key='01daad67ebbcb725e02a1955a6617512b311435a21ca6d523085aa015d2d1b473a'");
-    session_args.push("validator:key='validator_public_key'");
+    session_args.push("delegator:Key='01daad67ebbcb725e02a1955a6617512b311435a21ca6d523085aa015d2d1b473a'");
+    session_args.push("validator:Key='validator_public_key'");
     // test with session args -> tbd
     let session_params: casper_client::SessionStrParams = casper_client::SessionStrParams::with_path("./delegate.wasm", session_args, "");
     let payment_params: casper_client::PaymentStrParams = casper_client::PaymentStrParams::with_amount("5000000000");
