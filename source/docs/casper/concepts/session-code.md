@@ -1,4 +1,4 @@
-# Session Code
+# Contracts and Session Code
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
