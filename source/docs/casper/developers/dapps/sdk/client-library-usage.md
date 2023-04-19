@@ -516,7 +516,7 @@ async fn put_deploy(){
     
     session_args.push("delegator:public_key='01daad67ebbcb725e02a1955a6617512b311435a21ca6d523085aa015d2d1b473a'");
     session_args.push("validator:public_key='validator_public_key'");
-    // test with session args -> tbd
+  
     let session_params: casper_client::SessionStrParams = casper_client::SessionStrParams::with_path("./delegate.wasm", session_args, "");
     let payment_params: casper_client::PaymentStrParams = casper_client::PaymentStrParams::with_amount("5000000000");
     let result = casper_client::put_deploy(maybe_rpc, node_address, verbosity, deploy_params, session_params, payment_params).await.unwrap();
