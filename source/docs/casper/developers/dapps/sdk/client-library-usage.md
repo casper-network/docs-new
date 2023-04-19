@@ -380,9 +380,9 @@ async fn put_deploy(){
         session_account: "01daad67ebbcb725e02a1955a6617512b311435a21ca6d523085aa015d2d1b473a"
 
     };
-    // without session args:
-    //let session_args: Vec<&str> = Vec::new();
-    // with session args:
+    // Without session args:
+    // let session_args: Vec<&str> = Vec::new();
+    // With session args:
     let mut session_args: Vec<&str> = Vec::new();
     session_args.push("argument:String='hello world'");
     let session_params: casper_client::SessionStrParams = casper_client::SessionStrParams::with_path("./contract.wasm", session_args, "");
