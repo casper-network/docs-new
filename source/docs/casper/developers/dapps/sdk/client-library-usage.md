@@ -45,7 +45,7 @@ and add it to your `main.rs`:
 extern crate casper_client;
 ```
 
-use types and methods from casper_client:
+Use types and methods from casper_client:
 
 ```rust
 use casper_client::transfer;
