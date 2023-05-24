@@ -7,9 +7,10 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useLocaleMap from "../../../hooks/useLocaleMap";
 import { useLocation } from "@docusaurus/router";
 import styles from "./ExtendedFooter.module.scss";
-import React from "react";
+import React, { useContext } from "react";
 import Link from "@docusaurus/Link";
 import SocialMedia from "../../SocialMedia";
+import { ModalContext } from "../../Modals/CookieModal";
 
 export default function ExtendedFooter() {
     const location = useLocation();
@@ -20,7 +21,7 @@ export default function ExtendedFooter() {
     const siteUrl = customFields.siteUrl as string;
     // -- Remove the base url from the location
     const path = location.pathname.replace(baseUrl, "");
-
+    const { setShowCookieModal } = useContext(ModalContext);
     // -- Take the locale, if the locale isn't part of the path, the mapper is going to return the default external locale
     const internalLocale = path.split("/")[0];
 
@@ -97,6 +98,14 @@ export default function ExtendedFooter() {
                                 {footerData.bottomLinks.map((link, i) => {
                                     return <span key={`${link.title}_${i}`}>{renderLink(link.type, link.title, link.url, link.openInNewTab)}</span>;
                                 })}
+                                <button
+                                    onClick={() => {
+                                        setShowCookieModal(true);
+                                    }}
+                                    className={`${styles.button_modal_cookie} primaryParagraph`}
+                                >
+                                    {footerData?.manage_cookies_text}
+                                </button>
                             </div>
                         )}
                     </div>
