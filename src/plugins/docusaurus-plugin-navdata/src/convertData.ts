@@ -61,7 +61,7 @@ const convertData = (
     if (!translation.logo || !translation.title) {
       continue;
     }
-    const footerData = translation; //IFooterData = convertFooterData(translation);
+    const footerData: IFooterData = convertFooterData(translation);
 
     for (const columnSource of translation.link_column) {
       const column: IFooterColumn = convertFooterColumn(
