@@ -61,7 +61,7 @@ const convertData = (
     if (!translation.logo || !translation.title) {
       continue;
     }
-    const footerData: IFooterData = convertFooterData(translation);
+    const footerData = translation; //IFooterData = convertFooterData(translation);
 
     for (const columnSource of translation.link_column) {
       const column: IFooterColumn = convertFooterColumn(
@@ -152,6 +152,7 @@ const convertFooterData = (source: any): IFooterData => {
     logo: '',
     bottomLinks: [],
     columns: [],
+    manage_cookies_text: source?.manage_cookies_text,
   };
 };
 
