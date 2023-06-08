@@ -23,14 +23,15 @@ function DocPageMetadata(props) {
     const data = usePluginData("docusaurus-plugin-cookiesbanner");
 
     const cookiesData =
-        data.cookieData.find((x) => x.languageCode === externalLocale) ||
-        data.cookieData.find((x) => x.languageCode === siteConfig.customFields.defaultExternalLocales);
-    const items = cookiesData.items;
+        data?.cookieData.find((x) => x.languageCode === externalLocale) ||
+        data?.cookieData.find((x) => x.languageCode === siteConfig.customFields.defaultExternalLocales);
+    const items = cookiesData?.items;
     const prefs = Cookies.get("cookie-prefs") || JSON.stringify([]);
     return (
         <>
-            <Head>
-                <script type="application/javascript">{`
+            {cookiesData && (
+                <Head>
+                    <script type="application/javascript">{`
                     if(!window.gtmConfigured) {
                         const items = ${JSON.stringify(items)}
 
@@ -55,7 +56,8 @@ function DocPageMetadata(props) {
                         window.gtmConfigured = true;
                     }
                 `}</script>
-            </Head>
+                </Head>
+            )}
             <SearchMetadata version={versionMetadata.version} tag={docVersionSearchTag(versionMetadata.pluginId, versionMetadata.version)} />
             <PageMetadata>{versionMetadata.noIndex && <meta name="robots" content="noindex, nofollow" />}</PageMetadata>
         </>
