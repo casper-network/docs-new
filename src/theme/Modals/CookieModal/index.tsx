@@ -105,7 +105,7 @@ function CookieModal() {
     }, []);
 
     useEffect(() => {
-        if (document && document.body && showCookieModal) {
+        if (document && document.body && showCookieModal && cookiesData) {
             document.body.classList.add("preventScrollDocument");
         } else {
             document.body.classList.remove("preventScrollDocument");
