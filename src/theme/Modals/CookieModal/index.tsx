@@ -1,5 +1,4 @@
 import Cookies from "js-cookie";
-import { title } from "process";
 import React, { PropsWithChildren, ReactElement, useContext, useEffect, useRef, useState } from "react";
 import useFocusTrap from "../../../hooks/useFocusTrap";
 import icons from "../../../icons";
@@ -43,7 +42,6 @@ function CookieModal() {
     const { siteConfig } = useDocusaurusContext();
     const { customFields } = siteConfig;
     const baseUrl = customFields.baseUrl as string;
-    const siteUrl = customFields.siteUrl as string;
     // -- Remove the base url from the location
     const path = location.pathname.replace(baseUrl, "");
     // -- Take the locale, if the locale isn't part of the path, the mapper is going to return the default external locale
@@ -77,11 +75,11 @@ function CookieModal() {
         return current?.value ?? false;
     };
 
-    const data = usePluginData("docusaurus-plugin-cookiesbanner") as { cookieData: Array<ICookiesData> };
+    const data = usePluginData("docusaurus-plugin-cookiesbanner") as { cookieData: Array<ICookiesData> | undefined };
 
     const cookiesData =
-        data.cookieData.find((x) => x.languageCode === externalLocale) ||
-        data.cookieData.find((x) => x.languageCode === siteConfig.customFields.defaultExternalLocales);
+        data?.cookieData.find((x) => x.languageCode === externalLocale) ||
+        data?.cookieData.find((x) => x.languageCode === siteConfig.customFields.defaultExternalLocales);
 
     useEffect(() => {
         const prefs = Cookies.get("cookie-prefs");
@@ -97,9 +95,11 @@ function CookieModal() {
             setShowContent(false);
             setShowCookieModal(true);
         }
-        for (const item of cookiesData.items) {
-            const cookieValue = cookiesValues.find((x) => x.name === item!.parameter);
-            values.push({ name: item!.parameter!, value: (cookieValue && cookieValue.value) || item!.required! });
+        if (cookiesData) {
+            for (const item of cookiesData.items) {
+                const cookieValue = cookiesValues.find((x) => x.name === item!.parameter);
+                values.push({ name: item!.parameter!, value: (cookieValue && cookieValue.value) || item!.required! });
+            }
         }
         setSelected(values);
     }, []);
@@ -121,7 +121,7 @@ function CookieModal() {
     };
 
     const confirmAll = () => {
-        const values = cookiesData.items.map((x) => {
+        const values = cookiesData?.items.map((x) => {
             return { name: x!.parameter!, value: true };
         });
         Cookies.set("cookie-prefs", JSON.stringify(values), { expires: 365 });
@@ -141,7 +141,7 @@ function CookieModal() {
 
     return (
         <>
-            {
+            {cookiesData && (
                 <div className={`${styles.modal} ${!showCookieModal ? styles.hidden : ""}`} ref={modalRef}>
                     {showNotice && (
                         <div className={styles.notice}>
@@ -203,7 +203,7 @@ function CookieModal() {
                         </div>
                     )}
                 </div>
-            }
+            )}
         </>
     );
 }
