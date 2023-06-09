@@ -1,7 +1,3 @@
-require("dotenv").config({
-    path: process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : `.env`,
-});
-
 module.exports = {
     directusUrl: process.env.DIRECTUS_URL,
     directusGraphqlUrl: process.env.DIRECTUS_GRAPHQL_URL,
