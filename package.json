@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "prestart": "yarn run buildnavplugin && yarn run buildcookiesplugin",
-        "buildnavplugin": "cd ./src/plugins/docusaurus-plugin-navdata && yarn install && (yarn unlink > /dev/nul || true) && yarn link",
+        "buildnavplugin": "cd ./src/plugins/docusaurus-plugin-navdata && yarn install && (yarn unlink > /dev/null || true) && yarn link",
         "buildcookiesplugin": "cd ./src/plugins/docusaurus-plugin-cookiesbanner && yarn install && (yarn unlink > /dev/null || true) && yarn link",
         "start": "docusaurus start --no-open",
         "build": "yarn run buildnavplugin && yarn run buildcookiesplugin && docusaurus build",
