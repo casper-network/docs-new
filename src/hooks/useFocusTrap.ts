@@ -40,8 +40,6 @@ export default function useFocusTrap(
         }
 
         function keyDownHandler(e: KeyboardEvent): void {
-            console.log(focusInComponent(document.activeElement));
-            console.log("aca");
             // only execute if tab is pressed
             if (e.key !== "Tab") return;
 
