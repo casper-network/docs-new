@@ -10,6 +10,7 @@ const {
     dataConfig,
     footerConfig,
     gtagConfig,
+    gtmConfig,
     i18nConfig,
     metadatasConfig,
     navbarConfig,
@@ -71,6 +72,7 @@ module.exports = {
                     // onlyIncludeVersions: process.env.PREVIEW_DEPLOY === "true" ? ["current", ...versions.slice(0, 2)] : undefined,
                 },
                 ...(gtagConfig["trackingID"] && { gtag: gtagConfig }),
+                ...(gtmConfig["containerId"] && { googleTagManager: gtmConfig }),
                 // IMPORTANT: disable blog feature
                 blog: false,
                 /* Blog config options */
