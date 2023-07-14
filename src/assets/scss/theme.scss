@@ -287,7 +287,7 @@ html[data-theme="light"] {
     --casperRed: var(--casperBlue);
     --casperWhite: var(--liftedBlack)
     --casperYellow: var(--casperBlue);
-
+    --halfTitleGray:var(--liftedBlack);
     [class*="container_search"] {
         > input {
             background: var(--white);
@@ -305,6 +305,7 @@ html[data-theme="light"] {
     [class*="navbar_list"],
     [class*="container_icon"],[class*="logoCasper"] {
         color: var(--liftedBlack);
+        --casperWhite: var(--liftedBlack);
         svg {
             fill: var(--liftedBlack);
             path {
@@ -312,13 +313,28 @@ html[data-theme="light"] {
             }
         }
     }
-
+    
     [class*="navbar_list_container_button"] {
         > button {
             color: var(--casper-color-black);
         }
     }
-
+    
+    [class*="switchWrapper"]{
+        --liftedBlack:var(--white);
+        --casperWhite: #141414;
+        
+    }
+    
+    [class*="navbar--fixed-top"],
+    [class*="ExtendedNavbar"]{
+        background-color:var(--liftedBlack-light-theme);
+    }
+    
+    
+        [class*="container_icon"]{
+            background-color: transparent;
+        }
     /*     .menu__list {
         .menu__link {
             color: var(--casper-color-royal);
