@@ -282,21 +282,42 @@ main > .container {
 }
 
 html[data-theme="light"] {
+    --black: var(--casper-color-white);
+    --ifm-navbar-link-hover-color: var(--casperBlue);
+    --casperRed: var(--casperBlue);
     [class*="Navbar"] {
-        --black: var(--casper-color-white);
         --casperRed: var(--casperBlue);
-        --casperYellow: var(--casperBlue)
+        --casperYellow: var(--casperBlue);
+    }
+
+    [class*="container_search"] {
+        > input {
+            background: var(--white);
+            color: var(--liftedBlack);
+            border: 1px solid var(--liftedBlack);
+        }
+        [class*="results_container"] {
+            background: var(--white);
+            color: var(--liftedBlack);
+        }
     }
 
     [class*="navbar_logo_container"],
     [class*="social_icons"],
-    [class*="navbar_list"] {
-        color: var(--liftedBlack) !important;
+    [class*="navbar_list"],
+    [class*="container_icon"] {
+        color: var(--liftedBlack);
         svg {
             fill: var(--liftedBlack);
             path {
-                fill: var(--liftedBlack) !important;
+                fill: var(--liftedBlack);
             }
+        }
+    }
+
+    [class*="navbar_list_container_button"] {
+        > button {
+            color: var(--casper-color-black);
         }
     }
 
