@@ -285,10 +285,8 @@ html[data-theme="light"] {
     --black: var(--casper-color-white);
     --ifm-navbar-link-hover-color: var(--casperBlue);
     --casperRed: var(--casperBlue);
-    [class*="Navbar"] {
-        --casperRed: var(--casperBlue);
-        --casperYellow: var(--casperBlue);
-    }
+    --casperWhite: var(--liftedBlack)
+    --casperYellow: var(--casperBlue);
 
     [class*="container_search"] {
         > input {
@@ -305,7 +303,7 @@ html[data-theme="light"] {
     [class*="navbar_logo_container"],
     [class*="social_icons"],
     [class*="navbar_list"],
-    [class*="container_icon"] {
+    [class*="container_icon"],[class*="logoCasper"] {
         color: var(--liftedBlack);
         svg {
             fill: var(--liftedBlack);
