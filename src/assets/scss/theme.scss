@@ -282,10 +282,25 @@ main > .container {
 }
 
 html[data-theme="light"] {
-   [class*="Navbar"]{
-    --black: var(--casper-color-white);
-   }
-    .menu__list {
+    [class*="Navbar"] {
+        --black: var(--casper-color-white);
+        --casperRed: var(--casperBlue);
+        --casperYellow: var(--casperBlue)
+    }
+
+    [class*="navbar_logo_container"],
+    [class*="social_icons"],
+    [class*="navbar_list"] {
+        color: var(--liftedBlack) !important;
+        svg {
+            fill: var(--liftedBlack);
+            path {
+                fill: var(--liftedBlack) !important;
+            }
+        }
+    }
+
+    /*     .menu__list {
         .menu__link {
             color: var(--casper-color-royal);
         }
@@ -298,7 +313,7 @@ html[data-theme="light"] {
         .menu__link--sublist {
             color: var(--casper-color-black);
         }
-    }
+    } */
 }
 
 html[data-theme="dark"] {
