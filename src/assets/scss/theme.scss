@@ -173,7 +173,6 @@ nav.menu {
     white-space: nowrap;
 }
 
-
 .main-wrapper {
     align-items: center;
 }
@@ -282,7 +281,10 @@ main > .container {
     }
 }
 
-html[data-theme="white"] {
+html[data-theme="light"] {
+   [class*="Navbar"]{
+    --black: var(--casper-color-white);
+   }
     .menu__list {
         .menu__link {
             color: var(--casper-color-royal);
