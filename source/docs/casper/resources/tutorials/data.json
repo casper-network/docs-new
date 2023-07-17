@@ -155,6 +155,15 @@
                         "color": "purple"
                     }
                 ]
+            },
+            {
+                "image": "/image/tutorials/tiles/Casper_Icons_Technology_White.png",
+                "category": "Beginner",
+                "title": "Launching a Casper Node with AWS Marketplace",
+                "url": "/resources/tutorials/beginner/aws-node/",
+                "linkText": "source",
+                "paragraph": "Learn how to launch a Casper Node through the AWS Marketplace.",
+                "tags": []
             }
         ]
     },
