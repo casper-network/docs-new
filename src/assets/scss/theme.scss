@@ -311,7 +311,7 @@ html[data-theme="light"] {
         svg {
             fill: var(--liftedBlack);
             path {
-                fill: var(--liftedBlack);
+                fill: var(--liftedBlack) !important;
             }
         }
     }
@@ -327,13 +327,11 @@ html[data-theme="light"] {
         --casperWhite: #141414;
     }
 
-    
-
     [class*="navbar--fixed-top"],
     [class*="ExtendedNavbar"] {
         background-color: var(--white);
 
-        [class*="dropdown_container"]{
+        [class*="dropdown_container"] {
             border: 1px solid black;
         }
     }
