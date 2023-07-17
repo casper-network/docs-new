@@ -39,7 +39,7 @@
                 "image": "/image/tutorials/tiles/Casper_Icons_Apps_Red.png",
                 "category": "Beginner",
                 "title": "Getting Started Video",
-                "url": "../resources/tutorials/beginner/getting-started-tutorial/",
+                "url": "/resources/tutorials/beginner/getting-started-tutorial/",
                 "linkText": "Source",
                 "paragraph": "Step-by-step video tutorial for setting up the Casper development environment.",
                 "tags": [
@@ -53,7 +53,7 @@
             {
                 "image": "/image/tutorials/tiles/Casper_Icons_Decentralization_White.png",
                 "category": "Beginner",
-                "title": "NFTs on Casper",
+                "title": "NFTs on Casper with the CEP-78 NFT Standard",
                 "url": "https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/README.md",
                 "linkText": "source",
                 "paragraph": "Implementing the Casper CEP-78 NFT standard.",
@@ -76,7 +76,7 @@
                 "image": "/image/tutorials/tiles/Casper_Icons_Apps_Red.png",
                 "category": "Beginner",
                 "title": "A Counter on an NCTL Network",
-                "url": "../counter",
+                "url": "/counter/",
                 "linkText": "source",
                 "paragraph": "An example contract that maintains a counter variable on a local Casper Network with NCTL.",
                 "tags": [
@@ -94,7 +94,7 @@
                 "image": "/image/tutorials/tiles/Casper_Icons_Decentralization_White.png",
                 "category": "Beginner",
                 "title": "A Counter on the Testnet",
-                "url": "https://docs.casperlabs.io/",
+                "url": "/counter-testnet/",
                 "linkText": "source",
                 "paragraph": "An example contract that maintains a counter variable on the Casper Testnet.",
                 "tags": [
@@ -116,7 +116,7 @@
                 "image": "/image/tutorials/tiles/Casper_Icons_Apps_Red.png",
                 "category": "Beginner",
                 "title": "Fungible Tokens on Casper",
-                "url": "https://github.com/casper-ecosystem/erc20/blob/master/docs/TUTORIAL.md",
+                "url": "https://github.com/casper-ecosystem/cep18/blob/master/docs/full-tutorial.md",
                 "linkText": "source",
                 "paragraph": "Implement the Casper Fungible Token standard.",
                 "tags": [
@@ -135,26 +135,12 @@
                 ]
             },
             {
-                "image": "/image/tutorials/tiles/Casper_Icons_Decentralization_White.png",
-                "category": "Beginner",
-                "title": "Safely Transfer Tokens to a Contract",
-                "url": "https://github.com/casper-ecosystem/erc20/blob/master/docs/TUTORIAL.md",
-                "linkText": "source",
-                "paragraph": "How to handle tokens via a contract",
-                "tags": [
-                    {
-                        "text": "Rust",
-                        "color": "green"
-                    }
-                ]
-            },
-            {
                 "image": "/image/tutorials/tiles/Casper_Icons_Apps_Red.png",
                 "category": "Beginner",
                 "title": "Smart Contract Upgrades",
-                "url": "https://github.com/casper-ecosystem/erc20/blob/master/docs/TUTORIAL.md",
+                "url": "/resources/tutorials/beginner/upgrade-contract/",
                 "linkText": "source",
-                "paragraph": "Learn how to upgrade smart contracts",
+                "paragraph": "Learn how to upgrade smart contracts.",
                 "tags": [
                     {
                         "text": "Video",
