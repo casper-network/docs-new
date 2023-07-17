@@ -86,7 +86,6 @@ module.exports = {
             collapsed: true,
             items: [
                 "developers/writing-onchain-code/index",
-                //"developers/writing-onchain-code/prerequisites", // NEW CONTENT WILL BE HERE
                 "developers/writing-onchain-code/getting-started",
                 "developers/writing-onchain-code/assembly-script",
                 "developers/writing-onchain-code/simple-contract",
@@ -146,7 +145,6 @@ module.exports = {
                 "developers/dapps/sending-deploys",
                 //"developers/dapps/signer-integration",
                 //"developers/dapps/callstack-based", // NEW CONTENT WILL BE HERE
-                //"developers/dapps/explanation-session-and-contract", // NEW CONTENT WILL BE HERE
                 "developers/dapps/monitor-and-consume-events",
             ],
         },
@@ -311,7 +309,6 @@ module.exports = {
         "users/funding-from-exchanges",
         "users/testnet-faucet",
     ],
-    workflow: ["workflow/ledger-setup"],
     // BELOW ITEMS ARE COMMENTED OUT BECAUSE WE COULD NOT LOCATE PLACE FOR THEM IN THE NEW STRUCTURE:
     /*"dapp-dev-guide": [
         "dapp-dev-guide/json-rpc",
