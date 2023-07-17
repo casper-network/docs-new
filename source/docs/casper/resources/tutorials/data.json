@@ -180,9 +180,9 @@
                 "image": "/image/tutorials/tiles/Casper_Icons_Interoperability_White.png",
                 "category": "Advanced",
                 "title": "Safely Transfer Tokens to a Contract",
-                "url": "../resources/tutorials/beginner/getting-started-tutorial/",
+                "url": "/resources/tutorials/advanced/transfer-token-to-contract/",
                 "linkText": "Source",
-                "paragraph": "Tutorial covers two methods to handle tokens via a contract. ",
+                "paragraph": "Tutorial covers two methods to handle tokens via a contract.",
                 "tags": [
                     {
                         "text": "Rust",
@@ -194,9 +194,9 @@
                 "image": "/image/tutorials/tiles/Casper_Icons_Technology_White.png",
                 "category": "Advanced",
                 "title": "Two-Party Multi-Signature Deploys",
-                "url": "https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/README.md",
+                "url": "/resources/tutorials/advanced/two-party-multi-sig/",
                 "linkText": "source",
-                "paragraph": "Setting up Two-Party Multi-Signature Deploys",
+                "paragraph": "Setting up Two-Party Multi-Signature Deploys.",
                 "tags": [
                     {
                         "text": "Rust",
@@ -212,9 +212,9 @@
                 "image": "/image/tutorials/tiles/Casper_Icons_Decentralization_White.png",
                 "category": "Advanced",
                 "title": "Interacting with Runtime Return Values",
-                "url": "https://github.com/casper-ecosystem/erc20/blob/master/docs/TUTORIAL.md",
+                "url": "/resources/tutorials/advanced/return-values-tutorial/",
                 "linkText": "source",
-                "paragraph": "Learning how to return a value using contract code",
+                "paragraph": "Learning how to return a value using contract code.",
                 "tags": [
                     {
                         "text": "Rust",
@@ -230,7 +230,7 @@
                 "image": "/image/tutorials/tiles/Casper_Icons_Interoperability_White.png",
                 "category": "Advanced",
                 "title": "Listing CSPR on Your Exchange",
-                "url": "https://github.com/casper-ecosystem/erc20/blob/master/docs/TUTORIAL.md",
+                "url": "/resources/tutorials/advanced/list-cspr/",
                 "linkText": "source",
                 "paragraph": "This topic describes how to list Casper token (CSPR) on a cryptocurrency exchange.",
                 "tags": [
@@ -252,7 +252,7 @@
                 "image": "/image/tutorials/tiles/Casper_Icons_Technology_White.png",
                 "category": "Advanced",
                 "title": "Reading and Writing to Global State using Rust",
-                "url": "https://github.com/casper-ecosystem/erc20/blob/master/docs/TUTORIAL.md",
+                "url": "/resources/tutorials/advanced/storage-workflow/",
                 "linkText": "source",
                 "paragraph": "The following examples outline methods to read and write data to global state on a Casper network using the Rust programming language.",
                 "tags": [
@@ -265,8 +265,8 @@
             {
                 "image": "/image/tutorials/tiles/Casper_Icons_Interoperability_White.png",
                 "category": "Advanced",
-                "title": "Tutorial: Cross-Contract Communication",
-                "url": "https://github.com/casper-ecosystem/erc20/blob/master/docs/TUTORIAL.md",
+                "title": "Cross Contract Communication",
+                "url": "/resources/tutorials/advanced/cross-contract/",
                 "linkText": "source",
                 "paragraph": "This tutorial covers some variations of cross-contract communication.",
                 "tags": [
