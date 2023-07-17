@@ -36,8 +36,12 @@
     }
 
     &_social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         position: relative;
         margin: 45px 0;
+        width: 100%;
     }
 }
 

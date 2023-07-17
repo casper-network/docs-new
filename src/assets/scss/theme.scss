@@ -307,7 +307,8 @@ html[data-theme="light"] {
             border: 1px solid rgba(0, 0, 0, 0.25);
             color: var(--liftedBlack);
             background-color: var(--white);
-            a, div {
+            a,
+            div {
                 border: none;
             }
         }
@@ -349,6 +350,10 @@ html[data-theme="light"] {
 
     [class*="container_icon"] {
         background-color: transparent;
+    }
+
+    [class*="SideBar-module"] {
+        background-color: var(--liftedBlack-light-theme);
     }
 
     /*    [class*="breadcrumbs__item--active"] {
