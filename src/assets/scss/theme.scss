@@ -285,17 +285,18 @@ html[data-theme="light"] {
     --black: var(--casper-color-white);
     --ifm-navbar-link-hover-color: var(--casperBlue);
     --casperRed: var(--casperBlue);
-    --casperWhite: var(--liftedBlack)
+    --casperWhite: var(--liftedBlack);
     --casperYellow: var(--casperBlue);
-    --halfTitleGray:var(--liftedBlack);
+    --halfTitleGray: var(--liftedBlack);
+
     [class*="container_search"] {
+        --casperYellow: var(--casperBlue);
         > input {
             background: var(--white);
             color: var(--liftedBlack);
             border: 1px solid var(--liftedBlack);
         }
         [class*="results_container"] {
-            background: var(--white);
             color: var(--liftedBlack);
         }
     }
@@ -303,7 +304,8 @@ html[data-theme="light"] {
     [class*="navbar_logo_container"],
     [class*="social_icons"],
     [class*="navbar_list"],
-    [class*="container_icon"],[class*="logoCasper"] {
+    [class*="container_icon"],
+    [class*="logoCasper"] {
         color: var(--liftedBlack);
         --casperWhite: var(--liftedBlack);
         svg {
@@ -313,28 +315,32 @@ html[data-theme="light"] {
             }
         }
     }
-    
+
     [class*="navbar_list_container_button"] {
         > button {
             color: var(--casper-color-black);
         }
     }
-    
-    [class*="switchWrapper"]{
-        --liftedBlack:var(--white);
+
+    [class*="switchWrapper"] {
+        --liftedBlack: var(--white);
         --casperWhite: #141414;
-        
     }
+
     
+
     [class*="navbar--fixed-top"],
-    [class*="ExtendedNavbar"]{
-        background-color:var(--liftedBlack-light-theme);
-    }
-    
-    
-        [class*="container_icon"]{
-            background-color: transparent;
+    [class*="ExtendedNavbar"] {
+        background-color: var(--white);
+
+        [class*="dropdown_container"]{
+            border: 1px solid black;
         }
+    }
+
+    [class*="container_icon"] {
+        background-color: transparent;
+    }
     /*     .menu__list {
         .menu__link {
             color: var(--casper-color-royal);
