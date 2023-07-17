@@ -307,7 +307,7 @@ html[data-theme="light"] {
             border: 1px solid rgba(0, 0, 0, 0.25);
             color: var(--liftedBlack);
             background-color: var(--white);
-            a {
+            a, div {
                 border: none;
             }
         }
