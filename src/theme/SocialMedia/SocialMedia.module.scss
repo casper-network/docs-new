@@ -29,7 +29,7 @@
                 &:hover {
                     svg {
                         path {
-                            fill: var(--casperRed);
+                            fill: var(--casperRed) !important;
                         }
                     }
                 }

@@ -319,7 +319,7 @@ html[data-theme="light"] {
         svg {
             fill: var(--liftedBlack);
             path {
-                fill: var(--liftedBlack);
+                fill: var(--liftedBlack) !important;
             }
         }
     }
