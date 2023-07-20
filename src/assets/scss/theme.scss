@@ -359,11 +359,8 @@ html[data-theme="light"] {
         }
     }
 
-    [class*="buttons_container"] {
-        button {
-            background-color: var(--light-mode-dark-gray) !important;
-            border: 1px solid var(--light-mode-dark-gray) !important;
-        }
+    [class*="CookieModal"] {
+        color: black;
     }
 
     [class*="nav_category_title"] {
