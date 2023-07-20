@@ -26,6 +26,14 @@
                         fill: var(--primaryBtn-hover);
                     }
                 }
+
+                &:not(:hover) {
+                    svg {
+                        path {
+                            transition: none;
+                        }
+                    }
+                }
                 &:hover {
                     svg {
                         path {
