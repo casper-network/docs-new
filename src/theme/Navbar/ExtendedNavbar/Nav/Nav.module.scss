@@ -60,11 +60,11 @@
                 .navbar_list_item {
                     @include transition(0.3s all);
                     color: var(--casperRed);
-                }
-                svg {
-                    path {
-                        @include transition(0.3s all);
-                        fill: var(--casperRed);
+                    > svg {
+                        path {
+                            @include transition(0.3s all);
+                            fill: var(--casperRed) !important;
+                        }
                     }
                 }
             }

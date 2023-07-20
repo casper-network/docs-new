@@ -366,6 +366,10 @@ html[data-theme="light"] {
         }
     }
 
+    [class*="nav_category_title"] {
+        color: var(--casperWhite-light-theme);
+    }
+
     @media (max-width: 996px) {
         [class*="ExtendedNavbar"] {
             [class*="SearchBox"] {
