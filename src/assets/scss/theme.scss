@@ -368,9 +368,9 @@ html[data-theme="light"] {
             [class*="SearchBox"] {
                 width: 100%;
             }
-            [class*="dropdown_container"] {
-                border: none;
-            }
+        }
+        [class*="dropdown_container"] {
+            border: none !important;
         }
     }
 
