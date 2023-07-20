@@ -47,14 +47,23 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
+
                 &_cancel,
                 &_menu {
                     position: absolute;
                     transform: scale(all);
-                    @include transition(0.3s ease-in);
+                    @include transition(transform 0.3s ease-in);
                     > svg {
                         path {
                             fill: var(--casperWhite);
+                        }
+                    }
+                    &:hover {
+                        > svg {
+                            path {
+                                fill: var(--casperRed);
+                            }
                         }
                     }
                 }
