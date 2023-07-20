@@ -363,6 +363,17 @@ html[data-theme="light"] {
         }
     }
 
+    @media (max-width: 996px) {
+        [class*="ExtendedNavbar"] {
+            [class*="SearchBox"] {
+                width: 100%;
+            }
+            [class*="dropdown_container"] {
+                border: none;
+            }
+        }
+    }
+
     /*    [class*="breadcrumbs__item--active"] {
         span{
             background: #383838;
