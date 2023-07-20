@@ -26,12 +26,13 @@
         color: var(--casperWhite);
         margin: 0;
         align-items: unset;
+        padding: 0 30px;
 
         .navbar {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            gap: 4%;
+            gap: 3%;
             align-items: center;
 
             .navbar_logo_container {
