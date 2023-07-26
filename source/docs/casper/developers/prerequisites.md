@@ -141,7 +141,7 @@ casper-client --help
 You can use `help` for each command to get the most up-to-date arguments and descriptions.
 
 ```bash
-rustup toolchain install nightly
+casper-client <command> --help
 ```
 
 ### Accessing the Casper client source code {#building-client-from-source}
