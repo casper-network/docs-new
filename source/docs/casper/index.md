@@ -2,7 +2,6 @@
 id: welcome
 title: Welcome
 slug: /
-tags: ["Must read", "Legal", "Introduction", "CasperLabs", "CSPR"]
 ---
 
 # Welcome to the Casper Network Documentation
@@ -30,7 +29,7 @@ The [Operators](./operators/index.md) section caters for people who want to run 
  - [Running a node as an operator](./operators/index.md)
  - [Design](./concepts/design/index.md)
  - [Economics](./concepts/economics/index.md)
- - [Staking Guide](./concepts/economics/staking.md)
+ - [Staking Guide](./concepts/economics/staking/staking.md)
 
 ## Other Sections
 
