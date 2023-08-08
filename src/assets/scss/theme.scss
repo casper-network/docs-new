@@ -296,10 +296,28 @@ html[data-theme="light"] {
         }
     }
 
-    [class*="container_search"] {
-        --casperYellow: var(--casperBlue);
+    [class*="SearchWrapper"] {
         > input {
-            background: var(--white);
+            background-color: #fff;
+        }
+        > p {
+            background-color: #f4f4f4;
+        }
+        > [class*="SearchResult"] {
+            a {
+                color: black;
+                small {
+                    color: black !important;
+                }
+            }
+        }
+    }
+
+    /*    [class*="container_search"] {
+        --casperYellow: var(--casperBlue);
+        --liftedBlack: var(--casperWhite);
+        > input {
+            background-color: var(--white) !important;
             color: var(--liftedBlack);
             border: 1px solid var(--liftedBlack);
         }
@@ -313,7 +331,7 @@ html[data-theme="light"] {
             }
         }
     }
-
+ */
     [class*="navbar_logo_container"],
     [class*="social_icons"],
     [class*="navbar_list"],
