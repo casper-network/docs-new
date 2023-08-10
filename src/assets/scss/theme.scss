@@ -309,7 +309,6 @@ html[data-theme="light"] {
                }
            }
        }
-       
         > p {
             background-color: #f4f4f4;
         }
@@ -325,10 +324,28 @@ html[data-theme="light"] {
             }
         }
     }
+    [class*="container_search"] {
+        --casperYellow: var(--casperBlue);
+        > input {
+            background: var(--white);
+            color: var(--liftedBlack);
+            border: 1px solid var(--liftedBlack);
+        }
+        [class*="results_container"] {
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            color: var(--liftedBlack);
+            background-color: var(--white);
+            a,
+            div {
+                border: none;
+            }
+        }
+    }
 
     [class*="navbar_logo_container"],
     [class*="social_icons"],
     [class*="navbar_list"],
+    [class*="container_icon"],
     [class*="logoCasper"] {
         color: var(--liftedBlack);
         --casperWhite: var(--liftedBlack);
